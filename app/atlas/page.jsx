@@ -45,7 +45,6 @@ const __MARKUP = String.raw`
             <button type="submit">Subscribe →</button>
           </form>
           <p class="subscribe__hint">One list · quarterly cadence · FieldNotes@omameh.com.au</p>
-          <p class="subscribe__hint" style="margin-top: var(--space-2);">By submitting, you agree to our <a href="/privacy" style="color: inherit; text-decoration: underline; text-underline-offset: 2px;">privacy policy</a>.</p>
         </div>
         <div class="atlas-cta__divider" aria-hidden="true"></div>
         <div class="atlas-cta__col">

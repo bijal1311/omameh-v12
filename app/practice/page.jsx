@@ -29,7 +29,6 @@ const __MARKUP = String.raw`
       <div class="section__head">
         <span class="eyebrow">01 · The Five Pillars</span>
         <h2>What we modernise.</h2>
-        <p class="strap">Five areas where the AI era is forcing every serious organisation to make a structural choice. We work at the intersection of all five — because the leaders who lead this era won't do it with one capability, they'll do it with all of them, connected and compounding.</p>
       </div>
 
       <div class="pillars">
@@ -37,7 +36,7 @@ const __MARKUP = String.raw`
           <span class="pillar__num">P01</span>
           <div>
             <h3 class="pillar__title">Operating Model</h3>
-            <p style="color: var(--fg2); margin: var(--space-2) 0 0; font-size: 15px;">How work flows, decisions get made, and value is created when human-to-machine intelligence ratios shift every quarter. The interlinking layer between strategy and execution. <em>Can your 2015 operating model carry a 2030 strategy?</em></p>
+            <p style="color: var(--fg2); margin: var(--space-2) 0 0; font-size: 15px;">The structure that lets AI-era ambition land — accountability, decision rights, and the wiring between functions. Where the org chart ends and the architecture begins.</p>
           </div>
           <span class="pillar__cta">Read →</span>
         </div>
@@ -45,7 +44,7 @@ const __MARKUP = String.raw`
           <span class="pillar__num">P02</span>
           <div>
             <h3 class="pillar__title">Workforce, Skills <em>&amp; Culture</em></h3>
-            <p style="color: var(--fg2); margin: var(--space-2) 0 0; font-size: 15px;">The three-stranded rope — capability, culture, and the mindset the work runs on. Skills are becoming the new currency of the global economy. <em>Do you know what skills your organisation will need in three years — and are you building toward them?</em></p>
+            <p style="color: var(--fg2); margin: var(--space-2) 0 0; font-size: 15px;">The people side of the transition. What roles change. What skills compound. What culture has to hold while the model shifts beneath it.</p>
           </div>
           <span class="pillar__cta">Read →</span>
         </div>
@@ -53,7 +52,7 @@ const __MARKUP = String.raw`
           <span class="pillar__num">P03</span>
           <div>
             <h3 class="pillar__title">Right Talent in the <em>Right Place</em></h3>
-            <p style="color: var(--fg2); margin: var(--space-2) 0 0; font-size: 15px;">Right-shoring as design, not arbitrage. The right talent, in the right place, with cost efficiency, reach, risk management, and cultural alignment all by design. Includes Global Capability Centres in India and the Middle East. <em>Are you building global capability with intention — or just moving cost to a different geography?</em></p>
+            <p style="color: var(--fg2); margin: var(--space-2) 0 0; font-size: 15px;">Where work is done, by whom, on what economics — by design, not by labour arbitrage. Vetted partnership. AU + IN bench.</p>
           </div>
           <span class="pillar__cta">Read →</span>
         </div>
@@ -61,7 +60,7 @@ const __MARKUP = String.raw`
           <span class="pillar__num">P04</span>
           <div>
             <h3 class="pillar__title">AI Governance</h3>
-            <p style="color: var(--fg2); margin: var(--space-2) 0 0; font-size: 15px;">Boards and executives are being asked to govern something they barely understand. Omameh builds the frameworks, policies, and capability that allow leadership to guide AI adoption responsibly — without slowing it down. <em>Who is accountable for AI in your organisation — and do they have what they need?</em></p>
+            <p style="color: var(--fg2); margin: var(--space-2) 0 0; font-size: 15px;">The guard rails that satisfy the regulator before the regulator asks. Risk, ethics, audit, control — built into the operating model, not bolted on.</p>
           </div>
           <span class="pillar__cta">Read →</span>
         </div>
@@ -69,7 +68,7 @@ const __MARKUP = String.raw`
           <span class="pillar__num">P05</span>
           <div>
             <h3 class="pillar__title">AI-Era <em>Innovation</em></h3>
-            <p style="color: var(--fg2); margin: var(--space-2) 0 0; font-size: 15px;">Not a department. Not a project. A permanent internal capability — the structures, culture, and rhythm that make innovation repeatable, sequenced, and compounding under AI-era conditions. <em>Is your next breakthrough dependent on luck — or does it have a system behind it?</em></p>
+            <p style="color: var(--fg2); margin: var(--space-2) 0 0; font-size: 15px;">How the organisation learns to ship new things at AI speed without losing the architecture beneath it. Weeks, not quarters.</p>
           </div>
           <span class="pillar__cta">Read →</span>
         </div>

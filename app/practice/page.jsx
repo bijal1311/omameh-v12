@@ -18,6 +18,7 @@ export const metadata = {
 
 const __MARKUP = String.raw`
   <div class="container">
+    <div class="route__header"><span class="route__index">03</span><span class="route__name">/practice · Practice</span><span class="route__issue">Vol. I · Issue 01 · Q2 2026</span></div>
     <div class="hero">
       <span class="eyebrow">Practice · Omameh</span>
       <h1 style="margin-top: var(--space-4)">Five pillars. Three phases. <em>One architecture.</em></h1>

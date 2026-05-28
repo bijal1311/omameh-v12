@@ -15,6 +15,7 @@ export const metadata = {
 
 const __MARKUP = String.raw`
   <div class="container">
+    <div class="route__header"><span class="route__index">06</span><span class="route__name">/founder · Founder</span><span class="route__issue">Vol. I · Issue 01 · Q2 2026</span></div>
     <div class="fo-hero">
       <div class="fo-hero__portrait" role="img" aria-label="Bijal Sejpal, founder of Omameh — editorial portrait">
         <img src="/founder-portrait.png" alt="Bijal Sejpal · founder of Omameh" style="width: 100%; height: 100%; object-fit: cover; display: block;">

@@ -8,6 +8,7 @@ export const metadata = {
 
 const __MARKUP = String.raw`
   <div class="container">
+    <div class="route__header"><span class="route__index">01</span><span class="route__name">/ · Home</span><span class="route__issue">Vol. I · Issue 01 · Q2 2026</span></div>
     <div class="home-hero">
       <div class="home-hero__lockup">
         <div class="triskelion-stage" role="img" aria-label="Omameh — V9 master mark">

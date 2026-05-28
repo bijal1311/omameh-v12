@@ -56,6 +56,7 @@ const __MARKUP = String.raw`
   </style>
 
   <div class="container">
+    <div class="route__header"><span class="route__index">10</span><span class="route__name">/privacy · Privacy</span><span class="route__issue">Vol. I · Issue 01 · Q2 2026</span></div>
     <section class="privacy-hd">
       <span class="eyebrow">Legal · Privacy Policy</span>
       <h1>Privacy <em>Policy.</em></h1>

@@ -8,6 +8,7 @@ export const metadata = {
 
 const __MARKUP = String.raw`
   <div class="container">
+    <div class="route__header"><span class="route__index">04</span><span class="route__name">/atlas · Atlas</span><span class="route__issue">Vol. I · Issue 01 · Q2 2026 · Editorial</span></div>
     <div class="hero">
       <span class="eyebrow eyebrow--display" style="color: var(--accent-warm);">FIELD NOTES · OUTLOOKS · COMMUNITY</span>
       <h1 style="margin-top: var(--space-4); font-family: var(--font-edit-serif);">The <em>Atlas.</em></h1>

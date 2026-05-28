@@ -22,6 +22,7 @@ export const metadata = {
 
 const __MARKUP = String.raw`
   <div class="container">
+    <div class="route__header"><span class="route__index">08</span><span class="route__name">/media · Media Kit</span><span class="route__issue">Vol. I · Issue 01 · Q2 2026</span></div>
     <div class="hero">
       <span class="eyebrow">Media · Press · Bookings</span>
       <h1 style="margin-top: var(--space-4)">Media <em>kit.</em></h1>

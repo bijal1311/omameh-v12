@@ -8,6 +8,7 @@ export const metadata = {
 
 const __MARKUP = String.raw`
   <div class="container">
+    <div class="route__header"><span class="route__index">07</span><span class="route__name">/case-00 · Case 00</span><span class="route__issue">Vol. I · Issue 01 · Q2 2026</span></div>
     <div class="hero">
       <span class="eyebrow">Case · 00 · The Founding Case</span>
       <h1 style="margin-top: var(--space-4)">Built in thirty days. <em>The architecture, applied to itself.</em></h1>

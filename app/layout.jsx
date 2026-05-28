@@ -13,6 +13,7 @@
 
 import { Playfair_Display, Inter, JetBrains_Mono, Cormorant_Garamond, Space_Mono } from 'next/font/google';
 import '../styles/globals.css';
+import GlobalNav from './_components/GlobalNav';
 import GlobalFooter from './_components/GlobalFooter';
 
 const playfair = Playfair_Display({
@@ -84,6 +85,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${playfair.variable} ${inter.variable} ${jetbrains.variable} ${cormorant.variable} ${spaceMono.variable}`}>
       <body>
+        <GlobalNav />
         {children}
         <GlobalFooter />
       </body>

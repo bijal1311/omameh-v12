@@ -1,0 +1,66 @@
+import RouteShell from '../_components/RouteShell';
+
+export const metadata = {
+  title: 'Atlas',
+  description:
+    'An editorial register · Field Notes from the architecture, Industry Outlooks, and a LinkedIn community for second-act leaders.',
+};
+
+const __MARKUP = String.raw`
+  <div class="container">
+    <div class="hero">
+      <span class="eyebrow eyebrow--display" style="color: var(--accent-warm);">FIELD NOTES · OUTLOOKS · COMMUNITY</span>
+      <h1 style="margin-top: var(--space-4); font-family: var(--font-edit-serif);">The <em>Atlas.</em></h1>
+      <p class="lede">An editorial register · publishing what we learn inside the work. Field Notes from the architecture. Industry outlooks. A community for second-act leaders.</p>
+    </div>
+
+    <div class="section">
+      <div class="streams">
+        <div class="stream">
+          <span class="stream__num">01 · Stream</span>
+          <h3 class="stream__title">Field Notes</h3>
+          <p class="stream__body">Quarterly dispatches from inside the architecture. Long-form. By the founder. FN001 lands July 2026.</p>
+        </div>
+        <div class="stream">
+          <span class="stream__num">02 · Stream</span>
+          <h3 class="stream__title">Industry <em>Outlooks</em></h3>
+          <p class="stream__body">One sector per quarter. The structural call we are making — and why. Written for boards and the women and men running the work.</p>
+        </div>
+        <div class="stream">
+          <span class="stream__num">03 · Stream</span>
+          <h3 class="stream__title"><em>Community</em></h3>
+          <p class="stream__body">A LinkedIn community for second-act leaders rebuilding the work. Convened by Omameh. Joinable, not gated.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section section--space-8b">
+      <div class="atlas-cta">
+        <div class="atlas-cta__col">
+          <span class="eyebrow" style="color: var(--accent-warm);">Subscribe</span>
+          <h3 style="font-family: var(--font-edit-serif); font-size: 28px; line-height: var(--lh-tight); margin: var(--space-3) 0 var(--space-5);">Field Notes <em>&amp;</em> Industry Outlooks <em>— auto receive.</em></h3>
+          <form class="subscribe" action="mailto:fieldnotes@omameh.com.au" method="post" enctype="text/plain">
+            <input type="email" name="email" placeholder="your.email@org.com.au" aria-label="Email for Atlas subscription" required>
+            <button type="submit">Subscribe →</button>
+          </form>
+          <p class="subscribe__hint">One list · quarterly cadence · FieldNotes@omameh.com.au</p>
+          <p class="subscribe__hint" style="margin-top: var(--space-2);">By submitting, you agree to our <a href="/privacy" style="color: inherit; text-decoration: underline; text-underline-offset: 2px;">privacy policy</a>.</p>
+        </div>
+        <div class="atlas-cta__divider" aria-hidden="true"></div>
+        <div class="atlas-cta__col">
+          <span class="eyebrow" style="color: var(--accent-warm);">Community</span>
+          <h3 style="font-family: var(--font-edit-serif); font-size: 28px; line-height: var(--lh-tight); margin: var(--space-3) 0 var(--space-5);">For second-act leaders <em>rebuilding the work.</em></h3>
+          <a class="cta cta--primary" href="https://www.linkedin.com/company/omameh/" target="_blank" rel="noopener noreferrer">Join the community ↗</a>
+          <p class="subscribe__hint" style="margin-top: var(--space-4);">Convened on LinkedIn · Community@omameh.com.au</p>
+        </div>
+      </div>
+    </div>
+
+    <hr class="rule" style="margin-block: var(--space-8);">
+    <p class="tag" style="text-align:center; color: var(--fg3);">Continue reading → <em>Where do you want to come in?</em> · Next · 05 · Doors</p>
+  </div>
+`;
+
+export default function AtlasPage() {
+  return <RouteShell id="atlas" label="04 · Atlas" markup={__MARKUP} register="editorial" />;
+}

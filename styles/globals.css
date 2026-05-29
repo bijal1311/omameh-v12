@@ -2646,3 +2646,58 @@ html { scrollbar-width: thin; scrollbar-color: rgba(245,241,230,0.14) transparen
 .site-nav__links a { color: var(--fg2); padding: 4px 0; text-decoration: none; transition: color var(--dur-base) var(--ease-standard); }
 .site-nav__links a:hover { color: var(--fg1); }
 .site-nav__links a.is-editorial { color: var(--omameh-gold-light); }
+
+
+/* =====================================================================
+   Expandable card · <details> + <summary> pattern (Home Group tiles).
+   Tile face shows title + 3-phase strap + Read affordance. On click,
+   the eyebrow chip + body reveal beneath via native details/summary.
+   ===================================================================== */
+.card--expand {
+  cursor: pointer;
+  transition: border-color var(--dur-base) var(--ease-standard),
+              transform    var(--dur-base) var(--ease-standard),
+              box-shadow   var(--dur-base) var(--ease-standard);
+}
+.card--expand > summary.card__face {
+  list-style: none;
+  display: flex; flex-direction: column; gap: var(--space-2);
+  cursor: pointer;
+  outline: none;
+}
+.card--expand > summary.card__face::-webkit-details-marker { display: none; }
+.card--expand > summary.card__face::marker { content: ""; }
+.card--expand > summary.card__face .card__read {
+  margin-top: var(--space-4);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: var(--ls-tag);
+  text-transform: uppercase;
+  color: var(--fg2);
+  display: inline-flex; align-items: center; gap: var(--space-1);
+  transition: color var(--dur-base) var(--ease-standard);
+}
+.card--expand:hover > summary.card__face .card__read,
+.card--expand[open] > summary.card__face .card__read { color: var(--accent-warm); }
+.card--expand > summary.card__face .card__chev {
+  display: inline-block;
+  transition: transform var(--dur-base) var(--ease-standard);
+}
+.card--expand[open] > summary.card__face .card__chev {
+  transform: rotate(90deg);
+}
+.card--expand > .card__expanded {
+  margin-top: var(--space-5);
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--rule);
+  display: flex; flex-direction: column; gap: var(--space-3);
+  animation: card-expand-in 320ms var(--ease-standard);
+}
+@keyframes card-expand-in {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .card--expand > summary.card__face .card__chev { transition: none; }
+  .card--expand > .card__expanded { animation: none; }
+}

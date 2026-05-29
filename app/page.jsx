@@ -161,34 +161,53 @@ const __MARKUP = String.raw`
       </div>
 
       <div class="grid-4">
-        <div class="card">
-          <div class="card__eyebrow"><span class="num">01 · Architect with us</span></div>
-          <h3 class="card__title">Omameh <em>Advisory</em></h3>
-          <p class="card__strap">Sense, shift, scale.</p>
-          <p class="card__body">Strategy moves at AI speed. The architecture beneath it doesn't. Bespoke engagements that pressure-test, design, and embed the architecture between strategy and execution.</p>
-          <span class="card__read">Read →</span>
-        </div>
-        <div class="card card--gold">
-          <div class="card__eyebrow"><span class="num">02 · Orchestrate with us</span></div>
-          <h3 class="card__title">Omameh <em>Products</em></h3>
-          <p class="card__strap">Build. Operate. Govern.</p>
-          <p class="card__body">Twelve-month build cycles are the wrong unit of time for the AI era. Built AI native products, MVPs, agentic workflows, orchestration layers, digital capability and more with us.</p>
-          <span class="card__read">Read →</span>
-        </div>
-        <div class="card card--teal">
-          <div class="card__eyebrow"><span class="num">03 · Get fluent with us</span></div>
-          <h3 class="card__title">Omameh <em>AI-Era Fluency</em></h3>
-          <p class="card__strap">Unlearn, Relearn, Reinvent.</p>
-          <p class="card__body"><strong>Mindset by Design</strong> and <strong>Decision Literacy.</strong> Packaged learning for boards, executives, and the women and men running the work. Not training. Not e-learning. Capability that compounds inside the organisation for sustained future.</p>
-          <span class="card__read">Read →</span>
-        </div>
-        <div class="card card--quiet">
-          <div class="card__eyebrow"><span class="num">04 · Plug in with us</span></div>
-          <h3 class="card__title"><em>The next arm.</em></h3>
-          <p class="card__strap">The architecture admits more.</p>
-          <p class="card__body"><em>Plug-in by design. Others surface when they earn the right to.</em></p>
-          <span class="card__read">Plug in with us →</span>
-        </div>
+        <details class="card card--expand">
+          <summary class="card__face">
+            <h3 class="card__title">Omameh <em>Advisory</em></h3>
+            <p class="card__strap">Sense, shift, scale.</p>
+            <span class="card__read">Read <span class="card__chev" aria-hidden="true">→</span></span>
+          </summary>
+          <div class="card__expanded">
+            <div class="card__eyebrow"><span class="num">01 · Architect with us</span></div>
+            <p class="card__body">Strategy moves at AI speed. The architecture beneath it doesn't. Bespoke engagements that pressure-test, design, and embed the architecture between strategy and execution.</p>
+          </div>
+        </details>
+
+        <details class="card card--expand card--gold">
+          <summary class="card__face">
+            <h3 class="card__title">Omameh <em>Products</em></h3>
+            <p class="card__strap">Build. Operate. Govern.</p>
+            <span class="card__read">Read <span class="card__chev" aria-hidden="true">→</span></span>
+          </summary>
+          <div class="card__expanded">
+            <div class="card__eyebrow"><span class="num">02 · Orchestrate with us</span></div>
+            <p class="card__body">Twelve-month build cycles are the wrong unit of time for the AI era. Built AI native products, MVPs, agentic workflows, orchestration layers, digital capability and more with us.</p>
+          </div>
+        </details>
+
+        <details class="card card--expand card--teal">
+          <summary class="card__face">
+            <h3 class="card__title">Omameh <em>AI-Era Fluency</em></h3>
+            <p class="card__strap">Unlearn, Relearn, Reinvent.</p>
+            <span class="card__read">Read <span class="card__chev" aria-hidden="true">→</span></span>
+          </summary>
+          <div class="card__expanded">
+            <div class="card__eyebrow"><span class="num">03 · Get fluent with us</span></div>
+            <p class="card__body"><strong>Mindset by Design</strong> and <strong>Decision Literacy.</strong> Packaged learning for boards, executives, and the women and men running the work. Not training. Not e-learning. Capability that compounds inside the organisation for sustained future.</p>
+          </div>
+        </details>
+
+        <details class="card card--expand card--quiet">
+          <summary class="card__face">
+            <h3 class="card__title"><em>The next arm.</em></h3>
+            <p class="card__strap">The architecture admits more.</p>
+            <span class="card__read">Plug in with us <span class="card__chev" aria-hidden="true">→</span></span>
+          </summary>
+          <div class="card__expanded">
+            <div class="card__eyebrow"><span class="num">04 · Plug in with us</span></div>
+            <p class="card__body"><em>Plug-in by design. Others surface when they earn the right to.</em></p>
+          </div>
+        </details>
       </div>
     </div>
 

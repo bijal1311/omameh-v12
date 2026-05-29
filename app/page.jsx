@@ -161,53 +161,53 @@ const __MARKUP = String.raw`
       </div>
 
       <div class="grid-4">
-        <details class="card card--expand">
-          <summary class="card__face">
+        <div class="card card--reveal" tabindex="0">
+          <div class="card__face">
             <div class="card__eyebrow"><span class="num">01 · Architect with us</span></div>
             <h3 class="card__title">Omameh <em>Advisory</em></h3>
             <p class="card__strap">Sense, shift, scale.</p>
-            <span class="card__read">Read <span class="card__chev" aria-hidden="true">→</span></span>
-          </summary>
+            <span class="card__read">Read →</span>
+          </div>
           <div class="card__expanded">
             <p class="card__body">Strategy moves at AI speed. The architecture beneath it doesn't. Bespoke engagements that pressure-test, design, and embed the architecture between strategy and execution.</p>
           </div>
-        </details>
+        </div>
 
-        <details class="card card--expand card--gold">
-          <summary class="card__face">
+        <div class="card card--reveal card--gold" tabindex="0">
+          <div class="card__face">
             <div class="card__eyebrow"><span class="num">02 · Orchestrate with us</span></div>
             <h3 class="card__title">Omameh <em>Products</em></h3>
             <p class="card__strap">Build. Operate. Govern.</p>
-            <span class="card__read">Read <span class="card__chev" aria-hidden="true">→</span></span>
-          </summary>
+            <span class="card__read">Read →</span>
+          </div>
           <div class="card__expanded">
             <p class="card__body">Twelve-month build cycles are the wrong unit of time for the AI era. Built AI native products, MVPs, agentic workflows, orchestration layers, digital capability and more with us.</p>
           </div>
-        </details>
+        </div>
 
-        <details class="card card--expand card--teal">
-          <summary class="card__face">
+        <div class="card card--reveal card--teal" tabindex="0">
+          <div class="card__face">
             <div class="card__eyebrow"><span class="num">03 · Get fluent with us</span></div>
             <h3 class="card__title">Omameh <em>AI-Era Fluency</em></h3>
             <p class="card__strap">Unlearn, Relearn, Reinvent.</p>
-            <span class="card__read">Read <span class="card__chev" aria-hidden="true">→</span></span>
-          </summary>
+            <span class="card__read">Read →</span>
+          </div>
           <div class="card__expanded">
             <p class="card__body"><strong>Mindset by Design</strong> and <strong>Decision Literacy.</strong> Packaged learning for boards, executives, and the women and men running the work. Not training. Not e-learning. Capability that compounds inside the organisation for sustained future.</p>
           </div>
-        </details>
+        </div>
 
-        <details class="card card--expand card--quiet">
-          <summary class="card__face">
+        <div class="card card--reveal card--quiet" tabindex="0">
+          <div class="card__face">
             <div class="card__eyebrow"><span class="num">04 · Plug in with us</span></div>
             <h3 class="card__title"><em>The next arm.</em></h3>
             <p class="card__strap">The architecture admits more.</p>
-            <span class="card__read">Plug in with us <span class="card__chev" aria-hidden="true">→</span></span>
-          </summary>
+            <span class="card__read">Plug in with us →</span>
+          </div>
           <div class="card__expanded">
             <p class="card__body"><em>Plug-in by design. Others surface when they earn the right to.</em></p>
           </div>
-        </details>
+        </div>
       </div>
     </div>
 

@@ -2947,3 +2947,25 @@ html { scrollbar-width: thin; scrollbar-color: rgba(245,241,230,0.14) transparen
   text-transform: uppercase;
   color: var(--fg3);
 }
+
+
+/* =====================================================================
+   Atlas · Community CTA · register-aligned (was too dark via stage-indigo)
+   On the editorial register --accent-warm resolves to stage-indigo (the
+   defensive override for gold-on-cream a11y). A filled .cta--primary
+   button using stage-indigo reads heavy/dark against the cream ground.
+   Switch the fill to --accent (stage-green) so the button is lighter
+   and aligned with the editorial accent.
+   ===================================================================== */
+.atlas-route .cta--primary,
+[data-register="editorial"] .cta--primary {
+  background: var(--accent);
+  color: var(--bg);
+  border-color: var(--accent);
+}
+.atlas-route .cta--primary:hover,
+[data-register="editorial"] .cta--primary:hover {
+  background: var(--accent-warm);
+  color: var(--bg);
+  border-color: var(--accent-warm);
+}

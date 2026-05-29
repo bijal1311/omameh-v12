@@ -2722,3 +2722,137 @@ html { scrollbar-width: thin; scrollbar-color: rgba(245,241,230,0.14) transparen
 @media (prefers-reduced-motion: reduce) {
   .card--reveal .card__expanded { transition: none; }
 }
+
+
+/* =====================================================================
+   Pillar reveal · row layout (Practice).
+   Pillar row keeps its 3-column visible layout (num | content | cta).
+   The pillar__expanded panel sits below, spanning all columns, and
+   reveals on hover/focus. Same hover-vs-touch logic as .card--reveal.
+   ===================================================================== */
+.pillar--reveal {
+  outline: none;
+  transition: background var(--dur-base) var(--ease-standard);
+}
+.pillar--reveal:hover,
+.pillar--reveal:focus-within {
+  background: rgba(245, 241, 230, 0.025);
+}
+.pillar--reveal:hover .pillar__cta,
+.pillar--reveal:focus-within .pillar__cta { color: var(--accent-warm); }
+
+.pillar__expanded {
+  grid-column: 1 / -1;
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0 solid var(--rule);
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  display: flex; flex-direction: column; gap: var(--space-5);
+  transition:
+    max-height 420ms var(--ease-standard),
+    opacity 240ms var(--ease-standard),
+    margin-top 420ms var(--ease-standard),
+    padding-top 420ms var(--ease-standard),
+    border-top-width 420ms var(--ease-standard);
+}
+.pillar--reveal:hover .pillar__expanded,
+.pillar--reveal:focus-within .pillar__expanded {
+  margin-top: var(--space-6);
+  padding-top: var(--space-6);
+  border-top-width: 1px;
+  max-height: 900px;
+  opacity: 1;
+}
+@media (hover: none) {
+  .pillar__expanded {
+    margin-top: var(--space-6);
+    padding-top: var(--space-6);
+    border-top-width: 1px;
+    max-height: none;
+    opacity: 1;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pillar__expanded { transition: none; }
+}
+
+.pillar__prov {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(17px, 1.6vw, 19px);
+  line-height: 1.45;
+  color: var(--accent-warm);
+  max-width: 70ch;
+}
+.pillar__sub-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-5);
+}
+@media (max-width: 720px) { .pillar__sub-grid { grid-template-columns: 1fr; } }
+.pillar__sub { display: flex; flex-direction: column; gap: var(--space-2); }
+.pillar__sub-label {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent-warm);
+}
+.pillar__sub p { color: var(--fg2); font-size: 14.5px; line-height: 1.6; margin: 0; }
+
+.pillar__spine-row { display: flex; align-items: center; gap: var(--space-3); }
+.pillar__spine-label {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--fg3);
+}
+.pillar__spine-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: var(--space-4);
+}
+@media (max-width: 720px) { .pillar__spine-grid { grid-template-columns: 1fr; } }
+.pillar__spine-grid > div { display: flex; flex-direction: column; gap: var(--space-2); }
+.pillar__phase {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.pillar__spine-grid p { color: var(--fg2); font-size: 13.5px; line-height: 1.55; margin: 0; }
+
+.pillar__meta-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-5);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--rule);
+}
+@media (max-width: 720px) { .pillar__meta-grid { grid-template-columns: 1fr; } }
+.pillar__meta-grid > div { display: flex; flex-direction: column; gap: var(--space-2); }
+.pillar__meta-label {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--fg3);
+}
+.pillar__meta-grid p { color: var(--fg2); font-size: 14px; line-height: 1.55; margin: 0; }
+.pillar__meta-grid p em { color: var(--fg1); font-style: italic; }
+
+/* Card footer chip (used in Markets sector footers + Surfaces follow-on) */
+.card__foot {
+  margin-top: var(--space-3);
+  padding-top: var(--space-3);
+  border-top: 1px dashed var(--rule);
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--fg3);
+}

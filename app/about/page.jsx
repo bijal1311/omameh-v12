@@ -66,40 +66,69 @@ const __MARKUP = String.raw`
       </div>
 
       <div class="grid-5">
-        <div class="card">
-          <div class="card__eyebrow"><span class="num">S/01</span><span>FS&amp;I</span></div>
-          <h3 class="card__title">Financial Services <em>&amp; Insurance</em></h3>
-          <p class="card__strap">The operating model that holds at 7am to APRA.</p>
-          <p class="card__body">Where AI governance has to satisfy the regulator before the regulator asks. Big four, regional banks, GI, life, super — the architecture between AI ambition and prudential standards.</p>
-          <span class="card__read">Read →</span>
+        <div class="card card--reveal" tabindex="0">
+          <div class="card__face">
+            <div class="card__eyebrow"><span class="num">S/01</span><span>FS&amp;I</span></div>
+            <h3 class="card__title">Financial Services <em>&amp; Insurance</em></h3>
+            <p class="card__strap">The operating model that holds at 7am to APRA.</p>
+            <span class="card__read">Read →</span>
+          </div>
+          <div class="card__expanded">
+            <p class="card__body">Where AI governance has to satisfy the regulator before the regulator asks. Big four, regional banks, GI, life, super — the architecture between AI ambition and prudential standards.</p>
+            <p class="card__foot">Big four · Regional banks · GI · Life · Super</p>
+          </div>
         </div>
-        <div class="card">
-          <div class="card__eyebrow"><span class="num">S/02</span><span>Healthcare</span></div>
-          <h3 class="card__title">Healthcare <em>&amp; Health Insurance</em></h3>
-          <p class="card__strap">Three loads, one architecture.</p>
-          <p class="card__body">Clinical, claims, member experience — the three loads the architecture has to carry at the same time, on the same operating model, in the same release cycle.</p>
-          <span class="card__read">Read →</span>
+
+        <div class="card card--reveal" tabindex="0">
+          <div class="card__face">
+            <div class="card__eyebrow"><span class="num">S/02</span><span>Healthcare</span></div>
+            <h3 class="card__title">Healthcare <em>&amp; Health Insurance</em></h3>
+            <p class="card__strap">Three loads, one architecture.</p>
+            <span class="card__read">Read →</span>
+          </div>
+          <div class="card__expanded">
+            <p class="card__body">Clinical, claims, member experience — the three loads the architecture has to carry at the same time, on the same operating model, in the same release cycle.</p>
+            <p class="card__foot">Insurers · Networks · Digital health</p>
+          </div>
         </div>
-        <div class="card">
-          <div class="card__eyebrow"><span class="num">S/03</span><span>Government</span></div>
-          <h3 class="card__title">Government <em>&amp; Public Sector</em></h3>
-          <p class="card__strap">Procurement is the operating model.</p>
-          <p class="card__body">Where AI capability has to be built without selling the citizen short. Federal, state, regulators — the architecture that lets policy ambition land inside what the contract actually permits.</p>
-          <span class="card__read">Read →</span>
+
+        <div class="card card--reveal" tabindex="0">
+          <div class="card__face">
+            <div class="card__eyebrow"><span class="num">S/03</span><span>Government</span></div>
+            <h3 class="card__title">Government <em>&amp; Public Sector</em></h3>
+            <p class="card__strap">Procurement is the operating model.</p>
+            <span class="card__read">Read →</span>
+          </div>
+          <div class="card__expanded">
+            <p class="card__body">Where AI capability has to be built without selling the citizen short. Federal, state, regulators — the architecture that lets policy ambition land inside what the contract actually permits.</p>
+            <p class="card__foot">Federal · State · Regulators</p>
+          </div>
         </div>
-        <div class="card">
-          <div class="card__eyebrow"><span class="num">S/04</span><span>Media</span></div>
-          <h3 class="card__title">Media</h3>
-          <p class="card__strap">The value chain rewritten weekly.</p>
-          <p class="card__body">Where the operating model that worked last quarter has already aged out. Broadcast, publishing, platform — architecture that has to flex faster than the business case behind it.</p>
-          <span class="card__read">Read →</span>
+
+        <div class="card card--reveal" tabindex="0">
+          <div class="card__face">
+            <div class="card__eyebrow"><span class="num">S/04</span><span>Media</span></div>
+            <h3 class="card__title">Media</h3>
+            <p class="card__strap">The value chain rewritten weekly.</p>
+            <span class="card__read">Read →</span>
+          </div>
+          <div class="card__expanded">
+            <p class="card__body">Where the operating model that worked last quarter has already aged out. Broadcast, publishing, platform — architecture that has to flex faster than the business case behind it.</p>
+            <p class="card__foot">Broadcast · Publishing · Platform</p>
+          </div>
         </div>
-        <div class="card">
-          <div class="card__eyebrow"><span class="num">S/05</span><span>Technology</span></div>
-          <h3 class="card__title">Technology</h3>
-          <p class="card__strap">AI-native and legacy, same architecture.</p>
-          <p class="card__body">Where the AI-native and the legacy enterprise are both customers. Platform, SaaS, scale-ups — the architecture that lets one product surface scale across both reader registers.</p>
-          <span class="card__read">Read →</span>
+
+        <div class="card card--reveal" tabindex="0">
+          <div class="card__face">
+            <div class="card__eyebrow"><span class="num">S/05</span><span>Technology</span></div>
+            <h3 class="card__title">Technology</h3>
+            <p class="card__strap">AI-native and legacy, same architecture.</p>
+            <span class="card__read">Read →</span>
+          </div>
+          <div class="card__expanded">
+            <p class="card__body">Where the AI-native and the legacy enterprise are both customers. Platform, SaaS, scale-ups — the architecture that lets one product surface scale across both reader registers.</p>
+            <p class="card__foot">Platform · SaaS · Scale-ups</p>
+          </div>
         </div>
       </div>
     </div>

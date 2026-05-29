@@ -2866,3 +2866,84 @@ html { scrollbar-width: thin; scrollbar-color: rgba(245,241,230,0.14) transparen
   text-transform: uppercase;
   color: var(--fg3);
 }
+
+
+/* =====================================================================
+   Door row · clickable mailto link variant + alias span.
+   The whole row becomes an <a>; CSS keeps the visual identical to the
+   div version but adds hover state colour and resets <a> defaults.
+   ===================================================================== */
+.door-row--link {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: background var(--dur-base) var(--ease-standard);
+}
+.door-row--link:hover,
+.door-row--link:focus-visible {
+  background: rgba(245, 241, 230, 0.025);
+}
+.door-row--link:hover .door-row__cta,
+.door-row--link:focus-visible .door-row__cta {
+  color: var(--accent-warm);
+}
+.door-row__alias {
+  color: var(--accent-warm);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  margin-left: var(--space-2);
+}
+
+
+/* =====================================================================
+   Reveal card · consistency pass across Home / Markets / Surfaces.
+   Pins the face card__strap and the expanded card__body to one type
+   ramp so the four surfaces feel identical in rhythm.
+   ===================================================================== */
+.card--reveal .card__face .card__strap {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 15.5px;
+  line-height: 1.45;
+  color: var(--fg2);
+  margin: 0;
+  max-width: 36ch;
+}
+.card--reveal .card__expanded .card__body {
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: var(--fg2);
+  margin: 0 0 var(--space-3);
+  max-width: 48ch;
+}
+.card--reveal .card__expanded .card__body:last-child { margin-bottom: 0; }
+.card--reveal .card__face .card__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+.card--reveal .card__face .card__eyebrow > span:not(.num) {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-warm);
+  white-space: nowrap;
+}
+.card--reveal .card__face .card__title {
+  font-size: clamp(20px, 2vw, 24px);
+  line-height: 1.18;
+  margin: 0;
+}
+.card__foot {
+  margin-top: 0;
+  padding-top: var(--space-3);
+  border-top: 1px dashed var(--rule);
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--fg3);
+}

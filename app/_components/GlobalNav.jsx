@@ -9,17 +9,17 @@
  * the cream/editorial register shift.
  */
 
+// Top nav · 8 items only · plain names, no numbers.
+// Media + Privacy live in the footer, not in the top bar.
 const LINKS = [
-  ['01 · Home',     '/',         false],
-  ['02 · About',    '/about',    false],
-  ['03 · Practice', '/practice', false],
-  ['04 · Atlas',    '/atlas',    true],
-  ['05 · Doors',    '/doors',    false],
-  ['06 · Founder',  '/founder',  false],
-  ['07 · Case 00',  '/case-00',  false],
-  ['08 · Media',    '/media',    false],
-  ['09 · Contact',  '/contact',  false],
-  ['10 · Privacy',  '/privacy',  false],
+  ['Home',     '/',         false],
+  ['About',    '/about',    false],
+  ['Practice', '/practice', false],
+  ['Atlas',    '/atlas',    true],
+  ['Doors',    '/doors',    false],
+  ['Founder',  '/founder',  false],
+  ['Case 00',  '/case-00',  false],
+  ['Contact',  '/contact',  false],
 ];
 
 export default function GlobalNav() {

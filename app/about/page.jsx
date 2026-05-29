@@ -137,7 +137,7 @@ const __MARKUP = String.raw`
       <div class="section__head">
         <span class="eyebrow">04 · Where we work</span>
         <h2>What we work <em>on.</em></h2>
-        <p class="strap">domains and the connective tissue between them is the architecture.</p>
+        <p class="strap">Domains and the connective tissue between them is the architecture.</p>
       </div>
 
       <div class="domains">
@@ -154,7 +154,7 @@ const __MARKUP = String.raw`
         <div class="domain">
           <div class="domain__head"><span>03 · Operations</span><span class="badge">++</span></div>
           <h3 class="domain__title">Operations</h3>
-          <ul class="domain__list"><li>· Operating Model</li><li>· Partner</li><li>· Capability &amp; Sourcing</li></ul>
+          <ul class="domain__list"><li>· Operating Model</li><li>· Partner Optimisation</li><li>· Capability &amp; Sourcing</li></ul>
         </div>
       </div>
     </div>

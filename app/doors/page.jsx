@@ -16,62 +16,62 @@ const __MARKUP = String.raw`
 
     <div class="section">
       <div class="doors-list">
-        <div class="door-row">
+        <a class="door-row door-row--link" href="mailto:boards@omameh.com.au">
           <span class="door-row__num">D01</span>
           <div>
             <h3 class="door-row__title">Board <em>engagements</em></h3>
-            <p style="color: var(--fg2); margin: var(--space-2) 0 0; font-size: 14px;">Chair and CEO conversations about architecture-readiness. NEDs and committees welcome. <a href="mailto:boards@omameh.com.au" style="color: var(--accent-warm);">Boards@omameh.com.au</a></p>
+            <p style="color: var(--fg2); margin: var(--space-2) 0 0; font-size: 14px;">Chair and CEO conversations about architecture-readiness. NEDs and committees welcome. <span class="door-row__alias">Boards@omameh.com.au</span></p>
           </div>
           <span class="door-row__cta">Open →</span>
-        </div>
-        <div class="door-row">
+        </a>
+        <a class="door-row door-row--link" href="mailto:partner@omameh.com.au">
           <span class="door-row__num">D02</span>
           <div>
             <h3 class="door-row__title">Partner with us</h3>
-            <p style="color: var(--fg2); margin: var(--space-2) 0 0; font-size: 14px;">Delivery firms, embedded teams, industry advisors whose capability complements the bench. <a href="mailto:partner@omameh.com.au" style="color: var(--accent-warm);">Partner@omameh.com.au</a></p>
+            <p style="color: var(--fg2); margin: var(--space-2) 0 0; font-size: 14px;">Delivery firms, embedded teams, industry advisors whose capability complements the bench. <span class="door-row__alias">Partner@omameh.com.au</span></p>
           </div>
           <span class="door-row__cta">Open →</span>
-        </div>
-        <div class="door-row">
+        </a>
+        <a class="door-row door-row--link" href="mailto:speak@omameh.com.au">
           <span class="door-row__num">D03</span>
           <div>
             <h3 class="door-row__title">Speak <em>at your event</em></h3>
-            <p style="color: var(--fg2); margin: var(--space-2) 0 0; font-size: 14px;">Keynotes, panels, off-the-record sessions on the architecture between strategy and execution. <a href="mailto:speak@omameh.com.au" style="color: var(--accent-warm);">Speak@omameh.com.au</a></p>
+            <p style="color: var(--fg2); margin: var(--space-2) 0 0; font-size: 14px;">Keynotes, panels, off-the-record sessions on the architecture between strategy and execution. <span class="door-row__alias">Speak@omameh.com.au</span></p>
           </div>
           <span class="door-row__cta">Open →</span>
-        </div>
-        <div class="door-row">
+        </a>
+        <a class="door-row door-row--link" href="mailto:press@omameh.com.au">
           <span class="door-row__num">D04</span>
           <div>
             <h3 class="door-row__title">Press <em>&amp; media</em></h3>
-            <p style="color: var(--fg2); margin: var(--space-2) 0 0; font-size: 14px;">Interviews, briefings, off-the-record context. Media kit on the Media page. <a href="mailto:press@omameh.com.au" style="color: var(--accent-warm);">Press@omameh.com.au</a></p>
+            <p style="color: var(--fg2); margin: var(--space-2) 0 0; font-size: 14px;">Interviews, briefings, off-the-record context. Media kit on the Media page. <span class="door-row__alias">Press@omameh.com.au</span></p>
           </div>
           <span class="door-row__cta">Open →</span>
-        </div>
-        <div class="door-row">
+        </a>
+        <a class="door-row door-row--link" href="mailto:fieldnotes@omameh.com.au">
           <span class="door-row__num">D05</span>
           <div>
             <h3 class="door-row__title">Field Notes <em>subscription</em></h3>
-            <p style="color: var(--fg2); margin: var(--space-2) 0 0; font-size: 14px;">Subscribe to the quarterly dispatch. No tracking. No marketing list. <a href="mailto:fieldnotes@omameh.com.au" style="color: var(--accent-warm);">FieldNotes@omameh.com.au</a></p>
+            <p style="color: var(--fg2); margin: var(--space-2) 0 0; font-size: 14px;">Subscribe to the quarterly dispatch. No tracking. No marketing list. <span class="door-row__alias">FieldNotes@omameh.com.au</span></p>
           </div>
           <span class="door-row__cta">Open →</span>
-        </div>
-        <div class="door-row">
+        </a>
+        <a class="door-row door-row--link" href="mailto:community@omameh.com.au">
           <span class="door-row__num">D06</span>
           <div>
             <h3 class="door-row__title">Community</h3>
-            <p style="color: var(--fg2); margin: var(--space-2) 0 0; font-size: 14px;">A LinkedIn community for second-act leaders rebuilding the work. <a href="mailto:community@omameh.com.au" style="color: var(--accent-warm);">Community@omameh.com.au</a></p>
+            <p style="color: var(--fg2); margin: var(--space-2) 0 0; font-size: 14px;">A LinkedIn community for second-act leaders rebuilding the work. <span class="door-row__alias">Community@omameh.com.au</span></p>
           </div>
           <span class="door-row__cta">Open →</span>
-        </div>
-        <div class="door-row">
+        </a>
+        <a class="door-row door-row--link" href="mailto:contact@omameh.com.au">
           <span class="door-row__num">D07</span>
           <div>
             <h3 class="door-row__title">General <em>contact</em></h3>
-            <p style="color: var(--fg2); margin: var(--space-2) 0 0; font-size: 14px;">Everything that doesn't fit one of the six doors above. <a href="mailto:contact@omameh.com.au" style="color: var(--accent-warm);">Contact@omameh.com.au</a></p>
+            <p style="color: var(--fg2); margin: var(--space-2) 0 0; font-size: 14px;">Everything that doesn't fit one of the six doors above. <span class="door-row__alias">Contact@omameh.com.au</span></p>
           </div>
           <span class="door-row__cta">Open →</span>
-        </div>
+        </a>
       </div>
     </div>
 

@@ -3125,6 +3125,29 @@ html { scrollbar-width: thin; scrollbar-color: rgba(245,241,230,0.14) transparen
 }
 /* .why__portrait is already aspect-ratio 3/4 — no override needed. */
 
+/* RBG quote moved into the Why text column on /founder (per Bijal,
+   2 June 2026). The base .fo-quote rule centres the block (max-width
+   760px, margin auto, text-align center) for a standalone quote.
+   Inside .why__paragraphs, override to flow with the text body —
+   left-aligned, no max-width, quote mark sits at the column left. */
+.why__paragraphs .fo-quote {
+  max-width: none;
+  margin: var(--space-9) 0 var(--space-6);
+  padding-block: var(--space-7) var(--space-6);
+  text-align: left;
+}
+.why__paragraphs .fo-quote::before {
+  left: 0;
+  transform: none;
+}
+.why__paragraphs .fo-quote__text {
+  text-align: left;
+  text-wrap: pretty;
+}
+.why__paragraphs .fo-quote__attr {
+  align-items: flex-start;
+}
+
 /* Usage-only variant of the portrait-credit strip. No longer used in
    markup (media kit overlay removed per Bijal's request); kept in the
    stylesheet in case we want to re-enable the editorial-use line. */

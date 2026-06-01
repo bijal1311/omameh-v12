@@ -64,16 +64,16 @@ const __MARKUP = String.raw`
         <p>Most consultancies sell the strategy. Most platforms sell the tools. <strong>Almost no one does the architectural work in between.</strong></p>
         <p>The leaders who define the next generation are the ones whose organisations are more capable, more confident, and more humane after they have gone.</p>
         <p class="why__close"><em>Human-Led. AI-Operated.</em> Built for the era we are actually in.</p>
+
+        <figure class="fo-quote">
+          <blockquote class="fo-quote__text">Fight for the things that you care about, but do it in a way that will lead others to join you.</blockquote>
+          <figcaption class="fo-quote__attr">
+            <span class="name">Ruth Bader Ginsburg</span>
+            <span>Associate Justice · U.S. Supreme Court</span>
+          </figcaption>
+        </figure>
       </div>
     </div>
-
-    <figure class="fo-quote">
-      <blockquote class="fo-quote__text">Fight for the things that you care about, but do it in a way that will lead others to join you.</blockquote>
-      <figcaption class="fo-quote__attr">
-        <span class="name">Ruth Bader Ginsburg</span>
-        <span>Associate Justice · U.S. Supreme Court</span>
-      </figcaption>
-    </figure>
 
     <hr class="rule" style="margin-block: var(--space-8);">
     <p class="tag" style="text-align:center;">Continue reading → <em>The case that made the practice.</em> · Next · 07 · Case 00</p>

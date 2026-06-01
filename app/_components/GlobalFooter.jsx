@@ -18,7 +18,7 @@ export default function GlobalFooter() {
           <div className="footer__brand">
             <div className="footer__wordmark">Om<em>a</em>meh</div>
             <p className="footer__pledge">
-              <strong>Three percent of the practice</strong>, committed to second-act leaders rebuilding after a redundancy. Pro bono. Same rigour as any board engagement.
+              <strong>The Three Percent Pledge</strong> — Three percent of the practice, committed to leaders rebuilding after a redundancy.
             </p>
             <div style={{ display: 'flex', gap: 'var(--space-4)', marginTop: 'var(--space-3)', fontFamily: 'var(--font-mono)', fontSize: 11, letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--fg3)' }}>
               <a href="/about#pledge">Read the Pledge →</a>

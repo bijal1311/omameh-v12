@@ -10,7 +10,7 @@ const __MARKUP = String.raw`
     <div class="route__header"><span class="route__index">05</span><span class="route__name">/doors · Doors</span><span class="route__issue">Vol. I · Issue 01 · Q2 2026</span></div>
     <div class="hero">
       <span class="eyebrow">Doors · Omameh</span>
-      <h1 style="margin-top: var(--space-4)">Seven doors. <em>One practice.</em></h1>
+      <h1 style="margin-top: var(--space-4)">Eight doors. <em>One practice.</em></h1>
       <p class="lede">Different reasons to come in. Different reasons to come back. Each door has its own alias, its own register, its own form of welcome.</p>
     </div>
 
@@ -69,6 +69,14 @@ const __MARKUP = String.raw`
           <div>
             <h3 class="door-row__title">General <em>contact</em></h3>
             <p style="color: var(--fg2); margin: var(--space-2) 0 0; font-size: 14px;">Everything that doesn't fit one of the six doors above. <span class="door-row__alias">Contact@omameh.com.au</span></p>
+          </div>
+          <span class="door-row__cta">Open →</span>
+        </a>
+        <a class="door-row door-row--link" href="mailto:contact@omameh.com.au?subject=Three%20Percent%20Pledge">
+          <span class="door-row__num">D08</span>
+          <div>
+            <h3 class="door-row__title">The Three Percent <em>Pledge</em></h3>
+            <p style="color: var(--fg2); margin: var(--space-2) 0 0; font-size: 14px;">Three percent of the practice committed to leaders rebuilding after a redundancy. Advisory and curated sponsored training. <span class="door-row__alias">Contact@omameh.com.au</span></p>
           </div>
           <span class="door-row__cta">Open →</span>
         </a>

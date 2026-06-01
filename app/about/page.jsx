@@ -177,7 +177,10 @@ const __MARKUP = String.raw`
         <span class="eyebrow">06 · The Three Percent Pledge · Year Three Foundation</span>
         <h2>Three percent of the practice.</h2>
       </div>
-      <p class="strap" style="max-width: 60ch;"><em>Time, capacity, capability</em> — committed to <strong>second-act leaders rebuilding after a redundancy.</strong> Pro bono. Same rigour as any board engagement. <em>The signal of a Year Three Foundation ambition.</em></p>
+      <p class="strap" style="max-width: 60ch;"><em>Time, capacity, capability</em> — committed to <strong>leaders rebuilding after a redundancy.</strong> Advisory and curated sponsored training. <em>An early signal of a Year Three Foundation ambition.</em></p>
+      <div class="ctas" style="margin-top: var(--space-5);">
+        <a class="cta" href="/contact">Start a conversation →</a>
+      </div>
     </div>
 
     <hr class="rule">

@@ -100,8 +100,8 @@ const __MARKUP = String.raw`
       </div>
 
       <div class="home-hero__ctas">
-        <a class="cta cta--primary" href="/contact">Let's talk · 30-min discovery →</a>
-        <a class="cta" href="/atlas">Subscribe to Editorial →</a>
+        <a class="cta cta--primary" href="/contact">Let's talk →</a>
+        <a class="cta" href="/atlas">Subscribe →</a>
         <a class="cta" href="https://www.linkedin.com/company/omameh/" target="_blank" rel="noopener noreferrer">Join the community ↗</a>
       </div>
     </div>

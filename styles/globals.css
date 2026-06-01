@@ -3090,10 +3090,44 @@ html { scrollbar-width: thin; scrollbar-color: rgba(245,241,230,0.14) transparen
 .fo-hero__portrait { border: 0; }
 .why__portrait { border: 0; }
 
-/* Usage-only variant of the portrait-credit strip. Used on Media kit
-   portraits where the baked watermark (in the PNG itself) already
-   carries the name + title strip, so the CSS overlay only needs to
-   add the editorial-use line. Tighter padding, no internal gap. */
+/* =====================================================================
+   PORTRAIT CONTAINER FIX · 2 June 2026
+   Three issues Bijal flagged after design's watermarked PNGs landed:
+
+   1. "Lines behind the pics" — the .fo-hero__portrait::before and
+      .why__portrait::before render a diagonal stripe pattern
+      (repeating-linear-gradient 45deg). Those pseudos are
+      position:absolute on top of a position:static <img>, so the
+      diagonal lines render ON TOP of the photo, not behind it.
+      Now that the real watermarked photo is in place, the diagonal
+      decoration is dead weight and visually noisy. Remove it.
+
+   2. "Name and Founder cut off on /founder hero" — container had
+      aspect-ratio: 4/5. New PNG is 3/4 (1600×2133). With
+      object-fit: cover the image fills width and crops ~16px off
+      top + bottom. The credit strip sits in the bottom 8% of the
+      image, so the bottom of "BIJAL SEJPAL · FOUNDER · OMAMEH"
+      was being cropped. Match the container aspect-ratio to the
+      image (3/4) — zero cropping.
+
+   3. "Editorial use only text overlapping on media kit" — handled
+      by the markup edit in app/media/page.jsx (removes the slim
+      overlay div). CSS rule for .portrait-credit--usage-only no
+      longer used; left in place in case we re-enable.
+   ===================================================================== */
+
+.fo-hero__portrait::before,
+.why__portrait::before {
+  content: none;                      /* kill the diagonal stripe pattern */
+}
+.fo-hero__portrait {
+  aspect-ratio: 3 / 4;                /* match new PNG (was 4/5 — cropped bottom strip) */
+}
+/* .why__portrait is already aspect-ratio 3/4 — no override needed. */
+
+/* Usage-only variant of the portrait-credit strip. No longer used in
+   markup (media kit overlay removed per Bijal's request); kept in the
+   stylesheet in case we want to re-enable the editorial-use line. */
 .portrait-credit--usage-only {
   padding: var(--space-3) var(--space-4);
   gap: 0;

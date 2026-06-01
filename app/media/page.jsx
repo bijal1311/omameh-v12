@@ -31,15 +31,9 @@ const __MARKUP = String.raw`
       <div class="grid-2">
         <div class="why__portrait" style="aspect-ratio: 3/4;">
           <img src="/founder-portrait.png" alt="Bijal Sejpal · colour headshot" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-          <div class="portrait-credit portrait-credit--usage-only" aria-hidden="true">
-            <span class="portrait-credit__usage">For editorial use only · Credit: Omameh</span>
-          </div>
         </div>
         <div class="why__portrait" style="aspect-ratio: 3/4; background: linear-gradient(135deg, rgba(245,241,230,0.06), rgba(245,241,230,0.02));">
           <img src="/founder-portrait-bw.png" alt="Bijal Sejpal · black-and-white headshot" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-          <div class="portrait-credit portrait-credit--usage-only" aria-hidden="true">
-            <span class="portrait-credit__usage">For editorial use only · Credit: Omameh</span>
-          </div>
         </div>
       </div>
     </div>

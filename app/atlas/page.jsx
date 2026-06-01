@@ -3,7 +3,7 @@ import RouteShell from '../_components/RouteShell';
 export const metadata = {
   title: 'Atlas',
   description:
-    'An editorial register · Field Notes from the architecture, Industry Outlooks, and a LinkedIn community for second-act leaders.',
+    'What we learn inside the work, published — Field Notes from the architecture, Industry Outlooks, and a community for leaders rebuilding how the work gets done.',
 };
 
 const __MARKUP = String.raw`
@@ -12,7 +12,7 @@ const __MARKUP = String.raw`
     <div class="hero">
       <span class="eyebrow eyebrow--display" style="color: var(--accent-warm);">FIELD NOTES · OUTLOOKS · COMMUNITY</span>
       <h1 style="margin-top: var(--space-4); font-family: var(--font-edit-serif);">The <em>Atlas.</em></h1>
-      <p class="lede">An editorial register · publishing what we learn inside the work. Field Notes from the architecture. Industry outlooks. A community for second-act leaders.</p>
+      <p class="lede">What we learn inside the work, published — Field Notes from the architecture, industry outlooks, and a community for leaders rebuilding how the work gets done.</p>
     </div>
 
     <div class="section">
@@ -20,17 +20,17 @@ const __MARKUP = String.raw`
         <div class="stream">
           <span class="stream__num">01 · Stream</span>
           <h3 class="stream__title">Field Notes</h3>
-          <p class="stream__body">Quarterly dispatches from inside the architecture. Long-form. By the founder. FN001 lands July 2026.</p>
+          <p class="stream__body">Quarterly dispatches from inside the architecture. Long-form, by the founder. FN001 lands July 2026.</p>
         </div>
         <div class="stream">
           <span class="stream__num">02 · Stream</span>
           <h3 class="stream__title">Industry <em>Outlooks</em></h3>
-          <p class="stream__body">One sector per quarter. The structural call we are making — and why. Written for boards and the women and men running the work.</p>
+          <p class="stream__body">One sector a quarter: the structural call we're making, and why. Written for boards and the people running the work.</p>
         </div>
         <div class="stream">
           <span class="stream__num">03 · Stream</span>
           <h3 class="stream__title"><em>Community</em></h3>
-          <p class="stream__body">A LinkedIn community for second-act leaders rebuilding the work. Convened by Omameh. Joinable, not gated.</p>
+          <p class="stream__body">A LinkedIn community for leaders rebuilding how the work gets done. Convened by Omameh. Open, not gated.</p>
         </div>
       </div>
     </div>
@@ -39,7 +39,7 @@ const __MARKUP = String.raw`
       <div class="atlas-cta">
         <div class="atlas-cta__col">
           <span class="eyebrow" style="color: var(--accent-warm);">Subscribe</span>
-          <h3 style="font-family: var(--font-edit-serif); font-size: 28px; line-height: var(--lh-tight); margin: var(--space-3) 0 var(--space-5);">Field Notes <em>&amp;</em> Industry Outlooks <em>— auto receive.</em></h3>
+          <h3 style="font-family: var(--font-edit-serif); font-size: 28px; line-height: var(--lh-tight); margin: var(--space-3) 0 var(--space-5);">Field Notes and Industry Outlooks, <em>straight to your inbox.</em></h3>
           <form class="subscribe" action="mailto:fieldnotes@omameh.com.au" method="post" enctype="text/plain">
             <input type="email" name="email" placeholder="your.email@org.com.au" aria-label="Email for Atlas subscription" required>
             <button type="submit">Subscribe →</button>
@@ -49,7 +49,7 @@ const __MARKUP = String.raw`
         <div class="atlas-cta__divider" aria-hidden="true"></div>
         <div class="atlas-cta__col">
           <span class="eyebrow" style="color: var(--accent-warm);">Community</span>
-          <h3 style="font-family: var(--font-edit-serif); font-size: 28px; line-height: var(--lh-tight); margin: var(--space-3) 0 var(--space-5);">For second-act leaders <em>rebuilding the work.</em></h3>
+          <h3 style="font-family: var(--font-edit-serif); font-size: 28px; line-height: var(--lh-tight); margin: var(--space-3) 0 var(--space-5);">For leaders <em>rebuilding how the work gets done.</em></h3>
           <a class="cta cta--primary" href="https://www.linkedin.com/company/omameh/" target="_blank" rel="noopener noreferrer">Join the community ↗</a>
           <p class="subscribe__hint" style="margin-top: var(--space-4);">Convened on LinkedIn · Community@omameh.com.au</p>
         </div>

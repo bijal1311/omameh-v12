@@ -3180,3 +3180,61 @@ h1 em, h2 em, .fo-hero__name em {
 
 /* END typography precision pass · 1 June 2026
    ===================================================================== */
+
+/* =====================================================================
+   HOME HERO · ONE-FRAME COMPRESSION · 1 June 2026
+   ---------------------------------------------------------------------
+   Bijal flagged that on a 900px viewport the Triskelion alone fills
+   the first frame — you have to scroll to see the Omameh wordmark and
+   the three CTAs (Let's talk / Subscribe / Join the community).
+
+   Diagnosis (CSS-only, no measurement needed):
+     · .triskelion-stage width clamp(320, 42vw, 520) = 520px square at
+       1440 viewport. With aspect-ratio: 1, that's 520px of vertical.
+     · .wordmark (post precision pass) is ~158px tall, ~800px wide.
+     · Combined width 520 + 56 gap + 800 = 1376px exceeds the 1200px
+       container, so .home-hero__lockup flex-wrap kicks in and stacks
+       them VERTICALLY. Stacked: 520 + 16 + 158 = 694px just for the
+       lockup. Plus 128px hero padding + 54px nav/route header + 60px
+       CTAs = ~936px. Overflows a 900px viewport by ~36px.
+
+   Fix (this block, desktop only):
+     · Force side-by-side at >=1024px (flex-wrap: nowrap).
+     · Shrink Triskelion max to 400px (still substantial — the brand
+       mark sits at 320-400px in most mockup references). Now fits
+       400 + 40 gap + ~700 wordmark = 1140px inside 1200 container.
+     · Drop wordmark font to clamp(96, 11vw, 160) — at 1440 viewport
+       that's ~158px (was 173px). Marginal visual change, much
+       better proportional balance next to a 400px mark.
+     · Tighten hero padding-block from 56/72 to 32/40.
+     · Tighten CTAs margin-top so they sit closer to the lockup.
+
+   Mobile (<1024px) keeps the existing flex-wrap behaviour — Triskelion
+   stacks above wordmark, both centred. Below 480px, existing rule
+   shrinks Triskelion to 78vw max 320px.
+   ===================================================================== */
+
+@media (min-width: 1024px) {
+  .home-hero {
+    padding-block: var(--space-7) var(--space-8);  /* 32px / 40px */
+  }
+  .home-hero__lockup {
+    flex-wrap: nowrap;                              /* lock side-by-side */
+    gap: var(--space-8);                            /* 40px */
+    max-width: var(--max);                          /* 1200px */
+    margin-inline: auto;
+  }
+  .triskelion-stage {
+    width: clamp(280px, 28vw, 400px);               /* 400px @ 1440 */
+  }
+  .home-hero__lockup .wordmark {
+    font-size: clamp(96px, 11vw, 160px);            /* ~158px @ 1440 */
+  }
+  .home-hero__ctas {
+    margin-top: var(--space-5);                     /* 20px above CTAs */
+    gap: var(--space-3);
+  }
+}
+
+/* END home hero one-frame compression · 1 June 2026
+   ===================================================================== */

@@ -3215,24 +3215,43 @@ h1 em, h2 em, .fo-hero__name em {
    ===================================================================== */
 
 @media (min-width: 1024px) {
+  /* GRID LAYOUT · two columns, two rows.
+     Row 1: [triskelion] [wordmark]
+     Row 2: [   .      ] [   CTAs ]
+     CTAs occupy the same grid column as the wordmark, so they sit
+     directly under it — no translateX hack, no width math. */
   .home-hero {
-    padding-block: var(--space-7) var(--space-8);  /* 32px / 40px */
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-areas:
+      "trisk    wordmark"
+      ".        ctas";
+    column-gap: var(--space-8);                     /* 40px between trisk + wordmark */
+    row-gap: var(--space-5);                        /* 20px between wordmark + CTAs */
+    justify-content: center;                        /* centre the whole grid */
+    align-items: center;                            /* vertical centre per row */
+    padding-block: var(--space-7) var(--space-8);   /* 32px / 40px */
   }
+  /* Promote the lockup's children (triskelion + wordmark) to be direct
+     grid items of .home-hero. display: contents removes the lockup from
+     the layout tree but preserves its descendant selectors. */
   .home-hero__lockup {
-    flex-wrap: nowrap;                              /* lock side-by-side */
-    gap: var(--space-8);                            /* 40px */
-    max-width: var(--max);                          /* 1200px */
-    margin-inline: auto;
+    display: contents;
   }
   .triskelion-stage {
+    grid-area: trisk;
     width: clamp(280px, 28vw, 400px);               /* 400px @ 1440 */
   }
   .home-hero__lockup .wordmark {
+    grid-area: wordmark;
     font-size: clamp(96px, 11vw, 160px);            /* ~158px @ 1440 */
+    margin: 0;                                       /* reset block margins from base rule */
   }
   .home-hero__ctas {
-    margin-top: var(--space-5);                     /* 20px above CTAs */
+    grid-area: ctas;
+    margin: 0;                                       /* reset base margin-block-start */
     gap: var(--space-3);
+    justify-content: flex-start;                    /* start CTAs at wordmark left edge */
   }
 }
 

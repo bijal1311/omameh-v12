@@ -3037,3 +3037,70 @@ html { scrollbar-width: thin; scrollbar-color: rgba(245,241,230,0.14) transparen
   border-color: var(--accent-warm);
 }
 .bio__copy.is-copied { color: var(--accent); border-color: var(--accent); }
+
+
+/* =====================================================================
+   Portrait credit · overlay strip on Founder + Media portraits.
+   Sits inside any portrait container (.fo-hero__portrait, .why__portrait)
+   absolutely positioned at the bottom. Adds name + Founder · Omameh
+   attribution visibly on the page. NOTE: this is a visible HTML credit,
+   not a baked-in image watermark — right-click save still gets the raw
+   portrait without the strip. Bake watermark into the .png itself if
+   true protection is required.
+   ===================================================================== */
+.portrait-credit {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: var(--space-5) var(--space-4) var(--space-3);
+  background: linear-gradient(to top, rgba(8,21,57,0.88) 0
+
+/* =====================================================================
+   Portrait credit · overlay strip on Founder + Media portraits.
+   Sits inside any portrait container (.fo-hero__portrait, .why__portrait)
+   absolutely positioned at the bottom. Adds name + Founder · Omameh
+   attribution visibly on the page. NOTE: this is a visible HTML credit,
+   not a baked-in image watermark — right-click save still gets the raw
+   portrait without the strip. Bake watermark into the .png itself if
+   true protection is required.
+   ===================================================================== */
+.portrait-credit {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: var(--space-5) var(--space-4) var(--space-3);
+  background: linear-gradient(to top, rgba(8,21,57,0.88) 0%, rgba(8,21,57,0.62) 55%, rgba(8,21,57,0) 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  pointer-events: none;
+  z-index: 2;
+}
+.portrait-credit__name {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: -0.005em;
+  color: rgba(255, 255, 255, 0.96);
+  margin: 0;
+}
+.portrait-credit__meta {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.78);
+}
+.portrait-credit__usage {
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+  margin-top: 2px;
+}
+
+/* Remove the 1px border on the Founder identity hero portrait
+   (the line that was reading as a stripe behind the image). The
+   gradient background stays — it provides subtle context if the
+   image edge ever falls short of the container. */
+.fo-hero__portrait { border: 0; }
+.why__portrait { border: 0; }

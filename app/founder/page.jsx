@@ -19,6 +19,10 @@ const __MARKUP = String.raw`
     <div class="fo-hero">
       <div class="fo-hero__portrait" role="img" aria-label="Bijal Sejpal, founder of Omameh — editorial portrait">
         <img src="/founder-portrait.png" alt="Bijal Sejpal · founder of Omameh" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+        <div class="portrait-credit" aria-hidden="true">
+          <span class="portrait-credit__name">Bijal Sejpal</span>
+          <span class="portrait-credit__meta">Founder · Omameh</span>
+        </div>
       </div>
       <div class="fo-hero__body">
         <span class="eyebrow">Founder · the first door</span>
@@ -47,6 +51,10 @@ const __MARKUP = String.raw`
     <div class="why">
       <div class="why__portrait">
         <img src="/founder-portrait.png" alt="" aria-hidden="true" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+        <div class="portrait-credit" aria-hidden="true">
+          <span class="portrait-credit__name">Bijal Sejpal</span>
+          <span class="portrait-credit__meta">Founder · Omameh</span>
+        </div>
       </div>
       <div class="why__paragraphs">
         <p>What I do is structural. Why I do it is the people inside it.</p>

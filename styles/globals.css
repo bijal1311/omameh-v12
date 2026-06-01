@@ -3089,3 +3089,94 @@ html { scrollbar-width: thin; scrollbar-color: rgba(245,241,230,0.14) transparen
    image edge ever falls short of the container. */
 .fo-hero__portrait { border: 0; }
 .why__portrait { border: 0; }
+
+/* =====================================================================
+   TYPOGRAPHY PRECISION PASS · 1 June 2026
+   ---------------------------------------------------------------------
+   Bijal flagged that the Omameh wordmark and a few display elements
+   "feel flatter" than the HTML defined. Strict-precision audit at
+   1440×900 measured the cause:
+
+     · Display Playfair surfaces were inheriting --ls-wordmark (0.18em),
+       a mono-caps tracking value correct for the FOOTER wordmark at 28px
+       small-caps register but disastrous on the hero wordmark at 173px
+       where it spreads letters 31px apart and destroys the sculptural
+       lockup. The proof: the Founder name H1 (.fo-hero__name) is
+       already shipping with -0.01em tracking and reads sculpted.
+
+     · H1/H2 line-height inherited --lh-tight (1.18) — fine for h3/h4
+       but loose at 38-52px display sizes (industry: 1.05-1.10).
+
+     · .eyebrow had no explicit line-height and was inheriting body
+       1.7 prose leading — wrong for a single-line mono kicker.
+
+     · Playfair surfaces had only "tnum" feature enabled — missing
+       "kern" + "liga" + "calt" which display serifs need for sculpt.
+
+   Scope: this block is the last cascade winner. To revert any single
+   change, comment out that rule. To revert the whole pass, delete the
+   block. The footer wordmark intentionally untouched — 0.18em is
+   correct at 28px.
+   ===================================================================== */
+
+:root {
+  --ls-wordmark-display: -0.015em;   /* hero-size Playfair lockup */
+  --ls-h-display:        -0.008em;   /* h1/h2 at display sizes */
+  --lh-display:           1.05;      /* display leading for h1/h2 */
+  --feat-display:         "kern" 1, "liga" 1, "calt" 1, "tnum" 1;
+}
+
+/* Home hero · the Omameh wordmark.
+   Highest-specificity selector first so it wins against the four
+   legacy .home-hero__lockup .wordmark blocks earlier in this file. */
+.home-hero__lockup .wordmark,
+.wordmark {
+  letter-spacing: var(--ls-wordmark-display);
+  font-feature-settings: var(--feat-display);
+}
+
+/* Founder aside · the second "Om(a)meh" wordmark surface. Same
+   register as the home hero — apply the same display tracking. */
+.fo-name__brand {
+  letter-spacing: var(--ls-wordmark-display);
+  font-feature-settings: var(--feat-display);
+}
+
+/* H1 + H2 display register · tighten leading + add subtle negative
+   tracking to match the proven Founder-name sculpt (-1%).
+   Scoped to h1/h2 only — h3/h4 stay at --lh-tight (1.18) because
+   they sit at body-adjacent sizes (~22-28px) where 1.18 is right. */
+h1, h2 {
+  line-height: var(--lh-display);
+  letter-spacing: var(--ls-h-display);
+  font-feature-settings: var(--feat-display);
+}
+
+/* Founder name + h3/h4 also benefit from kern+liga even though
+   their tracking is already correct. */
+.fo-hero__name,
+h3, h4 {
+  font-feature-settings: var(--feat-display);
+}
+
+/* Eyebrow · single-line mono kicker. The 0.22em tracking is correct
+   for mono caps. The leading was inheriting body prose (1.7) which is
+   wrong for a one-line label — drop to a tight 1.2. */
+.eyebrow {
+  line-height: 1.2;
+}
+
+/* Italic display runs (the teal "a" in Omameh, italic ems in H1s)
+   want the same display features but also benefit from explicit
+   font-synthesis: none so the browser never fakes the italic when
+   the real italic file is loading. */
+.wordmark em,
+.fo-name__brand em,
+.home-hero__lockup .wordmark em,
+h1 em, h2 em, .fo-hero__name em {
+  font-synthesis: none;
+  font-feature-settings: var(--feat-display);
+}
+
+/* END typography precision pass · 1 June 2026
+   ===================================================================== */

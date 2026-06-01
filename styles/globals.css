@@ -3090,6 +3090,18 @@ html { scrollbar-width: thin; scrollbar-color: rgba(245,241,230,0.14) transparen
 .fo-hero__portrait { border: 0; }
 .why__portrait { border: 0; }
 
+/* Usage-only variant of the portrait-credit strip. Used on Media kit
+   portraits where the baked watermark (in the PNG itself) already
+   carries the name + title strip, so the CSS overlay only needs to
+   add the editorial-use line. Tighter padding, no internal gap. */
+.portrait-credit--usage-only {
+  padding: var(--space-3) var(--space-4);
+  gap: 0;
+}
+.portrait-credit--usage-only .portrait-credit__usage {
+  margin-top: 0;
+}
+
 /* =====================================================================
    TYPOGRAPHY PRECISION PASS · 1 June 2026
    ---------------------------------------------------------------------

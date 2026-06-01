@@ -3246,14 +3246,12 @@ h1 em, h2 em, .fo-hero__name em {
     grid-area: wordmark;
     font-size: clamp(96px, 11vw, 160px);            /* ~158px @ 1440 */
     margin: 0;                                       /* reset block margins from base rule */
-    align-self: end;                                /* drop wordmark to bottom of its row (kills centring offset against the taller triskelion) */
-    line-height: 0.85;                              /* "Omameh" has no descenders — trim the dead line-box space below the baseline */
   }
   .home-hero__ctas {
     grid-area: ctas;
     margin: 0;                                       /* reset base margin-block-start */
     gap: var(--space-3);
-    justify-content: flex-start;                    /* start CTAs at wordmark left edge */
+    justify-content: center;                        /* centre CTAs under Omameh (column = wordmark column) */
     flex-wrap: nowrap;                              /* keep three CTAs on one row */
   }
 }

@@ -2969,3 +2969,71 @@ html { scrollbar-width: thin; scrollbar-color: rgba(245,241,230,0.14) transparen
   color: var(--bg);
   border-color: var(--accent-warm);
 }
+
+
+/* =====================================================================
+   Media kit · 4 bios block.
+   Single-column stack of bio cards. Each card has a mono-caps label,
+   a small italic-serif context line, the prose body, and a Copy button
+   wired in lib/wire-interactions.js to copy plain text to clipboard.
+   ===================================================================== */
+.bios {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-7);
+  max-width: 76ch;
+}
+.bio {
+  position: relative;
+  padding: var(--space-6) 0;
+  border-top: 1px solid var(--rule);
+  outline: none;
+}
+.bio:first-child { border-top-color: var(--accent-warm); }
+.bio__head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+.bio__label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
+  color: var(--accent-warm);
+}
+.bio__context {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--fg3);
+}
+.bio__body {
+  font-family: var(--font-serif);
+  font-size: clamp(16px, 1.5vw, 18px);
+  line-height: 1.7;
+  color: var(--fg1);
+}
+.bio__body p { margin: 0 0 var(--space-4); }
+.bio__body p:last-child { margin-bottom: 0; }
+.bio__body em { font-style: italic; color: var(--accent-warm); }
+.bio__copy {
+  margin-top: var(--space-5);
+  background: transparent;
+  border: 1px solid var(--rule);
+  color: var(--fg2);
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: var(--ls-tag);
+  text-transform: uppercase;
+  padding: 8px 14px;
+  cursor: pointer;
+  transition: all var(--dur-base) var(--ease-standard);
+}
+.bio__copy:hover, .bio__copy:focus-visible {
+  color: var(--accent-warm);
+  border-color: var(--accent-warm);
+}
+.bio__copy.is-copied { color: var(--accent); border-color: var(--accent); }

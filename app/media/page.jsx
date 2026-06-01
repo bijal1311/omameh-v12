@@ -40,7 +40,59 @@ const __MARKUP = String.raw`
 
     <div class="section">
       <div class="section__head">
-        <span class="eyebrow">02 · Contacts</span>
+        <span class="eyebrow">02 · Founder bio · four lengths</span>
+        <h2>Pick the bio <em>that fits.</em></h2>
+        <p class="strap">One founder, four lengths. Lift any of them verbatim — they are written for the slot.</p>
+      </div>
+
+      <div class="bios">
+        <article class="bio" tabindex="0">
+          <header class="bio__head">
+            <div class="bio__label">25 words · the one-liner</div>
+            <div class="bio__context">For panel programmes, conference bios, LinkedIn header lift.</div>
+          </header>
+          <p class="bio__body">Bijal Sejpal is founder of Omameh, a specialist advisory practice for boards and senior leaders building organisations structurally ready for the AI era.</p>
+          <button type="button" class="bio__copy" data-bio-copy>Copy →</button>
+        </article>
+
+        <article class="bio" tabindex="0">
+          <header class="bio__head">
+            <div class="bio__label">50 words · the introduction</div>
+            <div class="bio__context">For press releases, partner intros, short speaker bios.</div>
+          </header>
+          <p class="bio__body">Bijal Sejpal is founder of Omameh, a specialist advisory practice for boards and senior leaders. She works in the gap between strategy and execution — the operating model, governance, and capability that decide whether AI-era ambition lands. Two decades across S&amp;P/ASX 20 enterprises in five regulated sectors.</p>
+          <button type="button" class="bio__copy" data-bio-copy>Copy →</button>
+        </article>
+
+        <article class="bio" tabindex="0">
+          <header class="bio__head">
+            <div class="bio__label">100 words · the considered</div>
+            <div class="bio__context">For press kits, media bios, board introductions, longer speaker bios.</div>
+          </header>
+          <p class="bio__body">Bijal Sejpal is founder of Omameh, a specialist advisory practice for boards and senior leaders. Two decades inside the rooms where transformations get approved taught her the discipline almost no one writes down before the budget signs off: <em>transformation strategy</em> — the architecture between strategy and execution. Omameh exists to close that gap. Pressure-testing the architecture. Designing the operating model, governance, and capability that let AI-era ambition land. Built from twenty years across S&amp;P/ASX 20 enterprises in financial services, healthcare, government, media, and technology. Sydney-based. Delivery across Australia and India. <em>Human-Led. AI-Operated.</em> Built for the era we are actually in.</p>
+          <button type="button" class="bio__copy" data-bio-copy>Copy →</button>
+        </article>
+
+        <article class="bio" tabindex="0">
+          <header class="bio__head">
+            <div class="bio__label">Long form · 149 words</div>
+            <div class="bio__context">For the website media kit page, keynote bios, magazine features, in-depth podcast pre-reads.</div>
+          </header>
+          <div class="bio__body">
+            <p>Bijal Sejpal is founder of Omameh — a specialist advisory practice for boards and senior leaders building organisations structurally ready for the AI era.</p>
+            <p>Strategy consulting tells you what to do. Transformation consulting delivers what was decided. Almost no one does the architectural work in between — the discipline of sequencing the shifts, calibrating ambition against appetite, and designing the operating model that can actually carry the ambition. That is the gap most AI-era programmes fail in. <em>It is the gap Omameh was built to close.</em></p>
+            <p>The practice works across five connected fronts: operating model, workforce and culture, talent geography, AI governance, and AI-era innovation. <em>One architecture, designed to hold.</em></p>
+            <p>Built from two decades inside S&amp;P/ASX 20 enterprises across financial services, healthcare, government, media, and technology. Sydney-based. Delivery across Australia and India.</p>
+            <p><em>Human-Led. AI-Operated.</em> Built for the era we are actually in.</p>
+          </div>
+          <button type="button" class="bio__copy" data-bio-copy>Copy →</button>
+        </article>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section__head">
+        <span class="eyebrow">03 · Contacts</span>
         <h2>Where to <em>write.</em></h2>
       </div>
       <div class="grid-3">

@@ -3137,12 +3137,16 @@ html { scrollbar-width: thin; scrollbar-color: rgba(245,241,230,0.14) transparen
   text-align: left;
 }
 .why__paragraphs .fo-quote::before {
-  left: 0;
-  transform: none;
+  /* Hide the 120px decorative quote mark when the quote sits inline in
+     the Why column. It was sized for a standalone centred block and at
+     this size + position it overlaps the first line of blockquote text.
+     The blockquote's natural opening " carries enough emphasis here. */
+  content: none;
 }
 .why__paragraphs .fo-quote__text {
   text-align: left;
   text-wrap: pretty;
+  padding-top: 0;                /* base rule added padding-top to reserve space for the decorative " mark; that mark is hidden inline, so the padding is now dead space */
 }
 .why__paragraphs .fo-quote__attr {
   align-items: flex-start;

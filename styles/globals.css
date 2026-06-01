@@ -3249,10 +3249,19 @@ h1 em, h2 em, .fo-hero__name em {
   }
   .home-hero__ctas {
     grid-area: ctas;
-    margin: 0;                                       /* reset base margin-block-start */
+    margin: 0;
     gap: var(--space-3);
     justify-content: center;                        /* centre CTAs under Omameh (column = wordmark column) */
     flex-wrap: nowrap;                              /* keep three CTAs on one row */
+    /* Pull the CTA row up by the wordmark's centring offset.
+       The wordmark sits centred in a row sized by the Triskelion (400px),
+       which leaves ~121px of dead space below the visible "h" before
+       row 1 ends. transform: translateY() shifts the CTAs up by exactly
+       that amount, without disturbing the grid's centring of the wordmark.
+       Formula: (wordmark-font-size − triskelion-width) / 2
+       At 1440: (158 − 400)/2 = −121px
+       At 1024: (113 − 287)/2 = −87px  */
+    transform: translateY(calc((clamp(96px, 11vw, 160px) - clamp(280px, 28vw, 400px)) / 2));
   }
 }
 

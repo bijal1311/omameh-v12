@@ -3179,6 +3179,46 @@ html { scrollbar-width: thin; scrollbar-color: rgba(245,241,230,0.14) transparen
   text-transform: uppercase;
   color: var(--fg1, #ffffff);
 }
+
+/* =====================================================================
+   Founder · Why · coda + signature
+   ---------------------------------------------------------------------
+   Added with Bijal's 22 Jun 2026 Why-text rewrite. Two new closing
+   elements live after the existing why__close 'Human-Led. AI-Operated.'
+   line:
+     1. .why__close--coda      "Change everything but the reason you began…"
+     2. .why__signoff           name + role, editorial letter close
+   ===================================================================== */
+
+.why__paragraphs .why__close--coda {
+  margin-top: var(--space-5);                     /* lift away from the prior close line */
+  color: var(--fg2);                              /* slightly quieter than the brand promise */
+}
+
+.why__paragraphs .why__signoff {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: var(--space-7);                     /* 32px breath from the coda */
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--rule);              /* hairline to close the essay */
+}
+.why__paragraphs .why__signoff-name {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 1;
+  color: var(--fg1);
+}
+.why__paragraphs .why__signoff-role {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
+  color: var(--fg3);
+  margin-top: 2px;
+}
 .fo-hero__portrait {
   aspect-ratio: 3 / 4;                /* match new PNG (was 4/5 — cropped bottom strip) */
 }

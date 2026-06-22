@@ -51,8 +51,9 @@ const __MARKUP = String.raw`
       <div class="why__paragraphs">
         <p>What I do is structural. Why I do it is the people inside it.</p>
         <p>Boards know business strategy. They know execution. The strategy of how you transform — how you sequence the shifts, calibrate ambition against appetite, work with the maturity the organisation actually carries — is the conversation that should happen before the budget is approved. It rarely does.</p>
-        <p>Most AI-era ambitions fail in that gap.</p>
-        <p>What organisations reach for instead are tools. Heatmaps. Interlocks. Prioritisation sessions of great art and little science. The same three questions surface every year — how much, why, what's the benefit. The answers get written down. The benefits rarely land.</p>
+        <p>Most Artificial Intelligence-era ambitions fail in that gap.</p>
+        <p>Business strategy sets the value. Execution is where it is meant to land. The architecture between them is what converts one into the other — or quietly loses it.</p>
+        <p>What organisations reach for instead are tools. Heatmaps. Interlocks. Prioritisation sessions of more art than science. The same three questions surface every year — how much, why, what's the benefit. The answers get written down. The benefits rarely land.</p>
         <p>Organisations are ecosystems running through silos, and the connective tissue between them is improvised every time. When the architecture fails, the people running the work carry weight that should be held for them. Strategy gets the credit. They carry the loss. And the loss compounds — the invoice arrives in three years.</p>
 
         <div class="why__break" role="separator" aria-label="Chapter break">
@@ -60,10 +61,17 @@ const __MARKUP = String.raw`
         </div>
 
         <p>The discipline behind sequencing transformation has a name almost no one writes down: <em>Transformation Strategy.</em></p>
-        <p>That is the gap I built Omameh to work in. The architecture between strategy and execution. The operating model that can carry the ambition. The governance that holds at 7am to a regulator. The capability that compounds because the people inside it are ready, equipped, and trusted.</p>
+        <p>That is the gap I built Omameh to work in. The architecture between strategy and execution. The operating model that can carry the ambition. The governance that holds at 7am to a regulator. The capability that compounds — because the people inside it are ready, equipped, and trusted, and because the return compounds with them.</p>
+        <p>And the target never holds still. Customer behaviour shifts, adoption curves bend — what you are transforming toward does not sit still, so the operating model cannot either. Architecture designed once is already Day 2. The work is building one that re-sequences as the picture changes: <em>strategically patient about where it is going, tactically impatient about getting there.</em></p>
         <p>Most consultancies sell the strategy. Most platforms sell the tools. <strong>Almost no one does the architectural work in between.</strong></p>
         <p>The leaders who define the next generation are the ones whose organisations are more capable, more confident, and more humane after they have gone.</p>
         <p class="why__close"><em>Human-Led. AI-Operated.</em> Built for the era we are actually in.</p>
+        <p class="why__close why__close--coda">Change everything but the reason you began. Build what stays Day 1 without you — <em>in the hands of people who no longer need you.</em></p>
+
+        <p class="why__signoff" aria-label="Bijal, Founder of Omameh">
+          <span class="why__signoff-name">Bijal</span>
+          <span class="why__signoff-role">Founder · Omameh</span>
+        </p>
 
         <figure class="fo-quote">
           <blockquote class="fo-quote__text">Fight for the things that you care about, but do it in a way that will lead others to join you.</blockquote>

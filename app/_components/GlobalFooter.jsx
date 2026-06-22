@@ -17,11 +17,24 @@ export default function GlobalFooter() {
         <div className="footer__row">
           <div className="footer__brand">
             <div className="footer__wordmark">Om<em>a</em>meh</div>
+            <span className="maa-lockup-v footer__maa" role="img" aria-label="माँ Foundation">
+              <span className="maa-mark" aria-hidden="true">माँ</span>
+              <span className="maa-lockup-v__row">
+                <span className="maa-lockup-v__tick" aria-hidden="true" />
+                <span className="maa-fdn">Foundation</span>
+                <span className="maa-lockup-v__tick" aria-hidden="true" />
+              </span>
+              <span className="maa-pron">
+                <span className="maa-pron__key">mā</span>
+                <span className="maa-pron__dot" aria-hidden="true" />
+                <span className="maa-pron__mean">mother</span>
+              </span>
+            </span>
             <p className="footer__pledge">
               A standing share of the practice — time, capacity, capability — directed toward helping and education.
             </p>
             <div style={{ display: 'flex', gap: 'var(--space-4)', marginTop: 'var(--space-3)', fontFamily: 'var(--font-mono)', fontSize: 11, letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--fg3)' }}>
-              <a href="/about#pledge">Read the Pledge →</a>
+              <a href="/about#pledge">Our Foundation →</a>
               <a href="/privacy">Privacy Policy →</a>
             </div>
             <p style={{ fontFamily: 'var(--font-mono)', fontSize: 11, letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--fg3)', marginTop: 'var(--space-4)' }}>

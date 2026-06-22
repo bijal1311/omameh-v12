@@ -3128,6 +3128,43 @@ html { scrollbar-width: thin; scrollbar-color: rgba(245,241,230,0.14) transparen
    so it telegraphs clickability. */
 .tag a { transition: color 0.18s ease; }
 .tag a:hover { color: var(--accent-warm); opacity: 1; }
+
+/* =====================================================================
+   FOOTER BRAND BLOCK · Omameh + माँ Foundation lockup
+   ---------------------------------------------------------------------
+   Two related changes (Bijal · 22 Jun 2026):
+   1. Bump the Omameh wordmark a tier larger — was 28px, now 40px.
+   2. Drop the maa-lockup-v stacked Foundation mark beneath Omameh,
+      scoped smaller than the spec defaults (the stacked variant ships
+      at clamp(72,8vw,104) for hero / square contexts; in the footer
+      brand col it would dominate, so we constrain it to a brand-
+      companion scale — mark ~44px, Foundation label ~11px).
+   ===================================================================== */
+
+.footer__brand .footer__wordmark {
+  font-size: 40px;                                /* was 28px */
+}
+
+.footer__brand .footer__maa {
+  margin-top: var(--space-4);
+  gap: 10px;                                       /* was 14px — tighter in footer scale */
+}
+.footer__brand .footer__maa .maa-mark {
+  font-size: clamp(36px, 3vw, 48px);              /* was clamp(72,8vw,104) */
+}
+.footer__brand .footer__maa .maa-fdn {
+  font-size: 11px;                                 /* was clamp(15,1.5vw,19) */
+  letter-spacing: 0.30em;                          /* a touch tighter than 0.34em at this size */
+}
+.footer__brand .footer__maa .maa-lockup-v__tick {
+  width: 20px;                                     /* was clamp(24,4vw,40) */
+}
+.footer__brand .footer__maa .maa-pron__key {
+  font-size: 10.5px;
+}
+.footer__brand .footer__maa .maa-pron__mean {
+  font-size: 13px;
+}
 .fo-hero__portrait {
   aspect-ratio: 3 / 4;                /* match new PNG (was 4/5 — cropped bottom strip) */
 }

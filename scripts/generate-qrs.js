@@ -12,9 +12,10 @@ const fs = require('fs');
 const path = require('path');
 
 const targets = [
-  { file: 'omameh-com-au.svg',   url: 'https://omameh.com.au' },
-  { file: 'linkedin-company.svg', url: 'https://www.linkedin.com/company/omameh/' },
-  { file: 'linkedin-bijal.svg',   url: 'https://www.linkedin.com/in/bijal-sejpal/' },
+  { file: 'omameh-com-au.svg',        url: 'https://omameh.com.au' },
+  { file: 'linkedin-company.svg',     url: 'https://www.linkedin.com/company/omameh/' },
+  { file: 'linkedin-bijal.svg',       url: 'https://www.linkedin.com/in/bijal-sejpal/' },
+  { file: 'subscribe-fieldnotes.svg', url: 'mailto:fieldnotes@omameh.com.au?subject=Subscribe to Field Notes&body=Please add me to Field Notes.' },
 ];
 
 const outDir = path.resolve(__dirname, '..', 'public', 'qr');

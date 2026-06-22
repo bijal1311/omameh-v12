@@ -3435,6 +3435,37 @@ html { scrollbar-width: thin; scrollbar-color: rgba(245,241,230,0.14) transparen
   margin: var(--space-4) 0 0;
 }
 
+/* Inline QR tile on /atlas next to Subscribe form + Community CTA.
+   Smaller than the /media share cards (200px) — this is in-page
+   register, not share-hub register. The cream tile matches the
+   editorial-register palette /atlas runs on. */
+.atlas-qr {
+  margin-top: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-2);
+}
+.atlas-qr__code {
+  display: inline-block;
+  background: var(--omameh-cream, #F4F0E6);
+  padding: 10px;
+  border-radius: 4px;
+}
+.atlas-qr__code img {
+  display: block;
+  width: 120px;
+  height: 120px;
+}
+.atlas-qr__label {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--fg3);
+  margin: 0;
+}
+
 /* Doors grid — same .grid-4 shape as elsewhere, with a small contact
    modifier that gives a tighter row gap when each cell carries a
    3-line content tile (label + alias + description). */

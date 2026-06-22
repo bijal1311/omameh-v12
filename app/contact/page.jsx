@@ -55,56 +55,13 @@ const __MARKUP = String.raw`
       </form>
     </div>
 
-    <hr class="rule" style="margin-block: var(--space-8);">
+    <hr class="rule" style="margin-block: var(--space-7);">
 
-    <div class="section">
-      <div class="section__head">
-        <span class="eyebrow">Or write to a specific door</span>
-        <h2>The seven <em>aliases.</em></h2>
-        <p class="strap">If your question fits one of these, write directly. Reply window is the same — 48 hours.</p>
-      </div>
-
-      <div class="grid-4 contact-doors">
-        <div>
-          <h4 class="tag" style="color: var(--accent-warm);">Boards</h4>
-          <p style="font-family: var(--font-mono); font-size: 12px; margin-top: var(--space-2);"><a href="mailto:boards@omameh.com.au">Boards@omameh.com.au</a></p>
-          <p style="color: var(--fg2); font-size: 13px; margin-top: var(--space-2);">Chair and CEO conversations. NEDs welcome.</p>
-        </div>
-        <div>
-          <h4 class="tag" style="color: var(--accent-warm);">Partner</h4>
-          <p style="font-family: var(--font-mono); font-size: 12px; margin-top: var(--space-2);"><a href="mailto:partner@omameh.com.au">Partner@omameh.com.au</a></p>
-          <p style="color: var(--fg2); font-size: 13px; margin-top: var(--space-2);">Delivery firms and embedded teams.</p>
-        </div>
-        <div>
-          <h4 class="tag" style="color: var(--accent-warm);">Press</h4>
-          <p style="font-family: var(--font-mono); font-size: 12px; margin-top: var(--space-2);"><a href="mailto:press@omameh.com.au">Press@omameh.com.au</a></p>
-          <p style="color: var(--fg2); font-size: 13px; margin-top: var(--space-2);">Interviews, briefings, off-the-record.</p>
-        </div>
-        <div>
-          <h4 class="tag" style="color: var(--accent-warm);">Speak</h4>
-          <p style="font-family: var(--font-mono); font-size: 12px; margin-top: var(--space-2);"><a href="mailto:speak@omameh.com.au">Speak@omameh.com.au</a></p>
-          <p style="color: var(--fg2); font-size: 13px; margin-top: var(--space-2);">Keynotes, panels, off-the-record sessions.</p>
-        </div>
-        <div>
-          <h4 class="tag" style="color: var(--accent-warm);">Field Notes</h4>
-          <p style="font-family: var(--font-mono); font-size: 12px; margin-top: var(--space-2);"><a href="mailto:fieldnotes@omameh.com.au">FieldNotes@omameh.com.au</a></p>
-          <p style="color: var(--fg2); font-size: 13px; margin-top: var(--space-2);">Subscribe to the quarterly dispatch.</p>
-        </div>
-        <div>
-          <h4 class="tag" style="color: var(--accent-warm);">Community</h4>
-          <p style="font-family: var(--font-mono); font-size: 12px; margin-top: var(--space-2);"><a href="https://www.linkedin.com/company/omameh/" target="_blank" rel="noopener noreferrer">linkedin.com/company/omameh ↗</a></p>
-          <p style="color: var(--fg2); font-size: 13px; margin-top: var(--space-2);">For leaders rebuilding the work. Lives on LinkedIn.</p>
-        </div>
-        <div>
-          <h4 class="tag" style="color: var(--accent-warm);">General</h4>
-          <p style="font-family: var(--font-mono); font-size: 12px; margin-top: var(--space-2);"><a href="mailto:contact@omameh.com.au">Contact@omameh.com.au</a></p>
-          <p style="color: var(--fg2); font-size: 13px; margin-top: var(--space-2);">Anything that doesn't fit the six above.</p>
-        </div>
-        <div>
-          <h4 class="tag" style="color: var(--accent-warm);">Foundation</h4>
-          <p style="font-family: var(--font-mono); font-size: 12px; margin-top: var(--space-2);"><a href="mailto:foundation@omameh.com.au">Foundation@omameh.com.au</a></p>
-          <p style="color: var(--fg2); font-size: 13px; margin-top: var(--space-2);">Partnership for the giving arm of the practice.</p>
-        </div>
+    <div class="section" style="text-align: center; padding-block: var(--space-7);">
+      <p class="tag" style="color: var(--fg2);">Prefer a specific door?</p>
+      <p style="font-family: var(--font-serif); font-style: italic; font-size: clamp(22px, 2.2vw, 28px); line-height: var(--lh-snug); color: var(--fg1); max-width: 36ch; margin: var(--space-3) auto 0;">Boards, partners, press, speaking, Field Notes, community, or the Mā Foundation — each has its own door.</p>
+      <div class="ctas" style="margin-top: var(--space-5); justify-content: center;">
+        <a class="cta" href="/doors">See the eight doors →</a>
       </div>
     </div>
   </div>

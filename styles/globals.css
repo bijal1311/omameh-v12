@@ -3436,21 +3436,44 @@ html { scrollbar-width: thin; scrollbar-color: rgba(245,241,230,0.14) transparen
 }
 
 /* Inline QR tile on /atlas next to Subscribe form + Community CTA.
-   Smaller than the /media share cards (200px) — this is in-page
-   register, not share-hub register. The cream tile matches the
-   editorial-register palette /atlas runs on. */
+   Styled to match the brand button family (.cta--primary on the
+   Community 'Join the community ↗' CTA and the Subscribe submit) —
+   gold-filled outer tile, navy text label, mono caps. Centred in
+   each .atlas-cta__col. The inner .atlas-qr__code keeps its cream
+   inset so the QR (gold dots on cream) retains the contrast it
+   needs to scan reliably. */
 .atlas-qr {
   margin-top: var(--space-5);
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: var(--space-2);
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-5);
+  border-radius: 2px;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  /* default background is gold in routes-default register; modifiers
+     below override to match the editorial-register button colours
+     used on Atlas. */
+  background: var(--accent-warm, #C9A84C);
+}
+/* Subscribe column · matches the form's submit button (uses --accent-warm
+   which is gold by default, stage-indigo in editorial register). */
+.atlas-qr--subscribe {
+  background: var(--accent-warm, #C9A84C);
+}
+/* Community column · matches the 'Join the community ↗' .cta--primary
+   button (which uses --accent — stage-green on Atlas, teal on
+   routes-default). */
+.atlas-qr--community {
+  background: var(--accent, var(--omameh-stage-green, #4A7C5E));
 }
 .atlas-qr__code {
   display: inline-block;
   background: var(--omameh-cream, #F4F0E6);
   padding: 10px;
-  border-radius: 4px;
+  border-radius: 2px;
 }
 .atlas-qr__code img {
   display: block;
@@ -3462,7 +3485,7 @@ html { scrollbar-width: thin; scrollbar-color: rgba(245,241,230,0.14) transparen
   font-size: 10.5px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--fg3);
+  color: var(--omameh-navy-deep, #081335);
   margin: 0;
 }
 

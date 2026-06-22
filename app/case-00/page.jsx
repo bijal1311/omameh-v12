@@ -162,7 +162,7 @@ const __MARKUP = String.raw`
     </div>
 
     <hr class="rule" style="margin-block: var(--space-8);">
-    <p class="tag" style="text-align:center;">Continue reading → <em>Press, downloads, headshots.</em> · Next · 08 · Media</p>
+    <p class="tag" style="text-align:center;"><a href="/media">Continue reading → <em>Press, downloads, headshots.</em> · Next · 08 · Media</a></p>
   </div>
 `;
 

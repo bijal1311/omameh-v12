@@ -3120,6 +3120,14 @@ html { scrollbar-width: thin; scrollbar-color: rgba(245,241,230,0.14) transparen
 .why__portrait::before {
   content: none;                      /* kill the diagonal stripe pattern */
 }
+
+/* Continue-reading tag at the bottom of every route is now an <a>.
+   Inherits the global a { color: inherit; text-decoration: none } reset,
+   so it visually reads as plain text by default. Add a hover that bumps
+   the colour to the warm accent + cancels the global 0.85 opacity dim
+   so it telegraphs clickability. */
+.tag a { transition: color 0.18s ease; }
+.tag a:hover { color: var(--accent-warm); opacity: 1; }
 .fo-hero__portrait {
   aspect-ratio: 3 / 4;                /* match new PNG (was 4/5 — cropped bottom strip) */
 }

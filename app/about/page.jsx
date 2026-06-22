@@ -174,17 +174,18 @@ const __MARKUP = String.raw`
 
     <div class="section" id="pledge">
       <div class="section__head">
-        <span class="eyebrow">06 · The Three Percent Pledge · Year Three Foundation</span>
-        <h2>Three percent of the practice.</h2>
+        <span class="eyebrow">06 · The Pledge · Year Three Foundation</span>
+        <h2>A standing share of the practice.</h2>
       </div>
-      <p class="strap" style="max-width: 60ch;"><em>Time, capacity, capability</em> — committed to <strong>leaders rebuilding after a redundancy.</strong> Advisory and curated sponsored training. <em>An early signal of a Year Three Foundation ambition.</em></p>
+      <p class="strap" style="max-width: 60ch;">We back people and organisations doing the work of lifting others. Advisory, curated sponsored training, and partnership where it counts.</p>
+      <p class="strap" style="max-width: 60ch;">Not-for-profits are welcome to connect — we're interviewing partners now to direct this well.</p>
       <div class="ctas" style="margin-top: var(--space-5);">
         <a class="cta" href="/contact">Start a conversation →</a>
       </div>
     </div>
 
     <hr class="rule">
-    <p class="tag" style="text-align:center">Continue reading → A framework is one thing. <em>How does it become the work?</em> · Next · 03 · Practice</p>
+    <p class="tag" style="text-align:center"><a href="/practice">Continue reading → A framework is one thing. <em>How does it become the work?</em> · Next · 03 · Practice</a></p>
   </div>
 `;
 

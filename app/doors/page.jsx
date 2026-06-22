@@ -84,7 +84,7 @@ const __MARKUP = String.raw`
     </div>
 
     <hr class="rule" style="margin-block: var(--space-8);">
-    <p class="tag" style="text-align:center;">Continue reading → <em>Why did the founder build this?</em> · Next · 06 · Founder</p>
+    <p class="tag" style="text-align:center;"><a href="/founder">Continue reading → <em>Why did the founder build this?</em> · Next · 06 · Founder</a></p>
   </div>
 `;
 

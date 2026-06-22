@@ -212,7 +212,7 @@ const __MARKUP = String.raw`
     </div>
 
     <hr class="rule">
-    <p class="tag" style="text-align:center">Continue reading → If this is the question, <em>what is Omameh qualified to ask it with?</em> · Next · 02 · About</p>
+    <p class="tag" style="text-align:center"><a href="/about">Continue reading → If this is the question, <em>what is Omameh qualified to ask it with?</em> · Next · 02 · About</a></p>
   </div>
 `;
 

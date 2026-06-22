@@ -57,7 +57,7 @@ const __MARKUP = String.raw`
     </div>
 
     <hr class="rule" style="margin-block: var(--space-8);">
-    <p class="tag" style="text-align:center; color: var(--fg3);">Continue reading → <em>Where do you want to come in?</em> · Next · 05 · Doors</p>
+    <p class="tag" style="text-align:center; color: var(--fg3);"><a href="/doors">Continue reading → <em>Where do you want to come in?</em> · Next · 05 · Doors</a></p>
   </div>
 `;
 

@@ -252,7 +252,7 @@ const __MARKUP = String.raw`
     </div>
 
     <hr class="rule">
-    <p class="tag" style="text-align:center">Continue reading → <em>What does the work look like in the open?</em> · Next · 04 · Atlas</p>
+    <p class="tag" style="text-align:center"><a href="/atlas">Continue reading → <em>What does the work look like in the open?</em> · Next · 04 · Atlas</a></p>
   </div>
 `;
 

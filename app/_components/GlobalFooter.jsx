@@ -17,13 +17,11 @@ export default function GlobalFooter() {
         <div className="footer__row">
           <div className="footer__brand">
             <div className="footer__wordmark">Om<em>a</em>meh</div>
-            <span className="maa-gloss footer__maa-gloss" role="img" aria-label="माँ — mā, mother">
+            <span className="maa-gloss footer__maa-gloss" role="img" aria-label="माँ Foundation">
               <span className="maa-mark" aria-hidden="true">माँ</span>
-              <span className="maa-gloss__dash" aria-hidden="true" />
-              <span className="maa-gloss__read">
-                <span className="maa-gloss__key">mā</span>
-                <span className="maa-gloss__mean">mother</span>
-              </span>
+              <span className="footer__maa-gloss__key">[ mā ]</span>
+              <span className="footer__maa-gloss__sep" aria-hidden="true">—</span>
+              <span className="footer__maa-gloss__fdn">Foundation</span>
             </span>
             <p className="footer__pledge">
               A standing share of the practice — time, capacity, capability — directed toward helping and education.

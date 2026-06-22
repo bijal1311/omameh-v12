@@ -3145,26 +3145,39 @@ html { scrollbar-width: thin; scrollbar-color: rgba(245,241,230,0.14) transparen
   font-size: 40px;                                /* was 28px */
 }
 
-/* Single-line gloss variant beneath the wordmark (mockup · 22 Jun 2026).
-   Scoped DOWN from spec defaults — the gloss ships at hero scale for
-   first-use body copy (mark up to 66px). In the footer brand col it
-   needs to sit as a companion mark next to the 40px Omameh wordmark,
-   not compete with it. */
+/* Single-line gloss variant beneath the wordmark — restructured for
+   visual uniformity (Bijal · 22 Jun 2026):
+     माँ  [ mā ]  —  Foundation
+   Same font-size (20px) across all four runs; distinct font families
+   keep the typographic register (Devanagari serif · mono brackets ·
+   gold em-dash · Inter caps for the Latin label). */
 .footer__brand .footer__maa-gloss {
   margin-top: var(--space-3);                     /* 12px gap from Omameh */
-  gap: 14px;                                       /* was 16px — tighten for footer scale */
+  gap: 10px;                                       /* tight inter-run spacing */
+  align-items: baseline;
 }
 .footer__brand .footer__maa-gloss .maa-mark {
-  font-size: 32px;                                 /* was clamp(48,6vw,66) */
+  font-size: 20px;
 }
-.footer__brand .footer__maa-gloss .maa-gloss__dash {
-  width: 22px;                                     /* was 30px */
+.footer__brand .footer__maa-gloss__key {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-weight: 400;
+  font-size: 20px;
+  letter-spacing: 0.04em;
+  color: var(--fg2, rgba(255,255,255,0.66));
 }
-.footer__brand .footer__maa-gloss .maa-gloss__key {
-  font-size: 12px;                                 /* was clamp(14,1.5vw,17) */
+.footer__brand .footer__maa-gloss__sep {
+  font-size: 20px;
+  color: var(--accent-warm, #C9A84C);              /* gold em-dash retains brand accent */
+  opacity: 0.85;
 }
-.footer__brand .footer__maa-gloss .maa-gloss__mean {
-  font-size: 17px;                                 /* was clamp(22,2.4vw,30) */
+.footer__brand .footer__maa-gloss__fdn {
+  font-family: var(--font-sans, 'Inter', system-ui, sans-serif);
+  font-weight: 500;
+  font-size: 20px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--fg1, #ffffff);
 }
 .fo-hero__portrait {
   aspect-ratio: 3 / 4;                /* match new PNG (was 4/5 — cropped bottom strip) */

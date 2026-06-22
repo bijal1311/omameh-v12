@@ -3237,6 +3237,101 @@ html { scrollbar-width: thin; scrollbar-color: rgba(245,241,230,0.14) transparen
   color: var(--fg3);
   margin-top: 4px;
 }
+
+/* =====================================================================
+   CONTACT FORM · /contact (mockup · 22 Jun 2026)
+   ---------------------------------------------------------------------
+   Form-based contact replaces the calendar mat per Bijal's decision to
+   defer Microsoft Bookings until request volume justifies it. Inspired
+   by the reference she shared — first/last name split, organisation +
+   role split, situation textarea, single send action. Translated into
+   Omameh's register: navy ground, cream text, subtle 1px rule borders,
+   gold focus ring instead of the reference's purple.
+   action="mailto:" works without a backend — opens the visitor's mail
+   client with the form payload populated. Same pattern as Atlas's
+   subscribe form.
+   ===================================================================== */
+
+.contact-form {
+  max-width: 720px;
+  margin: var(--space-7) auto var(--space-9);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+.contact-form__row--split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+@media (max-width: 560px) {
+  .contact-form__row--split { grid-template-columns: 1fr; }
+}
+.contact-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.contact-form__label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
+  color: var(--fg3);
+}
+.contact-form input,
+.contact-form textarea {
+  font-family: var(--font-serif);
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--fg1);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  padding: 12px 14px;
+  transition: border-color 0.18s ease, background 0.18s ease;
+}
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: var(--fg3);
+  font-style: italic;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--accent-warm);                /* gold focus */
+  background: rgba(201, 168, 76, 0.04);
+}
+.contact-form textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+.contact-form__footer {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin-top: var(--space-3);
+}
+.contact-form__note {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--fg3);
+}
+
+/* Doors grid — same .grid-4 shape as elsewhere, with a small contact
+   modifier that gives a tighter row gap when each cell carries a
+   3-line content tile (label + alias + description). */
+.contact-doors {
+  gap: var(--space-6) var(--space-5);
+}
+@media (max-width: 760px) {
+  .contact-doors { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .contact-doors { grid-template-columns: 1fr; }
+}
 .fo-hero__portrait {
   aspect-ratio: 3 / 4;                /* match new PNG (was 4/5 — cropped bottom strip) */
 }

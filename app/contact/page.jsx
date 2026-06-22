@@ -2,101 +2,109 @@ import RouteShell from '../_components/RouteShell';
 
 export const metadata = {
   title: 'Contact',
-  description: 'Thirty minutes. No deck. Discovery calendar · open slots · weekday time grid. AEST · Sydney time.',
+  description: 'Tell us the situation, the team, and the question that keeps coming back. We read every note carefully and reply within 48 hours.',
 };
 
 const __MARKUP = String.raw`
   <div class="container">
     <div class="route__header"><span class="route__index">09</span><span class="route__name">/contact · Contact</span><span class="route__issue">Vol. I · Issue 01 · Q2 2026</span></div>
     <div class="hero">
-      <span class="eyebrow">Contact · 30-min discovery</span>
+      <span class="eyebrow">Contact · Omameh</span>
       <h1 style="margin-top: var(--space-4)">Let's <em>talk.</em></h1>
-      <p class="lede">Thirty minutes. No deck. We listen, you sketch the situation, we tell you whether Omameh is the right room for it. Pick an open day below — or write directly.</p>
+      <p class="lede">Tell us about the situation, the team, and the question that keeps coming back. We read every note carefully and reply within 48 hours.</p>
     </div>
 
     <div class="section">
+      <form class="contact-form" action="mailto:contact@omameh.com.au" method="post" enctype="text/plain">
+        <div class="contact-form__row contact-form__row--split">
+          <label class="contact-form__field">
+            <span class="contact-form__label">First name</span>
+            <input type="text" name="first-name" required autocomplete="given-name" />
+          </label>
+          <label class="contact-form__field">
+            <span class="contact-form__label">Last name</span>
+            <input type="text" name="last-name" required autocomplete="family-name" />
+          </label>
+        </div>
+
+        <label class="contact-form__field">
+          <span class="contact-form__label">Email</span>
+          <input type="email" name="email" required autocomplete="email" placeholder="you@organisation.com" />
+        </label>
+
+        <div class="contact-form__row contact-form__row--split">
+          <label class="contact-form__field">
+            <span class="contact-form__label">Organisation</span>
+            <input type="text" name="organisation" autocomplete="organization" />
+          </label>
+          <label class="contact-form__field">
+            <span class="contact-form__label">Role</span>
+            <input type="text" name="role" autocomplete="organization-title" placeholder="CEO · CHRO · Chair · NED" />
+          </label>
+        </div>
+
+        <label class="contact-form__field">
+          <span class="contact-form__label">The situation in one paragraph</span>
+          <textarea name="situation" rows="6" required placeholder="What's the question that keeps coming back? What's been tried? What's the deadline behind it? Plain English is fine."></textarea>
+        </label>
+
+        <div class="contact-form__footer">
+          <button type="submit" class="cta cta--primary">Send to Omameh →</button>
+          <span class="contact-form__note">We read every note carefully and reply within 48 hours.</span>
+        </div>
+      </form>
+    </div>
+
+    <hr class="rule" style="margin-block: var(--space-8);">
+
+    <div class="section">
       <div class="section__head">
-        <span class="eyebrow">01 · Discovery calendar · June 2026</span>
-        <h2>Open <em>slots.</em></h2>
+        <span class="eyebrow">Or write to a specific door</span>
+        <h2>The seven <em>aliases.</em></h2>
+        <p class="strap">If your question fits one of these, write directly. Reply window is the same — 48 hours.</p>
       </div>
 
-      <div class="cm-calendar" data-role="calendar-mat">
-        <div class="cm-calendar__nav">
-          <button type="button" class="cm-calendar__nav-btn" data-cm-nav="prev">← Prev week</button>
-          <span class="cm-calendar__nav-week">Week of <em>01 — 05 June 2026</em></span>
-          <button type="button" class="cm-calendar__nav-btn" data-cm-nav="next">Next week →</button>
+      <div class="grid-4 contact-doors">
+        <div>
+          <h4 class="tag" style="color: var(--accent-warm);">Boards</h4>
+          <p style="font-family: var(--font-mono); font-size: 12px; margin-top: var(--space-2);"><a href="mailto:boards@omameh.com.au">Boards@omameh.com.au</a></p>
+          <p style="color: var(--fg2); font-size: 13px; margin-top: var(--space-2);">Chair and CEO conversations. NEDs welcome.</p>
         </div>
-
-        <div class="cm-calendar__meta">
-          <span><span class="key">AEST</span> · Sydney time</span>
-          <span><span class="key">30 min</span> · discovery slots</span>
-          <span><span class="key">Weekdays only</span></span>
+        <div>
+          <h4 class="tag" style="color: var(--accent-warm);">Partner</h4>
+          <p style="font-family: var(--font-mono); font-size: 12px; margin-top: var(--space-2);"><a href="mailto:partner@omameh.com.au">Partner@omameh.com.au</a></p>
+          <p style="color: var(--fg2); font-size: 13px; margin-top: var(--space-2);">Delivery firms and embedded teams.</p>
         </div>
-
-        <div class="cm-calendar__grid">
-          <div class="cm-calendar__head cm-calendar__head--corner">AEST</div>
-          <div class="cm-calendar__head"><span class="day">Mon</span><span class="date">01</span></div>
-          <div class="cm-calendar__head"><span class="day">Tue</span><span class="date">02</span></div>
-          <div class="cm-calendar__head"><span class="day">Wed</span><span class="date">03</span></div>
-          <div class="cm-calendar__head"><span class="day">Thu</span><span class="date">04</span></div>
-          <div class="cm-calendar__head"><span class="day">Fri</span><span class="date">05</span></div>
-
-          <div class="cm-calendar__time">09:00</div>
-          <button type="button" class="cm-calendar__slot is-open" data-cm-slot="Mon 09:00">Open</button>
-          <button type="button" class="cm-calendar__slot is-booked" disabled>Booked</button>
-          <button type="button" class="cm-calendar__slot is-open" data-cm-slot="Wed 09:00">Open</button>
-          <button type="button" class="cm-calendar__slot is-open" data-cm-slot="Thu 09:00">Open</button>
-          <button type="button" class="cm-calendar__slot is-booked" disabled>Booked</button>
-
-          <div class="cm-calendar__time">10:00</div>
-          <button type="button" class="cm-calendar__slot is-booked" disabled>Booked</button>
-          <button type="button" class="cm-calendar__slot is-open" data-cm-slot="Tue 10:00">Open</button>
-          <button type="button" class="cm-calendar__slot is-open" data-cm-slot="Wed 10:00">Open</button>
-          <button type="button" class="cm-calendar__slot is-booked" disabled>Booked</button>
-          <button type="button" class="cm-calendar__slot is-open" data-cm-slot="Fri 10:00">Open</button>
-
-          <div class="cm-calendar__time">11:00</div>
-          <button type="button" class="cm-calendar__slot is-open" data-cm-slot="Mon 11:00">Open</button>
-          <button type="button" class="cm-calendar__slot is-open" data-cm-slot="Tue 11:00">Open</button>
-          <button type="button" class="cm-calendar__slot is-booked" disabled>Booked</button>
-          <button type="button" class="cm-calendar__slot is-open" data-cm-slot="Thu 11:00">Open</button>
-          <button type="button" class="cm-calendar__slot is-open" data-cm-slot="Fri 11:00">Open</button>
-
-          <div class="cm-calendar__time">14:00</div>
-          <button type="button" class="cm-calendar__slot is-open" data-cm-slot="Mon 14:00">Open</button>
-          <button type="button" class="cm-calendar__slot is-booked" disabled>Booked</button>
-          <button type="button" class="cm-calendar__slot is-open" data-cm-slot="Wed 14:00">Open</button>
-          <button type="button" class="cm-calendar__slot is-booked" disabled>Booked</button>
-          <button type="button" class="cm-calendar__slot is-open" data-cm-slot="Fri 14:00">Open</button>
-
-          <div class="cm-calendar__time">15:00</div>
-          <button type="button" class="cm-calendar__slot is-booked" disabled>Booked</button>
-          <button type="button" class="cm-calendar__slot is-open" data-cm-slot="Tue 15:00">Open</button>
-          <button type="button" class="cm-calendar__slot is-open" data-cm-slot="Wed 15:00">Open</button>
-          <button type="button" class="cm-calendar__slot is-open" data-cm-slot="Thu 15:00">Open</button>
-          <button type="button" class="cm-calendar__slot is-booked" disabled>Booked</button>
-
-          <div class="cm-calendar__time">16:00</div>
-          <button type="button" class="cm-calendar__slot is-open" data-cm-slot="Mon 16:00">Open</button>
-          <button type="button" class="cm-calendar__slot is-open" data-cm-slot="Tue 16:00">Open</button>
-          <button type="button" class="cm-calendar__slot is-open" data-cm-slot="Wed 16:00">Open</button>
-          <button type="button" class="cm-calendar__slot is-booked" disabled>Booked</button>
-          <button type="button" class="cm-calendar__slot is-open" data-cm-slot="Fri 16:00">Open</button>
+        <div>
+          <h4 class="tag" style="color: var(--accent-warm);">Press</h4>
+          <p style="font-family: var(--font-mono); font-size: 12px; margin-top: var(--space-2);"><a href="mailto:press@omameh.com.au">Press@omameh.com.au</a></p>
+          <p style="color: var(--fg2); font-size: 13px; margin-top: var(--space-2);">Interviews, briefings, off-the-record.</p>
         </div>
-
-        <div class="cm-calendar__legend">
-          <span class="cm-calendar__legend-chip cm-calendar__legend-chip--open">Open · click to book</span>
-          <span class="cm-calendar__legend-chip">Booked</span>
-          <span style="margin-left: auto; color: var(--fg3);">Outside these hours? <a href="mailto:contact@omameh.com.au" style="color: var(--accent-warm);">Write directly →</a></span>
+        <div>
+          <h4 class="tag" style="color: var(--accent-warm);">Speak</h4>
+          <p style="font-family: var(--font-mono); font-size: 12px; margin-top: var(--space-2);"><a href="mailto:speak@omameh.com.au">Speak@omameh.com.au</a></p>
+          <p style="color: var(--fg2); font-size: 13px; margin-top: var(--space-2);">Keynotes, panels, off-the-record sessions.</p>
         </div>
-      </div>
-
-      <hr class="rule">
-
-      <div class="grid-3">
-        <div><h4 class="tag" style="color: var(--accent-warm);">Boards</h4><p style="font-family: var(--font-mono); font-size: 12px; margin-top: var(--space-3);"><a href="mailto:boards@omameh.com.au">Boards@omameh.com.au</a></p></div>
-        <div><h4 class="tag" style="color: var(--accent-warm);">Partner</h4><p style="font-family: var(--font-mono); font-size: 12px; margin-top: var(--space-3);"><a href="mailto:partner@omameh.com.au">Partner@omameh.com.au</a></p></div>
-        <div><h4 class="tag" style="color: var(--accent-warm);">General</h4><p style="font-family: var(--font-mono); font-size: 12px; margin-top: var(--space-3);"><a href="mailto:contact@omameh.com.au">Contact@omameh.com.au</a></p></div>
+        <div>
+          <h4 class="tag" style="color: var(--accent-warm);">Field Notes</h4>
+          <p style="font-family: var(--font-mono); font-size: 12px; margin-top: var(--space-2);"><a href="mailto:fieldnotes@omameh.com.au">FieldNotes@omameh.com.au</a></p>
+          <p style="color: var(--fg2); font-size: 13px; margin-top: var(--space-2);">Subscribe to the quarterly dispatch.</p>
+        </div>
+        <div>
+          <h4 class="tag" style="color: var(--accent-warm);">Community</h4>
+          <p style="font-family: var(--font-mono); font-size: 12px; margin-top: var(--space-2);"><a href="mailto:community@omameh.com.au">Community@omameh.com.au</a></p>
+          <p style="color: var(--fg2); font-size: 13px; margin-top: var(--space-2);">For leaders rebuilding the work.</p>
+        </div>
+        <div>
+          <h4 class="tag" style="color: var(--accent-warm);">General</h4>
+          <p style="font-family: var(--font-mono); font-size: 12px; margin-top: var(--space-2);"><a href="mailto:contact@omameh.com.au">Contact@omameh.com.au</a></p>
+          <p style="color: var(--fg2); font-size: 13px; margin-top: var(--space-2);">Anything that doesn't fit the six above.</p>
+        </div>
+        <div>
+          <h4 class="tag" style="color: var(--accent-warm);">Foundation</h4>
+          <p style="font-family: var(--font-mono); font-size: 12px; margin-top: var(--space-2);"><a href="mailto:contact@omameh.com.au?subject=माँ%20Foundation">Maa Foundation</a></p>
+          <p style="color: var(--fg2); font-size: 13px; margin-top: var(--space-2);">Partnership for the giving arm of the practice.</p>
+        </div>
       </div>
     </div>
   </div>

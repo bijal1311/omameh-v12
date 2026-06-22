@@ -11,7 +11,7 @@
  * here so each route's page.jsx only carries the route content.
  */
 
-import { Playfair_Display, Inter, JetBrains_Mono, Cormorant_Garamond, Space_Mono } from 'next/font/google';
+import { Playfair_Display, Inter, JetBrains_Mono, Cormorant_Garamond, Space_Mono, Caveat } from 'next/font/google';
 import '../styles/globals.css';
 import '../styles/maa-foundation.css';
 import GlobalNav from './_components/GlobalNav';
@@ -51,6 +51,13 @@ const spaceMono = Space_Mono({
   subsets: ['latin'],
   weight: ['400', '700'],
   variable: '--font-space-mono',
+  display: 'swap',
+});
+
+const caveat = Caveat({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-caveat',
   display: 'swap',
 });
 
@@ -97,7 +104,7 @@ export const viewport = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${playfair.variable} ${inter.variable} ${jetbrains.variable} ${cormorant.variable} ${spaceMono.variable}`}>
+    <html lang="en" className={`${playfair.variable} ${inter.variable} ${jetbrains.variable} ${cormorant.variable} ${spaceMono.variable} ${caveat.variable}`}>
       <body>
         <GlobalNav />
         {children}

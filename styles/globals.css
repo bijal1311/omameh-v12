@@ -3190,26 +3190,44 @@ html { scrollbar-width: thin; scrollbar-color: rgba(245,241,230,0.14) transparen
      2. .why__signoff           name + role, editorial letter close
    ===================================================================== */
 
+/* PROTOTYPE · 22 Jun 2026 — Bijal asked to try a more personal feel:
+   (1) script font on the signature name (Caveat, handwritten/intimate)
+   (2) the coda promoted from body paragraph to a bolder founder
+       pull-quote (fills the position the RBG epigraph used to hold,
+       but with Bijal's own words). Easily reverted: revert this CSS
+       block + drop the Caveat next/font import in layout.jsx. */
+
 .why__paragraphs .why__close--coda {
-  margin-top: var(--space-5);                     /* lift away from the prior close line */
-  color: var(--fg2);                              /* slightly quieter than the brand promise */
+  /* Display pull-quote treatment — was: lifted body paragraph */
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(24px, 2.6vw, 32px);
+  line-height: var(--lh-snug);
+  color: var(--fg1);
+  max-width: 38ch;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  padding-block: var(--space-7);
+  margin-block: var(--space-8) var(--space-7);
+  text-wrap: balance;
 }
 
 .why__paragraphs .why__signoff {
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  margin-top: var(--space-7);                     /* 32px breath from the coda */
-  padding-top: var(--space-5);
-  border-top: 1px solid var(--rule);              /* hairline to close the essay */
+  gap: 6px;
+  margin-top: var(--space-6);                     /* tighter than before — no hairline rule */
 }
 .why__paragraphs .why__signoff-name {
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-weight: 500;
-  font-size: 28px;
-  line-height: 1;
+  /* Cursive · handwritten signature */
+  font-family: var(--font-caveat), 'Caveat', 'Brush Script MT', cursive;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 64px;                                 /* bigger than the previous 28px italic Playfair */
+  line-height: 0.9;
   color: var(--fg1);
+  letter-spacing: 0.005em;
 }
 .why__paragraphs .why__signoff-role {
   font-family: var(--font-mono);
@@ -3217,7 +3235,7 @@ html { scrollbar-width: thin; scrollbar-color: rgba(245,241,230,0.14) transparen
   letter-spacing: var(--ls-eyebrow);
   text-transform: uppercase;
   color: var(--fg3);
-  margin-top: 2px;
+  margin-top: 4px;
 }
 .fo-hero__portrait {
   aspect-ratio: 3 / 4;                /* match new PNG (was 4/5 — cropped bottom strip) */

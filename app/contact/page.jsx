@@ -44,8 +44,14 @@ const __MARKUP = String.raw`
         </div>
 
         <label class="contact-form__field">
-          <span class="contact-form__label">The situation in one paragraph</span>
-          <textarea name="situation" rows="6" required placeholder="What's the question that keeps coming back? What's been tried? What's the deadline behind it? Plain English is fine."></textarea>
+          <span class="contact-form__field-head">
+            <span class="contact-form__label">The situation in one paragraph</span>
+            <button type="button" data-speech aria-pressed="false" class="contact-form__speech-btn" hidden>
+              <span class="contact-form__speech-dot" aria-hidden="true"></span>
+              <span class="contact-form__speech-text">Speak</span>
+            </button>
+          </span>
+          <textarea name="situation" rows="6" required placeholder="What's the question that keeps coming back? What's been tried? What's the deadline behind it? Plain English is fine — or click Speak to dictate."></textarea>
         </label>
 
         <div class="contact-form__footer">

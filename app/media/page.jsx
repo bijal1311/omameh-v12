@@ -92,7 +92,41 @@ const __MARKUP = String.raw`
 
     <div class="section">
       <div class="section__head">
-        <span class="eyebrow">03 · Contacts</span>
+        <span class="eyebrow">03 · Share Omameh</span>
+        <h2>Scan, save, <em>share.</em></h2>
+        <p class="strap">Three QR codes — for the website, the company on LinkedIn, and Bijal directly. Save as SVG for cards, slides, signatures, or conference badges.</p>
+      </div>
+      <div class="qr-grid">
+        <article class="qr-card">
+          <div class="qr-card__code">
+            <img src="/qr/omameh-com-au.svg" alt="QR code · omameh.com.au" width="200" height="200" />
+          </div>
+          <h3 class="qr-card__label">Website</h3>
+          <p class="qr-card__url">omameh.com.au</p>
+          <p class="qr-card__download"><a href="/qr/omameh-com-au.svg" download>Save SVG ↓</a></p>
+        </article>
+        <article class="qr-card">
+          <div class="qr-card__code">
+            <img src="/qr/linkedin-company.svg" alt="QR code · Omameh on LinkedIn" width="200" height="200" />
+          </div>
+          <h3 class="qr-card__label">Company on LinkedIn</h3>
+          <p class="qr-card__url">linkedin.com/company/omameh</p>
+          <p class="qr-card__download"><a href="/qr/linkedin-company.svg" download>Save SVG ↓</a></p>
+        </article>
+        <article class="qr-card">
+          <div class="qr-card__code">
+            <img src="/qr/linkedin-bijal.svg" alt="QR code · Bijal on LinkedIn" width="200" height="200" />
+          </div>
+          <h3 class="qr-card__label">Bijal on LinkedIn</h3>
+          <p class="qr-card__url">linkedin.com/in/bijal-sejpal</p>
+          <p class="qr-card__download"><a href="/qr/linkedin-bijal.svg" download>Save SVG ↓</a></p>
+        </article>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section__head">
+        <span class="eyebrow">04 · Contacts</span>
         <h2>Where to <em>write.</em></h2>
       </div>
       <div class="grid-3">

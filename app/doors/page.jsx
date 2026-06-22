@@ -56,13 +56,13 @@ const __MARKUP = String.raw`
           </div>
           <span class="door-row__cta">Open →</span>
         </a>
-        <a class="door-row door-row--link" href="mailto:community@omameh.com.au">
+        <a class="door-row door-row--link" href="https://www.linkedin.com/company/omameh/" target="_blank" rel="noopener noreferrer">
           <span class="door-row__num">D06</span>
           <div>
             <h3 class="door-row__title">Community</h3>
-            <p style="color: var(--fg2); margin: var(--space-2) 0 0; font-size: 14px;">A LinkedIn community for second-act leaders rebuilding the work. <span class="door-row__alias">Community@omameh.com.au</span></p>
+            <p style="color: var(--fg2); margin: var(--space-2) 0 0; font-size: 14px;">A LinkedIn community for second-act leaders rebuilding the work. <span class="door-row__alias">linkedin.com/company/omameh ↗</span></p>
           </div>
-          <span class="door-row__cta">Open →</span>
+          <span class="door-row__cta">Open ↗</span>
         </a>
         <a class="door-row door-row--link" href="mailto:contact@omameh.com.au">
           <span class="door-row__num">D07</span>
@@ -72,11 +72,11 @@ const __MARKUP = String.raw`
           </div>
           <span class="door-row__cta">Open →</span>
         </a>
-        <a class="door-row door-row--link" href="mailto:contact@omameh.com.au?subject=Three%20Percent%20Pledge">
+        <a class="door-row door-row--link" href="mailto:foundation@omameh.com.au">
           <span class="door-row__num">D08</span>
           <div>
-            <h3 class="door-row__title">The Three Percent <em>Pledge</em></h3>
-            <p style="color: var(--fg2); margin: var(--space-2) 0 0; font-size: 14px;">Three percent of the practice committed to leaders rebuilding after a redundancy. Advisory and curated sponsored training. <span class="door-row__alias">Contact@omameh.com.au</span></p>
+            <h3 class="door-row__title">Maa <em>Foundation</em></h3>
+            <p style="color: var(--fg2); margin: var(--space-2) 0 0; font-size: 14px;">We back people and organisations doing the work of lifting others. Advisory, curated sponsored training, and partnership where it counts. <span class="door-row__alias">Foundation@omameh.com.au</span></p>
           </div>
           <span class="door-row__cta">Open →</span>
         </a>

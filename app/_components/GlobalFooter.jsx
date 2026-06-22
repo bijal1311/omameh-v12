@@ -67,7 +67,6 @@ export default function GlobalFooter() {
             </ul>
             <div className="emails">
               <a href="mailto:fieldnotes@omameh.com.au">FieldNotes@omameh.com.au</a>
-              <a href="mailto:community@omameh.com.au">Community@omameh.com.au</a>
             </div>
           </div>
         </div>

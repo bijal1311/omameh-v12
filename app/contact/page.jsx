@@ -92,8 +92,8 @@ const __MARKUP = String.raw`
         </div>
         <div>
           <h4 class="tag" style="color: var(--accent-warm);">Community</h4>
-          <p style="font-family: var(--font-mono); font-size: 12px; margin-top: var(--space-2);"><a href="mailto:community@omameh.com.au">Community@omameh.com.au</a></p>
-          <p style="color: var(--fg2); font-size: 13px; margin-top: var(--space-2);">For leaders rebuilding the work.</p>
+          <p style="font-family: var(--font-mono); font-size: 12px; margin-top: var(--space-2);"><a href="https://www.linkedin.com/company/omameh/" target="_blank" rel="noopener noreferrer">linkedin.com/company/omameh ↗</a></p>
+          <p style="color: var(--fg2); font-size: 13px; margin-top: var(--space-2);">For leaders rebuilding the work. Lives on LinkedIn.</p>
         </div>
         <div>
           <h4 class="tag" style="color: var(--accent-warm);">General</h4>
@@ -102,7 +102,7 @@ const __MARKUP = String.raw`
         </div>
         <div>
           <h4 class="tag" style="color: var(--accent-warm);">Foundation</h4>
-          <p style="font-family: var(--font-mono); font-size: 12px; margin-top: var(--space-2);"><a href="mailto:contact@omameh.com.au?subject=माँ%20Foundation">Maa Foundation</a></p>
+          <p style="font-family: var(--font-mono); font-size: 12px; margin-top: var(--space-2);"><a href="mailto:foundation@omameh.com.au">Foundation@omameh.com.au</a></p>
           <p style="color: var(--fg2); font-size: 13px; margin-top: var(--space-2);">Partnership for the giving arm of the practice.</p>
         </div>
       </div>

@@ -53,7 +53,7 @@ const __MARKUP = String.raw`
           <span class="eyebrow" style="color: var(--accent-warm);">Community</span>
           <h3 style="font-family: var(--font-edit-serif); font-size: 28px; line-height: var(--lh-tight); margin: var(--space-3) 0 var(--space-5);">For leaders <em>rebuilding how the work gets done.</em></h3>
           <a class="cta cta--primary" href="https://www.linkedin.com/company/omameh/" target="_blank" rel="noopener noreferrer">Join the community ↗</a>
-          <p class="subscribe__hint" style="margin-top: var(--space-4);">Convened on LinkedIn · Community@omameh.com.au</p>
+          <p class="subscribe__hint" style="margin-top: var(--space-4);">Convened on LinkedIn · linkedin.com/company/omameh</p>
         </div>
       </div>
     </div>

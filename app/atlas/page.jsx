@@ -38,6 +38,7 @@ const __MARKUP = String.raw`
     <div class="section section--space-8b">
       <div class="atlas-cta">
         <div class="atlas-cta__col">
+          <img class="atlas-qr" src="/qr/subscribe-fieldnotes.svg" alt="QR · scan to subscribe to Field Notes" width="100" height="100" />
           <span class="eyebrow" style="color: var(--accent-warm);">Subscribe</span>
           <h3 style="font-family: var(--font-edit-serif); font-size: 28px; line-height: var(--lh-tight); margin: var(--space-3) 0 var(--space-5);">Field Notes and Industry Outlooks, <em>straight to your inbox.</em></h3>
           <form class="subscribe" action="mailto:fieldnotes@omameh.com.au" method="post" enctype="text/plain">
@@ -45,25 +46,14 @@ const __MARKUP = String.raw`
             <button type="submit">Subscribe →</button>
           </form>
           <p class="subscribe__hint">One list · quarterly cadence · FieldNotes@omameh.com.au</p>
-          <div class="atlas-qr atlas-qr--subscribe">
-            <div class="atlas-qr__code">
-              <img src="/qr/subscribe-fieldnotes.svg" alt="QR · subscribe to Field Notes" width="120" height="120" />
-            </div>
-            <p class="atlas-qr__label">Scan to subscribe ↓</p>
-          </div>
         </div>
         <div class="atlas-cta__divider" aria-hidden="true"></div>
         <div class="atlas-cta__col">
+          <img class="atlas-qr" src="/qr/linkedin-company.svg" alt="QR · scan to join the community on LinkedIn" width="100" height="100" />
           <span class="eyebrow" style="color: var(--accent-warm);">Community</span>
           <h3 style="font-family: var(--font-edit-serif); font-size: 28px; line-height: var(--lh-tight); margin: var(--space-3) 0 var(--space-5);">For leaders <em>rebuilding how the work gets done.</em></h3>
           <a class="cta cta--primary" href="https://www.linkedin.com/company/omameh/" target="_blank" rel="noopener noreferrer">Join the community ↗</a>
           <p class="subscribe__hint" style="margin-top: var(--space-4);">Convened on LinkedIn · Community@omameh.com.au</p>
-          <div class="atlas-qr atlas-qr--community">
-            <div class="atlas-qr__code">
-              <img src="/qr/linkedin-company.svg" alt="QR · Omameh on LinkedIn" width="120" height="120" />
-            </div>
-            <p class="atlas-qr__label">Scan to join ↓</p>
-          </div>
         </div>
       </div>
     </div>

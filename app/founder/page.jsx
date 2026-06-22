@@ -72,14 +72,6 @@ const __MARKUP = String.raw`
           <span class="why__signoff-name">Bijal</span>
           <span class="why__signoff-role">Founder · Omameh</span>
         </p>
-
-        <figure class="fo-quote">
-          <blockquote class="fo-quote__text">Fight for the things that you care about, but do it in a way that will lead others to join you.</blockquote>
-          <figcaption class="fo-quote__attr">
-            <span class="name">Ruth Bader Ginsburg</span>
-            <span>Associate Justice · U.S. Supreme Court</span>
-          </figcaption>
-        </figure>
       </div>
     </div>
 

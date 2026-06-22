@@ -27,7 +27,7 @@ const __MARKUP = String.raw`
         <a class="door-row door-row--link" href="mailto:partner@omameh.com.au">
           <span class="door-row__num">D02</span>
           <div>
-            <h3 class="door-row__title">Partner with us</h3>
+            <h3 class="door-row__title">Partner with us · <em>globally</em></h3>
             <p style="color: var(--fg2); margin: var(--space-2) 0 0; font-size: 14px;">Delivery firms, embedded teams, industry advisors whose capability complements the bench. <span class="door-row__alias">Partner@omameh.com.au</span></p>
           </div>
           <span class="door-row__cta">Open →</span>
@@ -59,7 +59,7 @@ const __MARKUP = String.raw`
         <a class="door-row door-row--link" href="https://www.linkedin.com/company/omameh/" target="_blank" rel="noopener noreferrer">
           <span class="door-row__num">D06</span>
           <div>
-            <h3 class="door-row__title">Community</h3>
+            <h3 class="door-row__title">Join Omameh <em>Community</em></h3>
             <p style="color: var(--fg2); margin: var(--space-2) 0 0; font-size: 14px;">A LinkedIn community for second-act leaders rebuilding the work. <span class="door-row__alias">linkedin.com/company/omameh ↗</span></p>
           </div>
           <span class="door-row__cta">Open ↗</span>

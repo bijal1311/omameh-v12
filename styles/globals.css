@@ -3167,9 +3167,18 @@ html { scrollbar-width: thin; scrollbar-color: rgba(245,241,230,0.14) transparen
   color: var(--fg2, rgba(255,255,255,0.66));
 }
 .footer__brand .footer__maa-gloss__sep {
-  font-size: 20px;
-  color: var(--accent-warm, #C9A84C);              /* gold em-dash retains brand accent */
+  /* Gold filled circle (was an em-dash character).
+     Mirrors design's .maa-pron__dot pattern from maa-foundation.css —
+     same geometric treatment used between 'mā · mother' in the
+     pronunciation cue. Sized up from 4px → 6px to balance with the
+     20px adjacent text in the footer gloss. */
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-warm, #C9A84C);
   opacity: 0.85;
+  align-self: center;                              /* vertical centre on the gloss baseline row */
+  flex-shrink: 0;
 }
 .footer__brand .footer__maa-gloss__fdn {
   font-family: var(--font-sans, 'Inter', system-ui, sans-serif);

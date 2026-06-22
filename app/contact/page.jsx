@@ -39,7 +39,7 @@ const __MARKUP = String.raw`
           </label>
           <label class="contact-form__field">
             <span class="contact-form__label">Role</span>
-            <input type="text" name="role" autocomplete="organization-title" placeholder="CEO · CHRO · Chair · NED" />
+            <input type="text" name="role" autocomplete="organization-title" />
           </label>
         </div>
 

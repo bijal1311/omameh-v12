@@ -1621,11 +1621,17 @@ a:focus-visible, button:focus-visible {                    /* §3.4 */
    ===================================================================== */
 
 /* FIX 1 · Footer collapses to single column at <600px —
-   email aliases (~24 chars) don't fit a 2-col split below this width. */
+   email aliases (~24 chars) don't fit a 2-col split below this width.
+   FIX 1b (22 Jun 2026 post-launch): footer row 2 carries an empty
+   <div></div> placeholder that aligns the Connect col under the brand
+   col on desktop. On mobile when the row collapses to 1-col, the empty
+   div stacked as a blank vertical slot above the Connect heading. Hide
+   any empty child in the footer rows at mobile to close that gap. */
 @media (max-width: 600px) {
   .footer__row { grid-template-columns: 1fr !important; }
   .footer__row[style*="grid-template-columns"] { grid-template-columns: 1fr !important; }
   .footer__col[style*="grid-column: span 2"] { grid-column: auto !important; }
+  .footer__row > div:empty { display: none; }
 }
 
 /* FIX 2 · Atlas CTA band — reduce padding on mobile so inner button + email
@@ -2573,11 +2579,17 @@ html { scrollbar-width: thin; scrollbar-color: rgba(245,241,230,0.14) transparen
    ===================================================================== */
 
 /* FIX 1 · Footer collapses to single column at <600px —
-   email aliases (~24 chars) don't fit a 2-col split below this width. */
+   email aliases (~24 chars) don't fit a 2-col split below this width.
+   FIX 1b (22 Jun 2026 post-launch): footer row 2 carries an empty
+   <div></div> placeholder that aligns the Connect col under the brand
+   col on desktop. On mobile when the row collapses to 1-col, the empty
+   div stacked as a blank vertical slot above the Connect heading. Hide
+   any empty child in the footer rows at mobile to close that gap. */
 @media (max-width: 600px) {
   .footer__row { grid-template-columns: 1fr !important; }
   .footer__row[style*="grid-template-columns"] { grid-template-columns: 1fr !important; }
   .footer__col[style*="grid-column: span 2"] { grid-column: auto !important; }
+  .footer__row > div:empty { display: none; }
 }
 
 /* FIX 2 · Atlas CTA band — reduce padding on mobile so inner button + email

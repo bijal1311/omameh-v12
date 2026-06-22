@@ -75,7 +75,7 @@ const __MARKUP = String.raw`
         <a class="door-row door-row--link" href="mailto:foundation@omameh.com.au">
           <span class="door-row__num">D08</span>
           <div>
-            <h3 class="door-row__title">Maa <em>Foundation</em></h3>
+            <h3 class="door-row__title">Mā <em>Foundation</em></h3>
             <p style="color: var(--fg2); margin: var(--space-2) 0 0; font-size: 14px;">We back people and organisations doing the work of lifting others. Advisory, curated sponsored training, and partnership where it counts. <span class="door-row__alias">Foundation@omameh.com.au</span></p>
           </div>
           <span class="door-row__cta">Open →</span>

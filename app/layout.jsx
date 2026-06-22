@@ -13,6 +13,7 @@
 
 import { Playfair_Display, Inter, JetBrains_Mono, Cormorant_Garamond, Space_Mono } from 'next/font/google';
 import '../styles/globals.css';
+import '../styles/maa-foundation.css';
 import GlobalNav from './_components/GlobalNav';
 import GlobalFooter from './_components/GlobalFooter';
 
@@ -72,6 +73,19 @@ export const metadata = {
   robots: {
     index: true,
     follow: true,
+  },
+  icons: {
+    icon: [
+      { url: '/favicon-32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon-16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-48.png', sizes: '48x48', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/favicon-180.png', sizes: '180x180', type: 'image/png' },
+    ],
+    other: [
+      { rel: 'icon', url: '/favicon-512.png', sizes: '512x512', type: 'image/png' },
+    ],
   },
 };
 

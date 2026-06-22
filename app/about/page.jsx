@@ -174,8 +174,19 @@ const __MARKUP = String.raw`
 
     <div class="section" id="pledge">
       <div class="section__head">
-        <span class="eyebrow">06 · The Pledge · Year Three Foundation</span>
-        <h2>A standing share of the practice.</h2>
+        <span class="eyebrow">06 · Our foundation</span>
+        <span class="maa-lockup-h section__head-mark" role="img" aria-label="माँ Foundation">
+          <span class="maa-lockup-h__row">
+            <span class="maa-mark" aria-hidden="true">माँ</span>
+            <span class="maa-lockup-h__rule" aria-hidden="true"></span>
+            <span class="maa-fdn">Foundation</span>
+          </span>
+          <span class="maa-pron">
+            <span class="maa-pron__key">mā</span>
+            <span class="maa-pron__dot" aria-hidden="true"></span>
+            <span class="maa-pron__mean">mother</span>
+          </span>
+        </span>
       </div>
       <p class="strap" style="max-width: 60ch;">We back people and organisations doing the work of lifting others. Advisory, curated sponsored training, and partnership where it counts.</p>
       <p class="strap" style="max-width: 60ch;">Not-for-profits are welcome to connect — we're interviewing partners now to direct this well.</p>

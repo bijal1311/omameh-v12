@@ -23,7 +23,7 @@ const __MARKUP = String.raw`
       <div style="position:relative;">
         <span class="eyebrow" style="color: var(--accent-warm);">One team · two time zones</span>
         <h1 style="margin-top: var(--space-4);">We build the things <em>we advise on.</em></h1>
-        <p class="lede">One team, eight platforms. Architecture out of Sydney. Engineering out of Hyderabad. No handoff between them. Several already running in production — not a roadmap.</p>
+        <p class="lede">One team, eight platforms. <em>Architected end-to-end</em> — Sydney to Hyderabad, boardroom to build. No handoff between them. Several already running in production — not a roadmap.</p>
       </div>
     </div>
 
@@ -36,7 +36,7 @@ const __MARKUP = String.raw`
         <p style="color: var(--fg2); font-size: 17px; line-height: 1.65;">Most advisory practices stop at the recommendation. The board gets a view, then finds someone else to make it real — usually the firm that sold them the software in the first place.</p>
         <p style="color: var(--fg2); font-size: 17px; line-height: 1.65; margin-top: var(--space-4);">We hold both ends. Architecture is done here. Engineering is done in Hyderabad by Syntegreti, where we hold an equity partnership and where every platform below was built. Your lead talks to the architect who designs it and the engineers who build it. There is no relay.</p>
         <p style="color: var(--fg2); font-size: 17px; line-height: 1.65; margin-top: var(--space-4);">We built it this way deliberately. Pillar 03 of this practice is <em>Right Talent in the Right Place</em> — the right capability, in the right geography, by design rather than by arbitrage. This is that pillar applied to ourselves, before we recommend it to anyone else.</p>
-        <p style="color: var(--fg2); font-size: 17px; line-height: 1.65; margin-top: var(--space-4);">Australia and Asia-Pacific are where we start. They are not where we stop.</p>
+        <p style="color: var(--fg2); font-size: 17px; line-height: 1.65; margin-top: var(--space-4);">Australia and Asia-Pacific are where we start. They are not where we stop. <em>End-to-end architecture, wherever the work lands.</em></p>
         <p style="color: var(--fg3); font-size: 15px; margin-top: var(--space-5);">That is also why the next section exists.</p>
       </div>
     </div>
@@ -63,8 +63,28 @@ const __MARKUP = String.raw`
 
     <div class="section">
       <div class="section__head">
-        <span class="eyebrow"><img src="/icons/readiness.svg" alt="" width="14" height="14" style="vertical-align:-2px; margin-right:8px; opacity:0.85;">03 · The platforms</span>
-        <h2>Three at full weight. <em>Five on the bench.</em></h2>
+        <span class="eyebrow"><img src="/icons/readiness.svg" alt="" width="14" height="14" style="vertical-align:-2px; margin-right:8px; opacity:0.85;">03 · Two ways in</span>
+        <h2>Products <em>and</em> Solutions.</h2>
+        <p class="strap">Same team, same architecture, same equity partnership with Syntegreti — two different starting shapes.</p>
+      </div>
+
+      <div class="ways-in">
+        <div class="ways-in__col">
+          <span class="ways-in__label">Products</span>
+          <p class="ways-in__lead"><em>If what you need is on the bench.</em></p>
+          <p class="ways-in__body">Eight platforms, built once, deployable to your environment. Multi-tenant. AWS or Azure. In your cloud, under your controls. Several already running in production — the roster is below.</p>
+        </div>
+        <div class="ways-in__col ways-in__col--alt">
+          <span class="ways-in__label">Solutions</span>
+          <p class="ways-in__lead"><em>If it isn't.</em></p>
+          <p class="ways-in__body">Bespoke pieces, built for one client, for one problem. Same architects. Same engineers in Hyderabad. Same disclosure rules. Some become the next platform on the bench. Most stay yours.</p>
+          <p class="ways-in__cta"><a href="mailto:contact@omameh.com.au?subject=Solutions enquiry&body=Hi Bijal,%0D%0A%0D%0AI want to talk about a bespoke Solution.%0D%0A%0D%0AMy organisation:%0D%0AMy role:%0D%0AThe problem I am trying to solve:%0D%0A%0D%0AThank you.">Talk to us about a Solution →</a></p>
+        </div>
+      </div>
+
+      <div class="section__subhead">
+        <span class="eyebrow" style="color: var(--fg3);">03 · A · Products · the bench</span>
+        <h3 class="section__subhead-h">Three at full weight. <em>Five on the bench.</em></h3>
         <p class="strap">The three most relevant to ANZ boards first. The rest of the roster beneath.</p>
       </div>
 
@@ -74,7 +94,7 @@ const __MARKUP = String.raw`
           <header class="platform-card__head">
             <span class="platform-card__code">PL01</span>
             <h3 class="platform-card__name">Contract Intelligence</h3>
-            <p class="platform-card__one-line">Contract lifecycle intelligence, and the obligations inside it.</p>
+            <p class="platform-card__one-line">Contract lifecycle intelligence — every obligation extracted, risk-scored, and tracked end-to-end.</p>
           </header>
           <p class="platform-card__question"><em>You negotiated hard for six weeks. Who has read it since?</em></p>
           <ul class="platform-card__spec">
@@ -83,6 +103,7 @@ const __MARKUP = String.raw`
             <li>Multi-tenant, fully audit-traced.</li>
           </ul>
           <p class="platform-card__why">Why it matters here. APRA CPS 230 made service provider management a prudential obligation, and the transition period for existing material agreements has closed. Boards are accountable for obligations nobody is reading.</p>
+          <p class="platform-card__outcome"><span class="platform-card__outcome-dot" aria-hidden="true"></span>Nine specialised agents · full audit trace · deployable in your cloud.</p>
           <footer class="platform-card__foot">
             <span class="platform-card__status platform-card__status--live"><span class="platform-card__status-bead" aria-hidden="true"></span>Live · demo-ready</span>
             <a class="platform-card__cta" href="mailto:contact@omameh.com.au?subject=Book a demo · PL01 Contract Intelligence&body=Hi Bijal,%0D%0A%0D%0AI would like to book a demo of Contract Intelligence.%0D%0A%0D%0AMy organisation:%0D%0AMy role:%0D%0AThe problem I am trying to solve:%0D%0A%0D%0AThank you.">Book a demo →</a>
@@ -93,7 +114,7 @@ const __MARKUP = String.raw`
           <header class="platform-card__head">
             <span class="platform-card__code">PL02</span>
             <h3 class="platform-card__name">AI Governance</h3>
-            <p class="platform-card__one-line">Every LLM call in your enterprise, intercepted and logged.</p>
+            <p class="platform-card__one-line">Every LLM call in your enterprise, intercepted, policed, and evidenced.</p>
           </header>
           <p class="platform-card__question"><em>Can you show a regulator what your organisation asked an AI last quarter?</em></p>
           <ul class="platform-card__spec">
@@ -102,6 +123,7 @@ const __MARKUP = String.raw`
             <li>A complete audit log of all AI traffic across the enterprise.</li>
           </ul>
           <p class="platform-card__why">Why it matters here. A control that cannot be evidenced is not a control — it is an intention. This is the evidence layer.</p>
+          <p class="platform-card__outcome"><span class="platform-card__outcome-dot" aria-hidden="true"></span>In hardening · first regulated-industry reference under NDA.</p>
           <footer class="platform-card__foot">
             <span class="platform-card__status platform-card__status--built"><span class="platform-card__status-bead" aria-hidden="true"></span>Built · reference in progress</span>
             <a class="platform-card__cta" href="mailto:contact@omameh.com.au?subject=Book a demo · PL02 AI Governance&body=Hi Bijal,%0D%0A%0D%0AI would like to book a demo of AI Governance.%0D%0A%0D%0AMy organisation:%0D%0AMy role:%0D%0AThe problem I am trying to solve:%0D%0A%0D%0AThank you.">Book a demo →</a>
@@ -112,7 +134,7 @@ const __MARKUP = String.raw`
           <header class="platform-card__head">
             <span class="platform-card__code">PL03</span>
             <h3 class="platform-card__name">Business Operations</h3>
-            <p class="platform-card__one-line">Sales, Marketing, HR, Finance, Projects, Recruitment and ITSM in one platform.</p>
+            <p class="platform-card__one-line">Seven back-office systems, replaced by one — with 160 AI actions built in.</p>
           </header>
           <p class="platform-card__question"><em>How much of your team's week goes to work no one would miss?</em></p>
           <ul class="platform-card__spec">
@@ -121,6 +143,7 @@ const __MARKUP = String.raw`
             <li>Built for organisations too small to carry seven systems and too serious to run on spreadsheets.</li>
           </ul>
           <p class="platform-card__why">Why it matters here. One platform replaces the seven-tool stack that eats a small ops team's week.</p>
+          <p class="platform-card__outcome"><span class="platform-card__outcome-dot" aria-hidden="true"></span>In trial · 60% fewer tickets · 4 hours to 2 minutes on the L1 service desk.</p>
           <footer class="platform-card__foot">
             <span class="platform-card__status platform-card__status--trial"><span class="platform-card__status-bead" aria-hidden="true"></span>Live · in client trial</span>
             <a class="platform-card__cta" href="mailto:contact@omameh.com.au?subject=Book a demo · PL03 Business Operations&body=Hi Bijal,%0D%0A%0D%0AI would like to book a demo of Business Operations.%0D%0A%0D%0AMy organisation:%0D%0AMy role:%0D%0AThe problem I am trying to solve:%0D%0A%0D%0AThank you.">Book a demo →</a>
@@ -139,6 +162,12 @@ const __MARKUP = String.raw`
           <div class="platforms-bench__item"><h4>Datacenter Thermal</h4><p>Thermal intelligence for data centre operators.</p></div>
         </div>
       </div>
+
+      <aside class="solutions-callout">
+        <div class="solutions-callout__eyebrow"><span>03 · B · Solutions · off the bench</span></div>
+        <p class="solutions-callout__body"><em>If what you need is not on the bench,</em> the same team builds it — for one client, for one problem. Bespoke pieces, engineered end-to-end on the same architecture as the platforms above. Some become the next platform. Most stay yours.</p>
+        <p class="solutions-callout__cta"><a class="cta cta--primary" href="mailto:contact@omameh.com.au?subject=Solutions enquiry&body=Hi Bijal,%0D%0A%0D%0AI want to talk about a bespoke Solution.%0D%0A%0D%0AMy organisation:%0D%0AMy role:%0D%0AThe problem I am trying to solve:%0D%0A%0D%0AThank you.">Talk to us about a Solution →</a></p>
+      </aside>
     </div>
 
     <hr class="om-rule" style="margin-block: var(--space-8);">

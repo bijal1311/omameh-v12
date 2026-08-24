@@ -4121,5 +4121,152 @@ h1 em, h2 em, .fo-hero__name em {
 }
 .not-card p:last-child { margin-bottom: 0; }
 
+/* Two ways in · Products vs Solutions band (top of §03) */
+.ways-in {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-6);
+  margin: var(--space-6) 0;
+  padding: var(--space-6);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+}
+@media (max-width: 760px) { .ways-in { grid-template-columns: 1fr; gap: var(--space-5); } }
+.ways-in__col {
+  padding-right: var(--space-5);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+.ways-in__col--alt {
+  padding-right: 0;
+  padding-left: var(--space-5);
+  border-right: 0;
+  border-left: 1px solid rgba(201, 168, 76, 0.35);
+}
+@media (max-width: 760px) {
+  .ways-in__col, .ways-in__col--alt {
+    padding: 0 0 var(--space-5) 0;
+    border-right: 0;
+    border-left: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .ways-in__col--alt {
+    border-bottom: 0;
+    padding-bottom: 0;
+    padding-top: var(--space-5);
+    border-top: 1px solid rgba(201, 168, 76, 0.35);
+  }
+}
+.ways-in__label {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--accent-warm);
+  margin-bottom: var(--space-3);
+}
+.ways-in__lead {
+  font-family: var(--font-serif);
+  font-size: clamp(20px, 2vw, 26px);
+  line-height: 1.25;
+  color: var(--fg1);
+  margin: 0 0 var(--space-3);
+  letter-spacing: -0.01em;
+}
+.ways-in__body {
+  color: var(--fg2);
+  font-size: 15px;
+  line-height: 1.65;
+  margin: 0;
+}
+.ways-in__cta {
+  margin: var(--space-4) 0 0;
+}
+.ways-in__cta a {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent-warm);
+  text-decoration: none;
+  transition: color var(--dur-base) var(--ease-standard);
+}
+.ways-in__cta a:hover { color: var(--fg1); }
+
+/* §03 subhead used to introduce the Products bench beneath the band */
+.section__subhead {
+  margin: var(--space-7) 0 var(--space-4);
+  padding-top: var(--space-5);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+.section__subhead .eyebrow {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: var(--space-3);
+}
+.section__subhead-h {
+  font-family: var(--font-serif);
+  font-size: clamp(22px, 2.4vw, 30px);
+  line-height: 1.2;
+  color: var(--fg1);
+  margin: 0 0 var(--space-3);
+  letter-spacing: -0.01em;
+}
+
+/* Per-card outcome line — the aioverlords-style hard-number echo */
+.platform-card__outcome {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  letter-spacing: 0.06em;
+  line-height: 1.55;
+  color: #00D4CB;
+  margin: 0 0 var(--space-4);
+  padding: var(--space-3) 0;
+  border-top: 1px dashed rgba(0, 212, 203, 0.28);
+  border-bottom: 1px dashed rgba(0, 212, 203, 0.28);
+}
+.platform-card__outcome-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--accent-warm);
+  flex-shrink: 0;
+  margin-top: 5px;
+}
+
+/* Solutions callout — the off-the-bench card, after the platform bench */
+.solutions-callout {
+  margin-top: var(--space-7);
+  padding: var(--space-6);
+  border: 1px solid rgba(201, 168, 76, 0.35);
+  border-left: 3px solid var(--accent-warm);
+  border-radius: 12px;
+  background: rgba(201, 168, 76, 0.04);
+}
+.solutions-callout__eyebrow span {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--accent-warm);
+}
+.solutions-callout__body {
+  font-family: var(--font-serif);
+  font-size: clamp(18px, 1.8vw, 22px);
+  line-height: 1.5;
+  color: var(--fg1);
+  margin: var(--space-3) 0 var(--space-4);
+  letter-spacing: -0.005em;
+  max-width: 72ch;
+}
+.solutions-callout__cta { margin: 0; }
+
 /* END v12 content · Aug 2026
    ===================================================================== */

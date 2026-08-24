@@ -7,11 +7,22 @@ export const metadata = {
 };
 
 /**
- * Practice — V11 Final Build · 29 May 2026
+ * Practice — v12 · 24 Aug 2026 · reordered per content brief §4.
  *
- * Pillar descriptions are LOCKED V11 content from CLAUDE.md (the
- * canonical source). Mockup had scaffolded short descriptions; v12
- * uses CLAUDE.md prose + key question per pillar.
+ * Surfaces / Four lanes now sits above The Five Pillars. Rationale: L01
+ * Pressure-test is the only thing on the page a reader can say yes to.
+ * Renumbered so 01 · Surfaces · 02 · The Five Pillars · 03 · The Spine
+ * reads clean in the new order (brief said "no copy changes" but keeping
+ * the old 03 · 01 · 02 numbering after the move reads as a bug — using
+ * judgement here per Bijal's Q3 answer, revert if she prefers).
+ *
+ * L01 Pressure-test's expanded body now carries a mailto CTA so the tile
+ * is actionable, not just readable. Tap-to-expand still works (the click
+ * handler in wire-interactions.js skips inner <a> clicks).
+ *
+ * Pillar descriptions are LOCKED V11 content from CLAUDE.md. Mockup had
+ * scaffolded short descriptions; v12 uses CLAUDE.md prose + key question
+ * per pillar.
  *
  * H1 ceiling 56px via .page-practice scope (founder call D · 28 May).
  */
@@ -27,7 +38,69 @@ const __MARKUP = String.raw`
 
     <div class="section">
       <div class="section__head">
-        <span class="eyebrow">01 · The Five Pillars</span>
+        <span class="eyebrow">01 · Surfaces</span>
+        <h2>Four lanes of <em>engagement.</em></h2>
+      </div>
+
+      <div class="grid-4">
+        <div class="card card--reveal" tabindex="0">
+          <div class="card__face">
+            <div class="card__eyebrow"><span class="num">L01</span><span>Sense</span></div>
+            <h3 class="card__title">Pressure-test</h3>
+            <p class="card__strap">A short engagement. Six weeks. Six conversations.</p>
+            <span class="card__read">Read →</span>
+          </div>
+          <div class="card__expanded">
+            <p class="card__body">Surfaces the gap between strategy and execution — and the architectural work that closes it. Format: six conversations across six weeks · chair, CEO, executive committee, observer. Output: architecture map · gap analysis · readiness score on the eight dimensions.</p>
+            <p class="card__foot">Leads to · Modernisation · or a parked decision with clarity</p>
+            <p class="card__cta-row"><a class="cta cta--primary" href="mailto:contact@omameh.com.au?subject=Pressure-test enquiry&body=Hi Bijal,%0D%0A%0D%0AI would like to start with a Pressure-test.%0D%0A%0D%0AMy organisation:%0D%0AMy role:%0D%0AThe question the board is holding:%0D%0A%0D%0AThank you.">Book a Pressure-test →</a></p>
+          </div>
+        </div>
+
+        <div class="card card--reveal" tabindex="0">
+          <div class="card__face">
+            <div class="card__eyebrow"><span class="num">L02</span><span>Shift</span></div>
+            <h3 class="card__title">Modernisation</h3>
+            <p class="card__strap">A longer engagement. Rebuilds the architecture for AI-era load.</p>
+            <span class="card__read">Read →</span>
+          </div>
+          <div class="card__expanded">
+            <p class="card__body">Embedded, then handed over. The shape of most board mandates. We redesign the operating model, capability placement, governance cadence, and AI architecture. Capability stays inside the organisation — we step out the moment it compounds.</p>
+            <p class="card__foot">Typical · 6 to 12 months · embedded · handover by design</p>
+          </div>
+        </div>
+
+        <div class="card card--reveal" tabindex="0">
+          <div class="card__face">
+            <div class="card__eyebrow"><span class="num">L03</span><span>Scale</span></div>
+            <h3 class="card__title">Advisory</h3>
+            <p class="card__strap">Recurring counsel for the leader inside the transition.</p>
+            <span class="card__read">Read →</span>
+          </div>
+          <div class="card__expanded">
+            <p class="card__body">A standing room — boardroom, off-site, late-evening call. Strategy stress-tests, escalations, regulator-readiness reviews, and talent decisions. Annual partnership · monthly cadence by default · scaled to the work.</p>
+            <p class="card__foot">Cadence · Monthly board · off-site · 24/7 escalation</p>
+          </div>
+        </div>
+
+        <div class="card card--reveal" tabindex="0">
+          <div class="card__face">
+            <div class="card__eyebrow"><span class="num">L04</span><span>Bench</span></div>
+            <h3 class="card__title">Partners <em>&amp; Collaborations</em></h3>
+            <p class="card__strap">Embedded delivery with our vetted bench — Australia and India.</p>
+            <span class="card__read">Read →</span>
+          </div>
+          <div class="card__expanded">
+            <p class="card__body">The right talent in the right place, complementary to ours. Delivery firms, embedded teams, industry advisors whose capability complements the bench. Right-shoring as design, not labour arbitrage. A small bench, kept small on purpose.</p>
+            <p class="card__foot">Process · 30-min conversation → reference check → trial → annual agreement</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section__head">
+        <span class="eyebrow">02 · The Five Pillars</span>
         <h2>What we modernise.</h2>
       </div>
 
@@ -166,7 +239,7 @@ const __MARKUP = String.raw`
 
     <div class="section section--space-8b">
       <div class="section__head">
-        <span class="eyebrow">02 · The Spine</span>
+        <span class="eyebrow">03 · The Spine</span>
         <h2><em>Sense.</em> Shift. <em>Scale.</em></h2>
         <p class="strap">Three phases. One engagement. The architecture moves with you.</p>
       </div>
@@ -190,69 +263,8 @@ const __MARKUP = String.raw`
       </div>
     </div>
 
-    <div class="section">
-      <div class="section__head">
-        <span class="eyebrow">03 · Surfaces</span>
-        <h2>Four lanes of <em>engagement.</em></h2>
-      </div>
-
-      <div class="grid-4">
-        <div class="card card--reveal" tabindex="0">
-          <div class="card__face">
-            <div class="card__eyebrow"><span class="num">L01</span><span>Sense</span></div>
-            <h3 class="card__title">Pressure-test</h3>
-            <p class="card__strap">A short engagement. Six weeks. Six conversations.</p>
-            <span class="card__read">Read →</span>
-          </div>
-          <div class="card__expanded">
-            <p class="card__body">Surfaces the gap between strategy and execution — and the architectural work that closes it. Format: six conversations across six weeks · chair, CEO, executive committee, observer. Output: architecture map · gap analysis · readiness score on the eight dimensions.</p>
-            <p class="card__foot">Leads to · Modernisation · or a parked decision with clarity</p>
-          </div>
-        </div>
-
-        <div class="card card--reveal" tabindex="0">
-          <div class="card__face">
-            <div class="card__eyebrow"><span class="num">L02</span><span>Shift</span></div>
-            <h3 class="card__title">Modernisation</h3>
-            <p class="card__strap">A longer engagement. Rebuilds the architecture for AI-era load.</p>
-            <span class="card__read">Read →</span>
-          </div>
-          <div class="card__expanded">
-            <p class="card__body">Embedded, then handed over. The shape of most board mandates. We redesign the operating model, capability placement, governance cadence, and AI architecture. Capability stays inside the organisation — we step out the moment it compounds.</p>
-            <p class="card__foot">Typical · 6 to 12 months · embedded · handover by design</p>
-          </div>
-        </div>
-
-        <div class="card card--reveal" tabindex="0">
-          <div class="card__face">
-            <div class="card__eyebrow"><span class="num">L03</span><span>Scale</span></div>
-            <h3 class="card__title">Advisory</h3>
-            <p class="card__strap">Recurring counsel for the leader inside the transition.</p>
-            <span class="card__read">Read →</span>
-          </div>
-          <div class="card__expanded">
-            <p class="card__body">A standing room — boardroom, off-site, late-evening call. Strategy stress-tests, escalations, regulator-readiness reviews, and talent decisions. Annual partnership · monthly cadence by default · scaled to the work.</p>
-            <p class="card__foot">Cadence · Monthly board · off-site · 24/7 escalation</p>
-          </div>
-        </div>
-
-        <div class="card card--reveal" tabindex="0">
-          <div class="card__face">
-            <div class="card__eyebrow"><span class="num">L04</span><span>Bench</span></div>
-            <h3 class="card__title">Partners <em>&amp; Collaborations</em></h3>
-            <p class="card__strap">Embedded delivery with our vetted bench — Australia and India.</p>
-            <span class="card__read">Read →</span>
-          </div>
-          <div class="card__expanded">
-            <p class="card__body">The right talent in the right place, complementary to ours. Delivery firms, embedded teams, industry advisors whose capability complements the bench. Right-shoring as design, not labour arbitrage. A small bench, kept small on purpose.</p>
-            <p class="card__foot">Process · 30-min conversation → reference check → trial → annual agreement</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <hr class="rule">
-    <p class="tag" style="text-align:center"><a href="/atlas">Continue reading → <em>What does the work look like in the open?</em> · Next · 04 · Atlas</a></p>
+    <p class="tag" style="text-align:center"><a href="/products">Continue reading → <em>We build the things we advise on.</em> · Next · 04 · Products</a></p>
   </div>
 `;
 

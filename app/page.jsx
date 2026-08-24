@@ -111,6 +111,7 @@ const __MARKUP = String.raw`
         <span class="eyebrow">01 · The Reframe</span>
         <h1>Built between strategy and <em>execution.</em> The architecture between them is the <em>work.</em></h1>
         <p class="lede">A specialist advisory practice for boards and senior leaders building organisations structurally ready for the AI era. Business architecture sits between strategy and execution. We design, embed, and stay until it compounds.</p>
+        <p class="signal-line"><em>Decisions taking eight weeks that need eight days.</em></p>
       </div>
 
       <div class="grid-3">
@@ -156,6 +157,13 @@ const __MARKUP = String.raw`
     </div>
 
     <div class="section">
+      <div class="failure-block">
+        <p class="failure-block__title">Most AI programmes do not fail <em>on the technology.</em></p>
+        <p class="failure-block__body">The pilot usually works. It just cannot survive contact with how the organisation actually operates — the decision rights, the handoffs and the workarounds that have accumulated into an operating model nobody designed.</p>
+      </div>
+    </div>
+
+    <div class="section">
       <div class="section__head">
         <span class="eyebrow">03 · Omameh Group · the architecture of the practice</span>
       </div>
@@ -166,6 +174,7 @@ const __MARKUP = String.raw`
             <div class="card__eyebrow"><span class="num">01 · Architect with us</span></div>
             <h3 class="card__title">Omameh <em>Advisory</em></h3>
             <p class="card__strap">Sense, shift, scale.</p>
+            <p class="card__signal"><em>Starts with a Pressure-test · six weeks · six conversations</em></p>
             <span class="card__read">Read →</span>
           </div>
           <div class="card__expanded">
@@ -181,7 +190,7 @@ const __MARKUP = String.raw`
             <span class="card__read">Read →</span>
           </div>
           <div class="card__expanded">
-            <p class="card__body">Twelve-month build cycles are the wrong unit of time for the AI era. Built AI native products, MVPs, agentic workflows, orchestration layers, digital capability and more with us.</p>
+            <p class="card__body">Eight platforms, built with Syntegreti. Several already in production. We are the Australian and Asia-Pacific route to them.</p>
           </div>
         </div>
 

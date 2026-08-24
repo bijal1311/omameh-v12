@@ -15,6 +15,8 @@ const LINKS = [
   ['Home',     '/',         false],
   ['About',    '/about',    false],
   ['Practice', '/practice', false],
+  ['Products', '/products', false],
+  ['Fluency',  '/fluency',  false],
   ['Atlas',    '/atlas',    true],
   ['Doors',    '/doors',    false],
   ['Founder',  '/founder',  false],

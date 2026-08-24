@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none" role="img" aria-label="Bearings">
+  <title>Omameh icon · Bearings · minimum render 48px</title>
+  <circle cx="200" cy="200" r="178" stroke="rgba(201,168,76,0.55)" stroke-width="12" stroke-dasharray="16 40"></circle>
+  <circle cx="378" cy="200" r="14" fill="#C9A84C" opacity="0.85"></circle>
+  <circle cx="200" cy="378" r="14" fill="#C9A84C" opacity="0.85"></circle>
+  <circle cx="22" cy="200" r="14" fill="#C9A84C" opacity="0.85"></circle>
+  <circle cx="200" cy="200" r="20" fill="#C9A84C"></circle>
+</svg>

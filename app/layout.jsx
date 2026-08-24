@@ -14,6 +14,7 @@
 import { Playfair_Display, Inter, JetBrains_Mono, Cormorant_Garamond, Space_Mono, Caveat } from 'next/font/google';
 import '../styles/globals.css';
 import '../styles/maa-foundation.css';
+import '../styles/omameh-motifs.css';
 import GlobalNav from './_components/GlobalNav';
 import GlobalFooter from './_components/GlobalFooter';
 

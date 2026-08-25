@@ -4268,5 +4268,193 @@ h1 em, h2 em, .fo-hero__name em {
 }
 .solutions-callout__cta { margin: 0; }
 
-/* END v12 content · Aug 2026
+/* =====================================================================
+   Cowork brief additions · V12_BUILD_PROMPT_for_Code.md · 24 Aug 2026
+   Fluency course-catalogue rewrite · Home §04 Who we work with · syntegreti
+   secondary CTAs · /about independence block reuses existing tokens.
+   ===================================================================== */
+
+/* --- Fluency · course cards (§5) --------------------------------- */
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-5);
+  margin-top: var(--space-6);
+}
+.course-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-top: 3px solid var(--accent-warm);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  padding: var(--space-6);
+}
+.course-card__head { margin-bottom: var(--space-4); }
+.course-card__code {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--fg3);
+  margin-bottom: var(--space-3);
+}
+.course-card__name {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  line-height: 1.2;
+  color: var(--fg1);
+  margin: 0;
+}
+.course-card__question {
+  font-family: var(--font-serif);
+  font-size: 17px;
+  line-height: 1.4;
+  color: var(--accent-warm);
+  margin: 0 0 var(--space-5);
+  padding-left: var(--space-3);
+  border-left: 2px solid var(--accent-warm);
+}
+.course-card__block { margin-bottom: var(--space-4); }
+.course-card__label {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--fg3);
+  margin-bottom: var(--space-2);
+}
+.course-card__block p {
+  color: var(--fg2);
+  font-size: 14.5px;
+  line-height: 1.6;
+  margin: 0;
+}
+.course-card__foot {
+  margin-top: auto;
+  padding-top: var(--space-4);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+.course-card__format {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent-warm);
+  padding: 6px 14px;
+  border: 1px solid rgba(201, 168, 76, 0.4);
+  border-radius: 999px;
+}
+.course-card__format-bead {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--accent-warm);
+}
+.courses-cta {
+  margin-top: var(--space-6);
+  display: inline-flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+/* --- Fluency · How a day actually runs (§7) --------------------- */
+.day-runs {
+  display: grid;
+  grid-template-columns: minmax(200px, 320px) 1fr;
+  gap: var(--space-7);
+  align-items: start;
+  margin-top: var(--space-5);
+}
+@media (max-width: 860px) { .day-runs { grid-template-columns: 1fr; } }
+.day-runs__diagram { padding: var(--space-4) 0; }
+.day-runs__steps {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+}
+.day-step {
+  padding-left: var(--space-6);
+  position: relative;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+.day-step__label {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--accent-warm);
+  transform: translateX(calc(-100% - var(--space-3)));
+}
+.day-step p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--fg2);
+  margin: 0;
+}
+.day-runs__meta {
+  grid-column: 1 / -1;
+  color: var(--fg1);
+  font-family: var(--font-serif);
+  font-size: 17px;
+  margin: var(--space-5) 0 0;
+  padding-top: var(--space-4);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* --- Home · §04 Who we work with -------------------------------- */
+.who-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-5);
+  margin-top: var(--space-6);
+}
+@media (max-width: 960px) { .who-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .who-grid { grid-template-columns: 1fr; } }
+.who-card {
+  padding: var(--space-5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.02);
+}
+.who-card__name {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  line-height: 1.25;
+  color: var(--fg1);
+  margin: 0 0 var(--space-3);
+}
+.who-card__body {
+  color: var(--fg2);
+  font-size: 14.5px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* --- Products · syntegreti secondary CTAs ----------------------- */
+.platform-card__ctas {
+  display: inline-flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  align-items: center;
+}
+.platform-card__cta--secondary {
+  color: var(--fg3);
+}
+.platform-card__cta--secondary:hover { color: #00D4CB; }
+.solutions-callout__ctas {
+  margin: 0;
+  display: inline-flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+/* END Cowork brief additions
    ===================================================================== */

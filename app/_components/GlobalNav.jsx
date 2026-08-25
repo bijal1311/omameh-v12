@@ -11,6 +11,9 @@
 
 // Top nav · 8 items only · plain names, no numbers.
 // Media + Privacy live in the footer, not in the top bar.
+// Primary nav · 8 items per Cowork brief (V12_BUILD_PROMPT_for_Code.md §2).
+// Doors · Case 00 · Media moved to footer to stop the primary nav bloating
+// past readable width. All three routes still live and linked from content.
 const LINKS = [
   ['Home',     '/',         false],
   ['About',    '/about',    false],
@@ -18,9 +21,7 @@ const LINKS = [
   ['Products', '/products', false],
   ['Fluency',  '/fluency',  false],
   ['Atlas',    '/atlas',    true],
-  ['Doors',    '/doors',    false],
   ['Founder',  '/founder',  false],
-  ['Case 00',  '/case-00',  false],
   ['Contact',  '/contact',  false],
 ];
 

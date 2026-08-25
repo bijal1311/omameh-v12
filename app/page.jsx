@@ -220,6 +220,34 @@ const __MARKUP = String.raw`
       </div>
     </div>
 
+    <div class="section" style="position:relative;">
+      <div class="om-field-open-ring om-field-layer" aria-hidden="true"></div>
+      <div style="position:relative;">
+        <div class="section__head">
+          <span class="eyebrow">04 · Who we work with</span>
+          <h2>Four markets. <em>One practice.</em></h2>
+        </div>
+        <div class="who-grid">
+          <div class="who-card">
+            <h3 class="who-card__name">Enterprise</h3>
+            <p class="who-card__body">Large, regulated, carrying the problem at scale. <em>Advisory, platforms and capability.</em></p>
+          </div>
+          <div class="who-card">
+            <h3 class="who-card__name">Small and mid-sized business</h3>
+            <p class="who-card__body">Too small for seven systems, too serious for spreadsheets. <em>The operations platform, and seats on the courses.</em></p>
+          </div>
+          <div class="who-card">
+            <h3 class="who-card__name">Boutique consulting firms</h3>
+            <p class="who-card__body">They hold the client relationship and don't build. <em>We become the technology behind them.</em></p>
+          </div>
+          <div class="who-card">
+            <h3 class="who-card__name">People with an idea</h3>
+            <p class="who-card__body">Founders and operators who want their own product made real.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <hr class="rule">
     <p class="tag" style="text-align:center"><a href="/about">Continue reading → If this is the question, <em>what is Omameh qualified to ask it with?</em> · Next · 02 · About</a></p>
   </div>

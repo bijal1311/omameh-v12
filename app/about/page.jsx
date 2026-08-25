@@ -58,9 +58,28 @@ const __MARKUP = String.raw`
       </div>
     </div>
 
+    <div class="section" id="independence" style="position:relative;">
+      <div class="om-field-open-ring om-field-layer" aria-hidden="true"></div>
+      <div style="position:relative;">
+        <div class="section__head">
+          <span class="eyebrow">03 · Independence · the disclosure</span>
+          <h2>We advise, we build, and <em>we tell you which is which.</em></h2>
+        </div>
+        <div style="max-width: 78ch;">
+          <p style="color: var(--fg1); font-size: 18px; line-height: 1.6;">One delivery team, two companies. Omameh holds equity in the one that builds these platforms. You should know that before anything else on this page.</p>
+          <p style="color: var(--fg2); font-size: 16px; margin-top: var(--space-5);">Two rules hold, and they are not negotiable:</p>
+          <ol style="color: var(--fg2); font-size: 16px; line-height: 1.7; padding-left: var(--space-5); margin-top: var(--space-3);">
+            <li style="margin-bottom: var(--space-3);">The advisory arm never recommends an Omameh product without disclosing the interest, in writing, at the time of the recommendation.</li>
+            <li>We never charge for a recommendation that leads to a related sale. You pay for the advice or you pay for the build. Never both on the same decision.</li>
+          </ol>
+          <p style="color: var(--fg3); font-size: 15px; margin-top: var(--space-5);"><em>Ask us to put it in the engagement letter. We will.</em></p>
+        </div>
+      </div>
+    </div>
+
     <div class="section section--space-8b">
       <div class="section__head">
-        <span class="eyebrow">03 · Markets · five sectors of depth</span>
+        <span class="eyebrow">04 · Markets · five sectors of depth</span>
         <h2>Five sectors of <em>depth.</em></h2>
         <p class="strap">Five sectors where the AI era is forcing structural choices. Where Omameh has bench, currency, and pattern recognition built from two decades inside.</p>
       </div>
@@ -135,7 +154,7 @@ const __MARKUP = String.raw`
 
     <div class="section">
       <div class="section__head">
-        <span class="eyebrow">04 · Where we work</span>
+        <span class="eyebrow">05 · Where we work</span>
         <h2>What we work <em>on.</em></h2>
         <p class="strap">Domains and the connective tissue between them is the architecture.</p>
       </div>
@@ -161,7 +180,7 @@ const __MARKUP = String.raw`
 
     <div class="section section--space-8b">
       <div class="section__head">
-        <span class="eyebrow">05 · Our Partners</span>
+        <span class="eyebrow">06 · Our Partners</span>
         <h2>The bench grows by <em>vetted partnership</em> and <em>active collaborations.</em></h2>
       </div>
       <div class="container--narrow" style="padding: 0;">
@@ -174,7 +193,7 @@ const __MARKUP = String.raw`
 
     <div class="section" id="pledge">
       <div class="section__head">
-        <span class="eyebrow">06 · Our foundation</span>
+        <span class="eyebrow">07 · Our foundation</span>
         <span class="maa-lockup-h section__head-mark" role="img" aria-label="माँ Foundation">
           <span class="maa-lockup-h__row">
             <span class="maa-mark" aria-hidden="true">माँ</span>

@@ -78,6 +78,7 @@ export default function GlobalFooter() {
             <ul>
               <li><a href="/founder">Founder</a></li>
               <li><a href="/doors">Doors</a></li>
+              <li><a href="/case-00">Case 00</a></li>
               <li><a href="/media">Media kit</a></li>
               <li><a href="/contact">Contact</a></li>
               <li><a href="https://www.linkedin.com/in/bijal-sejpal/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></li>

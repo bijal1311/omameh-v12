@@ -106,10 +106,7 @@ const __MARKUP = String.raw`
           <p class="platform-card__outcome"><span class="platform-card__outcome-dot" aria-hidden="true"></span>Nine specialised agents · full audit trace · deployable in your cloud.</p>
           <footer class="platform-card__foot">
             <span class="platform-card__status platform-card__status--live"><span class="platform-card__status-bead" aria-hidden="true"></span>Live · demo-ready</span>
-            <span class="platform-card__ctas">
-              <a class="platform-card__cta" href="mailto:contact@omameh.com.au?subject=Book a demo · PL01 Contract Intelligence&body=Hi Bijal,%0D%0A%0D%0AI would like to book a demo of Contract Intelligence.%0D%0A%0D%0AMy organisation:%0D%0AMy role:%0D%0AThe problem I am trying to solve:%0D%0A%0D%0AThank you.">Book a demo →</a>
-              <a class="platform-card__cta platform-card__cta--secondary" href="https://syntegreti.com/products/" target="_blank" rel="noopener noreferrer">See on Syntegreti ↗</a>
-            </span>
+            <a class="platform-card__cta" href="mailto:contact@omameh.com.au?subject=Book a demo · PL01 Contract Intelligence&body=Hi Bijal,%0D%0A%0D%0AI would like to book a demo of Contract Intelligence.%0D%0A%0D%0AMy organisation:%0D%0AMy role:%0D%0AThe problem I am trying to solve:%0D%0A%0D%0AThank you.">Book a demo →</a>
           </footer>
         </article>
 
@@ -129,10 +126,7 @@ const __MARKUP = String.raw`
           <p class="platform-card__outcome"><span class="platform-card__outcome-dot" aria-hidden="true"></span>In hardening · first regulated-industry reference under NDA.</p>
           <footer class="platform-card__foot">
             <span class="platform-card__status platform-card__status--built"><span class="platform-card__status-bead" aria-hidden="true"></span>Built · reference in progress</span>
-            <span class="platform-card__ctas">
-              <a class="platform-card__cta" href="mailto:contact@omameh.com.au?subject=Book a demo · PL02 AI Governance&body=Hi Bijal,%0D%0A%0D%0AI would like to book a demo of AI Governance.%0D%0A%0D%0AMy organisation:%0D%0AMy role:%0D%0AThe problem I am trying to solve:%0D%0A%0D%0AThank you.">Book a demo →</a>
-              <a class="platform-card__cta platform-card__cta--secondary" href="https://syntegreti.com/products/" target="_blank" rel="noopener noreferrer">See on Syntegreti ↗</a>
-            </span>
+            <a class="platform-card__cta" href="mailto:contact@omameh.com.au?subject=Book a demo · PL02 AI Governance&body=Hi Bijal,%0D%0A%0D%0AI would like to book a demo of AI Governance.%0D%0A%0D%0AMy organisation:%0D%0AMy role:%0D%0AThe problem I am trying to solve:%0D%0A%0D%0AThank you.">Book a demo →</a>
           </footer>
         </article>
 
@@ -152,10 +146,7 @@ const __MARKUP = String.raw`
           <p class="platform-card__outcome"><span class="platform-card__outcome-dot" aria-hidden="true"></span>In trial · 60% fewer tickets · 4 hours to 2 minutes on the L1 service desk.</p>
           <footer class="platform-card__foot">
             <span class="platform-card__status platform-card__status--trial"><span class="platform-card__status-bead" aria-hidden="true"></span>Live · in client trial</span>
-            <span class="platform-card__ctas">
-              <a class="platform-card__cta" href="mailto:contact@omameh.com.au?subject=Book a demo · PL03 Business Operations&body=Hi Bijal,%0D%0A%0D%0AI would like to book a demo of Business Operations.%0D%0A%0D%0AMy organisation:%0D%0AMy role:%0D%0AThe problem I am trying to solve:%0D%0A%0D%0AThank you.">Book a demo →</a>
-              <a class="platform-card__cta platform-card__cta--secondary" href="https://syntegreti.com/products/" target="_blank" rel="noopener noreferrer">See on Syntegreti ↗</a>
-            </span>
+            <a class="platform-card__cta" href="mailto:contact@omameh.com.au?subject=Book a demo · PL03 Business Operations&body=Hi Bijal,%0D%0A%0D%0AI would like to book a demo of Business Operations.%0D%0A%0D%0AMy organisation:%0D%0AMy role:%0D%0AThe problem I am trying to solve:%0D%0A%0D%0AThank you.">Book a demo →</a>
           </footer>
         </article>
 
@@ -175,10 +166,7 @@ const __MARKUP = String.raw`
       <aside class="solutions-callout">
         <div class="solutions-callout__eyebrow"><span>03 · B · Solutions · off the bench</span></div>
         <p class="solutions-callout__body"><em>If what you need is not on the bench,</em> the same team builds it — for one client, for one problem. Bespoke pieces, engineered end-to-end on the same architecture as the platforms above. Some become the next platform. Most stay yours.</p>
-        <p class="solutions-callout__ctas">
-          <a class="cta cta--primary" href="mailto:contact@omameh.com.au?subject=Solutions enquiry&body=Hi Bijal,%0D%0A%0D%0AI want to talk about a bespoke Solution.%0D%0A%0D%0AMy organisation:%0D%0AMy role:%0D%0AThe problem I am trying to solve:%0D%0A%0D%0AThank you.">Talk to us about a Solution →</a>
-          <a class="cta" href="https://syntegreti.com/services/" target="_blank" rel="noopener noreferrer">See the services ↗</a>
-        </p>
+        <p class="solutions-callout__cta"><a class="cta cta--primary" href="mailto:contact@omameh.com.au?subject=Solutions enquiry&body=Hi Bijal,%0D%0A%0D%0AI want to talk about a bespoke Solution.%0D%0A%0D%0AMy organisation:%0D%0AMy role:%0D%0AThe problem I am trying to solve:%0D%0A%0D%0AThank you.">Talk to us about a Solution →</a></p>
       </aside>
     </div>
 

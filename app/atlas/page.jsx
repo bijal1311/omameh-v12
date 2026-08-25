@@ -51,6 +51,14 @@ const __MARKUP = String.raw`
           <h3 class="feed-item__hook">On leadership, AI, and the shape of the work changing underneath it.</h3>
           <span class="feed-item__cta">Read on LinkedIn ↗</span>
         </a>
+        <a class="feed-item" href="https://www.linkedin.com/posts/bijal-sejpal_gratitude-inspiration-payitforward-share-7198925334858121216-UCdn/" target="_blank" rel="noopener noreferrer">
+          <div class="feed-item__meta">
+            <span class="feed-item__source">Bijal · LinkedIn</span>
+            <span class="feed-item__topic">Gratitude · Inspiration · Pay it forward</span>
+          </div>
+          <h3 class="feed-item__hook">On the lift others gave us, and the discipline of paying it forward.</h3>
+          <span class="feed-item__cta">Read on LinkedIn ↗</span>
+        </a>
       </div>
     </div>
 

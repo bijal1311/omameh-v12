@@ -67,6 +67,14 @@ const __MARKUP = String.raw`
           <h3 class="feed-item__hook">On cloud, AI, and what enterprise transformation actually looks like on the ground.</h3>
           <span class="feed-item__cta">Read on LinkedIn ↗</span>
         </a>
+        <a class="feed-item" href="https://www.linkedin.com/posts/theortusclub-knowledgesharing-saasevolution-ugcPost-7483382872242872321-3gL0/" target="_blank" rel="noopener noreferrer">
+          <div class="feed-item__meta">
+            <span class="feed-item__source">The Ortus Club · LinkedIn</span>
+            <span class="feed-item__topic">Knowledge sharing · SaaS evolution</span>
+          </div>
+          <h3 class="feed-item__hook">On knowledge sharing and how SaaS is evolving in the room.</h3>
+          <span class="feed-item__cta">Read on LinkedIn ↗</span>
+        </a>
       </div>
     </div>
 

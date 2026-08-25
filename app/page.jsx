@@ -225,25 +225,101 @@ const __MARKUP = String.raw`
       <div style="position:relative;">
         <div class="section__head">
           <span class="eyebrow">04 · Who we work with</span>
-          <h2>Four markets. <em>One practice.</em></h2>
+          <h2>Effort does not scale. <em>Systems do.</em></h2>
+          <p class="strap">Most businesses grow by adding effort. More people, more hours, more spreadsheets holding the gaps together. It works until it stops working — and the point it stops is rarely visible until it has already passed.</p>
+          <p class="strap">We design the operating model underneath, so growth stops depending on how hard everyone is working.</p>
         </div>
+
+        <div class="who-header">
+          <h3>Four starting points. <em>One practice.</em></h3>
+          <p>The problem is the same at every size. Only the shape of it changes.</p>
+        </div>
+
         <div class="who-grid">
-          <div class="who-card">
-            <h3 class="who-card__name">Enterprise</h3>
-            <p class="who-card__body">Large, regulated, carrying the problem at scale. <em>Advisory, platforms and capability.</em></p>
-          </div>
-          <div class="who-card">
-            <h3 class="who-card__name">Small and mid-sized business</h3>
-            <p class="who-card__body">Too small for seven systems, too serious for spreadsheets. <em>The operations platform, and seats on the courses.</em></p>
-          </div>
-          <div class="who-card">
-            <h3 class="who-card__name">Boutique consulting firms</h3>
-            <p class="who-card__body">They hold the client relationship and don't build. <em>We become the technology behind them.</em></p>
-          </div>
-          <div class="who-card">
-            <h3 class="who-card__name">People with an idea</h3>
-            <p class="who-card__body">Founders and operators who want their own product made real.</p>
-          </div>
+
+          <article class="who-card">
+            <div class="who-card__head">
+              <span class="who-card__num">01 ·</span>
+              <h3 class="who-card__name">Enterprise</h3>
+            </div>
+            <p class="who-card__subtitle"><em>From complexity to capability.</em></p>
+            <p class="who-card__problem">Large organisations carry process, technology and operational debt that nobody designed and everybody works around. The strategy is usually sound. The architecture beneath it cannot carry it.</p>
+            <p class="who-card__do">We modernise the operating model, put governance where accountability already sits, and build the capability to run it after we leave.</p>
+            <div class="who-card__examples">
+              <div class="who-card__examples-label">What that looks like</div>
+              <p class="who-card__example">— Supplier obligations monitored continuously instead of read once at signing</p>
+              <p class="who-card__example">— Every AI decision logged and evidenced before a regulator asks</p>
+              <p class="who-card__example">— Claims and case work triaged and routed without a person reading it first</p>
+            </div>
+            <p class="who-card__progression">Complexity → clarity → capability</p>
+          </article>
+
+          <article class="who-card">
+            <div class="who-card__head">
+              <span class="who-card__num">02 ·</span>
+              <h3 class="who-card__name">Growing business</h3>
+            </div>
+            <p class="who-card__subtitle"><em>From founder-led to system-led.</em></p>
+            <p class="who-card__problem">There is a point where the spreadsheet that got you here becomes the thing holding you back. Too small for seven systems. Too serious for the workarounds.</p>
+            <p class="who-card__do">We build the operations layer that gives you visibility, takes work off people, and creates room to grow into.</p>
+            <div class="who-card__examples">
+              <div class="who-card__examples-label">What that looks like</div>
+              <p class="who-card__example">— Quote to invoice to payment, running end to end without chasing</p>
+              <p class="who-card__example">— New customers onboarded the same way every time, whoever is on</p>
+              <p class="who-card__example">— One view of the business, so the founder is not the reporting system</p>
+            </div>
+            <p class="who-card__progression">Effort → automation → capacity</p>
+          </article>
+
+          <article class="who-card">
+            <div class="who-card__head">
+              <span class="who-card__num">03 ·</span>
+              <h3 class="who-card__name">Independent operator</h3>
+            </div>
+            <p class="who-card__subtitle"><em>From hours to leverage.</em></p>
+            <p class="who-card__problem">Consultants, advisers and fractional operators hit the same ceiling. Growth means more hours, and there are no more hours.</p>
+            <p class="who-card__do">We build the systems that let one person run something larger — the work handled, the judgement still yours.</p>
+            <div class="who-card__examples">
+              <div class="who-card__examples-label">What that looks like</div>
+              <p class="who-card__example">— Proposals and scopes drafted from your own method, not from a blank page</p>
+              <p class="who-card__example">— Client research and meeting preparation done before you sit down</p>
+              <p class="who-card__example">— Delivery running to a standard whether you are in the room or not</p>
+            </div>
+            <p class="who-card__aside"><em>A team you did not have to hire.</em></p>
+            <p class="who-card__progression">Expertise → capacity → scale</p>
+            <p class="who-card__where"><strong>Where to start</strong> — a seat on an AI-Era Fluency course, Intuka for the operations underneath, and a solution built for the part nobody sells off the shelf.</p>
+          </article>
+
+          <article class="who-card">
+            <div class="who-card__head">
+              <span class="who-card__num">04 ·</span>
+              <h3 class="who-card__name">Expertise becoming a product</h3>
+            </div>
+            <p class="who-card__subtitle"><em>From service to asset.</em></p>
+            <p class="who-card__problem">Boutique firms and specialists solve the same problem for the fifth time and recognise it. That recognition is worth something, and almost none of it gets captured.</p>
+            <p class="who-card__do">We turn the method into a product — built, owned, and earning after the engagement ends.</p>
+            <div class="who-card__examples">
+              <div class="who-card__examples-label">What that looks like</div>
+              <p class="who-card__example">— An assessment your clients complete themselves, scored against your framework</p>
+              <p class="who-card__example">— A compliance product for the regulation you already know better than anyone</p>
+              <p class="who-card__example">— Your methodology codified into software your clients pay for annually</p>
+            </div>
+            <p class="who-card__case-link">We have done this to ourselves. <a href="/case-00">Case 00 →</a></p>
+            <p class="who-card__progression">Service → solution → asset</p>
+          </article>
+
+        </div>
+
+        <div class="who-close">
+          <h3>What we actually build</h3>
+          <p>Not more technology. Most organisations already have plenty.</p>
+          <p>An operating model that connects people, process, data and AI — so decisions get made faster, capability stays after we leave, and the business is worth more than the effort inside it.</p>
+          <p class="who-close__belief"><strong>Human-Led. AI-Operated.</strong></p>
+        </div>
+
+        <div class="who-strip">
+          <p>Enterprise takes Advisory and the platforms. Growing businesses take Intuka. Independent operators take Fluency, Intuka and a build. Expertise becomes a product with all three.</p>
+          <p class="who-strip__tag"><strong>Four starting points. One practice.</strong></p>
         </div>
       </div>
     </div>

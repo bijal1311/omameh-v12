@@ -69,14 +69,14 @@ export const metadata = {
     template: '%s · Omameh',
   },
   description:
-    'Omameh is a specialist advisory practice for boards and senior leaders building organisations structurally ready for the AI era. Business architecture sits between strategy and execution.',
+    'Advisory, platforms and capability for organisations moving from effort-based growth to systems. Human-Led. AI-Operated.',
   openGraph: {
     type: 'website',
     locale: 'en_AU',
     siteName: 'Omameh',
     title: 'Omameh · Business architecture for the AI era',
     description:
-      'A specialist advisory practice for boards and senior leaders. Human-Led. AI-Operated.',
+      'Advisory, platforms and capability for organisations moving from effort-based growth to systems. Human-Led. AI-Operated.',
   },
   robots: {
     index: true,

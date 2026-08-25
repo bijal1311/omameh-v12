@@ -3,7 +3,7 @@ import RouteShell from './_components/RouteShell';
 export const metadata = {
   title: 'Omameh · Business architecture for the AI era',
   description:
-    'A specialist advisory practice for boards and senior leaders building organisations structurally ready for the AI era. Business architecture sits between strategy and execution.',
+    'Advisory, platforms and capability for organisations moving from effort-based growth to systems. Human-Led. AI-Operated.',
 };
 
 const __MARKUP = String.raw`

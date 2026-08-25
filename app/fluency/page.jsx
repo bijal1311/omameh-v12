@@ -24,9 +24,8 @@ const __MARKUP = String.raw`
   <div class="container">
     <div class="route__header"><span class="route__index">05</span><span class="route__name">/fluency · AI-Era Fluency</span><span class="route__issue">Vol. I · Issue 01 · Q3 2026</span></div>
 
-    <div class="hero" style="position:relative;">
-      <div class="om-field-open-ring om-field-layer" aria-hidden="true"></div>
-      <div style="position:relative;">
+    <div class="hero">
+      <div>
         <span class="eyebrow" style="color: var(--accent-warm);">05 · Fluency · Phase 1</span>
         <h1 style="margin-top: var(--space-4);">Unlearn. Relearn. <em>Reinvent.</em></h1>
         <p class="lede">One and two-day courses for the people who have to decide. Boards, executives, and anyone being asked to lead through a change they did not train for.</p>
@@ -208,9 +207,8 @@ const __MARKUP = String.raw`
 
     <hr class="om-rule" style="margin-block: var(--space-8);">
 
-    <div class="section" style="position:relative;">
-      <div class="om-field-rise om-field-layer" aria-hidden="true"></div>
-      <div style="position:relative;">
+    <div class="section">
+      <div>
         <div class="section__head">
           <span class="eyebrow"><img src="/icons/diagnose.svg" alt="" width="14" height="14" style="vertical-align:-2px; margin-right:8px; opacity:0.85;">07 · How a day actually runs</span>
           <h2>No slides. No lectures. <em>Your problems.</em></h2>

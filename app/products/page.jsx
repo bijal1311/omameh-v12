@@ -18,9 +18,8 @@ const __MARKUP = String.raw`
   <div class="container">
     <div class="route__header"><span class="route__index">04</span><span class="route__name">/products · Products</span><span class="route__issue">Vol. I · Issue 01 · Q3 2026</span></div>
 
-    <div class="hero" style="position:relative;">
-      <div class="om-field-open-ring om-field-layer" aria-hidden="true"></div>
-      <div style="position:relative;">
+    <div class="hero">
+      <div>
         <span class="eyebrow" style="color: var(--accent-warm);">One team · two time zones</span>
         <h1 style="margin-top: var(--space-4);">We build the things <em>we advise on.</em></h1>
         <p class="lede">One team, eight platforms. <em>Architected end-to-end</em> — Sydney to Hyderabad, boardroom to build. No handoff between them. Several already running in production — not a roadmap.</p>
@@ -106,7 +105,10 @@ const __MARKUP = String.raw`
           <p class="platform-card__outcome"><span class="platform-card__outcome-dot" aria-hidden="true"></span>Nine specialised agents · full audit trace · deployable in your cloud.</p>
           <footer class="platform-card__foot">
             <span class="platform-card__status platform-card__status--live"><span class="platform-card__status-bead" aria-hidden="true"></span>Live · demo-ready</span>
-            <a class="platform-card__cta" href="mailto:contact@omameh.com.au?subject=Book a demo · PL01 Contract Intelligence&body=Hi Bijal,%0D%0A%0D%0AI would like to book a demo of Contract Intelligence.%0D%0A%0D%0AMy organisation:%0D%0AMy role:%0D%0AThe problem I am trying to solve:%0D%0A%0D%0AThank you.">Book a demo →</a>
+            <span class="platform-card__ctas">
+              <a class="platform-card__cta" href="mailto:contact@omameh.com.au?subject=Book a demo · PL01 Contract Intelligence&body=Hi Bijal,%0D%0A%0D%0AI would like to book a demo of Contract Intelligence.%0D%0A%0D%0AMy organisation:%0D%0AMy role:%0D%0AThe problem I am trying to solve:%0D%0A%0D%0AThank you.">Book a demo →</a>
+              <a class="platform-card__cta platform-card__cta--secondary" href="#receipts">See the proof →</a>
+            </span>
           </footer>
         </article>
 
@@ -126,7 +128,10 @@ const __MARKUP = String.raw`
           <p class="platform-card__outcome"><span class="platform-card__outcome-dot" aria-hidden="true"></span>In hardening · first regulated-industry reference under NDA.</p>
           <footer class="platform-card__foot">
             <span class="platform-card__status platform-card__status--built"><span class="platform-card__status-bead" aria-hidden="true"></span>Built · reference in progress</span>
-            <a class="platform-card__cta" href="mailto:contact@omameh.com.au?subject=Book a demo · PL02 AI Governance&body=Hi Bijal,%0D%0A%0D%0AI would like to book a demo of AI Governance.%0D%0A%0D%0AMy organisation:%0D%0AMy role:%0D%0AThe problem I am trying to solve:%0D%0A%0D%0AThank you.">Book a demo →</a>
+            <span class="platform-card__ctas">
+              <a class="platform-card__cta" href="mailto:contact@omameh.com.au?subject=Book a demo · PL02 AI Governance&body=Hi Bijal,%0D%0A%0D%0AI would like to book a demo of AI Governance.%0D%0A%0D%0AMy organisation:%0D%0AMy role:%0D%0AThe problem I am trying to solve:%0D%0A%0D%0AThank you.">Book a demo →</a>
+              <a class="platform-card__cta platform-card__cta--secondary" href="#receipts">See the proof →</a>
+            </span>
           </footer>
         </article>
 
@@ -146,7 +151,10 @@ const __MARKUP = String.raw`
           <p class="platform-card__outcome"><span class="platform-card__outcome-dot" aria-hidden="true"></span>In trial · 60% fewer tickets · 4 hours to 2 minutes on the L1 service desk.</p>
           <footer class="platform-card__foot">
             <span class="platform-card__status platform-card__status--trial"><span class="platform-card__status-bead" aria-hidden="true"></span>Live · in client trial</span>
-            <a class="platform-card__cta" href="mailto:contact@omameh.com.au?subject=Book a demo · PL03 Business Operations&body=Hi Bijal,%0D%0A%0D%0AI would like to book a demo of Business Operations.%0D%0A%0D%0AMy organisation:%0D%0AMy role:%0D%0AThe problem I am trying to solve:%0D%0A%0D%0AThank you.">Book a demo →</a>
+            <span class="platform-card__ctas">
+              <a class="platform-card__cta" href="mailto:contact@omameh.com.au?subject=Book a demo · PL03 Business Operations&body=Hi Bijal,%0D%0A%0D%0AI would like to book a demo of Business Operations.%0D%0A%0D%0AMy organisation:%0D%0AMy role:%0D%0AThe problem I am trying to solve:%0D%0A%0D%0AThank you.">Book a demo →</a>
+              <a class="platform-card__cta platform-card__cta--secondary" href="#receipts">See the proof →</a>
+            </span>
           </footer>
         </article>
 
@@ -221,9 +229,8 @@ const __MARKUP = String.raw`
 
     <hr class="om-rule" style="margin-block: var(--space-8);">
 
-    <div class="section" style="position:relative;">
-      <div class="om-field-open-ring om-field-layer" aria-hidden="true"></div>
-      <div style="position:relative;">
+    <div class="section" id="receipts">
+      <div>
         <div class="section__head">
           <span class="eyebrow"><img src="/icons/compound.svg" alt="" width="14" height="14" style="vertical-align:-2px; margin-right:8px; opacity:0.85;">05 · Receipts</span>
           <h2>We keep <em>receipts.</em></h2>

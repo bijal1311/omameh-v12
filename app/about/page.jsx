@@ -58,9 +58,8 @@ const __MARKUP = String.raw`
       </div>
     </div>
 
-    <div class="section" id="independence" style="position:relative;">
-      <div class="om-field-open-ring om-field-layer" aria-hidden="true"></div>
-      <div style="position:relative;">
+    <div class="section" id="independence">
+      <div>
         <div class="section__head">
           <span class="eyebrow">03 · Independence · the disclosure</span>
           <h2>We advise, we build, and <em>we tell you which is which.</em></h2>

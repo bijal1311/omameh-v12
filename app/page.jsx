@@ -220,9 +220,8 @@ const __MARKUP = String.raw`
       </div>
     </div>
 
-    <div class="section" style="position:relative;">
-      <div class="om-field-open-ring om-field-layer" aria-hidden="true"></div>
-      <div style="position:relative;">
+    <div class="section">
+      <div>
         <div class="section__head">
           <span class="eyebrow">04 · Who we work with</span>
           <h2>Effort does not scale. <em>Systems do.</em></h2>

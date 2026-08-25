@@ -81,13 +81,13 @@ const __MARKUP = String.raw`
     <div class="section" id="courses">
       <div class="section__head">
         <span class="eyebrow"><img src="/icons/readiness.svg" alt="" width="14" height="14" style="vertical-align:-2px; margin-right:8px; opacity:0.85;">05 · The courses</span>
-        <h2>Five courses. <em>Per seat.</em></h2>
+        <h2>Seven courses. <em>Per seat.</em></h2>
         <p class="strap">Open enrolment. Anyone can buy. What each course does, what you leave with, what it costs, where it runs.</p>
       </div>
 
       <div class="courses-grid">
 
-        <article class="course-card">
+        <article id="c01" class="course-card">
           <header class="course-card__head">
             <span class="course-card__code">C01 · one day</span>
             <h3 class="course-card__name">Leader-Led AI</h3>
@@ -106,7 +106,7 @@ const __MARKUP = String.raw`
           </footer>
         </article>
 
-        <article class="course-card">
+        <article id="c02" class="course-card">
           <header class="course-card__head">
             <span class="course-card__code">C02 · one day</span>
             <h3 class="course-card__name">Buying AI</h3>
@@ -125,7 +125,7 @@ const __MARKUP = String.raw`
           </footer>
         </article>
 
-        <article class="course-card">
+        <article id="c03" class="course-card">
           <header class="course-card__head">
             <span class="course-card__code">C03 · one day</span>
             <h3 class="course-card__name">AI Governance for Boards</h3>
@@ -144,7 +144,7 @@ const __MARKUP = String.raw`
           </footer>
         </article>
 
-        <article class="course-card">
+        <article id="c04" class="course-card">
           <header class="course-card__head">
             <span class="course-card__code">C04 · two days</span>
             <h3 class="course-card__name">Mindset by Design</h3>
@@ -163,7 +163,7 @@ const __MARKUP = String.raw`
           </footer>
         </article>
 
-        <article class="course-card">
+        <article id="c05" class="course-card">
           <header class="course-card__head">
             <span class="course-card__code">C05 · two days</span>
             <h3 class="course-card__name">Operating Model for the AI Era</h3>
@@ -182,6 +182,93 @@ const __MARKUP = String.raw`
           </footer>
         </article>
 
+        <article id="c06" class="course-card">
+          <header class="course-card__head">
+            <span class="course-card__code">C06 · one day</span>
+            <h3 class="course-card__name">The Independent Practice</h3>
+          </header>
+          <p class="course-card__question"><em>You are the business, and there are no more hours in the week.</em></p>
+          <div class="course-card__block">
+            <div class="course-card__label">Why now</div>
+            <p>Every hour you sell is an hour you worked. AI changes that arithmetic for the first time, and most independent operators are using it to type faster rather than to run differently.</p>
+          </div>
+          <div class="course-card__block">
+            <div class="course-card__label">You leave with</div>
+            <p>A map of what only you can do and what you have been doing out of habit · three systems built for your practice rather than a generic stack · what your week looks like when the operations run without you.</p>
+          </div>
+          <footer class="course-card__foot">
+            <span class="course-card__format"><span class="course-card__format-bead" aria-hidden="true"></span>1 day · $1,500 per seat · Sydney and Melbourne</span>
+          </footer>
+        </article>
+
+        <article id="c07" class="course-card">
+          <header class="course-card__head">
+            <span class="course-card__code">C07 · one day</span>
+            <h3 class="course-card__name">From Method to Product</h3>
+          </header>
+          <p class="course-card__question"><em>You have solved the same problem five times. That is worth something.</em></p>
+          <div class="course-card__block">
+            <div class="course-card__label">Why now</div>
+            <p>The fifth time you solve a problem you stop learning and start repeating. Most expertise never gets captured, and it leaves when you do.</p>
+          </div>
+          <div class="course-card__block">
+            <div class="course-card__label">You leave with</div>
+            <p>Your method written down as something repeatable · an honest read on whether it can be productised or should stay a service · the first version of something a client could buy without you in the room.</p>
+          </div>
+          <footer class="course-card__foot">
+            <span class="course-card__format"><span class="course-card__format-bead" aria-hidden="true"></span>1 day · $1,500 per seat · Sydney and Melbourne</span>
+          </footer>
+        </article>
+
+      </div>
+
+      <div class="course-map">
+        <div class="course-map__head">
+          <h3>Four starting points. <em>Seven courses.</em></h3>
+        </div>
+        <div class="course-map__row">
+          <div class="course-map__market">
+            <h4>Enterprise</h4>
+            <p>Carrying complexity at scale</p>
+          </div>
+          <div class="course-map__codes">
+            <a href="#c01">C01 Leader-Led AI</a><span class="sep" aria-hidden="true">·</span>
+            <a href="#c03">C03 AI Governance for Boards</a><span class="sep" aria-hidden="true">·</span>
+            <a href="#c04">C04 Mindset by Design</a><span class="sep" aria-hidden="true">·</span>
+            <a href="#c05">C05 Operating Model</a>
+          </div>
+        </div>
+        <div class="course-map__row">
+          <div class="course-map__market">
+            <h4>Growing business</h4>
+            <p>Ready for the next stage</p>
+          </div>
+          <div class="course-map__codes">
+            <a href="#c01">C01 Leader-Led AI</a><span class="sep" aria-hidden="true">·</span>
+            <a href="#c02">C02 Buying AI</a><span class="sep" aria-hidden="true">·</span>
+            <a href="#c05">C05 Operating Model</a>
+          </div>
+        </div>
+        <div class="course-map__row">
+          <div class="course-map__market">
+            <h4>Independent operator</h4>
+            <p>Expertise, and not enough hours</p>
+          </div>
+          <div class="course-map__codes">
+            <a href="#c06">C06 The Independent Practice</a><span class="sep" aria-hidden="true">·</span>
+            <a href="#c02">C02 Buying AI</a>
+          </div>
+        </div>
+        <div class="course-map__row">
+          <div class="course-map__market">
+            <h4>Expertise becoming a product</h4>
+            <p>The same problem, solved five times</p>
+          </div>
+          <div class="course-map__codes">
+            <a href="#c07">C07 From Method to Product</a><span class="sep" aria-hidden="true">·</span>
+            <a href="#c04">C04 Mindset by Design</a>
+          </div>
+        </div>
       </div>
 
       <div class="courses-cta">

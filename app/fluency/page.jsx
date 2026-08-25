@@ -291,9 +291,9 @@ const __MARKUP = String.raw`
       </div>
     </div>
 
-    <div class="section" style="position:relative;">
-      <div class="om-field-rise om-field-layer" aria-hidden="true"></div>
-      <div class="close-block" style="position:relative;">
+    <div class="section">
+      <div class="close-block close-block--watermarked">
+        <img class="om-watermark" src="/omameh-watermark.svg" alt="" aria-hidden="true" />
         <p class="close-block__line">The next room <em>is being set.</em></p>
         <div class="close-block__ctas">
           <a class="cta cta--primary" href="mailto:contact@omameh.com.au?subject=Request a seat · Fluency&body=Hi Bijal,%0D%0A%0D%0AI would like to request a seat.%0D%0A%0D%0ACourse:%0D%0AMy name and organisation:%0D%0APreferred city:%0D%0A%0D%0AThank you.">Request a seat →</a>

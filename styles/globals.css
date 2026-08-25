@@ -4612,5 +4612,144 @@ h1 em, h2 em, .fo-hero__name em {
   flex-wrap: wrap;
 }
 
+/* =====================================================================
+   Watermarks · Bijal · 'motifs in lovely watermarks not striped'.
+   Single large mark, low opacity, corner-positioned. Replaces the tiled
+   om-field-* pattern with a proper ornamental treatment.
+   ===================================================================== */
+
+.om-watermark {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.08;
+  z-index: 0;
+  right: -40px;
+  bottom: -40px;
+  width: 320px;
+  height: auto;
+  max-width: 42vw;
+}
+
+/* Hero watermark · every route hero gets one · bottom-right, subtle */
+.hero { position: relative; overflow: hidden; }
+.hero::after {
+  content: '';
+  position: absolute;
+  right: -80px;
+  bottom: -80px;
+  width: 380px;
+  height: 380px;
+  background: url('/omameh-watermark.svg') no-repeat center;
+  background-size: contain;
+  opacity: 0.07;
+  pointer-events: none;
+  z-index: 0;
+}
+.hero > * { position: relative; z-index: 1; }
+@media (max-width: 720px) {
+  .hero::after { width: 240px; height: 240px; right: -60px; bottom: -60px; opacity: 0.06; }
+}
+
+/* Close block · watermarked variant · replaces the om-field-rise stripe */
+.close-block--watermarked {
+  position: relative;
+  overflow: hidden;
+}
+.close-block--watermarked > * { position: relative; z-index: 1; }
+.close-block--watermarked .om-watermark {
+  right: -60px;
+  bottom: -60px;
+  width: 360px;
+  opacity: 0.09;
+}
+@media (max-width: 720px) {
+  .close-block--watermarked .om-watermark { width: 220px; right: -40px; bottom: -40px; opacity: 0.07; }
+}
+
+/* =====================================================================
+   Platform detail sections (§03 Learn-more anchors on /products)
+   Bijal · deep links restored, content lives on our site, no syntegreti
+   branding · each of PL01/02/03 has an anchor target with fuller copy.
+   ===================================================================== */
+.platform-details {
+  margin-top: var(--space-7);
+  padding-top: var(--space-6);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+.platform-details__eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--fg3);
+  margin: 0 0 var(--space-5);
+}
+.platform-detail {
+  padding: var(--space-6) 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  scroll-margin-top: 100px;
+}
+.platform-detail:first-of-type { border-top: 0; padding-top: 0; }
+.platform-detail__head { margin-bottom: var(--space-4); }
+.platform-detail__code {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--accent-warm);
+  margin-bottom: var(--space-3);
+}
+.platform-detail__name {
+  font-family: var(--font-serif);
+  font-size: clamp(24px, 2.4vw, 32px);
+  line-height: 1.2;
+  color: var(--fg1);
+  margin: 0;
+  letter-spacing: -0.01em;
+  max-width: 32ch;
+}
+.platform-detail__lede {
+  color: var(--fg1);
+  font-size: 17px;
+  line-height: 1.55;
+  margin: 0 0 var(--space-5);
+  max-width: 68ch;
+}
+.platform-detail__cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-6);
+  margin-bottom: var(--space-5);
+}
+@media (max-width: 720px) {
+  .platform-detail__cols { grid-template-columns: 1fr; gap: var(--space-4); }
+}
+.platform-detail__cols h4 {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--fg3);
+  margin: 0 0 var(--space-3);
+}
+.platform-detail__cols p {
+  color: var(--fg2);
+  font-size: 15px;
+  line-height: 1.65;
+  margin: 0;
+  max-width: 46ch;
+}
+.platform-detail__foot {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  letter-spacing: 0.06em;
+  color: #00D4CB;
+  margin: 0;
+  padding-top: var(--space-4);
+  border-top: 1px dashed rgba(0, 212, 203, 0.28);
+  max-width: 68ch;
+}
+
 /* END Cowork brief additions
    ===================================================================== */

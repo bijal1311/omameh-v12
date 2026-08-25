@@ -107,7 +107,7 @@ const __MARKUP = String.raw`
             <span class="platform-card__status platform-card__status--live"><span class="platform-card__status-bead" aria-hidden="true"></span>Live · demo-ready</span>
             <span class="platform-card__ctas">
               <a class="platform-card__cta" href="mailto:contact@omameh.com.au?subject=Book a demo · PL01 Contract Intelligence&body=Hi Bijal,%0D%0A%0D%0AI would like to book a demo of Contract Intelligence.%0D%0A%0D%0AMy organisation:%0D%0AMy role:%0D%0AThe problem I am trying to solve:%0D%0A%0D%0AThank you.">Book a demo →</a>
-              <a class="platform-card__cta platform-card__cta--secondary" href="#receipts">See the proof →</a>
+              <a class="platform-card__cta platform-card__cta--secondary" href="#pl01-detail">Learn more →</a>
             </span>
           </footer>
         </article>
@@ -130,7 +130,7 @@ const __MARKUP = String.raw`
             <span class="platform-card__status platform-card__status--built"><span class="platform-card__status-bead" aria-hidden="true"></span>Built · reference in progress</span>
             <span class="platform-card__ctas">
               <a class="platform-card__cta" href="mailto:contact@omameh.com.au?subject=Book a demo · PL02 AI Governance&body=Hi Bijal,%0D%0A%0D%0AI would like to book a demo of AI Governance.%0D%0A%0D%0AMy organisation:%0D%0AMy role:%0D%0AThe problem I am trying to solve:%0D%0A%0D%0AThank you.">Book a demo →</a>
-              <a class="platform-card__cta platform-card__cta--secondary" href="#receipts">See the proof →</a>
+              <a class="platform-card__cta platform-card__cta--secondary" href="#pl02-detail">Learn more →</a>
             </span>
           </footer>
         </article>
@@ -153,15 +153,76 @@ const __MARKUP = String.raw`
             <span class="platform-card__status platform-card__status--trial"><span class="platform-card__status-bead" aria-hidden="true"></span>Live · in client trial</span>
             <span class="platform-card__ctas">
               <a class="platform-card__cta" href="mailto:contact@omameh.com.au?subject=Book a demo · PL03 Business Operations&body=Hi Bijal,%0D%0A%0D%0AI would like to book a demo of Business Operations.%0D%0A%0D%0AMy organisation:%0D%0AMy role:%0D%0AThe problem I am trying to solve:%0D%0A%0D%0AThank you.">Book a demo →</a>
-              <a class="platform-card__cta platform-card__cta--secondary" href="#receipts">See the proof →</a>
+              <a class="platform-card__cta platform-card__cta--secondary" href="#pl03-detail">Learn more →</a>
             </span>
           </footer>
         </article>
 
       </div>
 
+      <div class="platform-details">
+        <p class="platform-details__eyebrow">Learn more · the three at full weight.</p>
+
+        <article id="pl01-detail" class="platform-detail">
+          <header class="platform-detail__head">
+            <span class="platform-detail__code">PL01 · Contract Intelligence</span>
+            <h3 class="platform-detail__name">Contract lifecycle intelligence — <em>every obligation, seen.</em></h3>
+          </header>
+          <p class="platform-detail__lede">Enterprises negotiate every supplier agreement to the point of exhaustion, then never read it again. Contract Intelligence closes the gap between what was agreed and what is actually being delivered.</p>
+          <div class="platform-detail__cols">
+            <div>
+              <h4>What it does</h4>
+              <p>Nine specialised agents ingest a supplier agreement and extract every obligation, service level, price clause, exit right and renewal trigger. Each item is risk-scored, calendared, and assigned to a named owner. Vendors are then scored continuously against the KPIs you actually agreed — not the ones you assumed.</p>
+            </div>
+            <div>
+              <h4>Where it fits</h4>
+              <p>APRA CPS 230 turned service-provider oversight into a prudential obligation. This is the evidence layer for it. Any regulated buyer with more than fifty material supplier agreements, in a single tenanted deployment inside your own cloud.</p>
+            </div>
+          </div>
+          <p class="platform-detail__foot">Fully audit-traced. Deployable in AWS or Azure, under your controls.</p>
+        </article>
+
+        <article id="pl02-detail" class="platform-detail">
+          <header class="platform-detail__head">
+            <span class="platform-detail__code">PL02 · AI Governance</span>
+            <h3 class="platform-detail__name">The evidence layer <em>for every AI call.</em></h3>
+          </header>
+          <p class="platform-detail__lede">A control you cannot evidence is not a control — it is an intention. AI Governance sits between the enterprise and the LLM at the point of the call, so what a regulator asks for is already recorded.</p>
+          <div class="platform-detail__cols">
+            <div>
+              <h4>What it does</h4>
+              <p>Policy enforcement at the point of the call. Local ML-based data-loss prevention that keeps sensitive content inside the perimeter. A complete audit log of every LLM interaction across the enterprise, structured so a regulator, an internal auditor, or a board committee can query it without a specialist.</p>
+            </div>
+            <div>
+              <h4>Where it fits</h4>
+              <p>Every enterprise now has AI usage it cannot see. Board risk committees, chief risk officers, chief data officers, chief information security officers — this is the surface they can point at when the question comes up in a review.</p>
+            </div>
+          </div>
+          <p class="platform-detail__foot">Multi-tenant or single-tenant. In your cloud. Integrations with the major LLM providers and enterprise identity systems.</p>
+        </article>
+
+        <article id="pl03-detail" class="platform-detail">
+          <header class="platform-detail__head">
+            <span class="platform-detail__code">PL03 · Business Operations · Intuka</span>
+            <h3 class="platform-detail__name">Seven back-office systems, <em>replaced by one.</em></h3>
+          </header>
+          <p class="platform-detail__lede">Growing organisations stitch Sales, Marketing, HR, Finance, Projects, Recruitment and IT support together with spreadsheets and integrations that nobody quite owns. Intuka is the alternative — one platform, one data model, one place decisions get made.</p>
+          <div class="platform-detail__cols">
+            <div>
+              <h4>What it does</h4>
+              <p>A multi-tenant operations platform with a built-in assistant. 160 AI actions across four graduated autonomy levels, so AI does as much, or as little, as the operator allows. Quote to invoice to payment, employee onboarding, sales pipeline, project delivery and service desk — one system, one view.</p>
+            </div>
+            <div>
+              <h4>Where it fits</h4>
+              <p>Businesses that are too small for seven separate systems and too serious for the spreadsheets that stitch them together. Independent operators using it as the operating layer for a business one person could not otherwise run. Boutique consultancies giving it to clients as an off-the-shelf ops backbone.</p>
+            </div>
+          </div>
+          <p class="platform-detail__foot">Live in client trial. 60% fewer tickets, 4 hours to 2 minutes on the L1 service desk in one deployment.</p>
+        </article>
+      </div>
+
       <div class="platforms-bench">
-        <p class="platforms-bench__eyebrow">The rest of the bench — deep-linked, name and one line each.</p>
+        <p class="platforms-bench__eyebrow">The rest of the bench — name and one line each.</p>
         <div class="platforms-bench__grid">
           <div class="platforms-bench__item"><h4>Regulatory Reporting</h4><p>Regulation PDFs become a knowledge graph, and the graph becomes executable filing schemas. Texas and Florida already built.</p></div>
           <div class="platforms-bench__item"><h4>Document Intelligence</h4><p>Confidence-scored extraction with human review and approval by design — auditable, not black-box.</p></div>
@@ -256,9 +317,9 @@ const __MARKUP = String.raw`
       </div>
     </div>
 
-    <div class="section" style="position:relative;">
-      <div class="om-field-rise om-field-layer" aria-hidden="true"></div>
-      <div class="close-block" style="position:relative;">
+    <div class="section">
+      <div class="close-block close-block--watermarked">
+        <img class="om-watermark" src="/omameh-watermark.svg" alt="" aria-hidden="true" />
         <p class="close-block__line">The platforms are built. The architecture question is <em>whether yours can carry them.</em></p>
         <div class="close-block__ctas">
           <a class="cta cta--primary" href="mailto:contact@omameh.com.au?subject=Let's talk · Products&body=Hi Bijal,%0D%0A%0D%0AI want to talk about the platforms.%0D%0A%0D%0AMy organisation:%0D%0AMy role:%0D%0AThe problem I am trying to solve:%0D%0A%0D%0AThank you.">Let's talk →</a>

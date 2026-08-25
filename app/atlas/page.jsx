@@ -6,6 +6,55 @@ export const metadata = {
     'What we learn inside the work, published — Field Notes from the architecture, Industry Outlooks, and a community for leaders rebuilding how the work gets done.',
 };
 
+/**
+ * Featured LinkedIn posts on §04 · Recent from the feed.
+ * Hand-curated by Bijal. Adding a post = one entry in this array.
+ * Newest at top by convention. Own writing and featured reading both fit.
+ */
+const FEATURED_POSTS = [
+  {
+    url: 'https://www.linkedin.com/posts/bijal-sejpal_leadership-ai-futureofwork-share-7477258175662977024-2F1J/',
+    source: 'Bijal · LinkedIn',
+    topic: 'Leadership · AI · Future of work',
+    hook: 'On leadership, AI, and the shape of the work changing underneath it.',
+  },
+  {
+    url: 'https://www.linkedin.com/posts/bijal-sejpal_newbeginnings-foundersjourney-aiera-share-7486407228040572928-sgHc/',
+    source: 'Bijal · LinkedIn',
+    topic: 'New beginnings · Founder journey · AI era',
+    hook: 'On new beginnings, the founder journey, and building for the AI era.',
+  },
+  {
+    url: 'https://www.linkedin.com/posts/simonfletcher1_cloud-ai-transformation-share-7495331001980682240-y90L/',
+    source: 'Simon Fletcher · LinkedIn',
+    topic: 'Cloud · AI · Transformation',
+    hook: 'On cloud, AI, and what enterprise transformation actually looks like on the ground.',
+  },
+  {
+    url: 'https://www.linkedin.com/posts/theortusclub-knowledgesharing-saasevolution-ugcPost-7483382872242872321-3gL0/',
+    source: 'The Ortus Club · LinkedIn',
+    topic: 'Knowledge sharing · SaaS evolution',
+    hook: 'On knowledge sharing and how SaaS is evolving in the room.',
+  },
+  {
+    url: 'https://www.linkedin.com/posts/bijal-sejpal_gratitude-inspiration-payitforward-share-7198925334858121216-UCdn/',
+    source: 'Bijal · LinkedIn',
+    topic: 'Gratitude · Inspiration · Pay it forward',
+    hook: 'On the lift others gave us, and the discipline of paying it forward.',
+  },
+];
+
+const FEED_ITEMS_HTML = FEATURED_POSTS.map((p) => `
+  <a class="feed-item" href="${p.url}" target="_blank" rel="noopener noreferrer">
+    <div class="feed-item__meta">
+      <span class="feed-item__source">${p.source}</span>
+      <span class="feed-item__topic">${p.topic}</span>
+    </div>
+    <h3 class="feed-item__hook">${p.hook}</h3>
+    <span class="feed-item__cta">Read on LinkedIn ↗</span>
+  </a>
+`).join('');
+
 const __MARKUP = String.raw`
   <div class="container">
     <div class="route__header"><span class="route__index">04</span><span class="route__name">/atlas · Atlas</span><span class="route__issue">Vol. I · Issue 01 · Q2 2026 · Editorial</span></div>
@@ -42,40 +91,7 @@ const __MARKUP = String.raw`
         <p class="lede">Field-tested thinking, published where the conversation is already happening. Featured picks — refreshed when there is something worth surfacing.</p>
       </div>
 
-      <div class="feed-list">
-        <a class="feed-item" href="https://www.linkedin.com/posts/bijal-sejpal_leadership-ai-futureofwork-share-7477258175662977024-2F1J/" target="_blank" rel="noopener noreferrer">
-          <div class="feed-item__meta">
-            <span class="feed-item__source">Bijal · LinkedIn</span>
-            <span class="feed-item__topic">Leadership · AI · Future of work</span>
-          </div>
-          <h3 class="feed-item__hook">On leadership, AI, and the shape of the work changing underneath it.</h3>
-          <span class="feed-item__cta">Read on LinkedIn ↗</span>
-        </a>
-        <a class="feed-item" href="https://www.linkedin.com/posts/bijal-sejpal_gratitude-inspiration-payitforward-share-7198925334858121216-UCdn/" target="_blank" rel="noopener noreferrer">
-          <div class="feed-item__meta">
-            <span class="feed-item__source">Bijal · LinkedIn</span>
-            <span class="feed-item__topic">Gratitude · Inspiration · Pay it forward</span>
-          </div>
-          <h3 class="feed-item__hook">On the lift others gave us, and the discipline of paying it forward.</h3>
-          <span class="feed-item__cta">Read on LinkedIn ↗</span>
-        </a>
-        <a class="feed-item" href="https://www.linkedin.com/posts/simonfletcher1_cloud-ai-transformation-share-7495331001980682240-y90L/" target="_blank" rel="noopener noreferrer">
-          <div class="feed-item__meta">
-            <span class="feed-item__source">Simon Fletcher · LinkedIn</span>
-            <span class="feed-item__topic">Cloud · AI · Transformation</span>
-          </div>
-          <h3 class="feed-item__hook">On cloud, AI, and what enterprise transformation actually looks like on the ground.</h3>
-          <span class="feed-item__cta">Read on LinkedIn ↗</span>
-        </a>
-        <a class="feed-item" href="https://www.linkedin.com/posts/theortusclub-knowledgesharing-saasevolution-ugcPost-7483382872242872321-3gL0/" target="_blank" rel="noopener noreferrer">
-          <div class="feed-item__meta">
-            <span class="feed-item__source">The Ortus Club · LinkedIn</span>
-            <span class="feed-item__topic">Knowledge sharing · SaaS evolution</span>
-          </div>
-          <h3 class="feed-item__hook">On knowledge sharing and how SaaS is evolving in the room.</h3>
-          <span class="feed-item__cta">Read on LinkedIn ↗</span>
-        </a>
-      </div>
+      <div class="feed-list">${FEED_ITEMS_HTML}</div>
     </div>
 
     <div class="section section--space-8b">

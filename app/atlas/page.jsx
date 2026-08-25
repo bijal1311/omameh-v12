@@ -35,6 +35,25 @@ const __MARKUP = String.raw`
       </div>
     </div>
 
+    <div class="section">
+      <div class="section__head">
+        <span class="eyebrow" style="color: var(--accent-warm);">04 · Recent from the feed</span>
+        <h2 style="font-family: var(--font-edit-serif); margin-top: var(--space-3);">Live on <em>LinkedIn.</em></h2>
+        <p class="lede">Field-tested thinking, published where the conversation is already happening. Featured picks — refreshed when there is something worth surfacing.</p>
+      </div>
+
+      <div class="feed-list">
+        <a class="feed-item" href="https://www.linkedin.com/posts/bijal-sejpal_leadership-ai-futureofwork-share-7477258175662977024-2F1J/" target="_blank" rel="noopener noreferrer">
+          <div class="feed-item__meta">
+            <span class="feed-item__source">Bijal · LinkedIn</span>
+            <span class="feed-item__topic">Leadership · AI · Future of work</span>
+          </div>
+          <h3 class="feed-item__hook">On leadership, AI, and the shape of the work changing underneath it.</h3>
+          <span class="feed-item__cta">Read on LinkedIn ↗</span>
+        </a>
+      </div>
+    </div>
+
     <div class="section section--space-8b">
       <div class="atlas-cta">
         <div class="atlas-cta__col">

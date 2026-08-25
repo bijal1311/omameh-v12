@@ -59,6 +59,14 @@ const __MARKUP = String.raw`
           <h3 class="feed-item__hook">On the lift others gave us, and the discipline of paying it forward.</h3>
           <span class="feed-item__cta">Read on LinkedIn ↗</span>
         </a>
+        <a class="feed-item" href="https://www.linkedin.com/posts/simonfletcher1_cloud-ai-transformation-share-7495331001980682240-y90L/" target="_blank" rel="noopener noreferrer">
+          <div class="feed-item__meta">
+            <span class="feed-item__source">Simon Fletcher · LinkedIn</span>
+            <span class="feed-item__topic">Cloud · AI · Transformation</span>
+          </div>
+          <h3 class="feed-item__hook">On cloud, AI, and what enterprise transformation actually looks like on the ground.</h3>
+          <span class="feed-item__cta">Read on LinkedIn ↗</span>
+        </a>
       </div>
     </div>
 

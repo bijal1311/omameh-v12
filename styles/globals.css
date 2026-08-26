@@ -5436,5 +5436,263 @@ h1 em, h2 em, .fo-hero__name em {
 }
 .case-item:hover .case-item__cta { color: var(--accent-warm); }
 
+/* =====================================================================
+   V13 Home + About · watermark on Home Why band + About principals +
+   sectors table + Foundation strip + About close routes.
+   ===================================================================== */
+
+/* Home Why band watermark — Bijal's 'lovely watermarks not striped'
+   applied to the emotional-centre band per V13 brief §C. */
+.why-band { position: relative; overflow: hidden; }
+.why-band__inner { position: relative; z-index: 1; }
+.why-band__watermark {
+  position: absolute;
+  right: -60px;
+  bottom: -80px;
+  width: 400px;
+  height: auto;
+  opacity: 0.07;
+  z-index: 0;
+  pointer-events: none;
+}
+@media (max-width: 720px) {
+  .why-band__watermark { width: 240px; right: -40px; bottom: -50px; opacity: 0.06; }
+}
+
+/* Home close block · promote to watermarked variant */
+.home-close.close-block--watermarked > .om-watermark {
+  right: -60px;
+  bottom: -60px;
+  width: 320px;
+  opacity: 0.08;
+}
+@media (max-width: 720px) {
+  .home-close.close-block--watermarked > .om-watermark {
+    width: 200px; right: -40px; bottom: -40px; opacity: 0.06;
+  }
+}
+
+/* --- About · Principals grid (3 cards) ---------------------- */
+.principals-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+  margin-top: var(--space-6);
+}
+@media (max-width: 900px) { .principals-grid { grid-template-columns: 1fr; gap: var(--space-5); } }
+
+.principal {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-3);
+}
+.principal__avatar {
+  width: 120px;
+  height: 120px;
+  margin-bottom: var(--space-2);
+}
+.principal__avatar svg { width: 100%; height: 100%; display: block; }
+.principal__meta {
+  margin-bottom: var(--space-2);
+}
+.principal__name {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  line-height: 1.2;
+  color: var(--fg1);
+  margin: 0 0 var(--space-2);
+  letter-spacing: -0.005em;
+}
+.principal__role {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  color: var(--accent-warm);
+  text-transform: uppercase;
+  margin: 0;
+  line-height: 1.5;
+}
+.principal__bio {
+  color: var(--fg2);
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 0;
+}
+.principal__bio--pending {
+  color: var(--fg3);
+  font-style: italic;
+  padding: var(--space-3);
+  border: 1px dashed rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+}
+
+.principals-foot {
+  margin-top: var(--space-6);
+  padding-top: var(--space-4);
+  border-top: 1px dashed rgba(255, 255, 255, 0.1);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--fg3);
+}
+
+/* --- About · Sectors 2x2 grid (BFSI flagship + 3 others) ---- */
+.sectors-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-5);
+  margin-top: var(--space-6);
+}
+@media (max-width: 720px) { .sectors-grid { grid-template-columns: 1fr; } }
+
+.sector {
+  padding: var(--space-5);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-left: 3px solid #00D4CB;
+  border-radius: 0 6px 6px 0;
+}
+.sector:first-child { border-left-color: var(--accent-warm); }
+.sector__head { margin-bottom: var(--space-4); }
+.sector__code {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--fg3);
+  display: block;
+  margin-bottom: var(--space-2);
+}
+.sector:first-child .sector__code { color: var(--accent-warm); }
+.sector__name {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  line-height: 1.25;
+  color: var(--fg1);
+  margin: 0;
+  letter-spacing: -0.005em;
+}
+.sector__meta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+.sector__row {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: var(--space-3);
+  align-items: baseline;
+}
+.sector__label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--fg3);
+}
+.sector__value {
+  color: var(--fg2);
+  font-size: 14.5px;
+  line-height: 1.55;
+}
+
+/* --- About · Foundation strip (small, quiet) --------------- */
+.foundation-strip {
+  margin: var(--space-8) 0 var(--space-6);
+  padding: var(--space-5) 0;
+  border-top: 1px dashed rgba(255, 255, 255, 0.15);
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.15);
+}
+.foundation-strip__inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  align-items: baseline;
+  justify-content: flex-start;
+}
+.foundation-strip__mark {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+}
+.foundation-strip__key {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.16em;
+  color: var(--fg3);
+  text-transform: uppercase;
+}
+.foundation-strip__sep {
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  border-radius: 999px;
+  background: var(--accent-warm);
+  margin: 0 6px;
+  vertical-align: middle;
+}
+.foundation-strip__fdn {
+  font-family: var(--font-serif);
+  font-size: 16px;
+  color: var(--fg1);
+  letter-spacing: -0.005em;
+}
+.foundation-strip__body {
+  color: var(--fg2);
+  font-size: 14px;
+  line-height: 1.55;
+  margin: 0;
+  flex: 1 1 300px;
+}
+.foundation-strip__disclaimer {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  color: #5A6890;
+  text-transform: uppercase;
+  margin: 0;
+  flex-basis: 100%;
+  padding-top: var(--space-2);
+}
+
+/* --- About · Close --------------------------------------- */
+.about-close {
+  text-align: center;
+  padding: var(--space-7) 0 var(--space-6);
+  max-width: 72ch;
+  margin: 0 auto;
+}
+.about-close__lead {
+  font-family: var(--font-serif);
+  font-size: clamp(26px, 3vw, 38px);
+  line-height: 1.2;
+  color: var(--fg1);
+  margin: 0 0 var(--space-5);
+  letter-spacing: -0.01em;
+}
+.about-close__routes {
+  display: inline-flex;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 0 var(--space-6);
+}
+.about-close__routes a {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent-warm);
+  text-decoration: none;
+  transition: color var(--dur-base) var(--ease-standard);
+}
+.about-close__routes a:hover { color: var(--fg1); }
+.about-close__cta {
+  display: inline-flex;
+  justify-content: center;
+}
+
 /* END Cowork brief additions
    ===================================================================== */

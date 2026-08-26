@@ -146,38 +146,27 @@ const __MARKUP = String.raw`
             <span class="eyebrow" style="color: var(--accent-warm);">WHAT THE MARKET IS TELLING US</span>
             <h2>Three pressures. <em>One cause.</em></h2>
           </div>
-          <a class="market-band__link" href="/practice#nine-shifts">See all nine shifts →</a>
+          <a class="market-band__link" href="/about#nine-shifts">See all nine →</a>
         </div>
-        <div class="market-band__cards market-band__cards--two">
+        <div class="market-band__cards">
           <article class="market-card market-card--board">
             <span class="market-card__eyebrow">BOARD PRESSURE</span>
             <div class="market-card__figure">20%</div>
             <p class="market-card__line">of AU insurance boards have signed an AI risk appetite statement.</p>
             <p class="market-card__source">APRA CPG 234 FEEDBACK 2026</p>
           </article>
+          <article class="market-card market-card--drag">
+            <span class="market-card__eyebrow">DELIVERY FRICTION</span>
+            <div class="market-card__figure">$4.4M</div>
+            <p class="market-card__line">average waste per stalled AI initiative.</p>
+            <p class="market-card__source">IBM / PONEMON 2026 †</p>
+          </article>
           <article class="market-card market-card--ops">
             <span class="market-card__eyebrow">OPERATING DRAG</span>
-            <div class="market-card__figure">95%</div>
-            <p class="market-card__line">of enterprise AI pilots produce no measurable P&amp;L impact.</p>
-            <p class="market-card__source">MIT NANDA · 2025</p>
+            <div class="market-card__figure">82%</div>
+            <p class="market-card__line">of enterprise AI pilots never ship to production.</p>
+            <p class="market-card__source">MIT SLOAN / BCG 2026</p>
           </article>
-        </div>
-      </div>
-    </div>
-
-    <div class="section">
-      <div class="grid-3">
-        <div class="card">
-          <div class="card__eyebrow"><span class="num">V/01</span><span>Vision</span></div>
-          <p class="card__strap"><em>Organisations ready to lead the AI era</em> — by architecture, not by accident.</p>
-        </div>
-        <div class="card">
-          <div class="card__eyebrow"><span class="num">M/02</span><span>Mission</span></div>
-          <p class="card__strap">Pressure-test, design, and deliver the architecture between <strong>strategy and execution.</strong></p>
-        </div>
-        <div class="card">
-          <div class="card__eyebrow"><span class="num">B/03</span><span>Belief</span></div>
-          <p class="card__strap"><em>Human-Led. AI-Operated.</em> Built to last. Built to lead.</p>
         </div>
       </div>
     </div>
@@ -268,6 +257,7 @@ const __MARKUP = String.raw`
     </div>
 
     <div class="why-band">
+      <img class="why-band__watermark om-watermark" src="/omameh-watermark.svg" alt="" aria-hidden="true" />
       <div class="why-band__inner">
         <div class="section__head">
           <span class="eyebrow" style="color: var(--accent-warm);">WHY</span>
@@ -434,7 +424,8 @@ const __MARKUP = String.raw`
     </div>
 
     <div class="section">
-      <div class="home-close">
+      <div class="home-close close-block--watermarked">
+        <img class="om-watermark" src="/omameh-watermark.svg" alt="" aria-hidden="true" />
         <h2 class="home-close__lead">You already know which of the four you are. <em>Start there.</em></h2>
         <p class="home-close__body">One conversation. No deck, no pitch. If nothing is broken, we will tell you that too.</p>
         <div class="home-close__ctas">

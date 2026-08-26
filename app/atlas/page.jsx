@@ -86,7 +86,26 @@ const __MARKUP = String.raw`
 
     <div class="section">
       <div class="section__head">
-        <span class="eyebrow" style="color: var(--accent-warm);">04 · Recent from the feed</span>
+        <span class="eyebrow" style="color: var(--accent-warm);">04 · Case studies</span>
+        <h2 style="font-family: var(--font-edit-serif); margin-top: var(--space-3);">The method, <em>on ourselves first.</em></h2>
+        <p class="lede">The engagements worth writing about, once they are worth writing about. Each one is a case where the theory got tested and the numbers came back. We start with our own.</p>
+      </div>
+
+      <div class="case-list">
+        <a class="case-item" href="/case-00">
+          <div class="case-item__meta">
+            <span class="case-item__code">Case 00</span>
+            <span class="case-item__topic">Self-application · Founding · Method-as-proof</span>
+          </div>
+          <h3 class="case-item__hook">We built this practice using the method we sell. The receipts on ourselves before we ask anyone else to try it.</h3>
+          <span class="case-item__cta">Read the case →</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section__head">
+        <span class="eyebrow" style="color: var(--accent-warm);">05 · Recent from the feed</span>
         <h2 style="font-family: var(--font-edit-serif); margin-top: var(--space-3);">Live on <em>LinkedIn.</em></h2>
         <p class="lede">Field-tested thinking, published where the conversation is already happening. Featured picks — refreshed when there is something worth surfacing.</p>
       </div>

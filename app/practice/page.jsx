@@ -263,6 +263,85 @@ const __MARKUP = String.raw`
       </div>
     </div>
 
+    <div class="section" id="nine-shifts">
+      <div class="section__head">
+        <span class="eyebrow">04 · The nine shifts</span>
+        <h2>Nine pressures. <em>One market moving.</em></h2>
+        <p class="strap">The signals a board should be reading now. Three under board pressure, three under delivery friction, three under operating drag. Nine reasons the ground has moved underneath the strategy.</p>
+      </div>
+
+      <div class="shifts-group">
+        <div class="shifts-group__head">
+          <span class="shifts-group__label shifts-group__label--board">BOARD PRESSURE</span>
+        </div>
+        <div class="shifts-grid">
+          <article class="shift-card shift-card--board">
+            <div class="shift-card__figure">78%</div>
+            <p class="shift-card__line">of ASX-listed insurance boards now carry AI as a standing quarterly agenda item — up from 12% two years ago.</p>
+            <p class="shift-card__source">KPMG ASX AI Adoption 2026 †</p>
+          </article>
+          <article class="shift-card shift-card--board">
+            <div class="shift-card__figure">63%</div>
+            <p class="shift-card__line">of AI investments have no measurable ROI. CFOs describe AI spend as increasingly indefensible.</p>
+            <p class="shift-card__source">Gartner AI in FS 2026 †</p>
+          </article>
+          <article class="shift-card shift-card--board">
+            <div class="shift-card__figure">20%</div>
+            <p class="shift-card__line">only, of AU insurance boards have signed an AI risk appetite statement.</p>
+            <p class="shift-card__source">APRA CPG 234 Feedback 2026</p>
+          </article>
+        </div>
+      </div>
+
+      <div class="shifts-group">
+        <div class="shifts-group__head">
+          <span class="shifts-group__label shifts-group__label--drag">DELIVERY FRICTION</span>
+        </div>
+        <div class="shifts-grid">
+          <article class="shift-card shift-card--drag">
+            <div class="shift-card__figure">82%</div>
+            <p class="shift-card__line">of enterprise AI pilots never ship to production. Momentum stalls between demo and deployment.</p>
+            <p class="shift-card__source">MIT Sloan / BCG State of AI 2026</p>
+          </article>
+          <article class="shift-card shift-card--drag">
+            <div class="shift-card__figure">70%</div>
+            <p class="shift-card__line">of AI projects stall at data-readiness. Governance debt shows up as delivery drag.</p>
+            <p class="shift-card__source">Gartner Data &amp; AI Barriers 2026 †</p>
+          </article>
+          <article class="shift-card shift-card--drag">
+            <div class="shift-card__figure">$4.4M</div>
+            <p class="shift-card__line">average waste per stalled AI initiative.</p>
+            <p class="shift-card__source">IBM / Ponemon 2026 †</p>
+          </article>
+        </div>
+      </div>
+
+      <div class="shifts-group">
+        <div class="shifts-group__head">
+          <span class="shifts-group__label shifts-group__label--ops">OPERATING DRAG</span>
+        </div>
+        <div class="shifts-grid">
+          <article class="shift-card shift-card--ops">
+            <div class="shift-card__figure">20%</div>
+            <p class="shift-card__line">only, of AU insurers have operating-model changes actually underway.</p>
+            <p class="shift-card__source">McKinsey State of Organizations 2026</p>
+          </article>
+          <article class="shift-card shift-card--ops">
+            <div class="shift-card__figure">2 in 3</div>
+            <p class="shift-card__line">insurance leaders describe their organisation as too complex to move at AI speed.</p>
+            <p class="shift-card__source">Deloitte AI in FS 2026 †</p>
+          </article>
+          <article class="shift-card shift-card--ops">
+            <div class="shift-card__figure">CPS 230</div>
+            <p class="shift-card__line">In force with CPS 234, CPG 234 and APS 233. The July 2026 APRA letter names attested action.</p>
+            <p class="shift-card__source">APRA Letter to Industry, July 2026</p>
+          </article>
+        </div>
+      </div>
+
+      <p class="shifts-footnote">† directional analyst research — sourced but not primary-verified. Marked, not hidden.</p>
+    </div>
+
     <hr class="rule">
     <p class="tag" style="text-align:center"><a href="/products">Continue reading → <em>We build the things we advise on.</em> · Next · 04 · Products</a></p>
   </div>

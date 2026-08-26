@@ -146,6 +146,7 @@ const __MARKUP = String.raw`
             <span class="eyebrow" style="color: var(--accent-warm);">WHAT THE MARKET IS TELLING US</span>
             <h2>Three pressures. <em>One cause.</em></h2>
           </div>
+          <a class="market-band__link" href="/practice#nine-shifts">See all nine shifts →</a>
         </div>
         <div class="market-band__cards market-band__cards--two">
           <article class="market-card market-card--board">

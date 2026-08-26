@@ -6155,6 +6155,196 @@ h1 em, h2 em, .fo-hero__name em {
   max-width: 72ch;
 }
 
+/* =====================================================================
+   /products/[slug] · Syntegreti-inspired layout · 26 Aug 2026
+   Cleaner platform hero + vertical ✕ pain list + responsive features
+   grid + horizontal 4-stage flow with connecting arrows.
+   ===================================================================== */
+
+/* Platform hero · tighter than the generic .hero */
+.platform-hero { padding-bottom: var(--space-7); }
+.platform-hero__name {
+  font-family: var(--font-serif);
+  font-size: clamp(40px, 5vw, 64px);
+  line-height: 1.05;
+  color: var(--fg1);
+  margin: var(--space-3) 0 var(--space-3);
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+.platform-hero__promise {
+  font-family: var(--font-serif);
+  font-size: clamp(20px, 2.2vw, 26px);
+  line-height: 1.35;
+  color: var(--accent-warm);
+  margin: 0 0 var(--space-4);
+  max-width: 42ch;
+}
+.platform-hero__body {
+  color: var(--fg2);
+  font-size: 17px;
+  line-height: 1.65;
+  margin: 0 0 var(--space-5);
+  max-width: 68ch;
+}
+
+/* Pain list · vertical ✕ list (Syntegreti pattern) */
+.pain-list {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-6) 0 0;
+  max-width: 72ch;
+  border-top: 1px dashed rgba(232, 139, 122, 0.28);
+}
+.pain-list__item {
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  gap: var(--space-3);
+  align-items: baseline;
+  padding: var(--space-4) 0;
+  border-bottom: 1px dashed rgba(232, 139, 122, 0.28);
+}
+.pain-list__mark {
+  color: var(--accent-coral);
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+}
+.pain-list__text {
+  color: var(--fg2);
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+/* Features grid · responsive by capability count */
+.features-grid {
+  display: grid;
+  gap: var(--space-5);
+  margin-top: var(--space-6);
+}
+.features-grid--2 { grid-template-columns: repeat(2, 1fr); }
+.features-grid--3 { grid-template-columns: repeat(3, 1fr); }
+.features-grid--4 { grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 960px) {
+  .features-grid--3, .features-grid--4 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 720px) {
+  .features-grid--2, .features-grid--3, .features-grid--4 { grid-template-columns: 1fr; }
+}
+
+.feature-card {
+  padding: var(--space-5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.02);
+}
+.feature-card__h {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  color: var(--fg1);
+  margin: 0 0 var(--space-3);
+  letter-spacing: -0.005em;
+}
+.feature-card__b {
+  color: var(--fg2);
+  font-size: 14.5px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Mechanic — plain prose variant */
+.mechanic-prose {
+  max-width: 72ch;
+  margin-top: var(--space-5);
+}
+.mechanic-prose p {
+  color: var(--fg1);
+  font-family: var(--font-serif);
+  font-size: 18px;
+  line-height: 1.65;
+  margin: 0 0 var(--space-4);
+}
+
+/* Mechanic — horizontal stage flow (Business Ops autonomy pattern) */
+.mechanic-intro {
+  color: var(--fg2);
+  font-size: 16px;
+  line-height: 1.65;
+  margin: var(--space-5) 0 var(--space-5);
+  max-width: 78ch;
+}
+.stages-flow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-5);
+  margin: var(--space-6) 0;
+  position: relative;
+}
+@media (max-width: 960px) { .stages-flow { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .stages-flow { grid-template-columns: 1fr; } }
+
+.stage-card {
+  padding: var(--space-5);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 3px solid #00D4CB;
+  border-radius: 6px;
+  position: relative;
+}
+.stage-card__level {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  color: #00D4CB;
+  margin-bottom: var(--space-3);
+  padding: 3px 10px;
+  border: 1px solid rgba(0, 212, 203, 0.4);
+  border-radius: 4px;
+  font-weight: 600;
+}
+.stage-card__title {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  color: var(--fg1);
+  margin: 0 0 var(--space-3);
+  letter-spacing: -0.005em;
+}
+.stage-card__body {
+  color: var(--fg2);
+  font-size: 14.5px;
+  line-height: 1.55;
+  margin: 0;
+}
+.stage-card__arrow {
+  position: absolute;
+  top: 50%;
+  right: calc(var(--space-5) * -1 - 4px);
+  transform: translateY(-50%);
+  color: var(--accent-warm);
+  font-size: 20px;
+  font-weight: 700;
+  z-index: 1;
+}
+@media (max-width: 960px) {
+  .stage-card__arrow { display: none; }
+}
+
+.mechanic-footer {
+  color: var(--accent-warm);
+  font-family: var(--font-serif);
+  font-size: 17px;
+  line-height: 1.55;
+  margin: var(--space-6) 0 0;
+  padding-top: var(--space-4);
+  border-top: 1px dashed rgba(255, 255, 255, 0.1);
+  max-width: 68ch;
+}
+
+/* END /products/[slug] Syntegreti-inspired layout
+   ===================================================================== */
+
 /* --- Footer overhaul (V13 · 20 links to 9, 7 emails to 1) --- */
 .footer__row--brand {
   display: block;

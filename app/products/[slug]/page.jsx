@@ -70,8 +70,15 @@ const PLATFORMS = {
       { h: 'End-to-end workflows', b: 'Quote → contract → invoice → payment, running without chasing. Applicant → offer → onboarded, the same way every time.' },
       { h: 'Multi-tenant SaaS', b: 'In your cloud. AWS or Microsoft Azure. Configurable per operator without engineering effort.' },
     ],
-    mechanic: 'Four autonomy levels',
-    mechanicBody: '<p>Every AI action in Intuka sits at one of four levels, and you set the level per action. <strong>L1 Observe</strong> — AI watches, logs and reports; humans decide everything. <strong>L2 Suggest</strong> — AI proposes a next action; the human approves before it runs. <strong>L3 Act with approval</strong> — AI executes routine actions; a human is notified with the option to reverse. <strong>L4 Autonomous</strong> — AI executes and reports back at cadence; humans intervene only when an alert triggers. The autonomy dial is per-action. Humans stay in charge of judgement; machines run the routine.</p><p><strong>Human-Led. AI-Operated.</strong> This is that belief, written into a product rather than a slide.</p>',
+    mechanic: 'AI that earns trust one level at a time',
+    mechanicIntro: 'Every AI action in Intuka sits at one of four levels, and you set the level per action. The autonomy dial is per-action, not per-organisation. Humans stay in charge of judgement; machines run the routine.',
+    mechanicStages: [
+      { level: 'L1', title: 'Observe', body: 'AI watches, logs and reports. Humans decide everything.' },
+      { level: 'L2', title: 'Suggest', body: 'AI proposes a next action. The human approves before it runs.' },
+      { level: 'L3', title: 'Act with approval', body: 'AI executes routine actions. A human is notified with the option to reverse.' },
+      { level: 'L4', title: 'Autonomous', body: 'AI executes and reports back at cadence. Humans intervene only when an alert triggers.' },
+    ],
+    mechanicFooter: 'Human-Led. AI-Operated. This is that belief, written into a product rather than a slide.',
     who: 'Businesses that are too small for seven separate systems and too serious for the spreadsheets that stitch them together. Independent operators using it as the operating layer for a business one person could not otherwise run. Boutique consultancies giving it to their clients as an off-the-shelf ops backbone.',
   },
   'ai-governance': {
@@ -249,29 +256,60 @@ export default function PlatformDetailPage({ params }) {
   const p = PLATFORMS[params.slug];
   if (!p) notFound();
 
-  const problemsHtml = p.problems
-    .map((line) => `<p class="platform-detail-problem__item">— ${line}</p>`)
+  const demoMailto = `mailto:contact@omameh.com.au?subject=Request a demo · ${p.name}&body=Hi Bijal,%0D%0A%0D%0AI would like to book a demo of ${p.name}.%0D%0A%0D%0AMy organisation:%0D%0AMy role:%0D%0AThe problem I am trying to solve:%0D%0A%0D%0AThank you.`;
+
+  const painsHtml = p.problems
+    .map((line) => `<li class="pain-list__item"><span class="pain-list__mark" aria-hidden="true">✕</span><span class="pain-list__text">${line}</span></li>`)
     .join('');
-  const capabilitiesHtml = p.capabilities
-    .map((c) => `<article class="capability-card"><h4 class="capability-card__h">${c.h}</h4><p class="capability-card__b">${c.b}</p></article>`)
+
+  const capabilityCount = p.capabilities.length;
+  const capCols = capabilityCount >= 4 ? 'features-grid--4' : capabilityCount === 3 ? 'features-grid--3' : 'features-grid--2';
+  const featuresHtml = p.capabilities
+    .map((c) => `<article class="feature-card"><h4 class="feature-card__h">${c.h}</h4><p class="feature-card__b">${c.b}</p></article>`)
     .join('');
+
   const brandLine = p.brand ? `<span class="platform-detail__brand">${p.brand}</span>` : '';
+
+  // Mechanic renders one of two ways:
+  // · if platform has mechanicStages · horizontal 4-stage progression (Business Ops autonomy pattern)
+  // · else · single mechanicBody paragraph
+  let mechanicHtml = '';
+  if (p.mechanicStages) {
+    const stagesHtml = p.mechanicStages
+      .map((s, i, arr) => `
+        <article class="stage-card">
+          <span class="stage-card__level">${s.level}</span>
+          <h4 class="stage-card__title">${s.title}</h4>
+          <p class="stage-card__body">${s.body}</p>
+          ${i < arr.length - 1 ? '<span class="stage-card__arrow" aria-hidden="true">→</span>' : ''}
+        </article>`)
+      .join('');
+    mechanicHtml = `
+      ${p.mechanicIntro ? `<p class="mechanic-intro">${p.mechanicIntro}</p>` : ''}
+      <div class="stages-flow">${stagesHtml}</div>
+      ${p.mechanicFooter ? `<p class="mechanic-footer"><em>${p.mechanicFooter}</em></p>` : ''}
+    `;
+  } else if (p.mechanicBody) {
+    mechanicHtml = p.mechanicBody.startsWith('<p>')
+      ? `<div class="mechanic-prose">${p.mechanicBody}</div>`
+      : `<div class="mechanic-prose"><p>${p.mechanicBody}</p></div>`;
+  }
 
   const markup = `
     <div class="container">
       <div class="route__header"><span class="route__index">04</span><span class="route__name">/products/${params.slug} · Product</span><span class="route__issue">Vol. I · Issue 01 · Q3 2026</span></div>
 
-      <div class="hero">
+      <div class="hero platform-hero">
         <div class="platform-detail__chips">
           <span class="platform-detail__chip">PLATFORM · ${p.code}</span>
           <span class="platform-detail__chip platform-detail__chip--status">${p.statusLabel}</span>
         </div>
         ${brandLine}
-        <h1 style="margin-top: var(--space-3);">${p.name}</h1>
-        <p class="platform-detail__promise"><em>${p.promise}</em></p>
-        <p class="lede">${p.para}</p>
+        <h1 class="platform-hero__name">${p.name}</h1>
+        <p class="platform-hero__promise"><em>${p.promise}</em></p>
+        <p class="platform-hero__body">${p.para}</p>
         <div class="platform-detail__ctas">
-          <a class="cta cta--primary" href="mailto:contact@omameh.com.au?subject=Request a demo · ${p.name}&body=Hi Bijal,%0D%0A%0D%0AI would like to book a demo of ${p.name}.%0D%0A%0D%0AMy organisation:%0D%0AMy role:%0D%0AThe problem I am trying to solve:%0D%0A%0D%0AThank you.">Request a demo →</a>
+          <a class="cta cta--primary" href="${demoMailto}">Request a demo →</a>
           <a class="cta" href="/contact">Talk to us →</a>
         </div>
       </div>
@@ -281,7 +319,7 @@ export default function PlatformDetailPage({ params }) {
           <span class="eyebrow eyebrow--coral">01 · The problem</span>
           <h2>What ${p.name.toLowerCase()} <em>is for.</em></h2>
         </div>
-        <div class="platform-detail-problems">${problemsHtml}</div>
+        <ul class="pain-list">${painsHtml}</ul>
       </div>
 
       <div class="section">
@@ -289,20 +327,21 @@ export default function PlatformDetailPage({ params }) {
           <span class="eyebrow">02 · What is in it</span>
           <h2>The <em>capability.</em></h2>
         </div>
-        <div class="capabilities-grid">${capabilitiesHtml}</div>
+        <div class="features-grid ${capCols}">${featuresHtml}</div>
       </div>
 
+      ${mechanicHtml ? `
       <div class="section">
         <div class="section__head">
           <span class="eyebrow">03 · The distinctive mechanic</span>
           <h2>${p.mechanic}<em>.</em></h2>
         </div>
-        <div class="platform-detail-mechanic">${p.mechanicBody.startsWith('<p>') ? p.mechanicBody : `<p>${p.mechanicBody}</p>`}</div>
-      </div>
+        ${mechanicHtml}
+      </div>` : ''}
 
       <div class="section">
         <div class="section__head">
-          <span class="eyebrow">04 · Who it is for</span>
+          <span class="eyebrow">${mechanicHtml ? '04' : '03'} · Who it is for</span>
         </div>
         <p class="platform-detail-who">${p.who}</p>
       </div>
@@ -310,9 +349,9 @@ export default function PlatformDetailPage({ params }) {
       <div class="section">
         <div class="close-block close-block--watermarked">
           <img class="om-watermark" src="/omameh-watermark.svg" alt="" aria-hidden="true" />
-          <p class="close-block__line">Ready to <em>see it?</em></p>
+          <p class="close-block__line">Run <em>${p.name.toLowerCase()}</em> in your business.</p>
           <div class="close-block__ctas">
-            <a class="cta cta--primary" href="mailto:contact@omameh.com.au?subject=Request a demo · ${p.name}&body=Hi Bijal,%0D%0A%0D%0AI would like to book a demo of ${p.name}.%0D%0A%0D%0AMy organisation:%0D%0AMy role:%0D%0AThe problem I am trying to solve:%0D%0A%0D%0AThank you.">Request a demo →</a>
+            <a class="cta cta--primary" href="${demoMailto}">Request a demo →</a>
             <a class="cta" href="/products">All platforms →</a>
           </div>
         </div>

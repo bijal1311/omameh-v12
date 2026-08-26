@@ -185,17 +185,17 @@ const __MARKUP = String.raw`
           <p class="arm-card__promise"><em>We work out what is actually wrong.</em></p>
           <p class="arm-card__body">We learn how your world runs, find what is blocking growth, and redesign it with your people rather than around them.</p>
         </article>
-        <article class="arm-card arm-card--gold">
+        <article class="arm-card arm-card--teal">
           <span class="arm-card__eyebrow">02 · GET FLUENT WITH US</span>
           <h3 class="arm-card__name">AI-Era <em>Fluency</em></h3>
           <p class="arm-card__promise"><em>We make the decision yours to make.</em></p>
           <p class="arm-card__body">Boards, executives, teams and one-person businesses. What AI can do, what it cannot, and what you answer for either way.</p>
         </article>
-        <article class="arm-card arm-card--shift">
+        <article class="arm-card arm-card--teal">
           <span class="arm-card__eyebrow">03 · BUILD WITH US</span>
           <h3 class="arm-card__name">Omameh <em>Products</em></h3>
           <p class="arm-card__promise"><em>Then we build the thing.</em></p>
-          <p class="arm-card__body">Eight platforms built by our own team, several already in production. Or something new, for the part nobody sells off the shelf.</p>
+          <p class="arm-card__body">Eight platforms built by our own team. Or something new, for the part nobody sells off the shelf.</p>
         </article>
       </div>
 
@@ -241,17 +241,14 @@ const __MARKUP = String.raw`
         <div class="bearing-label">
           <h4>Sense</h4>
           <p>Where you actually are</p>
-          <span class="bearing-label__foot">SIX WEEKS</span>
         </div>
         <div class="bearing-label">
           <h4>Shift</h4>
           <p>Redesigned with your people</p>
-          <span class="bearing-label__foot">ONE TEAM AT A TIME</span>
         </div>
         <div class="bearing-label">
           <h4>Scale</h4>
           <p>Runs without us, then we go</p>
-          <span class="bearing-label__foot">THE CAPABILITY STAYS</span>
         </div>
       </div>
     </div>
@@ -416,8 +413,8 @@ const __MARKUP = String.raw`
             <p class="ask__answer">We are not here to sell AI to the people who can already afford it. We are here so that everyone using it does so on purpose, and stops being afraid of it.</p>
           </article>
           <article class="ask">
-            <h3 class="ask__question">You advise on AI and you sell AI products. Is that a conflict?</h3>
-            <p class="ask__answer">It would be if we hid it. We disclose the interest in writing, and we never charge for a recommendation that leads to a related sale. We also recommend technology we don't build, and walk away from work we can't do well — which is the part you should actually judge us on.</p>
+            <h3 class="ask__question">What if it doesn't work?</h3>
+            <p class="ask__answer">Then we say so. We would rather tell you a thing is not worth building than bill you for the next phase of finding out. It has happened, and it will happen again.</p>
           </article>
         </div>
       </div>

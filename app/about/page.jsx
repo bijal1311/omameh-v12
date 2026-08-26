@@ -3,43 +3,38 @@ import RouteShell from '../_components/RouteShell';
 export const metadata = {
   title: 'About',
   description:
-    'One team, two flags. Architecture in Sydney. Engineering in Hyderabad. The people who design it are the people who build it — and the market we are built for.',
+    'One team, two flags. Architecture in Sydney. Engineering in Hyderabad. The market we are built for and the way we work.',
 };
 
 /**
- * About · V13 rebuild · 26 Aug 2026.
- * Full brief · Venture Architecture/V13_Home_and_About_Brief_for_Code.md
+ * About · V13 rebuild · 26 Aug 2026 · per V13_SITE_BUILD_for_Code.md §3.
  *
- * About answers 'who are you, and why should I believe you?' It is the
- * proof page. Home is the pitch.
+ * Section order:
+ *   Hero + numbers strip
+ *   Why there is a team · founder note (first person)
+ *   The team · collective, no bio cards, no headshots
+ *   How we work · four principles, one sentence each
+ *   What we believe · V/M/B
+ *   The market · nine shifts (all coral except CPS 230)
+ *   Where we play · four sectors
+ *   Foundation strip · one quiet line
+ *   Close · 'Got a hard problem?'
  *
- * Deleted from About in this rebuild:
+ * Deleted from About (per brief §3):
  *   · Six-layer stack + Framework diagram
+ *   · Four-column architecture diagram
  *   · Eight dimensions listing
  *   · Five pillars listing
  *   · Partners & Collaborations section
- *   · The old Media sector card
+ *   · The entire 'How we hold ourselves' / independence block
+ *     (per ten rules · nothing about equity or conflict disclosure anywhere)
+ *   · Every abstract 'what we stake' passage
  *   · The word 'bench' anywhere
- *   · Old Foundation full-section treatment (now a small strip)
+ *   · The three principal cards (Bijal + Jay + Manish avatars) —
+ *     brief §3 · 'The team · collective. No bio cards, no headshots.'
  *
- * Added:
- *   · New hero · 'One team. Two flags.'
- *   · Who we are · Syntegreti named, three principal cards (Bijal + Jay + Manish)
- *   · What we believe · Vision · Mission · Belief moved from Home
- *   · The market we are built for · full nine-shift grid moved from /practice
- *   · Where we play · 4 sectors (Media removed, Healthcare = flagship weight)
- *   · How we hold ourselves · independence, reworded per brief §B7
- *   · Foundation · small strip, not section, mono disclaimer
- *   · Close · 'The rest is on the record.' + route links + Let's talk
- *
- * BLOCKERS honoured with clear placeholders:
- *   · Jay + Manish bios · [ Full bio pending from Bijal ] markers
- *   · Photos for principals · open-ring avatars with initials
- *     (per Open Circle Law · swap when real photos land)
- *   · Five † directional shift figures kept with the marker convention
- *
- * Frameworks (6-layer, 8 dimensions, 5 pillars) move to /practice in a
- * later build — NOT rendered on About in any form per brief §B1.
+ * Ten rules held throughout · no timelines, no equity mentions,
+ * numbers over adjectives, Australian English, no emoji.
  */
 
 const __MARKUP = String.raw`
@@ -55,65 +50,94 @@ const __MARKUP = String.raw`
       </div>
     </div>
 
-    <div class="section">
-      <div class="section__head">
-        <span class="eyebrow">01 · Who we are</span>
-        <h2>The people <em>building this.</em></h2>
-        <p class="strap">Omameh is small on purpose. The advisory work is founder-led. The engineering is a team of specialists in Hyderabad who have shipped eight platforms and run several of them in production today. Two companies, one delivery team, and equity between them that we disclose rather than manage.</p>
+    <div class="numbers-strip">
+      <div class="number-stat">
+        <div class="number-stat__figure">8</div>
+        <p class="number-stat__label">platforms built in-house</p>
       </div>
-
-      <div class="principals-grid">
-
-        <article class="principal">
-          <div class="principal__avatar" aria-hidden="true">
-            <svg viewBox="0 0 400 400" fill="none">
-              <path d="M 230.9,24.7 A 178,178 0 1,1 169.1,24.7" stroke="#00B5AD" stroke-width="14" stroke-linecap="round" fill="none" />
-              <text x="200" y="240" text-anchor="middle" font-family="'Playfair Display', serif" font-size="130" font-weight="700" fill="rgba(255,255,255,0.85)">BS</text>
-            </svg>
-          </div>
-          <div class="principal__meta">
-            <h3 class="principal__name">Bijal Sejpal</h3>
-            <p class="principal__role">Founder &amp; CEO, Omameh · Managing Partner, Syntegreti</p>
-          </div>
-          <p class="principal__bio">Twenty years running data, AI and operations inside two of Australia's largest regulated organisations. Former Group COO Data &amp; AI, QBE. Former COO Technology and interim CIO, Bupa Asia-Pacific.</p>
-        </article>
-
-        <article class="principal">
-          <div class="principal__avatar" aria-hidden="true">
-            <svg viewBox="0 0 400 400" fill="none">
-              <path d="M 230.9,24.7 A 178,178 0 1,1 169.1,24.7" stroke="#C9A84C" stroke-width="14" stroke-linecap="round" fill="none" />
-              <text x="200" y="240" text-anchor="middle" font-family="'Playfair Display', serif" font-size="130" font-weight="700" fill="rgba(255,255,255,0.85)">JJ</text>
-            </svg>
-          </div>
-          <div class="principal__meta">
-            <h3 class="principal__name">Jay Jayakeerthy</h3>
-            <p class="principal__role">Co-founder, Syntegreti</p>
-          </div>
-          <p class="principal__bio principal__bio--pending"><em>[ Two-line bio pending from Bijal. ]</em></p>
-        </article>
-
-        <article class="principal">
-          <div class="principal__avatar" aria-hidden="true">
-            <svg viewBox="0 0 400 400" fill="none">
-              <path d="M 230.9,24.7 A 178,178 0 1,1 169.1,24.7" stroke="#7B9EF0" stroke-width="14" stroke-linecap="round" fill="none" />
-              <text x="200" y="240" text-anchor="middle" font-family="'Playfair Display', serif" font-size="130" font-weight="700" fill="rgba(255,255,255,0.85)">MD</text>
-            </svg>
-          </div>
-          <div class="principal__meta">
-            <h3 class="principal__name">Manish Davda</h3>
-            <p class="principal__role">Co-founder, Syntegreti</p>
-          </div>
-          <p class="principal__bio principal__bio--pending"><em>[ Two-line bio pending from Bijal. ]</em></p>
-        </article>
-
+      <div class="number-stat">
+        <div class="number-stat__figure">20+</div>
+        <p class="number-stat__label">people and growing</p>
       </div>
+      <div class="number-stat">
+        <div class="number-stat__figure">4</div>
+        <p class="number-stat__label">markets, one method</p>
+      </div>
+      <div class="number-stat">
+        <div class="number-stat__figure">100+</div>
+        <p class="number-stat__label">years combined leadership</p>
+      </div>
+    </div>
 
-      <p class="principals-foot">Hyderabad → global delivery · AWS and Microsoft Azure partners.</p>
+    <div class="founder-note-band">
+      <div class="founder-note-band__inner">
+        <div class="section__head">
+          <span class="eyebrow" style="color: var(--accent-warm);">FROM THE FOUNDER</span>
+          <h2>Why there is <em>a team.</em></h2>
+        </div>
+        <div class="founder-note">
+          <p>I spent twenty years inside large regulated organisations, and I kept watching the same thing happen. A good strategy, a well-run pilot, and then nothing. Not because the technology failed — because the way the work happened underneath it never changed.</p>
+          <p>As an adviser you can name that problem precisely. Naming it was never what I wanted to do.</p>
+          <p>I wanted to be accountable for fixing it. Not to hand a client a diagnosis and a recommended vendor, but to stay in it until the thing worked — and to carry the consequence if it did not.</p>
+          <p><em>One team, two countries.</em> I am accountable for all of it.</p>
+          <p>Twenty people and growing — architecture, engineering, data, cloud, clinical and domain specialists — working to the same agenda I have. That the client succeeds. Not that a phase closes.</p>
+          <p>I sit closest to the client: their growth model, their governance, the architecture underneath it. None of it gets designed alone. The team is in the room for the design, not only the build.</p>
+          <p class="founder-note__sign">— <strong>Bijal</strong></p>
+        </div>
+      </div>
     </div>
 
     <div class="section">
       <div class="section__head">
-        <span class="eyebrow">02 · What we believe</span>
+        <span class="eyebrow">01 · The team</span>
+        <h2>Small on <em>purpose.</em></h2>
+        <p class="strap">The advisory work is founder-led out of Sydney. The engineering is a team of specialists in Hyderabad — Syntegreti — who have built eight platforms and run several of them in production today. Everyone here chose to be here.</p>
+      </div>
+
+      <div class="role-tags">
+        <span class="role-tag">AI / ML ENGINEERS</span>
+        <span class="role-tag">FULL-STACK DEVELOPERS</span>
+        <span class="role-tag">CLOUD ARCHITECTS</span>
+        <span class="role-tag">DATA SCIENTISTS</span>
+        <span class="role-tag">CLINICAL SPECIALISTS</span>
+        <span class="role-tag">DOMAIN SPECIALISTS</span>
+        <span class="role-tag">DEVOPS</span>
+      </div>
+
+      <div class="team-foot">
+        <p>Founded by <strong>Bijal Sejpal</strong> — former Group COO Data &amp; AI at QBE, former COO Technology and interim CIO at Bupa Asia-Pacific. <a href="/founder">More on the founder →</a></p>
+        <p class="team-foot__location">SYDNEY · HYDERABAD · GLOBAL DELIVERY · AWS AND MICROSOFT AZURE PARTNERS</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section__head">
+        <span class="eyebrow">02 · How we work</span>
+        <h2>Four <em>principles.</em></h2>
+      </div>
+      <div class="principles-grid">
+        <article class="principle">
+          <h3 class="principle__name">Build first, pitch second.</h3>
+          <p class="principle__body">We do not sell decks — we build a working proof and let the result decide.</p>
+        </article>
+        <article class="principle">
+          <h3 class="principle__name">Everyone ships.</h3>
+          <p class="principle__body">The person who talks to you on day one is the person deploying it later.</p>
+        </article>
+        <article class="principle">
+          <h3 class="principle__name">Stay small, go deep.</h3>
+          <p class="principle__body">We could hire two hundred people and dilute. We would rather go further into fewer problems.</p>
+        </article>
+        <article class="principle">
+          <h3 class="principle__name">Own the outcome.</h3>
+          <p class="principle__body">Nothing is handed off.</p>
+        </article>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section__head">
+        <span class="eyebrow">03 · What we believe</span>
       </div>
       <div class="grid-3">
         <div class="card">
@@ -133,27 +157,26 @@ const __MARKUP = String.raw`
 
     <div class="section" id="nine-shifts">
       <div class="section__head">
-        <span class="eyebrow">03 · The market we are built for</span>
+        <span class="eyebrow">04 · The market we are built for</span>
         <h2>Nine shifts on every board's <em>agenda.</em></h2>
-        <p class="strap">The signals a board should be reading now. Three under board pressure, three under delivery friction, three under operating drag. Nine reasons the ground has moved underneath the strategy.</p>
       </div>
 
       <div class="shifts-group">
         <div class="shifts-group__head">
-          <span class="shifts-group__label shifts-group__label--board">BOARD PRESSURE</span>
+          <span class="shifts-group__label shifts-group__label--coral">BOARD PRESSURE</span>
         </div>
         <div class="shifts-grid">
-          <article class="shift-card shift-card--board">
+          <article class="shift-card shift-card--coral">
             <div class="shift-card__figure">78%</div>
             <p class="shift-card__line">of ASX-listed insurance boards now carry AI as a standing quarterly agenda item — up from 12% two years ago.</p>
             <p class="shift-card__source">KPMG ASX AI Adoption 2026 †</p>
           </article>
-          <article class="shift-card shift-card--board">
+          <article class="shift-card shift-card--coral">
             <div class="shift-card__figure">63%</div>
             <p class="shift-card__line">of AI investments have no measurable ROI. CFOs describe AI spend as increasingly indefensible.</p>
             <p class="shift-card__source">Gartner AI in FS 2026 †</p>
           </article>
-          <article class="shift-card shift-card--board">
+          <article class="shift-card shift-card--coral">
             <div class="shift-card__figure">20%</div>
             <p class="shift-card__line">only, of AU insurance boards have signed an AI risk appetite statement.</p>
             <p class="shift-card__source">APRA CPG 234 Feedback 2026</p>
@@ -163,20 +186,20 @@ const __MARKUP = String.raw`
 
       <div class="shifts-group">
         <div class="shifts-group__head">
-          <span class="shifts-group__label shifts-group__label--drag">DELIVERY FRICTION</span>
+          <span class="shifts-group__label shifts-group__label--coral">DELIVERY FRICTION</span>
         </div>
         <div class="shifts-grid">
-          <article class="shift-card shift-card--drag">
+          <article class="shift-card shift-card--coral">
             <div class="shift-card__figure">82%</div>
             <p class="shift-card__line">of enterprise AI pilots never ship to production. Momentum stalls between demo and deployment.</p>
             <p class="shift-card__source">MIT Sloan / BCG State of AI 2026</p>
           </article>
-          <article class="shift-card shift-card--drag">
+          <article class="shift-card shift-card--coral">
             <div class="shift-card__figure">70%</div>
             <p class="shift-card__line">of AI projects stall at data-readiness. Governance debt shows up as delivery drag.</p>
             <p class="shift-card__source">Gartner Data &amp; AI Barriers 2026 †</p>
           </article>
-          <article class="shift-card shift-card--drag">
+          <article class="shift-card shift-card--coral">
             <div class="shift-card__figure">$4.4M</div>
             <p class="shift-card__line">average waste per stalled AI initiative.</p>
             <p class="shift-card__source">IBM / Ponemon 2026 †</p>
@@ -186,20 +209,20 @@ const __MARKUP = String.raw`
 
       <div class="shifts-group">
         <div class="shifts-group__head">
-          <span class="shifts-group__label shifts-group__label--ops">OPERATING DRAG</span>
+          <span class="shifts-group__label shifts-group__label--coral">OPERATING DRAG</span>
         </div>
         <div class="shifts-grid">
-          <article class="shift-card shift-card--ops">
+          <article class="shift-card shift-card--coral">
             <div class="shift-card__figure">20%</div>
             <p class="shift-card__line">only, of AU insurers have operating-model changes actually underway.</p>
             <p class="shift-card__source">McKinsey State of Organizations 2026</p>
           </article>
-          <article class="shift-card shift-card--ops">
+          <article class="shift-card shift-card--coral">
             <div class="shift-card__figure">2 in 3</div>
             <p class="shift-card__line">insurance leaders describe their organisation as too complex to move at AI speed.</p>
             <p class="shift-card__source">Deloitte AI in FS 2026 †</p>
           </article>
-          <article class="shift-card shift-card--ops">
+          <article class="shift-card shift-card--teal-fact">
             <div class="shift-card__figure">CPS 230</div>
             <p class="shift-card__line">In force with CPS 234, CPG 234 and APS 233. The July 2026 APRA letter names attested action.</p>
             <p class="shift-card__source">APRA Letter to Industry, July 2026</p>
@@ -212,24 +235,22 @@ const __MARKUP = String.raw`
 
     <div class="section">
       <div class="section__head">
-        <span class="eyebrow">04 · Where we play</span>
+        <span class="eyebrow">05 · Where we play</span>
         <h2>Regulated, complex, <em>and under a clock.</em></h2>
         <p class="strap">We go deep where the stakes are highest and the regulator is closest. Insurance is where we started — richest domain, sharpest regulatory lens. Everything else extends from it.</p>
       </div>
 
       <div class="sectors-grid">
-
         <article class="sector">
           <div class="sector__head">
-            <span class="sector__code">S/01 · FLAGSHIP</span>
+            <span class="sector__code">S/01</span>
             <h3 class="sector__name">Banking, Financial Services &amp; Insurance</h3>
           </div>
           <div class="sector__meta">
             <div class="sector__row"><span class="sector__label">Regulators</span><span class="sector__value">APRA · ASIC · AFCA</span></div>
-            <div class="sector__row"><span class="sector__label">Where we work</span><span class="sector__value">Claims · underwriting · complaints · fraud · KYC and AML · third-party resilience</span></div>
+            <div class="sector__row"><span class="sector__label">Work</span><span class="sector__value">Claims · underwriting · complaints · fraud · KYC and AML · third-party resilience</span></div>
           </div>
         </article>
-
         <article class="sector">
           <div class="sector__head">
             <span class="sector__code">S/02</span>
@@ -237,21 +258,19 @@ const __MARKUP = String.raw`
           </div>
           <div class="sector__meta">
             <div class="sector__row"><span class="sector__label">Regulators</span><span class="sector__value">TGA · ADHA · state health</span></div>
-            <div class="sector__row"><span class="sector__label">Where we work</span><span class="sector__value">Clinical governance · care navigation · patient pathways · digital health platforms · clinical AI assurance</span></div>
+            <div class="sector__row"><span class="sector__label">Work</span><span class="sector__value">Clinical governance · care navigation · patient pathways · digital health · clinical AI assurance</span></div>
           </div>
         </article>
-
         <article class="sector">
           <div class="sector__head">
             <span class="sector__code">S/03</span>
             <h3 class="sector__name">Government &amp; Public Sector</h3>
           </div>
           <div class="sector__meta">
-            <div class="sector__row"><span class="sector__label">Regulators</span><span class="sector__value">Commonwealth and state</span></div>
-            <div class="sector__row"><span class="sector__label">Where we work</span><span class="sector__value">Service delivery · shared services · citizen-facing platforms · public accountability</span></div>
+            <div class="sector__row"><span class="sector__label">Regulators</span><span class="sector__value">Commonwealth · state</span></div>
+            <div class="sector__row"><span class="sector__label">Work</span><span class="sector__value">Service delivery · shared services · citizen-facing platforms · public accountability</span></div>
           </div>
         </article>
-
         <article class="sector">
           <div class="sector__head">
             <span class="sector__code">S/04</span>
@@ -259,22 +278,9 @@ const __MARKUP = String.raw`
           </div>
           <div class="sector__meta">
             <div class="sector__row"><span class="sector__label">Regulators</span><span class="sector__value">Sector-dependent</span></div>
-            <div class="sector__row"><span class="sector__label">Where we work</span><span class="sector__value">Operating model · engineering capability · platform modernisation · global capability centres</span></div>
+            <div class="sector__row"><span class="sector__label">Work</span><span class="sector__value">Operating model · engineering capability · platform modernisation · global capability centres</span></div>
           </div>
         </article>
-
-      </div>
-    </div>
-
-    <div class="section" id="independence">
-      <div class="section__head">
-        <span class="eyebrow">05 · How we hold ourselves</span>
-        <h2>We advise, we build, and <em>we tell you which is which.</em></h2>
-      </div>
-      <div style="max-width: 78ch;">
-        <p style="color: var(--fg1); font-size: 18px; line-height: 1.6;">Omameh holds equity in the company that builds our platforms. You should know that before you read anything else here.</p>
-        <p style="color: var(--fg2); font-size: 16px; line-height: 1.7; margin-top: var(--space-4);">Two rules hold, and they are not negotiable. <strong>The advisory arm never recommends an Omameh product without disclosing the interest, in writing, at the time of the recommendation. We never charge for a recommendation that leads to a related sale.</strong></p>
-        <p style="color: var(--fg2); font-size: 16px; line-height: 1.7; margin-top: var(--space-4);">We also recommend technology we do not build, and we walk away from work we cannot do well. <em>Ask us to put any of it in the engagement letter. We will.</em></p>
       </div>
     </div>
 
@@ -287,19 +293,14 @@ const __MARKUP = String.raw`
           <span class="foundation-strip__fdn">Foundation</span>
         </span>
         <p class="foundation-strip__body">A standing share of the practice — time, capacity, capability — directed toward helping and education.</p>
-        <p class="foundation-strip__disclaimer">A commitment of our own time and capability, not a registered charity. No funds are solicited or held.</p>
+        <p class="foundation-strip__disclaimer">A COMMITMENT OF OUR OWN TIME AND CAPABILITY, NOT A REGISTERED CHARITY. NO FUNDS ARE SOLICITED OR HELD.</p>
       </div>
     </div>
 
     <div class="section">
       <div class="about-close">
-        <h2 class="about-close__lead">The rest is <em>on the record.</em></h2>
-        <div class="about-close__routes">
-          <a href="/practice">Practice →</a>
-          <a href="/products">Products →</a>
-          <a href="/fluency">Fluency →</a>
-          <a href="/case-00">Case 00 →</a>
-        </div>
+        <h2 class="about-close__lead">Got a hard <em>problem?</em></h2>
+        <p class="about-close__body">We are small, so we are picky about what we take on. If yours is interesting, we will move faster than you expect.</p>
         <div class="about-close__cta">
           <a class="cta cta--primary" href="/contact">Let's talk →</a>
         </div>
@@ -307,7 +308,7 @@ const __MARKUP = String.raw`
     </div>
 
     <hr class="rule">
-    <p class="tag" style="text-align:center"><a href="/practice">Continue reading → A framework is one thing. <em>How does it become the work?</em> · Next · 03 · Practice</a></p>
+    <p class="tag" style="text-align:center"><a href="/advisory">Continue reading → <em>We work out what is actually wrong.</em> · Next · 03 · Advisory</a></p>
   </div>
 `;
 

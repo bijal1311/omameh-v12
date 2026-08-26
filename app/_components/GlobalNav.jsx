@@ -17,7 +17,7 @@
 const LINKS = [
   ['Home',     '/',         false],
   ['About',    '/about',    false],
-  ['Practice', '/practice', false],
+  ['Advisory', '/advisory', false],
   ['Products', '/products', false],
   ['Fluency',  '/fluency',  false],
   ['Atlas',    '/atlas',    true],

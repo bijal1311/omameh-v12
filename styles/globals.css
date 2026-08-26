@@ -6345,6 +6345,453 @@ h1 em, h2 em, .fo-hero__name em {
 /* END /products/[slug] Syntegreti-inspired layout
    ===================================================================== */
 
+/* =====================================================================
+   V13 · Fluency rebuild · 26 Aug 2026
+   CTA state chips · Room grid · Personas · Flagship + 2×2 course grid ·
+   Closed rooms band · Outlooks 4-step Bearing + series · Start for
+   nothing (Rise) · What it is not band.
+   ===================================================================== */
+
+/* --- Course state chips (Opening first / Interest / Open) ------ */
+.course-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 999px;
+}
+.course-chip__bead {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--accent-warm);
+}
+.course-chip--opening {
+  background: rgba(0, 212, 203, 0.15);
+  color: #00D4CB;
+  border: 1px solid rgba(0, 212, 203, 0.4);
+}
+.course-chip--opening .course-chip__bead { background: #00D4CB; }
+.course-chip--open {
+  color: var(--accent-warm);
+  border: 1px solid var(--accent-warm);
+  background: rgba(201, 168, 76, 0.06);
+}
+
+.course-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--fg3);
+}
+
+/* --- The Room · 4-card grid ---------------------------------- */
+.room-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-4);
+  margin-top: var(--space-6);
+}
+@media (max-width: 900px) { .room-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 500px) { .room-grid { grid-template-columns: 1fr; } }
+
+.room-card {
+  padding: var(--space-4);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+.room-card__name {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  color: var(--fg1);
+  margin: 0 0 var(--space-2);
+  letter-spacing: -0.005em;
+}
+.room-card__body {
+  color: var(--fg2);
+  font-size: 14px;
+  line-height: 1.55;
+  margin: 0;
+}
+
+.room-foot {
+  margin-top: var(--space-6);
+  text-align: center;
+  color: var(--fg3);
+  font-family: var(--font-serif);
+  font-size: 15px;
+}
+
+/* --- Who is in it · Personas 2×2 ---------------------------- */
+.personas-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-5);
+  margin-top: var(--space-6);
+}
+@media (max-width: 720px) { .personas-grid { grid-template-columns: 1fr; } }
+.persona {
+  padding: var(--space-4) var(--space-5);
+  border-left: 2px solid #00D4CB;
+}
+.persona__name {
+  font-family: var(--font-serif);
+  font-size: 19px;
+  color: var(--fg1);
+  margin: 0 0 var(--space-2);
+  letter-spacing: -0.005em;
+}
+.persona__body {
+  color: var(--fg2);
+  font-size: 15px;
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* --- Open rooms · flagship (C01 · AI Fluency) --------------- */
+.room-flagship {
+  padding: var(--space-6);
+  margin-top: var(--space-6);
+  border: 1px solid rgba(0, 212, 203, 0.3);
+  border-left: 3px solid #00D4CB;
+  border-radius: 0 8px 8px 0;
+  background: linear-gradient(135deg, rgba(0, 212, 203, 0.04), rgba(255, 255, 255, 0.02));
+}
+.room-flagship__head {
+  display: flex;
+  gap: var(--space-3);
+  align-items: center;
+  margin-bottom: var(--space-4);
+  flex-wrap: wrap;
+}
+.room-flagship__name {
+  font-family: var(--font-serif);
+  font-size: clamp(28px, 3.4vw, 40px);
+  line-height: 1.1;
+  color: var(--fg1);
+  margin: 0 0 var(--space-3);
+  letter-spacing: -0.01em;
+  font-weight: 700;
+}
+.room-flagship__promise {
+  color: var(--accent-warm);
+  font-family: var(--font-serif);
+  font-size: 20px;
+  line-height: 1.4;
+  margin: 0 0 var(--space-5);
+  max-width: 46ch;
+}
+.room-flagship__body {
+  max-width: 68ch;
+  margin-bottom: var(--space-5);
+}
+.room-flagship__body p {
+  color: var(--fg2);
+  font-size: 15.5px;
+  line-height: 1.65;
+  margin: 0 0 var(--space-3);
+}
+.room-flagship__body p strong { color: var(--fg1); }
+.room-flagship__cta {
+  padding-top: var(--space-4);
+  border-top: 1px dashed rgba(255, 255, 255, 0.15);
+}
+
+/* --- Open rooms · 2×2 course grid (C02–C05) ----------------- */
+.rooms-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-5);
+  margin-top: var(--space-5);
+}
+@media (max-width: 720px) { .rooms-grid { grid-template-columns: 1fr; } }
+
+.room-course {
+  padding: var(--space-5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-top-width: 3px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.03);
+  display: flex;
+  flex-direction: column;
+}
+.room-course--teal { border-top-color: #00D4CB; }
+.room-course--gold { border-top-color: var(--accent-warm); }
+.room-course--shift { border-top-color: #7B9EF0; }
+.room-course--coral { border-top-color: var(--accent-coral); }
+
+.room-course__head { margin-bottom: var(--space-3); }
+.room-course__name {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  color: var(--fg1);
+  margin: 0 0 var(--space-3);
+  letter-spacing: -0.005em;
+}
+.room-course__q {
+  color: var(--accent-warm);
+  font-size: 15px;
+  line-height: 1.45;
+  margin: 0 0 var(--space-4);
+  font-family: var(--font-serif);
+}
+.room-course__leave {
+  color: var(--fg2);
+  font-size: 14.5px;
+  line-height: 1.6;
+  margin: 0 0 var(--space-4);
+}
+.room-course__leave strong {
+  color: var(--fg1);
+  display: inline-block;
+  margin-right: 4px;
+}
+.room-course__cta {
+  margin-top: auto;
+  padding-top: var(--space-3);
+  border-top: 1px dashed rgba(255, 255, 255, 0.1);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent-warm);
+  text-decoration: none;
+  transition: color var(--dur-base) var(--ease-standard);
+}
+.room-course__cta:hover { color: var(--fg1); }
+
+/* --- Beneath the course grid · help + shape strips ---------- */
+.rooms-help {
+  margin: var(--space-6) 0 0;
+  padding: var(--space-4) 0;
+  border-top: 1px dashed rgba(255, 255, 255, 0.15);
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.15);
+}
+.rooms-help p {
+  color: var(--fg2);
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 78ch;
+}
+.rooms-help p a {
+  color: var(--accent-warm);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  margin-left: 4px;
+}
+
+.rooms-shape {
+  margin-top: var(--space-6);
+  padding-top: var(--space-5);
+  display: flex;
+  gap: var(--space-4);
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.rooms-shape p {
+  color: var(--fg2);
+  font-family: var(--font-serif);
+  font-size: 17px;
+  margin: 0;
+}
+
+/* --- Closed rooms band ------------------------------------- */
+.closed-band {
+  background: #0B1738;
+  padding: var(--space-8) 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  margin: var(--space-8) calc((100vw - 100%) / -2);
+  padding-inline: max(24px, calc((100vw - 1240px) / 2));
+}
+.closed-band__inner {
+  max-width: 1240px;
+  margin-inline: auto;
+}
+.closed-lede {
+  max-width: 78ch;
+  margin: 0 0 var(--space-6);
+}
+.closed-lede p {
+  color: var(--fg2);
+  font-size: 16px;
+  line-height: 1.65;
+  margin: 0 0 var(--space-3);
+}
+.closed-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5);
+  margin-bottom: var(--space-6);
+}
+@media (max-width: 860px) { .closed-grid { grid-template-columns: 1fr; } }
+
+.closed-card {
+  padding: var(--space-5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 3px solid var(--accent-warm);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.02);
+}
+.closed-card__name {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  color: var(--fg1);
+  margin: 0 0 var(--space-3);
+  letter-spacing: -0.005em;
+}
+.closed-card__body {
+  color: var(--fg2);
+  font-size: 14.5px;
+  line-height: 1.6;
+  margin: 0;
+}
+.closed-cta {
+  display: inline-flex;
+}
+
+/* --- Outlooks · 4-step Bearing + series grid ---------------- */
+.bearing-row--four svg { max-height: 190px; }
+.bearing-labels--four {
+  grid-template-columns: repeat(4, 1fr);
+}
+@media (max-width: 900px) { .bearing-labels--four { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 500px) { .bearing-labels--four { grid-template-columns: 1fr; } }
+.bearing-label--conditional {
+  opacity: 0.55;
+}
+.bearing-label--conditional h4 {
+  font-style: italic;
+}
+
+.series-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-5);
+  margin-top: var(--space-5);
+}
+@media (max-width: 720px) { .series-grid { grid-template-columns: 1fr; } }
+
+.series-card {
+  padding: var(--space-5);
+  border-left: 2px solid var(--accent-warm);
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 0 4px 4px 0;
+}
+.series-card__name {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  color: var(--fg1);
+  margin: 0 0 var(--space-3);
+  letter-spacing: -0.005em;
+}
+.series-card__body {
+  color: var(--fg2);
+  font-size: 14.5px;
+  line-height: 1.6;
+  margin: 0;
+}
+.series-foot {
+  margin-top: var(--space-6);
+  padding-top: var(--space-4);
+  border-top: 1px dashed rgba(255, 255, 255, 0.15);
+  color: var(--fg2);
+  font-size: 15px;
+}
+.series-foot a {
+  color: var(--accent-warm);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  margin-left: 8px;
+}
+
+/* --- Start for nothing · 3 columns with Rise motif ---------- */
+.start-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5);
+  margin-top: var(--space-6);
+}
+@media (max-width: 860px) { .start-grid { grid-template-columns: 1fr; } }
+
+.start-card {
+  position: relative;
+  padding: var(--space-6) var(--space-5);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  overflow: hidden;
+  min-height: 220px;
+}
+.start-card > .om-field-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+.start-card__name {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  color: var(--fg1);
+  margin: 0 0 var(--space-3);
+  letter-spacing: -0.005em;
+}
+.start-card__body {
+  color: var(--fg2);
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 0 0 var(--space-3);
+}
+.start-card__note {
+  color: var(--accent-warm);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin: var(--space-3) 0 0;
+}
+.start-card__note a {
+  color: var(--accent-warm);
+  text-decoration: none;
+}
+
+/* --- What it is not · dark band with coral heading accent --- */
+.not-band {
+  background: #0B1738;
+  padding: var(--space-8) 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  margin: var(--space-8) calc((100vw - 100%) / -2);
+  padding-inline: max(24px, calc((100vw - 1240px) / 2));
+}
+.not-band__inner {
+  max-width: 1240px;
+  margin-inline: auto;
+}
+.not-band__accent {
+  color: var(--accent-coral);
+}
+.not-grid--v13 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5);
+  margin-top: var(--space-6);
+}
+@media (max-width: 860px) { .not-grid--v13 { grid-template-columns: 1fr; } }
+
+/* END V13 · Fluency rebuild
+   ===================================================================== */
+
 /* --- Footer overhaul (V13 · 20 links to 9, 7 emails to 1) --- */
 .footer__row--brand {
   display: block;

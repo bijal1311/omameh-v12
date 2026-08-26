@@ -3,52 +3,71 @@ import RouteShell from '../_components/RouteShell';
 export const metadata = {
   title: 'AI-Era Fluency',
   description:
-    'One and two-day courses for the people who have to decide. Boards, executives, and anyone being asked to lead through a change they did not train for.',
+    'Ten people in a room, and the decisions you actually have to make. Not a lecture, not a certificate, and nothing you could have read.',
 };
 
 /**
- * Fluency · v12 · Cowork brief V12_Fluency_Page_Code_Prompt.md · 24 Aug 2026.
- * Phase 1 · course catalogue per seat (supersedes the earlier roundtable-first
- * frame from V12_Products_and_Fluency_Content_Brief.md §2).
+ * Fluency · V13 rebuild · 26 Aug 2026.
+ * Full brief · AI-Era Fluency/V13_Fluency_Page_Brief_for_Code.md
  *
- * Five courses (C01-C05) · $1,500 to $2,800 per seat · Sydney + Melbourne.
- * Booking CTA reads "Request a seat →" and mailto's contact@ until Stripe
- * is live.
+ * Supersedes the V12 Fluency Code Prompt and §5A addendum (C06/C07 dropped).
  *
- * Practice register only. Open Ring at 26% on grounds. Rise motif on §7
- * (How a day runs) and §10 (Close) — the human surfaces. Bearing composition
- * on §7 Before / On the day / After sequence. Six sanctioned icons only.
+ * Five courses: C01 AI Fluency (Opening first · absorbs Buying AI as
+ * the afternoon), C02 Leader-Led AI, C03 AI Governance, C04 Mindset by
+ * Design, C05 Operating Model for the AI Era.
+ *
+ * NO PRICES anywhere. Shape carried by 'Per seat. Ten to a room. We
+ * travel — fees reflect it.' Numbers arrive in conversation.
+ *
+ * CTA state machine · three states per course. Only two in use at launch:
+ *   · Opening first · teal chip · Request a seat →     (C01)
+ *   · Interest      · no chip   · Register interest →  (C02–C05)
+ *   · Open          · gold chip · Book a seat →         (none yet · adding
+ *     a date is a content change, not code)
+ *
+ * Section order:
+ *   Hero
+ *   §3  Why this exists (dark band, coral eyebrow)
+ *   §4  Q·001 Unlearning + Q·002 Reverse knowledge transfer
+ *   §5  The room (4 cards)
+ *   §6  Who is in it (2×2 personas)
+ *   §7  Open rooms · 5 courses (C01 flagship + C02–C05 2×2)
+ *   §8  Closed rooms (dark band, 3 cards)
+ *   §9  Outlooks (4-step Bearing diagram + 4 series cards)
+ *   §10 Start for nothing (3 cols, Rise motif)
+ *   §11 What it is not (dark band, coral accent)
+ *   §12 Close
  */
+
+const REQUEST_SEAT_MAILTO = 'mailto:contact@omameh.com.au?subject=Request a seat · Fluency&body=Hi Bijal,%0D%0A%0D%0AI would like to request a seat.%0D%0A%0D%0ACourse:%0D%0AMy name and organisation:%0D%0APreferred city:%0D%0A%0D%0AThank you.';
+const RUN_CLOSED_MAILTO = 'mailto:contact@omameh.com.au?subject=Closed session enquiry&body=Hi Bijal,%0D%0A%0D%0AI want to explore running a closed Fluency room for my organisation.%0D%0A%0D%0AMy organisation:%0D%0AMy role:%0D%0AThe team we are considering it for:%0D%0AWhat we are trying to shift:%0D%0A%0D%0AThank you.';
 
 const __MARKUP = String.raw`
   <div class="container">
     <div class="route__header"><span class="route__index">05</span><span class="route__name">/fluency · AI-Era Fluency</span><span class="route__issue">Vol. I · Issue 01 · Q3 2026</span></div>
 
-    <div class="hero">
+    <div class="hero hero--watermarked">
+      <img class="om-watermark" src="/omameh-watermark.svg" alt="" aria-hidden="true" />
       <div>
-        <span class="eyebrow" style="color: var(--accent-warm);">05 · Fluency · Phase 1</span>
+        <span class="eyebrow">05 · Fluency</span>
         <h1 style="margin-top: var(--space-4);">Unlearn. Relearn. <em>Reinvent.</em></h1>
-        <p class="lede">One and two-day courses for the people who have to decide. Boards, executives, and anyone being asked to lead through a change they did not train for.</p>
-        <p style="color: var(--fg3); font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; margin-top: var(--space-4);">Sydney and Melbourne · open enrolment · closed sessions on request</p>
-        <div class="hero__ctas" style="margin-top: var(--space-5); display:inline-flex; gap: var(--space-3); flex-wrap: wrap;">
-          <a class="cta cta--primary" href="#courses">See the courses →</a>
-          <a class="cta" href="mailto:contact@omameh.com.au?subject=Fluency enquiry&body=Hi Bijal,%0D%0A%0D%0AI want to talk about Fluency courses.%0D%0A%0D%0AMy organisation:%0D%0AMy role:%0D%0AWhat I am hoping to work out:%0D%0A%0D%0AThank you.">Talk to us →</a>
+        <p class="lede">Ten people in a room, and the decisions you actually have to make. Not a lecture, not a certificate, and nothing you could have read.</p>
+        <div class="hero__ctas" style="margin-top: var(--space-5); display: inline-flex; gap: var(--space-3); flex-wrap: wrap;">
+          <a class="cta cta--primary" href="${REQUEST_SEAT_MAILTO}">Request a seat →</a>
+          <a class="cta" href="${RUN_CLOSED_MAILTO}">Run it for your team →</a>
         </div>
       </div>
     </div>
 
-    <div class="section">
-      <div class="section__head">
-        <h2>You are being asked to decide things <em>nobody trained you for.</em></h2>
-      </div>
-      <div style="max-width: 78ch;">
-        <p style="color: var(--fg2); font-size: 17px; line-height: 1.65;">Most AI training teaches tools. Six months later the tool has changed and the training is worthless.</p>
-        <p style="color: var(--fg2); font-size: 17px; line-height: 1.65; margin-top: var(--space-4);">The decisions do not change that fast. What to commit to. What to hold. What stays human. What you are accountable for when a machine got it wrong. Nobody is teaching that, because almost everyone teaching is also selling something.</p>
-        <p style="color: var(--fg1); font-size: 17px; line-height: 1.65; margin-top: var(--space-4);"><em>That is the gap these courses sit in.</em></p>
+    <div class="why-band">
+      <div class="why-band__inner">
+        <div class="section__head">
+          <span class="eyebrow eyebrow--coral">WHY THIS EXISTS</span>
+          <h2>You are being asked to decide things <em>nobody trained you for.</em></h2>
+        </div>
+        <p class="why-lede">Most AI training teaches tools. Six months later the tool has changed and the training is worthless. The decisions do not change that fast — what to commit to, what to hold, what stays human, what you answer for when a machine got it wrong. Almost nobody teaches that, because almost everyone teaching is also selling something.</p>
       </div>
     </div>
-
-    <hr class="om-rule" style="margin-block: var(--space-8);">
 
     <div class="section">
       <div class="section__head">
@@ -59,7 +78,6 @@ const __MARKUP = String.raw`
         <p style="color: var(--fg2); font-size: 17px; line-height: 1.65;">Everyone talks about relearning. Almost nobody talks about what has to go first.</p>
         <p style="color: var(--fg2); font-size: 17px; line-height: 1.65; margin-top: var(--space-4);">Relearning is additive and it feels good — a new tool, a new framework, a new vocabulary. Unlearning is subtractive and it costs something. It asks a leader to put down the judgement that got them promoted, the instinct that has been right for twenty years, the process they personally built and defended.</p>
         <p style="color: var(--fg2); font-size: 17px; line-height: 1.65; margin-top: var(--space-4);">That is why AI courses stall in senior rooms. Not because the material is hard. Because the material is easy and the letting go is not.</p>
-        <p style="color: var(--fg2); font-size: 17px; line-height: 1.65; margin-top: var(--space-4);">We start there. Every course opens with what has to be unlearned at that seat — named specifically, not gestured at.</p>
         <p style="color: var(--fg1); font-size: 17px; line-height: 1.65; margin-top: var(--space-4);"><em>Reinvention is what is left when both have happened.</em> Not a third module. The evidence that the first two landed.</p>
       </div>
     </div>
@@ -72,308 +90,301 @@ const __MARKUP = String.raw`
       <div style="max-width: 78ch;">
         <p style="color: var(--fg2); font-size: 17px; line-height: 1.65;">In most organisations the people most fluent with these tools have the least authority, and the people with the most authority are the least fluent. Any course that ignores that is teaching in the wrong direction.</p>
         <p style="color: var(--fg2); font-size: 17px; line-height: 1.65; margin-top: var(--space-4);">So we build the channel deliberately. Senior leaders learn from the people doing the work with these tools every day — structured and reciprocal, not a reverse-mentoring photo opportunity.</p>
-        <p style="color: var(--fg1); font-size: 17px; line-height: 1.65; margin-top: var(--space-4);"><em>It is also the only version that survives us leaving.</em></p>
       </div>
     </div>
-
-    <hr class="om-rule" style="margin-block: var(--space-8);">
-
-    <div class="section" id="courses">
-      <div class="section__head">
-        <span class="eyebrow"><img src="/icons/readiness.svg" alt="" width="14" height="14" style="vertical-align:-2px; margin-right:8px; opacity:0.85;">05 · The courses</span>
-        <h2>Seven courses. <em>Per seat.</em></h2>
-        <p class="strap">Open enrolment. Anyone can buy. What each course does, what you leave with, what it costs, where it runs.</p>
-      </div>
-
-      <div class="courses-grid">
-
-        <article id="c01" class="course-card">
-          <header class="course-card__head">
-            <span class="course-card__code">C01 · one day</span>
-            <h3 class="course-card__name">Leader-Led AI</h3>
-          </header>
-          <p class="course-card__question"><em>You have delegated AI to people who cannot make the decisions it requires.</em></p>
-          <div class="course-card__block">
-            <div class="course-card__label">Why now</div>
-            <p>Your organisation is already spending on AI and someone is already making the calls. If it is not you, it is a technologist choosing your risk appetite for you.</p>
-          </div>
-          <div class="course-card__block">
-            <div class="course-card__label">You leave with</div>
-            <p>A scored read on your own organisation across eight dimensions · the four decisions you cannot delegate, written down · a ninety-day plan you signed.</p>
-          </div>
-          <footer class="course-card__foot">
-            <span class="course-card__format"><span class="course-card__format-bead" aria-hidden="true"></span>1 day · $1,500 per seat · Sydney and Melbourne</span>
-          </footer>
-        </article>
-
-        <article id="c02" class="course-card">
-          <header class="course-card__head">
-            <span class="course-card__code">C02 · one day</span>
-            <h3 class="course-card__name">Buying AI</h3>
-          </header>
-          <p class="course-card__question"><em>You will be shown an AI business case this quarter. What do you believe?</em></p>
-          <div class="course-card__block">
-            <div class="course-card__label">Why now</div>
-            <p>Every executive is sold to weekly and almost nobody has a framework for it. The word "pilot" is doing a lot of hiding.</p>
-          </div>
-          <div class="course-card__block">
-            <div class="course-card__label">You leave with</div>
-            <p>A vendor interrogation framework · the questions that separate a real capability from a demo · what a defensible business case has in it.</p>
-          </div>
-          <footer class="course-card__foot">
-            <span class="course-card__format"><span class="course-card__format-bead" aria-hidden="true"></span>1 day · $1,500 per seat · Sydney and Melbourne</span>
-          </footer>
-        </article>
-
-        <article id="c03" class="course-card">
-          <header class="course-card__head">
-            <span class="course-card__code">C03 · one day</span>
-            <h3 class="course-card__name">AI Governance for Boards</h3>
-          </header>
-          <p class="course-card__question"><em>You are accountable for decisions you cannot yet see or evidence.</em></p>
-          <div class="course-card__block">
-            <div class="course-card__label">Why now</div>
-            <p>Australian boards are already accountable for AI and third-party oversight. Almost none can evidence it. The obligation did not wait for readiness.</p>
-          </div>
-          <div class="course-card__block">
-            <div class="course-card__label">You leave with</div>
-            <p>An accountability map for your own board · the questions to put to management · what a regulator will actually ask for.</p>
-          </div>
-          <footer class="course-card__foot">
-            <span class="course-card__format"><span class="course-card__format-bead" aria-hidden="true"></span>1 day · $2,200 per seat · Sydney</span>
-          </footer>
-        </article>
-
-        <article id="c04" class="course-card">
-          <header class="course-card__head">
-            <span class="course-card__code">C04 · two days</span>
-            <h3 class="course-card__name">Mindset by Design</h3>
-          </header>
-          <p class="course-card__question"><em>What has to change in how you think, decide and design?</em></p>
-          <div class="course-card__block">
-            <div class="course-card__label">Why now</div>
-            <p>The technology is not the constraint. The mental models built for a different era are, and they are load-bearing until someone names them.</p>
-          </div>
-          <div class="course-card__block">
-            <div class="course-card__label">You leave with</div>
-            <p>Your own assumptions surfaced and tested · a redesign of one real decision loop from your business · a ninety-day plan with a peer holding you to it.</p>
-          </div>
-          <footer class="course-card__foot">
-            <span class="course-card__format"><span class="course-card__format-bead" aria-hidden="true"></span>2 days · $2,800 per seat · Sydney and Melbourne</span>
-          </footer>
-        </article>
-
-        <article id="c05" class="course-card">
-          <header class="course-card__head">
-            <span class="course-card__code">C05 · two days</span>
-            <h3 class="course-card__name">Operating Model for the AI Era</h3>
-          </header>
-          <p class="course-card__question"><em>Can your 2015 operating model carry a 2030 strategy?</em></p>
-          <div class="course-card__block">
-            <div class="course-card__label">Why now</div>
-            <p>Most AI programmes stall after the pilot. The technology usually works. It cannot survive contact with how the organisation actually operates.</p>
-          </div>
-          <div class="course-card__block">
-            <div class="course-card__label">You leave with</div>
-            <p>A map of your own operating model against the ambition it has to carry · the three bottlenecks costing you most · what to change first.</p>
-          </div>
-          <footer class="course-card__foot">
-            <span class="course-card__format"><span class="course-card__format-bead" aria-hidden="true"></span>2 days · $2,800 per seat · Sydney and Melbourne</span>
-          </footer>
-        </article>
-
-        <article id="c06" class="course-card">
-          <header class="course-card__head">
-            <span class="course-card__code">C06 · one day</span>
-            <h3 class="course-card__name">The Independent Practice</h3>
-          </header>
-          <p class="course-card__question"><em>You are the business, and there are no more hours in the week.</em></p>
-          <div class="course-card__block">
-            <div class="course-card__label">Why now</div>
-            <p>Every hour you sell is an hour you worked. AI changes that arithmetic for the first time, and most independent operators are using it to type faster rather than to run differently.</p>
-          </div>
-          <div class="course-card__block">
-            <div class="course-card__label">You leave with</div>
-            <p>A map of what only you can do and what you have been doing out of habit · three systems built for your practice rather than a generic stack · what your week looks like when the operations run without you.</p>
-          </div>
-          <footer class="course-card__foot">
-            <span class="course-card__format"><span class="course-card__format-bead" aria-hidden="true"></span>1 day · $1,500 per seat · Sydney and Melbourne</span>
-          </footer>
-        </article>
-
-        <article id="c07" class="course-card">
-          <header class="course-card__head">
-            <span class="course-card__code">C07 · one day</span>
-            <h3 class="course-card__name">From Method to Product</h3>
-          </header>
-          <p class="course-card__question"><em>You have solved the same problem five times. That is worth something.</em></p>
-          <div class="course-card__block">
-            <div class="course-card__label">Why now</div>
-            <p>The fifth time you solve a problem you stop learning and start repeating. Most expertise never gets captured, and it leaves when you do.</p>
-          </div>
-          <div class="course-card__block">
-            <div class="course-card__label">You leave with</div>
-            <p>Your method written down as something repeatable · an honest read on whether it can be productised or should stay a service · the first version of something a client could buy without you in the room.</p>
-          </div>
-          <footer class="course-card__foot">
-            <span class="course-card__format"><span class="course-card__format-bead" aria-hidden="true"></span>1 day · $1,500 per seat · Sydney and Melbourne</span>
-          </footer>
-        </article>
-
-      </div>
-
-      <div class="course-map">
-        <div class="course-map__head">
-          <h3>Four starting points. <em>Seven courses.</em></h3>
-        </div>
-        <div class="course-map__row">
-          <div class="course-map__market">
-            <h4>Enterprise</h4>
-            <p>Carrying complexity at scale</p>
-          </div>
-          <div class="course-map__codes">
-            <a href="#c01">C01 Leader-Led AI</a><span class="sep" aria-hidden="true">·</span>
-            <a href="#c03">C03 AI Governance for Boards</a><span class="sep" aria-hidden="true">·</span>
-            <a href="#c04">C04 Mindset by Design</a><span class="sep" aria-hidden="true">·</span>
-            <a href="#c05">C05 Operating Model</a>
-          </div>
-        </div>
-        <div class="course-map__row">
-          <div class="course-map__market">
-            <h4>Growing business</h4>
-            <p>Ready for the next stage</p>
-          </div>
-          <div class="course-map__codes">
-            <a href="#c01">C01 Leader-Led AI</a><span class="sep" aria-hidden="true">·</span>
-            <a href="#c02">C02 Buying AI</a><span class="sep" aria-hidden="true">·</span>
-            <a href="#c05">C05 Operating Model</a>
-          </div>
-        </div>
-        <div class="course-map__row">
-          <div class="course-map__market">
-            <h4>Independent operator</h4>
-            <p>Expertise, and not enough hours</p>
-          </div>
-          <div class="course-map__codes">
-            <a href="#c06">C06 The Independent Practice</a><span class="sep" aria-hidden="true">·</span>
-            <a href="#c02">C02 Buying AI</a>
-          </div>
-        </div>
-        <div class="course-map__row">
-          <div class="course-map__market">
-            <h4>Expertise becoming a product</h4>
-            <p>The same problem, solved five times</p>
-          </div>
-          <div class="course-map__codes">
-            <a href="#c07">C07 From Method to Product</a><span class="sep" aria-hidden="true">·</span>
-            <a href="#c04">C04 Mindset by Design</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="courses-cta">
-        <a class="cta cta--primary" href="mailto:contact@omameh.com.au?subject=Request a seat · Fluency&body=Hi Bijal,%0D%0A%0D%0AI would like to request a seat.%0D%0A%0D%0ACourse (C01 Leader-Led AI %2F C02 Buying AI %2F C03 AI Governance for Boards %2F C04 Mindset by Design %2F C05 Operating Model for the AI Era):%0D%0AMy name and organisation:%0D%0APreferred city (Sydney %2F Melbourne):%0D%0A%0D%0AThank you.">Request a seat →</a>
-        <a class="cta" href="mailto:contact@omameh.com.au?subject=Fluency dates&body=Hi Bijal,%0D%0A%0D%0APlease send me the upcoming Fluency course dates.%0D%0A%0D%0AMy name and organisation:%0D%0APreferred city:%0D%0AWhich courses I am considering:%0D%0A%0D%0AThank you.">Contact us for dates →</a>
-      </div>
-    </div>
-
-    <hr class="om-rule" style="margin-block: var(--space-8);">
 
     <div class="section">
       <div class="section__head">
-        <h2>Run it <em>for your team.</em></h2>
+        <span class="eyebrow">THE ROOM</span>
+        <h2>Ten people. <em>No slides.</em></h2>
+        <p class="strap">Ten is deliberate. Above that people stop saying the true thing. Below it there is not enough disagreement to be useful.</p>
       </div>
-      <div style="max-width: 78ch;">
-        <p style="color: var(--fg2); font-size: 17px; line-height: 1.65;">Every course above runs closed, for a single organisation, using your own decisions as the material rather than worked examples.</p>
-        <p style="color: var(--fg2); font-size: 17px; line-height: 1.65; margin-top: var(--space-4);">Boards. Executive teams. Function leadership. Delivered in your office or somewhere better.</p>
-        <div style="margin-top: var(--space-5);">
-          <a class="cta cta--primary" href="mailto:contact@omameh.com.au?subject=Closed session enquiry&body=Hi Bijal,%0D%0A%0D%0AI want to explore running a closed Fluency session for my organisation.%0D%0A%0D%0AMy organisation:%0D%0AMy role:%0D%0AThe team we are considering it for:%0D%0AWhat we are trying to shift:%0D%0A%0D%0AThank you.">Contact us for content, dates and pricing →</a>
-        </div>
+      <div class="room-grid">
+        <article class="room-card">
+          <h4 class="room-card__name">Ten seats</h4>
+          <p class="room-card__body">Never more than twelve. That is the whole room.</p>
+        </article>
+        <article class="room-card">
+          <h4 class="room-card__name">In person</h4>
+          <p class="room-card__body">A proper room, in a city we announce. Not a hotel suite.</p>
+        </article>
+        <article class="room-card">
+          <h4 class="room-card__name">Online</h4>
+          <p class="room-card__body">Where distance makes the room impossible. Not as the default.</p>
+        </article>
+        <article class="room-card">
+          <h4 class="room-card__name">Chatham House</h4>
+          <p class="room-card__body">No vendors. Nothing sold from the front.</p>
+        </article>
+      </div>
+      <p class="room-foot"><em>We travel. Fees reflect it.</em></p>
+    </div>
+
+    <div class="section">
+      <div class="section__head">
+        <span class="eyebrow">WHO IS IN IT</span>
+        <h2>Four people who <em>keep turning up.</em></h2>
+      </div>
+      <div class="personas-grid">
+        <article class="persona">
+          <h4 class="persona__name">The one about to sit in the C-suite</h4>
+          <p class="persona__body">First time in the seat, and the first thing on the agenda is a decision about AI nobody prepared you for.</p>
+        </article>
+        <article class="persona">
+          <h4 class="persona__name">The one redesigning their own function</h4>
+          <p class="persona__body">You have been handed a transformation and a budget, and told to work out the rest.</p>
+        </article>
+        <article class="persona">
+          <h4 class="persona__name">The leader who wants to actually understand it</h4>
+          <p class="persona__body">Not the demo, not the hype. What it does, what it cannot, and where the judgement still has to be yours.</p>
+        </article>
+        <article class="persona">
+          <h4 class="persona__name">The director who wants better questions</h4>
+          <p class="persona__body">You are accountable for it. You would like to interrogate what you are told, in your own industry's language.</p>
+        </article>
       </div>
     </div>
 
-    <hr class="om-rule" style="margin-block: var(--space-8);">
+    <div class="section" id="rooms">
+      <div class="section__head">
+        <span class="eyebrow">OPEN ROOMS</span>
+        <h2>Five rooms. <em>Ten seats each.</em></h2>
+        <p class="strap">Sold per seat — you do not need an organisation behind you to sit in one. Rooms open city by city. Tell us which one you want and we will tell you when it runs.</p>
+      </div>
 
-    <div class="section">
-      <div>
+      <article class="room-flagship">
+        <div class="room-flagship__head">
+          <span class="course-eyebrow">C01 · ONE DAY · START HERE</span>
+          <span class="course-chip course-chip--opening"><span class="course-chip__bead" aria-hidden="true"></span>OPENING FIRST</span>
+        </div>
+        <h3 class="room-flagship__name">AI Fluency</h3>
+        <p class="room-flagship__promise"><em>You are making decisions about something nobody has explained to you properly.</em></p>
+        <div class="room-flagship__body">
+          <p>What the models actually are and how they differ. What an agent is, and how it is not a chatbot. Where the tools sit, what they cost, what they are genuinely good at and what they reliably get wrong. The shape of the whole landscape — so when the next thing arrives you can place it instead of starting again.</p>
+          <p><strong>The afternoon turns to what is being sold to you.</strong> Every demo works. Every business case is optimistic. What separates a real capability from a good deck, and the questions to put to the next vendor who walks in.</p>
+          <p><strong>You leave with</strong> — the ability to look at any AI tool and say what it is, what it would replace, and what could go wrong with it. Plus a written framework for interrogating the next proposal you are shown. <em>Every other room assumes this one.</em></p>
+        </div>
+        <div class="room-flagship__cta">
+          <a class="cta cta--primary" href="${REQUEST_SEAT_MAILTO}">Request a seat →</a>
+        </div>
+      </article>
+
+      <div class="rooms-grid">
+
+        <article class="room-course room-course--teal">
+          <div class="room-course__head">
+            <span class="course-eyebrow">C02 · ONE DAY</span>
+          </div>
+          <h3 class="room-course__name">Leader-Led AI</h3>
+          <p class="room-course__q"><em>You have delegated AI to people who cannot make the decisions it requires.</em></p>
+          <p class="room-course__leave"><strong>You leave with</strong> — a scored read on your own organisation, the four decisions you cannot delegate written down, and a ninety-day plan you signed.</p>
+          <a class="room-course__cta" href="${REQUEST_SEAT_MAILTO.replace('Course:', 'Course: C02 Leader-Led AI')}">Register interest →</a>
+        </article>
+
+        <article class="room-course room-course--gold">
+          <div class="room-course__head">
+            <span class="course-eyebrow">C03 · ONE DAY</span>
+          </div>
+          <h3 class="room-course__name">AI Governance</h3>
+          <p class="room-course__q"><em>You are accountable for decisions you cannot yet see or evidence.</em></p>
+          <p class="room-course__leave"><strong>You leave with</strong> — an accountability map for your own organisation, the questions to put to the people building it, and what a regulator will actually ask for. Calibrated to your industry.</p>
+          <a class="room-course__cta" href="${REQUEST_SEAT_MAILTO.replace('Course:', 'Course: C03 AI Governance')}">Register interest →</a>
+        </article>
+
+        <article class="room-course room-course--shift">
+          <div class="room-course__head">
+            <span class="course-eyebrow">C04 · TWO DAYS</span>
+          </div>
+          <h3 class="room-course__name">Mindset by Design</h3>
+          <p class="room-course__q"><em>What has to change in how you think, decide and design?</em></p>
+          <p class="room-course__leave"><strong>You leave with</strong> — your assumptions surfaced and tested, a redesign of one real decision loop from your business, and a peer holding you to it.</p>
+          <a class="room-course__cta" href="${REQUEST_SEAT_MAILTO.replace('Course:', 'Course: C04 Mindset by Design')}">Register interest →</a>
+        </article>
+
+        <article class="room-course room-course--shift">
+          <div class="room-course__head">
+            <span class="course-eyebrow">C05 · TWO DAYS</span>
+          </div>
+          <h3 class="room-course__name">Operating Model for the AI Era</h3>
+          <p class="room-course__q"><em>Can your 2015 operating model carry a 2030 strategy?</em></p>
+          <p class="room-course__leave"><strong>You leave with</strong> — a map of your operating model against the ambition it carries, the three bottlenecks costing you most, and what to change first.</p>
+          <a class="room-course__cta" href="${REQUEST_SEAT_MAILTO.replace('Course:', 'Course: C05 Operating Model for the AI Era')}">Register interest →</a>
+        </article>
+
+      </div>
+
+      <div class="rooms-help">
+        <p><em>Not sure which room?</em> Tell us the decision in front of you and we will tell you which one fits — or that none of them do. <a href="mailto:contact@omameh.com.au?subject=Which room · Fluency&body=Hi Bijal,%0D%0A%0D%0AThe decision I am facing:%0D%0A%0D%0AMy role and organisation:%0D%0A%0D%0AThank you.">Talk to us →</a></p>
+      </div>
+
+      <div class="rooms-shape">
+        <p><em>Per seat. Ten to a room. We travel — fees reflect it.</em></p>
+        <a class="cta cta--primary" href="${REQUEST_SEAT_MAILTO}">Request a seat →</a>
+      </div>
+    </div>
+
+    <div class="closed-band">
+      <div class="closed-band__inner">
         <div class="section__head">
-          <span class="eyebrow"><img src="/icons/diagnose.svg" alt="" width="14" height="14" style="vertical-align:-2px; margin-right:8px; opacity:0.85;">07 · How a day actually runs</span>
-          <h2>No slides. No lectures. <em>Your problems.</em></h2>
+          <span class="eyebrow" style="color: var(--accent-warm);">CLOSED ROOMS</span>
+          <h2>Or bring <em>your own ten.</em></h2>
         </div>
-
-        <div class="day-runs">
-          <div class="day-runs__diagram" aria-hidden="true">
-            <svg viewBox="0 0 720 220" fill="none" style="width:100%; height:auto; max-height:220px;">
-              <g fill="none" stroke="rgba(201,168,76,0.32)" stroke-width="1" stroke-dasharray="2 6">
-                <circle cx="360" cy="110" r="48"></circle>
-                <circle cx="360" cy="110" r="88"></circle>
-                <circle cx="360" cy="110" r="128"></circle>
-              </g>
-              <g fill="#C9A84C" opacity="0.9">
-                <circle cx="408" cy="110" r="4"></circle>
-                <circle cx="448" cy="110" r="4"></circle>
-                <circle cx="488" cy="110" r="4"></circle>
-              </g>
-              <g fill="none" stroke="rgba(0,212,203,0.55)" stroke-width="1" stroke-dasharray="3 4">
-                <circle cx="360" cy="62" r="6"></circle>
-              </g>
-              <circle cx="360" cy="110" r="6" fill="#C9A84C"></circle>
-            </svg>
-          </div>
-          <div class="day-runs__steps">
-            <div class="day-step">
-              <span class="day-step__label">Before</span>
-              <p>You score your own organisation. Fifteen minutes. It is yours whether you come or not, and we read it before you arrive.</p>
-            </div>
-            <div class="day-step">
-              <span class="day-step__label">On the day</span>
-              <p>Short input, long working. You bring a real decision you face this quarter and we work it in the room, with people in the same position.</p>
-            </div>
-            <div class="day-step">
-              <span class="day-step__label">After</span>
-              <p>One page. What you said you would do, and when.</p>
-            </div>
-          </div>
-          <p class="day-runs__meta"><em>Twelve to twenty-four people. Chatham House rule. No vendors in the room and nothing being sold from the front.</em></p>
+        <div class="closed-lede">
+          <p>Every room above runs closed, for one organisation. Same format, same ten people — except they all work for you, and the material is your decisions instead of worked examples.</p>
+          <p><em>This is where most of the work happens. An executive team gets further in a day together than five of them get separately over a year.</em></p>
+        </div>
+        <div class="closed-grid">
+          <article class="closed-card">
+            <h4 class="closed-card__name">Boards</h4>
+            <p class="closed-card__body">Governance, accountability and the questions to put to management. Calibrated to your industry and your regulator.</p>
+          </article>
+          <article class="closed-card">
+            <h4 class="closed-card__name">Executive teams</h4>
+            <p class="closed-card__body">One room, one decision loop, everybody who has to live with the answer already in it.</p>
+          </article>
+          <article class="closed-card">
+            <h4 class="closed-card__name">Function leadership</h4>
+            <p class="closed-card__body">The people running the work, with the workflows they actually run rather than a case study.</p>
+          </article>
+        </div>
+        <div class="closed-cta">
+          <a class="cta cta--primary" href="${RUN_CLOSED_MAILTO}">Contact us for content, dates and pricing →</a>
         </div>
       </div>
     </div>
 
-    <hr class="om-rule" style="margin-block: var(--space-8);">
-
     <div class="section">
       <div class="section__head">
-        <span class="eyebrow"><img src="/icons/governance.svg" alt="" width="14" height="14" style="vertical-align:-2px; margin-right:8px; opacity:0.85;">08 · What it is not</span>
-        <h2>Not a certificate. Not e-learning. <em>Not delegable.</em></h2>
+        <span class="eyebrow">OUTLOOKS · A SERIES</span>
+        <h2>Where this goes <em>next.</em></h2>
+        <p class="strap">One theme at a time, with someone who has spent a career inside it. Not a trend report — a view on where this thing is in five years, in ten, and in 2050, and what someone living it should be doing about that now.</p>
+        <p class="strap"><em>Each runs the same way, and each step decides whether the next one is worth taking.</em></p>
       </div>
-      <div class="not-grid">
-        <article class="not-card">
-          <h4>Not a certificate.</h4>
-          <p>A certificate is something you are given. Proof here is the difference between your score on the way in and your score a year later. <em>Evidence, not a credential.</em></p>
+
+      <div class="bearing-row bearing-row--four" aria-hidden="true">
+        <svg viewBox="0 0 800 170" fill="none" preserveAspectRatio="xMidYMid meet" style="width:100%; height:auto; max-height:190px;">
+          <line x1="20" y1="110" x2="780" y2="110" stroke="rgba(255,255,255,0.14)" stroke-dasharray="3 5" stroke-width="1" />
+
+          <g>
+            <path d="M 108.68,60.72 A 50,50 0 1,1 91.32,60.72" stroke="#00B5AD" stroke-width="2.5" stroke-linecap="round" fill="none" />
+            <text x="100" y="68" text-anchor="middle" fill="rgba(255,255,255,0.88)" font-family="'Playfair Display', serif" font-size="22" font-weight="700">01</text>
+            <circle cx="100" cy="110" r="3.5" fill="#C9A84C" opacity="0.9" />
+          </g>
+
+          <g>
+            <path d="M 340.68,60.72 A 50,50 0 1,1 323.32,60.72" stroke="#7B9EF0" stroke-width="2.5" stroke-linecap="round" fill="none" />
+            <text x="332" y="68" text-anchor="middle" fill="rgba(255,255,255,0.88)" font-family="'Playfair Display', serif" font-size="22" font-weight="700">02</text>
+            <circle cx="332" cy="110" r="3.5" fill="#C9A84C" opacity="0.9" />
+          </g>
+
+          <g>
+            <path d="M 570.68,60.72 A 50,50 0 1,1 553.32,60.72" stroke="#C9A84C" stroke-width="2.5" stroke-linecap="round" fill="none" />
+            <text x="562" y="68" text-anchor="middle" fill="rgba(255,255,255,0.88)" font-family="'Playfair Display', serif" font-size="22" font-weight="700">03</text>
+            <circle cx="562" cy="110" r="3.5" fill="#C9A84C" opacity="0.9" />
+          </g>
+
+          <g opacity="0.5">
+            <path d="M 762.68,60.72 A 50,50 0 1,1 745.32,60.72" stroke="rgba(255,255,255,0.4)" stroke-width="2" stroke-dasharray="4 5" stroke-linecap="round" fill="none" />
+            <text x="754" y="68" text-anchor="middle" fill="rgba(255,255,255,0.45)" font-family="'Playfair Display', serif" font-size="22" font-weight="700">04</text>
+            <circle cx="754" cy="110" r="3.5" fill="rgba(201,168,76,0.4)" />
+          </g>
+        </svg>
+      </div>
+
+      <div class="bearing-labels bearing-labels--four">
+        <div class="bearing-label">
+          <h4>The conversation</h4>
+          <p>Podcast, with the specialist</p>
+        </div>
+        <div class="bearing-label">
+          <h4>The Outlook</h4>
+          <p>Written. Five, ten, 2050.</p>
+        </div>
+        <div class="bearing-label">
+          <h4>The table</h4>
+          <p>Ten people living it</p>
+        </div>
+        <div class="bearing-label bearing-label--conditional">
+          <h4>A room</h4>
+          <p>Only if the table asks</p>
+        </div>
+      </div>
+
+      <div class="section__head" style="margin-top: var(--space-8);">
+        <span class="eyebrow">IN THE SERIES</span>
+      </div>
+      <div class="series-grid">
+        <article class="series-card">
+          <h4 class="series-card__name">An industry</h4>
+          <p class="series-card__body">Insurance first. Then wherever the specialist is better than us.</p>
         </article>
-        <article class="not-card">
-          <h4>Not e-learning.</h4>
-          <p>Nothing is recorded and nothing is watched alone. The value is the room.</p>
+        <article class="series-card">
+          <h4 class="series-card__name">Founders</h4>
+          <p class="series-card__body">Building something now, with tools that did not exist when the playbook was written.</p>
         </article>
-        <article class="not-card">
-          <h4>Not delegable.</h4>
-          <p>Sending someone in your place defeats the point. The shift has to land in the person making the decisions.</p>
+        <article class="series-card">
+          <h4 class="series-card__name">Second acts</h4>
+          <p class="series-card__body">People who left the seat and built something of their own. What actually happened.</p>
+        </article>
+        <article class="series-card">
+          <h4 class="series-card__name">Who gets to decide</h4>
+          <p class="series-card__body">Who holds authority in the AI era, who does not yet, and what changes that.</p>
+        </article>
+      </div>
+
+      <p class="series-foot"><em>The series opens shortly.</em> <a href="mailto:contact@omameh.com.au?subject=Register interest · Outlooks series&body=Hi Bijal,%0D%0A%0D%0AI would like to register interest in an Outlook theme.%0D%0A%0D%0ATheme (industry %2F founders %2F second acts %2F who gets to decide):%0D%0AMy name and organisation:%0D%0A%0D%0AThank you.">Register interest in a theme →</a></p>
+    </div>
+
+    <div class="section" style="position:relative;">
+      <div class="section__head">
+        <span class="eyebrow">START FOR NOTHING</span>
+        <h2>Before you buy a seat, <em>read the room.</em></h2>
+      </div>
+      <div class="start-grid">
+        <article class="start-card">
+          <div class="om-field-rise om-field-layer" style="opacity:0.14;" aria-hidden="true"></div>
+          <div style="position: relative;">
+            <h4 class="start-card__name">The roundtable</h4>
+            <p class="start-card__body">Ninety minutes, the same ten people, no charge and nothing sold. The diagnostic goes out beforehand and the result is yours either way.</p>
+          </div>
+        </article>
+        <article class="start-card">
+          <div class="om-field-rise om-field-layer" style="opacity:0.14;" aria-hidden="true"></div>
+          <div style="position: relative;">
+            <h4 class="start-card__name">The podcast</h4>
+            <p class="start-card__body">Conversations with the people who actually answer for this, not the people selling it.</p>
+            <p class="start-card__note"><em>Coming.</em></p>
+          </div>
+        </article>
+        <article class="start-card">
+          <div class="om-field-rise om-field-layer" style="opacity:0.14;" aria-hidden="true"></div>
+          <div style="position: relative;">
+            <h4 class="start-card__name">Field Notes</h4>
+            <p class="start-card__body">What we learn inside the work, written down. Free, and nobody has to give us an email address to read it.</p>
+            <p class="start-card__note"><a href="/atlas">Read Atlas →</a></p>
+          </div>
         </article>
       </div>
     </div>
 
-    <hr class="om-rule" style="margin-block: var(--space-8);">
-
-    <div class="section">
-      <div class="section__head">
-        <span class="eyebrow"><img src="/icons/compound.svg" alt="" width="14" height="14" style="vertical-align:-2px; margin-right:8px; opacity:0.85;">09 · Coming</span>
-        <h2>Industry <em>tables.</em></h2>
-      </div>
-      <div style="max-width: 72ch;">
-        <p style="color: var(--fg2); font-size: 17px; line-height: 1.65;">The future of your industry, in a room of twelve, convened with a named adviser from that sector. Financial services. Insurance. Healthcare. Government.</p>
-        <p style="color: var(--fg3); font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; margin-top: var(--space-4);">2027 · by invitation</p>
-        <div style="margin-top: var(--space-4);">
-          <a class="cta" href="mailto:contact@omameh.com.au?subject=Register interest · Industry tables 2027&body=Hi Bijal,%0D%0A%0D%0AI would like to register interest in the 2027 Industry tables.%0D%0A%0D%0AMy organisation:%0D%0AMy role:%0D%0AIndustry:%0D%0A%0D%0AThank you.">Register interest →</a>
+    <div class="not-band">
+      <div class="not-band__inner">
+        <div class="section__head">
+          <h2>What it is <em class="not-band__accent">not.</em></h2>
+        </div>
+        <div class="not-grid not-grid--v13">
+          <article class="not-card">
+            <h4>Not a certificate.</h4>
+            <p>A certificate is something you are given. Proof here is the difference between your score walking in and your score a year later.</p>
+          </article>
+          <article class="not-card">
+            <h4>Not e-learning.</h4>
+            <p>Nothing is recorded and nothing is watched alone. The value is the other nine people.</p>
+          </article>
+          <article class="not-card">
+            <h4>Not delegable.</h4>
+            <p>Sending someone in your place defeats the point. The shift has to land in the person making the decision.</p>
+          </article>
         </div>
       </div>
     </div>
@@ -381,11 +392,13 @@ const __MARKUP = String.raw`
     <div class="section">
       <div class="close-block close-block--watermarked">
         <img class="om-watermark" src="/omameh-watermark.svg" alt="" aria-hidden="true" />
-        <p class="close-block__line">The next room <em>is being set.</em></p>
+        <p class="close-block__line">Ten seats. <em>Then the room is full.</em></p>
+        <p style="color: var(--fg2); font-size: 17px; margin: 0 auto var(--space-5); max-width: 60ch; line-height: 1.55;">Tell us which city, or bring your own ten.</p>
         <div class="close-block__ctas">
-          <a class="cta cta--primary" href="mailto:contact@omameh.com.au?subject=Request a seat · Fluency&body=Hi Bijal,%0D%0A%0D%0AI would like to request a seat.%0D%0A%0D%0ACourse:%0D%0AMy name and organisation:%0D%0APreferred city:%0D%0A%0D%0AThank you.">Request a seat →</a>
-          <a class="cta" href="mailto:contact@omameh.com.au?subject=Fluency conversation&body=Hi Bijal,%0D%0A%0D%0AI want to talk about Fluency.%0D%0A%0D%0AMy organisation:%0D%0AMy role:%0D%0AWhat I am hoping to work out:%0D%0A%0D%0AThank you.">Talk to us →</a>
+          <a class="cta cta--primary" href="${REQUEST_SEAT_MAILTO}">Request a seat →</a>
+          <a class="cta" href="${RUN_CLOSED_MAILTO}">Run it for your team →</a>
         </div>
+        <p class="close-block__belief" style="font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.32em; color: var(--accent-warm); margin: var(--space-6) 0 0;">UNLEARN · RELEARN · REINVENT</p>
       </div>
     </div>
 

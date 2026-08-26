@@ -148,18 +148,12 @@ const __MARKUP = String.raw`
           </div>
           <a class="market-band__link" href="/about#nine-shifts">See all nine →</a>
         </div>
-        <div class="market-band__cards">
+        <div class="market-band__cards market-band__cards--two">
           <article class="market-card market-card--board">
             <span class="market-card__eyebrow">BOARD PRESSURE</span>
             <div class="market-card__figure">20%</div>
             <p class="market-card__line">of AU insurance boards have signed an AI risk appetite statement.</p>
             <p class="market-card__source">APRA CPG 234 FEEDBACK 2026</p>
-          </article>
-          <article class="market-card market-card--drag">
-            <span class="market-card__eyebrow">DELIVERY FRICTION</span>
-            <div class="market-card__figure">$4.4M</div>
-            <p class="market-card__line">average waste per stalled AI initiative.</p>
-            <p class="market-card__source">IBM / PONEMON 2026 †</p>
           </article>
           <article class="market-card market-card--ops">
             <span class="market-card__eyebrow">OPERATING DRAG</span>
@@ -173,7 +167,7 @@ const __MARKUP = String.raw`
 
     <div class="section">
       <div class="section__head">
-        <span class="eyebrow">WHAT</span>
+        <span class="eyebrow">02 · WHAT</span>
         <h2>Advisory. Fluency. <em>Products.</em></h2>
         <p class="strap">Three arms, one team. Architecture here, engineering in India, no handoff in between. Most firms sell one of the three and hand you off for the rest.</p>
       </div>
@@ -214,25 +208,25 @@ const __MARKUP = String.raw`
       </div>
 
       <div class="bearing-row" aria-hidden="true">
-        <svg viewBox="0 0 600 170" fill="none" preserveAspectRatio="xMidYMid meet" style="width: 100%; height: auto; max-height: 190px;">
-          <line x1="20" y1="110" x2="580" y2="110" stroke="rgba(255,255,255,0.14)" stroke-dasharray="3 5" stroke-width="1" />
+        <svg viewBox="0 0 600 180" fill="none" preserveAspectRatio="xMidYMid meet" style="width: 100%; height: auto; max-height: 200px;">
+          <line x1="20" y1="160" x2="580" y2="160" stroke="rgba(255,255,255,0.16)" stroke-dasharray="3 5" stroke-width="1" />
 
           <g>
             <path d="M 108.68,60.72 A 50,50 0 1,1 91.32,60.72" stroke="#00B5AD" stroke-width="2.5" stroke-linecap="round" fill="none" />
-            <text x="100" y="68" text-anchor="middle" fill="rgba(255,255,255,0.88)" font-family="'Playfair Display', serif" font-size="22" font-weight="700">01</text>
-            <circle cx="100" cy="110" r="3.5" fill="#C9A84C" opacity="0.9" />
+            <text x="100" y="118" text-anchor="middle" fill="rgba(255,255,255,0.88)" font-family="'Playfair Display', serif" font-size="22" font-weight="700">01</text>
+            <circle cx="100" cy="160" r="3.5" fill="#C9A84C" opacity="0.9" />
           </g>
 
           <g>
             <path d="M 308.68,60.72 A 50,50 0 1,1 291.32,60.72" stroke="#7B9EF0" stroke-width="2.5" stroke-linecap="round" fill="none" />
-            <text x="300" y="68" text-anchor="middle" fill="rgba(255,255,255,0.88)" font-family="'Playfair Display', serif" font-size="22" font-weight="700">02</text>
-            <circle cx="300" cy="110" r="3.5" fill="#C9A84C" opacity="0.9" />
+            <text x="300" y="118" text-anchor="middle" fill="rgba(255,255,255,0.88)" font-family="'Playfair Display', serif" font-size="22" font-weight="700">02</text>
+            <circle cx="300" cy="160" r="3.5" fill="#C9A84C" opacity="0.9" />
           </g>
 
           <g>
             <path d="M 508.68,60.72 A 50,50 0 1,1 491.32,60.72" stroke="#C9A84C" stroke-width="2.5" stroke-linecap="round" fill="none" />
-            <text x="500" y="68" text-anchor="middle" fill="rgba(255,255,255,0.88)" font-family="'Playfair Display', serif" font-size="22" font-weight="700">03</text>
-            <circle cx="500" cy="110" r="3.5" fill="#C9A84C" opacity="0.9" />
+            <text x="500" y="118" text-anchor="middle" fill="rgba(255,255,255,0.88)" font-family="'Playfair Display', serif" font-size="22" font-weight="700">03</text>
+            <circle cx="500" cy="160" r="3.5" fill="#C9A84C" opacity="0.9" />
           </g>
         </svg>
       </div>

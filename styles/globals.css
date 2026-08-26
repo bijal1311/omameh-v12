@@ -6859,6 +6859,23 @@ h1 em, h2 em, .fo-hero__name em {
 }
 .footer__linkedin:hover { color: var(--accent-warm); }
 
+.footer__maa-block {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  flex: 1 1 320px;
+}
+.footer__maa-disclaimer {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  line-height: 1.5;
+  color: #5A6890;
+  margin: 0;
+  text-transform: uppercase;
+  max-width: 68ch;
+}
+
 /* END V13 Site Build additions
    ===================================================================== */
 

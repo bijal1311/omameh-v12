@@ -56,12 +56,15 @@ export default function GlobalFooter() {
         </div>
 
         <div className="footer__row footer__row--strip">
-          <span className="maa-gloss footer__maa-gloss" role="img" aria-label="माँ Foundation">
-            <span className="maa-mark" aria-hidden="true">माँ</span>
-            <span className="footer__maa-gloss__key">[ mā ]</span>
-            <span className="footer__maa-gloss__sep" aria-hidden="true" />
-            <span className="footer__maa-gloss__fdn">Foundation</span>
-          </span>
+          <div className="footer__maa-block">
+            <span className="maa-gloss footer__maa-gloss" role="img" aria-label="माँ Foundation">
+              <span className="maa-mark" aria-hidden="true">माँ</span>
+              <span className="footer__maa-gloss__key">[ mā ]</span>
+              <span className="footer__maa-gloss__sep" aria-hidden="true" />
+              <span className="footer__maa-gloss__fdn">Foundation</span>
+            </span>
+            <p className="footer__maa-disclaimer">A commitment of our own time and capability, not a registered charity. No funds are solicited or held.</p>
+          </div>
           <div className="footer__contact-row">
             <a className="footer__contact-btn" href="mailto:contact@omameh.com.au">contact@omameh.com.au</a>
             <a className="footer__linkedin" href="https://www.linkedin.com/company/omameh/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>

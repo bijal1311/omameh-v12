@@ -41,7 +41,7 @@ const __MARKUP = String.raw`
   <div class="container">
     <div class="route__header"><span class="route__index">02</span><span class="route__name">/about · About</span><span class="route__issue">Vol. I · Issue 01 · Q3 2026</span></div>
 
-    <div class="hero">
+    <div class="hero hero--watermarked">
       <img class="om-watermark" src="/omameh-watermark.svg" alt="" aria-hidden="true" />
       <div>
         <span class="eyebrow">About · Omameh</span>

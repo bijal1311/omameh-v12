@@ -4695,24 +4695,25 @@ h1 em, h2 em, .fo-hero__name em {
   max-width: 42vw;
 }
 
-/* Hero watermark · every route hero gets one · bottom-right, subtle */
+/* Hero watermark · opt-in per V13 brief §C.
+   Only the surfaces named in the brief carry a watermark:
+   Home Why band, Home close, About hero. Everywhere else · no watermark.
+   Add .hero--watermarked to the .hero to opt in, and drop an .om-watermark
+   img inside as the actual mark. */
 .hero { position: relative; overflow: hidden; }
-.hero::after {
-  content: '';
+.hero > * { position: relative; z-index: 1; }
+.hero--watermarked .om-watermark {
   position: absolute;
   right: -80px;
   bottom: -80px;
   width: 380px;
-  height: 380px;
-  background: url('/omameh-watermark.svg') no-repeat center;
-  background-size: contain;
+  height: auto;
   opacity: 0.07;
-  pointer-events: none;
   z-index: 0;
+  pointer-events: none;
 }
-.hero > * { position: relative; z-index: 1; }
 @media (max-width: 720px) {
-  .hero::after { width: 240px; height: 240px; right: -60px; bottom: -60px; opacity: 0.06; }
+  .hero--watermarked .om-watermark { width: 240px; right: -60px; bottom: -60px; opacity: 0.06; }
 }
 
 /* Close block · watermarked variant · replaces the om-field-rise stripe */

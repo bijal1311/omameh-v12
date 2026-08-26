@@ -29,7 +29,7 @@ const PLATFORMS = {
     status: 'live',
     statusLabel: 'LIVE · DEMO READY',
     promise: 'Every obligation, seen. Every vendor, scored.',
-    para: 'Nine specialised agents ingest every supplier agreement you hold, extract every obligation, risk-score each one, and track it against what your vendor actually did. What was negotiated in six weeks stops living in a filing cabinet.',
+    para: 'Nine specialised agents ingest every supplier agreement you hold, extract every obligation, risk-score each one, and track it against what your vendor actually did. What was negotiated hard stops living in a filing cabinet.',
     problems: [
       'Contracts read once at signing, then never again',
       'Obligations spread across teams with no owner',
@@ -46,7 +46,7 @@ const PLATFORMS = {
     ],
     mechanic: 'The relationship governance layer',
     mechanicBody: 'Most contract intelligence tools stop at extraction. Contract Intelligence goes further — it scores the ongoing relationship against the terms you signed, continuously. You do not have to ask whether a vendor is meeting obligations. The system tells you when they are not.',
-    who: 'Regulated buyers with more than fifty material supplier agreements. Boards and executives newly accountable for third-party resilience under APRA CPS 230. Chief risk officers and heads of procurement carrying obligations across hundreds of vendors and no time to read them.',
+    who: 'Any organisation that signs supplier or partner agreements and cannot spare the hours it would take to read them properly. Regulated buyers under APRA CPS 230. Growing businesses adding vendors faster than they can track them. Boutique firms managing a small but high-consequence portfolio. Anyone treating contract governance as a job rather than a compliance chore.',
   },
   'business-operations': {
     code: 'P02',
@@ -71,7 +71,7 @@ const PLATFORMS = {
       { h: 'Multi-tenant SaaS', b: 'In your cloud. AWS or Microsoft Azure. Configurable per operator without engineering effort.' },
     ],
     mechanic: 'Four autonomy levels',
-    mechanicBody: 'Every AI action in Intuka sits at one of four levels, and you set the level per action. **L1 Observe** — AI watches, logs and reports; humans decide everything. **L2 Suggest** — AI proposes a next action; the human approves before it runs. **L3 Act with approval** — AI executes routine actions; a human is notified with the option to reverse. **L4 Autonomous** — AI executes and reports back at cadence; humans intervene only when an alert triggers. The autonomy dial is per-action. Humans stay in charge of judgement; machines run the routine.\n\n**Human-Led. AI-Operated.** This is that belief, written into a product rather than a slide.',
+    mechanicBody: '<p>Every AI action in Intuka sits at one of four levels, and you set the level per action. <strong>L1 Observe</strong> — AI watches, logs and reports; humans decide everything. <strong>L2 Suggest</strong> — AI proposes a next action; the human approves before it runs. <strong>L3 Act with approval</strong> — AI executes routine actions; a human is notified with the option to reverse. <strong>L4 Autonomous</strong> — AI executes and reports back at cadence; humans intervene only when an alert triggers. The autonomy dial is per-action. Humans stay in charge of judgement; machines run the routine.</p><p><strong>Human-Led. AI-Operated.</strong> This is that belief, written into a product rather than a slide.</p>',
     who: 'Businesses that are too small for seven separate systems and too serious for the spreadsheets that stitch them together. Independent operators using it as the operating layer for a business one person could not otherwise run. Boutique consultancies giving it to their clients as an off-the-shelf ops backbone.',
   },
   'ai-governance': {
@@ -297,7 +297,7 @@ export default function PlatformDetailPage({ params }) {
           <span class="eyebrow">03 · The distinctive mechanic</span>
           <h2>${p.mechanic}<em>.</em></h2>
         </div>
-        <div class="platform-detail-mechanic">${p.mechanicBody.replace(/\\n\\n/g, '</p><p>').replace(/\\*\\*(.+?)\\*\\*/g, '<strong>$1</strong>').replace(/^/, '<p>').replace(/$/, '</p>')}</div>
+        <div class="platform-detail-mechanic">${p.mechanicBody.startsWith('<p>') ? p.mechanicBody : `<p>${p.mechanicBody}</p>`}</div>
       </div>
 
       <div class="section">

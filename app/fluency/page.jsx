@@ -71,30 +71,6 @@ const __MARKUP = String.raw`
 
     <div class="section">
       <div class="section__head">
-        <span class="eyebrow">Q · 001</span>
-        <h2>Unlearning is the <em>hard part.</em></h2>
-      </div>
-      <div style="max-width: 78ch;">
-        <p style="color: var(--fg2); font-size: 17px; line-height: 1.65;">Everyone talks about relearning. Almost nobody talks about what has to go first.</p>
-        <p style="color: var(--fg2); font-size: 17px; line-height: 1.65; margin-top: var(--space-4);">Relearning is additive and it feels good — a new tool, a new framework, a new vocabulary. Unlearning is subtractive and it costs something. It asks a leader to put down the judgement that got them promoted, the instinct that has been right for twenty years, the process they personally built and defended.</p>
-        <p style="color: var(--fg2); font-size: 17px; line-height: 1.65; margin-top: var(--space-4);">That is why AI courses stall in senior rooms. Not because the material is hard. Because the material is easy and the letting go is not.</p>
-        <p style="color: var(--fg1); font-size: 17px; line-height: 1.65; margin-top: var(--space-4);"><em>Reinvention is what is left when both have happened.</em> Not a third module. The evidence that the first two landed.</p>
-      </div>
-    </div>
-
-    <div class="section">
-      <div class="section__head">
-        <span class="eyebrow">Q · 002</span>
-        <h2>We believe in <em>reverse knowledge transfer.</em></h2>
-      </div>
-      <div style="max-width: 78ch;">
-        <p style="color: var(--fg2); font-size: 17px; line-height: 1.65;">In most organisations the people most fluent with these tools have the least authority, and the people with the most authority are the least fluent. Any course that ignores that is teaching in the wrong direction.</p>
-        <p style="color: var(--fg2); font-size: 17px; line-height: 1.65; margin-top: var(--space-4);">So we build the channel deliberately. Senior leaders learn from the people doing the work with these tools every day — structured and reciprocal, not a reverse-mentoring photo opportunity.</p>
-      </div>
-    </div>
-
-    <div class="section">
-      <div class="section__head">
         <span class="eyebrow">THE ROOM</span>
         <h2>Ten people. <em>No slides.</em></h2>
         <p class="strap">Ten is deliberate. Above that people stop saying the true thing. Below it there is not enough disagreement to be useful.</p>

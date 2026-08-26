@@ -5278,24 +5278,20 @@ h1 em, h2 em, .fo-hero__name em {
   line-height: 1.6;
   margin: 0 0 var(--space-6);
 }
-.home-close__cta {
+.home-close__cta,
+.home-close__ctas {
   margin: 0 0 var(--space-6);
+  display: inline-flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  justify-content: center;
 }
 .home-close__case {
-  color: var(--fg3);
-  font-size: 14.5px;
+  color: var(--fg2);
+  font-family: var(--font-serif);
+  font-size: 15px;
   margin: 0 0 var(--space-6);
 }
-.home-close__case a {
-  color: var(--accent-warm);
-  font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  text-decoration: none;
-  margin-left: 4px;
-}
-.home-close__case a:hover { color: var(--fg1); }
 .home-close__belief {
   font-family: var(--font-mono);
   font-size: 11.5px;

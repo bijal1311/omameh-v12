@@ -146,7 +146,6 @@ const __MARKUP = String.raw`
             <span class="eyebrow" style="color: var(--accent-warm);">WHAT THE MARKET IS TELLING US</span>
             <h2>Three pressures. <em>One cause.</em></h2>
           </div>
-          <a class="market-band__link" href="/practice">See all nine shifts →</a>
         </div>
         <div class="market-band__cards market-band__cards--two">
           <article class="market-card market-card--board">
@@ -437,10 +436,11 @@ const __MARKUP = String.raw`
       <div class="home-close">
         <h2 class="home-close__lead">You already know which of the four you are. <em>Start there.</em></h2>
         <p class="home-close__body">One conversation. No deck, no pitch. If nothing is broken, we will tell you that too.</p>
-        <div class="home-close__cta">
+        <div class="home-close__ctas">
           <a class="cta cta--primary" href="/contact">Let's talk →</a>
+          <a class="cta" href="/case-00">See Case 00 →</a>
         </div>
-        <p class="home-close__case">We built this practice using the method we sell. <a href="/case-00">Case 00 →</a></p>
+        <p class="home-close__case"><em>We built this practice using the method we sell.</em></p>
         <p class="home-close__belief">HUMAN-LED. AI-OPERATED.</p>
       </div>
     </div>

@@ -518,3 +518,18 @@ h2, h3, h4              { margin-left: -0.024em; }
 .chain__rail i{width:6px;height:1.5px;background:rgba(244,240,230,.28);display:block}
 .chain__rail i.is-here{width:14px;background:var(--gold)}
 @media(max-width:860px){.chain{display:none}}
+
+/* Fluency calendar · below 880px a row stops being a table row and
+   becomes a card. 04_DESIGN_NOTES.md §4 — the largest single piece of
+   refinement work, and the one change that needed a media query.
+   The rail is faded on the 2027 rows so the live pilots read first. */
+@media(max-width:879px){
+  .row{
+    border-left:2px solid var(--gold);
+    padding-left:var(--s3);
+    margin-bottom:var(--s2);
+  }
+  .row.later{border-left-color:rgba(201,168,76,.32)}
+  .row.now{margin-inline:0;padding-inline:0;padding-left:var(--s3)}
+  .row .a{margin-top:var(--s1)}
+}

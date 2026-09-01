@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60">
+  <title>Omameh · The Open Ring · 60px tile</title>
+  <g transform="translate(30 30) scale(0.135)" fill="none" stroke-linecap="round" stroke-width="16">
+    <path d="M 22.57,-128.03 A 130,130 0 0,1 112.6,65" stroke="#00B5AD"></path>
+    <path d="M 112.6,65 A 130,130 0 0,1 -112.6,65" stroke="#FFFFFF" opacity="0.88"></path>
+    <path d="M -112.6,65 A 130,130 0 0,1 -22.57,-128.03" stroke="#C9A84C"></path>
+  </g>
+</svg>

@@ -81,5 +81,5 @@ const __MARKUP = String.raw`
 `;
 
 export default function FounderPage() {
-  return <RouteShell id="founder" label="06 · Founder" markup={__MARKUP} />;
+  return <RouteShell id="founder" label="06 · Founder" markup={__MARKUP} className="legacy" />;
 }

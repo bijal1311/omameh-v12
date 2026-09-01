@@ -16,6 +16,7 @@
 
 import { Playfair_Display, Inter, JetBrains_Mono } from 'next/font/google';
 import '../styles/globals.css';
+import '../styles/legacy.css';
 import GlobalNav from './_components/GlobalNav';
 import GlobalFooter from './_components/GlobalFooter';
 

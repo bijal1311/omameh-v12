@@ -154,5 +154,5 @@ const __MARKUP = String.raw`
 `;
 
 export default function MediaPage() {
-  return <RouteShell id="media" label="08 · Media" markup={__MARKUP} />;
+  return <RouteShell id="media" label="08 · Media" markup={__MARKUP} className="legacy" />;
 }

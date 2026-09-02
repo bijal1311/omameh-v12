@@ -1,4 +1,5 @@
-const BASE = 'https://omameh.com.au';
+// Canonical host — the apex 308-redirects here.
+const BASE = 'https://www.omameh.com.au';
 
 export default function robots() {
   return {

@@ -1,4 +1,6 @@
-const BASE = 'https://omameh.com.au';
+// Canonical host. The apex 308-redirects here, so emit www directly rather
+// than sending crawlers through a redirect on every URL.
+const BASE = 'https://www.omameh.com.au';
 
 /**
  * /follow is deliberately absent — it carries robots:{index:false} and is a

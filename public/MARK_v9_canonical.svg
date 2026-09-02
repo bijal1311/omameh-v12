@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500" role="img" aria-label="Omameh — V9 Premium Triskelion">
+  <defs>
+    <linearGradient id="g-teal" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#00B5AD" stop-opacity="0.30"/>
+      <stop offset="50%"  stop-color="#00B5AD" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#00D4CB" stop-opacity="0.50"/>
+    </linearGradient>
+    <linearGradient id="g-white" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#FFFFFF" stop-opacity="0.40"/>
+      <stop offset="50%"  stop-color="#FFFFFF" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.55"/>
+    </linearGradient>
+    <linearGradient id="g-gold" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#C9A84C" stop-opacity="0.45"/>
+      <stop offset="50%"  stop-color="#C9A84C" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#E5C56F" stop-opacity="0.60"/>
+    </linearGradient>
+    <radialGradient id="g-centre" cx="42%" cy="34%" r="65%">
+      <stop offset="0%"   stop-color="#F1DA8C"/>
+      <stop offset="35%"  stop-color="#E5C56F"/>
+      <stop offset="70%"  stop-color="#C9A84C"/>
+      <stop offset="100%" stop-color="#B8941F"/>
+    </radialGradient>
+    <linearGradient id="g-comet" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%"   stop-color="#00D4CB" stop-opacity="0"/>
+      <stop offset="60%"  stop-color="#00D4CB" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#00D4CB" stop-opacity="0.95"/>
+    </linearGradient>
+    <path id="om-orbit-path" d="M 250,250 m -178,0 a 178,178 0 1,1 356,0 a 178,178 0 1,1 -356,0"/>
+  </defs>
+
+  <rect width="500" height="500" fill="#070F2A"/>
+
+  <g transform="translate(50, 50)">
+    <circle cx="200" cy="200" r="194" stroke="rgba(255,255,255,0.10)" stroke-width="0.75" stroke-dasharray="1.5 9" fill="none"/>
+    <line x1="200" y1="60" x2="200" y2="180" stroke="rgba(255,255,255,0.10)" stroke-width="0.75"/>
+
+    <circle cx="394" cy="200" r="6.5" fill="#C9A84C" opacity="0.18"/>
+    <circle cx="394" cy="200" r="3.5" fill="#C9A84C" opacity="0.92"/>
+    <circle cx="200" cy="394" r="6.5" fill="#C9A84C" opacity="0.18"/>
+    <circle cx="200" cy="394" r="3.5" fill="#C9A84C" opacity="0.92"/>
+    <circle cx="6"   cy="200" r="6.5" fill="#C9A84C" opacity="0.18"/>
+    <circle cx="6"   cy="200" r="3.5" fill="#C9A84C" opacity="0.92"/>
+
+    <text font-family="ui-monospace, monospace" font-size="9.5" fill="rgba(255,255,255,0.42)" letter-spacing="8">
+      <textPath href="#om-orbit-path" startOffset="0">UNLEARN  ·  RELEARN  ·  REINVENT  ·  UNLEARN  ·  RELEARN  ·  REINVENT  ·</textPath>
+    </text>
+
+    <circle cx="200" cy="200" r="148" stroke="rgba(0,212,203,0.13)" stroke-width="0.75" fill="none"/>
+
+    <g transform="translate(200 200)" stroke="rgba(201,168,76,0.55)" stroke-width="1" stroke-linecap="round">
+      <line x1="0" y1="-92" x2="0" y2="-86"/>
+      <line x1="0" y1="-92" x2="0" y2="-86" transform="rotate(30)"/>
+      <line x1="0" y1="-92" x2="0" y2="-86" transform="rotate(60)"/>
+      <line x1="0" y1="-92" x2="0" y2="-86" transform="rotate(90)"/>
+      <line x1="0" y1="-92" x2="0" y2="-86" transform="rotate(120)"/>
+      <line x1="0" y1="-92" x2="0" y2="-86" transform="rotate(150)"/>
+      <line x1="0" y1="-92" x2="0" y2="-86" transform="rotate(180)"/>
+      <line x1="0" y1="-92" x2="0" y2="-86" transform="rotate(210)"/>
+      <line x1="0" y1="-92" x2="0" y2="-86" transform="rotate(240)"/>
+      <line x1="0" y1="-92" x2="0" y2="-86" transform="rotate(270)"/>
+      <line x1="0" y1="-92" x2="0" y2="-86" transform="rotate(300)"/>
+      <line x1="0" y1="-92" x2="0" y2="-86" transform="rotate(330)"/>
+      <circle r="86" fill="none" stroke="rgba(201,168,76,0.16)" stroke-width="0.5"/>
+    </g>
+
+    <g transform="translate(200 200)">
+      <path d="M 22.57,-128.03 A 130,130 0 0,1 112.6,65" stroke="url(#g-teal)" stroke-width="14" stroke-linecap="round" fill="none"/>
+      <path d="M 112.6,65 A 130,130 0 0,1 -112.6,65"     stroke="url(#g-white)" stroke-width="14" stroke-linecap="round" fill="none" opacity="0.92"/>
+      <path d="M -112.6,65 A 130,130 0 0,1 -22.57,-128.03" stroke="url(#g-gold)" stroke-width="14" stroke-linecap="round" fill="none"/>
+      <circle cx="22.57"  cy="-128.03" r="2"   fill="#E5C56F"/>
+      <circle cx="22.57"  cy="-128.03" r="3.5" fill="#E5C56F" opacity="0.22"/>
+      <circle cx="-22.57" cy="-128.03" r="2"   fill="#E5C56F"/>
+      <circle cx="-22.57" cy="-128.03" r="3.5" fill="#E5C56F" opacity="0.22"/>
+    </g>
+
+    <g opacity="1" transform="translate(0, -2)">
+      <line x1="200" y1="63" x2="200" y2="54" stroke="url(#g-comet)" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="200" cy="54" r="5" fill="#00D4CB"/>
+    </g>
+    <g opacity="0.72" transform="translate(2, -22)">
+      <line x1="200" y1="63" x2="200" y2="54" stroke="url(#g-comet)" stroke-width="1.7" stroke-linecap="round"/>
+      <circle cx="200" cy="54" r="4.25" fill="#00D4CB"/>
+    </g>
+    <g opacity="0.38" transform="translate(4, -38)">
+      <line x1="200" y1="63" x2="200" y2="54" stroke="url(#g-comet)" stroke-width="1.4" stroke-linecap="round"/>
+      <circle cx="200" cy="54" r="3" fill="#00D4CB"/>
+    </g>
+
+    <g transform="translate(200 200)">
+      <circle r="14" fill="none" stroke="rgba(201,168,76,0.30)" stroke-width="0.75"/>
+      <circle r="9"  fill="none" stroke="rgba(229,197,111,0.22)" stroke-width="1"/>
+      <circle r="6"  fill="url(#g-centre)"/>
+      <circle cx="-1.8" cy="-1.8" r="1.4" fill="#FFF6D9" opacity="0.85"/>
+    </g>
+  </g>
+</svg>

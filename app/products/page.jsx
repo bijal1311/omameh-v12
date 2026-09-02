@@ -1,203 +1,157 @@
 import RouteShell from '../_components/RouteShell';
 
-export const metadata = {
-  title: 'Products',
-  description:
-    'Eight platforms, built by our own team. Or something new, for the part nobody sells off the shelf.',
-};
-
 /**
- * Products · V13 rebuild · 26 Aug 2026 · per V13_SITE_BUILD_for_Code.md §5.
+ * 03 · Products · V16
  *
- * Deleted from the current page:
- *   · 'One team, two flags' claim (now on About)
- *   · The independence / disclosure block (removed everywhere per ten rules)
- *   · The four-stage Frame · Architect · Build · Decide on-ramp
- *   · Every duration/timeline (4-6 weeks etc)
- *   · The 'Two ways in' band + Solutions callout (from a prior V12 pass)
- *   · Every 'See on Syntegreti' link
- *
- * New structure:
- *   Hero · 'We build the things we advise on.'
- *   Part one · The platforms (8 cards, P01–P08, each links to /products/[slug])
- *   Part two · Solutions (3 short cards)
- *   Receipts (3 cases, on-page)
- *   Close
- *
- * Naming settled per brief §5:
- *   · P01 Evaluetor · Contract Intelligence
- *   · P02 Intuka · Business Operations
- *   · P03–P08 · no brand label until settled (ControlPlane/RegAssure NOT used)
+ * Markup ported verbatim from 02_CONTENT_SOURCE.html. Content is locked —
+ * not a word changes. The only edits are technical: the document's
+ * #anchors become real routes, and the shared .vol bar, <nav> and
+ * <footer> are lifted into GlobalNav and GlobalFooter.
  */
 
+export const metadata = {
+  title: "We build the things we advise on.",
+  description: "Eight platforms built by our own team. Or something new, for the part nobody sells off the shelf.",
+};
+
 const __MARKUP = String.raw`
-  <div class="container">
-    <div class="route__header"><span class="route__index">04</span><span class="route__name">/products · Products</span><span class="route__issue">Vol. I · Issue 01 · Q3 2026</span></div>
+<section class="hero"><div class="w">
+  <p class="eyebrow">Products</p>
+  <h1>We build the things we <em>advise on.</em></h1>
+  <p class="lede">Eight platforms built by our own team. Or something new, for the part nobody sells off the shelf.</p>
+</div></section>
 
-    <div class="hero">
-      <div>
-        <span class="eyebrow" style="color: var(--accent-warm);">04 · Products</span>
-        <h1 style="margin-top: var(--space-4);">We build the things <em>we advise on.</em></h1>
-        <p class="lede">Eight platforms, built by our own team. Or something new, for the part nobody sells off the shelf.</p>
-      </div>
+<section><div class="w">
+  <p class="eyebrow">Part one · The platforms</p>
+
+  <div class="feature lead">
+    <div class="top"><span class="eyebrow" style="margin:0">P01 · Evaluetor</span><span class="chip live">Live</span></div>
+    <h3>Contract Intelligence</h3>
+    <p class="lede">Nine agents read every supplier agreement you hold, score the risk and track every obligation inside it.</p>
+    <a class="link" href="/products">Explore Evaluetor</a>
+  </div>
+
+  <div class="feature lead">
+    <div class="top">
+      <div><span class="eyebrow" style="margin:0">P02</span><h3 style="margin:2px 0 0">Intuka</h3></div>
+      <span class="phase">In trial</span>
     </div>
-
-    <div class="section">
-      <div class="section__head">
-        <span class="eyebrow">01 · The platforms</span>
-        <h2>Eight. <em>Built by our own team.</em></h2>
-        <p class="strap">Each opens a full specification — the problem it solves, how it works, what it needs from you.</p>
-      </div>
-
-      <div class="platforms-flagship">
-        <a class="platform-tile platform-tile--flagship" href="/products/contract-intelligence">
-          <div class="platform-tile__head">
-            <span class="platform-tile__code">P01</span>
-            <span class="platform-tile__brand">EVALUETOR</span>
-            <span class="platform-tile__status platform-tile__status--live"><span class="platform-tile__bead" aria-hidden="true"></span>LIVE · DEMO READY</span>
-          </div>
-          <h3 class="platform-tile__name">Contract Intelligence</h3>
-          <p class="platform-tile__line">Nine agents read every supplier agreement you hold, score the risk and track every obligation inside it.</p>
-          <span class="platform-tile__cta">See the platform →</span>
-        </a>
-        <a class="platform-tile platform-tile--flagship" href="/products/business-operations">
-          <div class="platform-tile__head">
-            <span class="platform-tile__code">P02</span>
-            <span class="platform-tile__brand">INTUKA</span>
-            <span class="platform-tile__status platform-tile__status--early"><span class="platform-tile__bead" aria-hidden="true"></span>EARLY ACCESS</span>
-          </div>
-          <h3 class="platform-tile__name">Business Operations</h3>
-          <p class="platform-tile__line">Seven things a business runs on, in one platform, with AI in every one of them.</p>
-          <span class="platform-tile__cta">See the platform →</span>
-        </a>
-      </div>
-
-      <div class="platforms-grid-3">
-        <a class="platform-tile" href="/products/ai-governance">
-          <div class="platform-tile__head">
-            <span class="platform-tile__code">P03</span>
-            <span class="platform-tile__status platform-tile__status--built"><span class="platform-tile__bead" aria-hidden="true"></span>BUILT</span>
-          </div>
-          <h3 class="platform-tile__name">AI Governance</h3>
-          <p class="platform-tile__line">Every AI call in your enterprise intercepted, policy enforced, and logged.</p>
-          <span class="platform-tile__cta">See the platform →</span>
-        </a>
-        <a class="platform-tile" href="/products/regulatory-reporting">
-          <div class="platform-tile__head">
-            <span class="platform-tile__code">P04</span>
-            <span class="platform-tile__status platform-tile__status--built"><span class="platform-tile__bead" aria-hidden="true"></span>BUILT</span>
-          </div>
-          <h3 class="platform-tile__name">Regulatory Reporting</h3>
-          <p class="platform-tile__line">Regulation becomes a knowledge graph; the graph becomes executable filing schemas.</p>
-          <span class="platform-tile__cta">See the platform →</span>
-        </a>
-        <a class="platform-tile" href="/products/document-intelligence">
-          <div class="platform-tile__head">
-            <span class="platform-tile__code">P05</span>
-            <span class="platform-tile__status platform-tile__status--built"><span class="platform-tile__bead" aria-hidden="true"></span>BUILT</span>
-          </div>
-          <h3 class="platform-tile__name">Document Intelligence</h3>
-          <p class="platform-tile__line">Confidence-scored extraction with human review built in. Auditable, not black-box.</p>
-          <span class="platform-tile__cta">See the platform →</span>
-        </a>
-      </div>
-
-      <div class="platforms-grid-3">
-        <a class="platform-tile" href="/products/agent-platform">
-          <div class="platform-tile__head">
-            <span class="platform-tile__code">P06</span>
-            <span class="platform-tile__status platform-tile__status--built"><span class="platform-tile__bead" aria-hidden="true"></span>BUILT</span>
-          </div>
-          <h3 class="platform-tile__name">Agent Platform</h3>
-          <p class="platform-tile__line">Enterprise agents for support deflection and intelligence, fully traced.</p>
-          <span class="platform-tile__cta">See the platform →</span>
-        </a>
-        <a class="platform-tile" href="/products/ai-sdlc">
-          <div class="platform-tile__head">
-            <span class="platform-tile__code">P07</span>
-            <span class="platform-tile__status platform-tile__status--built"><span class="platform-tile__bead" aria-hidden="true"></span>BUILT</span>
-          </div>
-          <h3 class="platform-tile__name">AI-Assisted SDLC</h3>
-          <p class="platform-tile__line">AI-guided delivery across five roles, every artefact carrying an audit trail.</p>
-          <span class="platform-tile__cta">See the platform →</span>
-        </a>
-        <a class="platform-tile" href="/products/datacenter">
-          <div class="platform-tile__head">
-            <span class="platform-tile__code">P08</span>
-            <span class="platform-tile__status platform-tile__status--built"><span class="platform-tile__bead" aria-hidden="true"></span>BUILT</span>
-          </div>
-          <h3 class="platform-tile__name">Datacenter Thermal</h3>
-          <p class="platform-tile__line">Thermal intelligence and cooling optimisation against live plant data.</p>
-          <span class="platform-tile__cta">See the platform →</span>
-        </a>
-      </div>
-    </div>
-
-    <div class="section">
-      <div class="section__head">
-        <span class="eyebrow">02 · Solutions</span>
-        <h2>When the thing you need <em>does not exist yet.</em></h2>
-        <p class="strap">Most of what an organisation actually needs is not something anyone sells. It sits between three systems nobody joined up, inside a process only two people understand. We build those, using the platforms above as foundations.</p>
-      </div>
-
-      <div class="solutions-triad">
-        <article class="solution-card">
-          <h3 class="solution-card__name">Built on what exists.</h3>
-          <p class="solution-card__body">Every solution sits on top of the eight. Faster to ship, cheaper to run, sharper because the foundations were already tested.</p>
-        </article>
-        <article class="solution-card">
-          <h3 class="solution-card__name">Deployed in your cloud.</h3>
-          <p class="solution-card__body">Under your controls. AWS and Microsoft Azure partners. Your data never leaves your perimeter.</p>
-        </article>
-        <article class="solution-card">
-          <h3 class="solution-card__name">Yours at the end.</h3>
-          <p class="solution-card__body">You own what we build. Source, deployment, documentation, and the person on your team who can run it after we leave.</p>
-        </article>
-      </div>
-    </div>
-
-    <div class="section" id="receipts">
-      <div class="section__head">
-        <span class="eyebrow"><img src="/icons/compound.svg" alt="" width="14" height="14" style="vertical-align:-2px; margin-right:8px; opacity:0.85;">03 · Receipts</span>
-        <h2>Patterns, not <em>experiments.</em></h2>
-        <p class="strap">Each of these is deployable at your organisation.</p>
-      </div>
-      <div class="receipts">
-        <article class="receipt">
-          <h4 class="receipt__case">Insurance sales platform · Texas</h4>
-          <p class="receipt__nums">35+ carriers shopped · 200+ locations · in production</p>
-          <p class="receipt__replicable">Replicable at: any multi-carrier agency, panel or aggregator network.</p>
-        </article>
-        <article class="receipt">
-          <h4 class="receipt__case">AI service desk</h4>
-          <p class="receipt__nums">60% fewer tickets · 4 hours to 2 minutes · $72k annual saving</p>
-          <p class="receipt__replicable">Replicable at: any IT support function with 500+ tickets a month.</p>
-        </article>
-        <article class="receipt">
-          <h4 class="receipt__case">Field services scheduling · US</h4>
-          <p class="receipt__nums">Zero wait time · four channels · in production</p>
-          <p class="receipt__replicable">Replicable at: any scheduling-heavy operation with 200+ daily calls.</p>
-        </article>
-      </div>
-    </div>
-
-    <div class="section">
-      <div class="close-block close-block--watermarked">
-        <img class="om-watermark" src="/omameh-watermark.svg" alt="" aria-hidden="true" />
-        <p class="close-block__line">Bring us the problem, not the <em>specification.</em></p>
-        <p style="color: var(--fg2); font-size: 16px; margin: 0 auto var(--space-5); max-width: 60ch; line-height: 1.55;">We will tell you whether it needs a platform, a build, or neither.</p>
-        <div class="close-block__ctas">
-          <a class="cta cta--primary" href="mailto:contact@omameh.com.au?subject=Request a demo&body=Hi Bijal,%0D%0A%0D%0AI would like to book a demo.%0D%0A%0D%0AWhich platform:%0D%0AMy organisation:%0D%0AMy role:%0D%0AThe problem I am trying to solve:%0D%0A%0D%0AThank you.">Request a demo →</a>
-          <a class="cta" href="/contact">Let's talk →</a>
+    <h4 style="color:var(--ink-soft);font-family:var(--body);font-size:14px;font-weight:500;letter-spacing:.08em;text-transform:uppercase">Business Operations</h4>
+    <p class="lede">Seven things a business runs on, in one platform, with AI in every one of them.</p>
+    <div class="apply" style="margin-top:var(--s2)">
+      <span class="eyebrow" style="margin:0;color:#8A7228">Trial phase · fourteen days</span>
+      <h4>Fourteen days of early access, on your real operation.</h4>
+      <p style="font-size:14.5px;color:var(--ink-soft)">Not a sandbox and not a demo environment — your business, your data, for a fortnight. It costs nothing. What we ask for in return is your time and your honest read, including what you would change.</p>
+      <div class="cols" style="grid-template-columns:1fr">
+        <div class="seq" style="margin-top:0">
+          <div class="step"><span class="n">01 · Ask</span><span>Tell us what your business runs on today. Two minutes.</span></div>
+          <div class="step"><span class="n">02 · The read</span><span>We send you the operations diagnostic. Fifteen minutes, and the number is yours to keep either way.</span></div>
+          <div class="step"><span class="n">03 · Decide</span><span>If what it finds is worth fixing, we set you up. If your time is better spent elsewhere, we will tell you that too.</span></div>
         </div>
       </div>
+      <div class="cta" style="margin-top:0"><a class="btn" href="/contact">Book a demo</a><a class="btn ghost" href="/contact">Learn more</a></div>
     </div>
-
-    <hr class="rule" style="margin-block: var(--space-8);">
-    <p class="tag" style="text-align:center;"><a href="/fluency">Continue reading → <em>Capability for the seat you hold.</em> · Next · 05 · Fluency</a></p>
   </div>
+
+  <div class="feature">
+    <div class="top"><h3 style="margin:0">Agent Platform</h3><span class="chip live">In production</span></div>
+    <p class="lede">Specialised agents coordinated by a supervisor, querying your systems in parallel and returning a synthesised answer in thirty seconds instead of fifteen minutes.</p>
+    <div class="figs">
+      <div class="fig"><b>97%</b><span>faster context gathering</span></div>
+      <div class="fig"><b>40–60%</b><span>ticket reduction</span></div>
+      <div class="fig"><b>$72k</b><span>saved per 1,000 users, annually</span></div>
+    </div>
+    <div class="tags"><span>Multi-agent orchestration</span><span>Enterprise RAG</span><span>Voice + chat</span><span>Smart escalation</span></div>
+    <a class="link" href="/products">Explore Agent Platform</a>
+  </div>
+
+  <div class="feature">
+    <div class="top"><h3 style="margin:0">AI-Assisted SDLC</h3><span class="chip live">In production</span></div>
+    <p class="lede">Structured questionnaires replacing ad-hoc prompting across five roles. Context flows between phases automatically, and every line of code traces back to the requirement that asked for it.</p>
+    <div class="figs">
+      <div class="fig"><b>40%</b><span>less rework</span></div>
+      <div class="fig"><b>60%</b><span>faster onboarding</span></div>
+      <div class="fig"><b>$780k</b><span>saved annually, 50-developer team</span></div>
+    </div>
+    <div class="tags"><span>Five role-based phases</span><span>Context threading</span><span>Compliance audit trail</span><span>Model-agnostic</span></div>
+    <a class="link" href="/products">Explore AI-Assisted SDLC</a>
+  </div>
+
+  <div class="feature">
+    <div class="top"><h3 style="margin:0">Datacenter Thermal</h3><span class="chip live">In production</span></div>
+    <p class="lede">Thermal intelligence built on real exascale operational data. Five forecasting algorithms predicting thermal state thirty to sixty minutes ahead, with a digital twin for what-if simulation.</p>
+    <div class="figs">
+      <div class="fig"><b>95%</b><span>prediction accuracy</span></div>
+      <div class="fig"><b>15%</b><span>lower cooling cost</span></div>
+      <div class="fig"><b>$2–5M</b><span>saved per facility, annually</span></div>
+    </div>
+    <div class="tags"><span>Ensemble ML</span><span>Digital twin</span><span>Heat recovery</span><span>Carbon and ESG</span></div>
+    <a class="link" href="/products">Explore Datacenter Thermal</a>
+  </div>
+
+  <p class="eyebrow" style="margin-top:var(--s5)">Also in the estate</p>
+  <div class="grid three">
+    <div class="card"><h4>AI Governance</h4><p>Every AI call intercepted, policy enforced, logged.</p></div>
+    <div class="card"><h4>Regulatory Reporting</h4><p>Regulation as a knowledge graph, the graph as filing schemas.</p></div>
+    <div class="card"><h4>Document Intelligence</h4><p>Confidence-scored extraction with human review. Auditable, not black-box.</p></div>
+  </div>
+</div></section>
+
+<section class="warm"><div class="w">
+  <p class="eyebrow">Part two · Solutions</p>
+  <h2>When the thing you need does not <em>exist yet.</em></h2>
+  <p class="lede">Most of what an organisation actually needs is not something anyone sells. It sits between three systems nobody joined up, inside a process only two people understand. We build those.</p>
+  <div class="grid three">
+    <div class="card"><h4>Never from a blank page</h4><p>Eight platforms of foundations underneath, so we start from something proven rather than an empty repository.</p></div>
+    <div class="card"><h4>Deployed in your cloud</h4><p>Under your controls, not ours.</p></div>
+    <div class="card"><h4>Yours at the end</h4><p>You own everything you build with us.</p></div>
+  </div>
+</div></section>
+
+<section><div class="w">
+  <p class="eyebrow">Built and running</p>
+  <h2>Patterns, not <em>experiments.</em></h2>
+  <p class="lede">Four builds our team has running today. Each one is deployable at your organisation.</p>
+  <div class="grid two">
+    <div class="card">
+      <div class="top" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap"><span class="k">Insurance aggregator · Texas</span><span class="chip live">In production</span></div>
+      <h4>AI-assisted insurance sales</h4>
+      <p>Carrier comparison, quoting workflow and the sales conversation in one place — across a retail network shopping dozens of carriers per customer.</p>
+      <div class="figs" style="border-bottom:0;padding-bottom:0"><div class="fig"><b>200+</b><span>locations</span></div><div class="fig"><b>35+</b><span>carriers per customer</span></div></div>
+    </div>
+    <div class="card">
+      <div class="top" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap"><span class="k">Enterprise IT</span><span class="chip live">In production</span></div>
+      <h4>AI IT support assistant</h4>
+      <p>Multi-agent orchestration resolving first-line tickets on its own, across ServiceNow and Salesforce, with escalation carrying full context.</p>
+      <div class="figs" style="border-bottom:0;padding-bottom:0"><div class="fig"><b>60%</b><span>of L1 resolved automatically</span></div><div class="fig"><b>2 min</b><span>resolution time</span></div></div>
+    </div>
+    <div class="card">
+      <div class="top" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap"><span class="k">Field services · US</span><span class="chip live">In production</span></div>
+      <h4>AI scheduling assistant</h4>
+      <p>Voice, web chat and SMS replacing manual field-service scheduling, with weather-aware automation and a full audit trail.</p>
+      <div class="tags" style="margin-top:auto;padding-top:var(--s2);border-top:1px solid var(--rule)"><span>Voice AI</span><span>Omni-channel</span><span>Weather-aware</span></div>
+    </div>
+    <div class="card">
+      <div class="top" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap"><span class="k">Home improvement · US</span><span class="chip next">In delivery</span></div>
+      <h4>Licence and contractor compliance</h4>
+      <p>The compliance backbone for one of America's largest home-improvement platforms — jurisdiction monitoring, AI document verification, pre-computed compliance status.</p>
+      <div class="tags" style="margin-top:auto;padding-top:var(--s2);border-top:1px solid var(--rule)"><span>Jurisdiction monitoring</span><span>Document AI</span><span>Milestone delivery</span></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="deep"><div class="w">
+  <h2>Bring us the problem, not the <em>specification.</em></h2>
+  <p class="lede">We will tell you whether it needs a platform, a build, or neither.</p>
+  <div class="cta"><a class="btn" href="/contact">Request a demo</a><a class="btn ghost" href="/contact">Let's talk</a></div>
+</div></section>
+
+<div class="next"><div class="w"><a href="/fluency">
+  <div><span class="k">Continue</span><span class="t">So the next decision does not need us in the room.</span></div>
+  <span class="r">Next · 04 · Fluency →</span>
+</a></div></div>
 `;
 
 export default function ProductsPage() {
-  return <RouteShell id="products" label="04 · Products" markup={__MARKUP} />;
+  return <RouteShell id="products" label="03 · Products" markup={__MARKUP} />;
 }

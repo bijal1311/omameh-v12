@@ -167,5 +167,5 @@ const __MARKUP = String.raw`
 `;
 
 export default function Case00Page() {
-  return <RouteShell id="case-00" label="07 · Case 00" markup={__MARKUP} />;
+  return <RouteShell id="case-00" label="07 · Case 00" markup={__MARKUP} className="legacy" />;
 }

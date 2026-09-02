@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 52 52">
+  <title>Omameh · The Lattice · PARKED — ungrounded, do not ship without approval</title>
+  <path d="M0 26 A 26 26 0 0 1 26 0" stroke="rgba(201,168,76,0.6)" stroke-width="1.2" fill="none"></path>
+  <path d="M26 0 A 26 26 0 0 1 52 26" stroke="rgba(0,181,173,0.6)" stroke-width="1.2" fill="none"></path>
+  <path d="M52 26 A 26 26 0 0 1 26 52" stroke="rgba(201,168,76,0.6)" stroke-width="1.2" fill="none"></path>
+  <path d="M26 52 A 26 26 0 0 1 0 26" stroke="rgba(0,181,173,0.6)" stroke-width="1.2" fill="none"></path>
+  <circle cx="26" cy="26" r="1.4" fill="rgba(255,255,255,0.5)"></circle>
+</svg>

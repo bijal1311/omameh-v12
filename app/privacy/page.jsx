@@ -223,5 +223,5 @@ const __MARKUP = String.raw`
 `;
 
 export default function PrivacyPage() {
-  return <RouteShell id="privacy" label="10 · Privacy" markup={__MARKUP} />;
+  return <RouteShell id="privacy" label="10 · Privacy" markup={__MARKUP} className="legacy" />;
 }

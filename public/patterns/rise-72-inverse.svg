@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 72 72">
+  <title>Omameh · The Rise · 72px tile · gold ground</title>
+  <g fill="#081335">
+    <circle cx="18" cy="56" r="3"></circle>
+    <circle cx="19.4" cy="44" r="2.2" opacity="0.55"></circle>
+    <circle cx="20.8" cy="33" r="1.6" opacity="0.3"></circle>
+  </g>
+  <g fill="#0D1F4E">
+    <circle cx="54" cy="20" r="3"></circle>
+    <circle cx="55.4" cy="8" r="2.2" opacity="0.55"></circle>
+    <circle cx="55.4" cy="68" r="1.6" opacity="0.3"></circle>
+  </g>
+</svg>

@@ -3,8 +3,9 @@
 const BASE = 'https://www.omameh.com.au';
 
 /**
- * /follow is deliberately absent — it carries robots:{index:false} and is a
- * link-hub reached from print and QR codes, not from search.
+ * /follow and /trial are deliberately absent — both carry
+ * robots:{index:false}. /follow is a link-hub reached from print and QR
+ * codes; /trial is reached from the essay, not from search.
  */
 const ROUTES = [
   { path: '', priority: 1.0 },

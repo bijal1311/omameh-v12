@@ -172,7 +172,7 @@ const __MARKUP = String.raw`
   </div>
 
   <div class="endnote">
-    <p>A note at the end rather than the middle: the system we built gets its own piece — Case 01, next. If you run a growing business and you recognised the three-tabs-and-a-spreadsheet problem, the first trial is opening and I would like you in it. And if something here is wrong, or you would have done it differently — <a href="/contact">advice, not feedback</a>. It is the thing I would most like back.</p>
+    <p>A note at the end rather than the middle: the system we built gets its own piece — Case 01, next. If you run a growing business and you recognised the three-tabs-and-a-spreadsheet problem, the first trial is opening and <a href="/trial">I would like you in it</a>. And if something here is wrong, or you would have done it differently — <a href="/contact">advice, not feedback</a>. It is the thing I would most like back.</p>
   </div>
 
   <div class="closing">

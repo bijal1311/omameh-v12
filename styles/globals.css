@@ -668,3 +668,30 @@ h2, h3, h4              { margin-left: -0.024em; }
 .cl-fix{font-family:var(--display);font-size:clamp(20px,2.6vw,26px)!important;font-weight:500;color:var(--navy);margin:0!important}
 .cl-mark{width:52px;height:52px;margin-top:var(--s3);opacity:.75}
 
+
+
+/* =====================================================================
+   /trial · the enquiry form
+   Uses the Practice register and the existing tokens only — no new
+   colours, spacing values or faces.
+   ===================================================================== */
+.tf{margin-top:var(--s4);display:flex;flex-direction:column;gap:var(--s3)}
+.tf__row{display:grid;grid-template-columns:1fr 1fr;gap:var(--s3)}
+.tf__field{display:flex;flex-direction:column;gap:8px}
+.tf__field>span{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft)}
+.tf__field>span em{font-style:normal;opacity:.62}
+.tf__field input,.tf__field textarea{font-family:var(--body);font-size:16px;line-height:1.55;color:var(--ink);background:#fff;border:1px solid var(--rule);border-radius:0;padding:13px 14px;width:100%;transition:border-color .18s ease}
+.tf__field textarea{resize:vertical;min-height:104px}
+.tf__field input::placeholder,.tf__field textarea::placeholder{color:var(--ink-soft);opacity:.5}
+.tf__field input:focus,.tf__field textarea:focus{outline:none;border-color:var(--teal);box-shadow:0 0 0 3px rgba(0,181,173,.12)}
+.tf__pot{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.tf__foot{display:flex;align-items:center;gap:var(--s3);flex-wrap:wrap;margin-top:var(--s2)}
+.tf__foot .btn{border:0;cursor:pointer}
+.tf__foot .btn:disabled{opacity:.55;cursor:default}
+.tf__note{font-size:13.5px;color:var(--ink-soft)}
+.tf__err{font-size:14px;color:var(--coral);margin:0}
+.tf__err a{color:var(--navy);border-bottom:1px solid var(--teal);text-decoration:none}
+.tf--done{border:1px solid var(--rule);border-left:2px solid var(--teal);padding:var(--s4)}
+.tf__done-k{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);margin:0 0 10px}
+.tf__done-t{font-size:17px;line-height:1.6;color:var(--ink);margin:0;max-width:52ch}
+@media(max-width:640px){.tf__row{grid-template-columns:1fr}}

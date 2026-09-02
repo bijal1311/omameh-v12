@@ -28,7 +28,7 @@ const __MARKUP = String.raw`
     <div class="top"><span class="eyebrow" style="margin:0">P01 · Evaluetor</span><span class="chip live">Live</span></div>
     <h3>Contract Intelligence</h3>
     <p class="lede">Nine agents read every supplier agreement you hold, score the risk and track every obligation inside it.</p>
-    <a class="link" href="/products">Explore Evaluetor</a>
+    <a class="link" href="mailto:contact@omameh.com.au?subject=Demo%20request%20-%20Evaluetor">Book a demo</a>
   </div>
 
   <div class="feature lead">
@@ -62,7 +62,7 @@ const __MARKUP = String.raw`
       <div class="fig"><b>$72k</b><span>saved per 1,000 users, annually</span></div>
     </div>
     <div class="tags"><span>Multi-agent orchestration</span><span>Enterprise RAG</span><span>Voice + chat</span><span>Smart escalation</span></div>
-    <a class="link" href="/products">Explore Agent Platform</a>
+    <a class="link" href="mailto:contact@omameh.com.au?subject=Demo%20request%20-%20Agent%20Platform">Book a demo</a>
   </div>
 
   <div class="feature">
@@ -74,7 +74,7 @@ const __MARKUP = String.raw`
       <div class="fig"><b>$780k</b><span>saved annually, 50-developer team</span></div>
     </div>
     <div class="tags"><span>Five role-based phases</span><span>Context threading</span><span>Compliance audit trail</span><span>Model-agnostic</span></div>
-    <a class="link" href="/products">Explore AI-Assisted SDLC</a>
+    <a class="link" href="mailto:contact@omameh.com.au?subject=Demo%20request%20-%20AI-Assisted%20SDLC">Book a demo</a>
   </div>
 
   <div class="feature">
@@ -86,7 +86,7 @@ const __MARKUP = String.raw`
       <div class="fig"><b>$2–5M</b><span>saved per facility, annually</span></div>
     </div>
     <div class="tags"><span>Ensemble ML</span><span>Digital twin</span><span>Heat recovery</span><span>Carbon and ESG</span></div>
-    <a class="link" href="/products">Explore Datacenter Thermal</a>
+    <a class="link" href="mailto:contact@omameh.com.au?subject=Demo%20request%20-%20Datacenter%20Thermal">Book a demo</a>
   </div>
 
   <p class="eyebrow" style="margin-top:var(--s5)">Also in the estate</p>

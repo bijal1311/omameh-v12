@@ -5,16 +5,32 @@
  * needing interactivity is extracted into a child and marked there
  * (see _components/GlobalNav.jsx).
  *
- * Fonts · Playfair Display, Inter and JetBrains Mono load site-wide.
- * Cormorant Garamond and Space Mono load ONLY on /atlas, per
- * 01_CODE_BRIEF.md §9 — they are imported in app/atlas/layout.jsx.
+ * Fonts · Playfair Display, Inter and JetBrains Mono load site-wide and
+ * are preloaded.
+ *
+ * Cormorant Garamond and Space Mono are the Editorial register, used on
+ * /atlas and /case-00 only. They are DECLARED here rather than in a route
+ * layout, with preload:false — declaring them here puts --font-cormorant
+ * and --font-space-mono in scope for GlobalNav, which sits outside every
+ * route layout and needs the editorial face for its wordmark on those two
+ * routes. preload:false keeps the font files off the wire on the routes
+ * that never render them, which is what §9 was protecting.
+ *
+ * This replaces app/atlas/layout.jsx, which scoped the import but could
+ * not reach the nav.
  *
  * The V16 stylesheet is self-contained: it carries the motif tiles and
  * the Foundation block, so the old maa-foundation.css and
  * omameh-motifs.css imports are gone.
  */
 
-import { Playfair_Display, Inter, JetBrains_Mono } from 'next/font/google';
+import {
+  Playfair_Display,
+  Inter,
+  JetBrains_Mono,
+  Cormorant_Garamond,
+  Space_Mono,
+} from 'next/font/google';
 import '../styles/globals.css';
 import '../styles/legacy.css';
 import GlobalNav from './_components/GlobalNav';
@@ -43,6 +59,23 @@ const jetbrains = JetBrains_Mono({
   variable: '--font-jetbrains',
   display: 'swap',
   preload: true,
+});
+
+const cormorant = Cormorant_Garamond({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600'],
+  style: ['normal', 'italic'],
+  variable: '--font-cormorant',
+  display: 'swap',
+  preload: false,
+});
+
+const spaceMono = Space_Mono({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  variable: '--font-space-mono',
+  display: 'swap',
+  preload: false,
 });
 
 export const metadata = {
@@ -89,7 +122,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en-AU"
-      className={`${playfair.variable} ${inter.variable} ${jetbrains.variable}`}
+      className={`${playfair.variable} ${inter.variable} ${jetbrains.variable} ${cormorant.variable} ${spaceMono.variable}`}
     >
       <body>
         <GlobalNav />

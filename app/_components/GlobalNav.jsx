@@ -34,10 +34,18 @@ const LINKS = [
 // the chain — it is step 08.
 const CHAIN = ['/', '/advisory', '/products', '/fluency', '/about', '/atlas', '/contact', '/follow'];
 
+/**
+ * The two Editorial-register routes. On these the nav wordmark switches to
+ * Cormorant Garamond to match the page beneath it; everything else in the
+ * nav is unchanged. Practice register everywhere else.
+ */
+const EDITORIAL_ROUTES = ['/atlas', '/case-00'];
+
 export default function GlobalNav() {
   const pathname = usePathname() || '/';
   const step = CHAIN.indexOf(pathname);
   const position = step >= 0 ? step + 1 : null;
+  const editorial = EDITORIAL_ROUTES.includes(pathname);
 
   return (
     <>
@@ -50,7 +58,17 @@ export default function GlobalNav() {
 
       <nav>
         <div className="w">
-          <a className="wordmark" href="/">Omameh</a>
+          <a
+            className="wordmark"
+            href="/"
+            style={
+              editorial
+                ? { fontFamily: 'var(--ed-display)', fontWeight: 500 }
+                : undefined
+            }
+          >
+            Omameh
+          </a>
 
           <ul>
             {LINKS.map(([label, href]) => {

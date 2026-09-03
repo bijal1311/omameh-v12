@@ -49,54 +49,59 @@ const __MARKUP = String.raw`
   <p>One decision did come before all of it. <strong>This was never going to be a consultancy only.</strong> Twenty years taught me to name a problem precisely, and naming it was never what I wanted to do. I wanted to be accountable for fixing it. Everything below is downstream of that.</p>
 
   <figure class="rail">
-    <svg viewBox="0 0 460 372" aria-label="Four months as three concentric open rings. Sense, shift and scale all run at once, each heavier in some months than others. The outer ring stops short because month four is still open.">
-      <g class="rr-track">
-        <path d="M 240.42 118.91 A 60 60 0 1 1 219.58 118.91"/>
-        <path d="M 245.63 89.37 A 90 90 0 1 1 214.37 89.37"/>
-        <path d="M 250.84 59.82 A 120 120 0 1 1 209.16 59.82"/>
+    <svg viewBox="0 0 460 242" aria-label="Four months. The curve above runs sense, shift then scale in sequence. The three lanes below show all three movements running at once across every month, each heavier where it carried more. Month four is still open.">
+      <defs>
+        <linearGradient id="rl-fade" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#1A1A18" stop-opacity="0"/>
+          <stop offset=".18" stop-color="#1A1A18" stop-opacity=".15"/>
+          <stop offset=".82" stop-color="#1A1A18" stop-opacity=".15"/>
+          <stop offset="1" stop-color="#1A1A18" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+      <path class="rl-ghost" d="M 38 171.66 A 620 620 0 0 1 432 40.12"/>
+      <path class="rl-seg rl-seg--sense" d="M 98.5 129.87 A 620 620 0 0 1 175.5 90.25"/>
+      <path class="rl-seg rl-seg--shift" d="M 191.5 83.64 A 620 620 0 0 1 268.5 58.79"/>
+      <path class="rl-seg rl-seg--scale" d="M 284.5 54.99 A 620 620 0 0 1 361.5 42.77"/>
+      <g class="rl-drop">
+        <line x1="90.5" y1="145.81" x2="90.5" y2="155"/>
+        <line x1="183.5" y1="97.88" x2="183.5" y2="155"/>
+        <line x1="276.5" y1="67.84" x2="276.5" y2="155"/>
+        <line x1="369.5" y1="53.06" x2="369.5" y2="155"/>
       </g>
-      <g class="rr-seg rr--sense">
-        <path d="M 241.55 119.12 A 60 60 0 0 1 289.86 182.08" opacity="1"/>
-        <path d="M 289.66 184.38 A 60 60 0 0 1 231.15 237.99" opacity="0.82"/>
-        <path d="M 228.85 237.99 A 60 60 0 0 1 170.34 184.38" opacity="0.44"/>
-        <path d="M 170.14 182.08 A 60 60 0 0 1 218.45 119.12" opacity="0.3"/>
+      <g class="rl-n">
+        <circle class="rl-dot rl-dot--sense" cx="90.5" cy="134.81" r="4.5"/>
+        <circle class="rl-dot rl-dot--sense" cx="183.5" cy="86.88" r="4.5"/>
+        <circle class="rl-dot rl-dot--shift" cx="276.5" cy="56.84" r="4.5"/>
+        <path class="rl-open" d="M 371.55 36.42 A 6 6 0 1 1 367.45 36.42"/>
       </g>
-      <g class="rr-seg rr--shift">
-        <path d="M 247.33 89.68 A 90 90 0 0 1 319.79 184.12" opacity="0.24"/>
-        <path d="M 319.49 187.56 A 90 90 0 0 1 231.73 267.98" opacity="0.6"/>
-        <path d="M 228.27 267.98 A 90 90 0 0 1 140.51 187.56" opacity="1"/>
-        <path d="M 140.21 184.12 A 90 90 0 0 1 212.67 89.68" opacity="0.56"/>
+      <g class="rl-num">
+        <text x="90.5" y="121.81">01</text>
+        <text x="183.5" y="73.88">02</text>
+        <text x="276.5" y="43.84">03</text>
+        <text x="369.5" y="29.06">04</text>
       </g>
-      <g class="rr-seg rr--scale">
-        <path d="M 253.1 60.24 A 120 120 0 0 1 349.72 186.16" opacity="0.16"/>
-        <path d="M 349.32 190.75 A 120 120 0 0 1 232.3 297.98" opacity="0.24"/>
-        <path d="M 227.7 297.98 A 120 120 0 0 1 110.68 190.75" opacity="0.52"/>
-        <path d="M 110.28 186.16 A 120 120 0 0 1 164.47 77.47" opacity="1"/>
+      <g class="rl-lab">
+        <text x="90.5" y="168">on paper</text>
+        <text x="183.5" y="168">tested</text>
+        <text x="276.5" y="168">built</text>
+        <text x="369.5" y="168" class="is-open">live</text>
       </g>
-      <g class="rr-spoke">
-        <line x1="238.68" y1="128.76" x2="252.23" y2="51.94"/>
-        <line x1="279.81" y1="182.36" x2="357.51" y2="189.16"/>
-        <line x1="230" y1="228" x2="230" y2="306"/>
-        <line x1="180.19" y1="182.36" x2="102.49" y2="189.16"/>
-        <line x1="221.32" y1="128.76" x2="207.77" y2="51.94"/>
-      </g>
-      <g class="rr-lab">
-        <text class="rr-num" x="343.45" y="90.95" text-anchor="start">01</text>
-        <text class="rr-t" x="343.45" y="105.95" text-anchor="start">on paper</text>
-        <text class="rr-num" x="326.61" y="283.43" text-anchor="start">02</text>
-        <text class="rr-t" x="326.61" y="298.43" text-anchor="start">tested</text>
-        <text class="rr-num" x="133.39" y="283.43" text-anchor="end">03</text>
-        <text class="rr-t" x="133.39" y="298.43" text-anchor="end">built</text>
-        <text class="rr-num" x="116.55" y="90.95" text-anchor="end">04</text>
-        <text class="rr-t is-open" x="116.55" y="105.95" text-anchor="end">live</text>
-      </g>
-      <g class="rr-key">
-        <line class="rr--sense" x1="124" y1="346" x2="140" y2="346"/>
-        <text class="rr--sense" x="147" y="350">SENSE</text>
-        <line class="rr--shift" x1="218" y1="346" x2="234" y2="346"/>
-        <text class="rr--shift" x="241" y="350">SHIFT</text>
-        <line class="rr--scale" x1="312" y1="346" x2="328" y2="346"/>
-        <text class="rr--scale" x="335" y="350">SCALE</text>
+      <g class="rl-lane">
+        <line class="rl-bar rl-bar--sense" x1="45.5" y1="193" x2="135.5" y2="193" opacity="1"/>
+        <line class="rl-bar rl-bar--sense" x1="138.5" y1="193" x2="228.5" y2="193" opacity="0.84"/>
+        <line class="rl-bar rl-bar--sense" x1="231.5" y1="193" x2="321.5" y2="193" opacity="0.5"/>
+        <line class="rl-bar rl-bar--sense" x1="324.5" y1="193" x2="414.5" y2="193" opacity="0.34"/>
+        <text class="rl-lane-k rl-lane-k--sense" x="424" y="196">SENSE</text>
+        <line class="rl-bar rl-bar--shift" x1="45.5" y1="209" x2="135.5" y2="209" opacity="0.26"/>
+        <line class="rl-bar rl-bar--shift" x1="138.5" y1="209" x2="228.5" y2="209" opacity="0.64"/>
+        <line class="rl-bar rl-bar--shift" x1="231.5" y1="209" x2="321.5" y2="209" opacity="1"/>
+        <line class="rl-bar rl-bar--shift" x1="324.5" y1="209" x2="414.5" y2="209" opacity="0.58"/>
+        <text class="rl-lane-k rl-lane-k--shift" x="424" y="212">SHIFT</text>
+        <line class="rl-bar rl-bar--scale" x1="45.5" y1="225" x2="135.5" y2="225" opacity="0.22"/>
+        <line class="rl-bar rl-bar--scale" x1="138.5" y1="225" x2="228.5" y2="225" opacity="0.3"/>
+        <line class="rl-bar rl-bar--scale" x1="231.5" y1="225" x2="321.5" y2="225" opacity="0.56"/>
+        <line class="rl-bar rl-bar--scale" x1="324.5" y1="225" x2="396.5" y2="225" opacity="1"/>
+        <text class="rl-lane-k rl-lane-k--scale" x="424" y="228">SCALE</text>
       </g>
     </svg>
   </figure>

@@ -49,17 +49,53 @@ const __MARKUP = String.raw`
   <p>One decision did come before all of it. <strong>This was never going to be a consultancy only.</strong> Twenty years taught me to name a problem precisely, and naming it was never what I wanted to do. I wanted to be accountable for fixing it. Everything below is downstream of that.</p>
 
   <figure class="rail">
-    <svg viewBox="0 0 460 96" aria-label="Four months, from sense through shift to scale">
-      <path class="rl-arc" d="M 26 40 A 700 700 0 0 1 434 40"/>
-      <path class="rl-run" d="M 26 40 A 700 700 0 0 1 434 40"/>
-      <g class="rl-n">
-        <circle cx="26" cy="40" r="5" class="on"/><circle cx="162" cy="26" r="5" class="on"/>
-        <circle cx="298" cy="26" r="5" class="on"/><circle cx="434" cy="40" r="5"/>
+    <svg viewBox="0 0 460 210" aria-label="Four months rising from sense through shift to scale. Month four is still open.">
+      <defs>
+        <linearGradient id="rl-fade" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#1A1A18" stop-opacity="0"/>
+          <stop offset=".18" stop-color="#1A1A18" stop-opacity=".15"/>
+          <stop offset=".82" stop-color="#1A1A18" stop-opacity=".15"/>
+          <stop offset="1" stop-color="#1A1A18" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+      <path class="rl-ghost" d="M 8 142.94 A 860 860 0 0 1 452 40.75"/>
+      <path class="rl-seg rl-seg--sense" d="M 53 120.36 A 860 860 0 0 1 159 79.3"/>
+      <path class="rl-seg rl-seg--shift" d="M 177 73.88 A 860 860 0 0 1 283 50.35"/>
+      <path class="rl-seg rl-seg--scale" d="M 301 47.72 A 860 860 0 0 1 407 40.05"/>
+      <g class="rl-drop">
+        <line x1="44" y1="135.62" x2="44" y2="150"/>
+        <line x1="168" y1="87.53" x2="168" y2="150"/>
+        <line x1="292" y1="59.99" x2="292" y2="150"/>
+        <line x1="416" y1="51" x2="416" y2="150"/>
       </g>
-      <g class="rl-num"><text x="26" y="16">01</text><text x="162" y="14">02</text><text x="298" y="14">03</text><text x="434" y="16">04</text></g>
-      <g class="rl-lab"><text x="26" y="62">on paper</text><text x="162" y="62">tested</text><text x="298" y="62">built</text><text x="434" y="62">live</text></g>
-      <line class="rl-band" x1="8" y1="76" x2="452" y2="76"/>
-      <g class="rl-ph"><text x="94" y="90">SENSE</text><text x="240" y="90">SHIFT</text><text x="392" y="90">SCALE</text></g>
+      <g class="rl-n">
+        <circle class="rl-dot rl-dot--sense" cx="44" cy="124.62" r="4.5"/>
+        <circle class="rl-dot rl-dot--sense" cx="168" cy="76.53" r="4.5"/>
+        <circle class="rl-dot rl-dot--shift" cx="292" cy="48.99" r="4.5"/>
+        <path class="rl-open" d="M 418.05 34.36 A 6 6 0 1 1 413.95 34.36"/>
+      </g>
+      <g class="rl-num">
+        <text x="44" y="111.62">01</text>
+        <text x="168" y="63.53">02</text>
+        <text x="292" y="35.99">03</text>
+        <text x="416" y="27">04</text>
+      </g>
+      <g class="rl-lab">
+        <text x="44" y="163">on paper</text>
+        <text x="168" y="163">tested</text>
+        <text x="292" y="163">built</text>
+        <text x="416" y="163" class="is-open">live</text>
+      </g>
+      <g class="rl-bracket">
+        <path class="rl-br rl-br--sense" d="M 50 178 L 50 182 L 162 182 L 162 178"/>
+        <path class="rl-br rl-br--shift" d="M 174 178 L 174 182 L 286 182 L 286 178"/>
+        <path class="rl-br rl-br--scale" d="M 298 178 L 298 182 L 410 182 L 410 178"/>
+      </g>
+      <g class="rl-ph">
+        <text class="rl-ph--sense" x="106" y="196">SENSE</text>
+        <text class="rl-ph--shift" x="230" y="196">SHIFT</text>
+        <text class="rl-ph--scale" x="354" y="196">SCALE</text>
+      </g>
     </svg>
   </figure>
 

@@ -49,7 +49,7 @@ const __MARKUP = String.raw`
           <div class="step"><span class="n">03 · Decide</span><span>If what it finds is worth fixing, we set you up. If your time is better spent elsewhere, we will tell you that too.</span></div>
         </div>
       </div>
-      <div class="cta" style="margin-top:0"><a class="btn" href="/contact">Book a demo</a><a class="btn ghost" href="/contact">Learn more</a></div>
+      <div class="cta" style="margin-top:0"><a class="btn" href="mailto:contact@omameh.com.au?subject=Demo%20request%20-%20Intuka">Book a demo</a><a class="btn ghost" href="https://www.intuka.com" target="_blank" rel="noopener">Learn more about Intuka →</a></div>
     </div>
   </div>
 

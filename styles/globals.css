@@ -555,35 +555,31 @@ h2, h3, h4              { margin-left: -0.024em; }
 /* the journey rail */
 .rail{margin:var(--s4) 0 var(--s2)}
 .rail svg{width:100%;height:auto;display:block}
-.rl-ghost{stroke:url(#rl-fade);stroke-width:1.4;fill:none}
-.rl-seg{fill:none;stroke-width:2.8;stroke-linecap:round}
-.rl-seg--sense{stroke:var(--teal)}
-.rl-seg--shift{stroke:var(--navy);opacity:.72}
-.rl-seg--scale{stroke:var(--gold)}
-.rl-drop line{stroke:rgba(26,26,24,.16);stroke-width:1;stroke-dasharray:1.5 3}
-.rl-dot{stroke:var(--cream);stroke-width:2}
-.rl-dot--sense{fill:var(--teal)}
-.rl-dot--shift{fill:var(--navy)}
-.rl-dot--scale{fill:var(--gold)}
-/* month four has not closed — an open ring, gap at north */
-.rl-open{fill:none;stroke:var(--gold);stroke-width:2.2;stroke-linecap:round}
-.rl-num{font-family:var(--mono);font-size:7.5px;letter-spacing:.14em;fill:var(--ink-soft);opacity:.8;text-anchor:middle}
-.rl-lab{font-family:var(--display);font-size:11px;font-style:italic;fill:var(--ink);text-anchor:middle}
-.rl-lab .is-open{fill:var(--gold-sh)}
-.rl-br{fill:none;stroke-width:1}
-.rl-br--sense{stroke:var(--teal);opacity:.5}
-.rl-br--shift{stroke:var(--navy);opacity:.34}
-.rl-br--scale{stroke:var(--gold);opacity:.6}
-.rl-ph{font-family:var(--mono);font-size:7px;letter-spacing:.22em;text-anchor:middle}
-.rl-ph--sense{fill:var(--teal)}
-.rl-ph--shift{fill:var(--navy);opacity:.66}
-.rl-ph--scale{fill:var(--gold-sh)}
-/* rail · small screens — the SVG scales with its viewBox, so at 320px the
-   labels fell to about 4px. Sizes go up as the figure comes down. */
+/* ── Case 00 · the four months as concentric open rings ──
+   Each ring is one movement, running the whole time and heavier in the
+   months it carried. Reading inward at any month shows what was live at
+   once. 20deg gap at north on every ring; the outer ring stops short
+   because month four has not closed. */
+.rr-track path{fill:none;stroke:rgba(26,26,24,.09);stroke-width:7}
+.rr-seg path{fill:none;stroke-width:7;stroke-linecap:butt}
+.rr--sense path,line.rr--sense{stroke:var(--teal)}
+.rr--shift path,line.rr--shift{stroke:var(--navy)}
+.rr--scale path,line.rr--scale{stroke:var(--gold)}
+.rr-spoke line{stroke:rgba(26,26,24,.13);stroke-width:1}
+.rr-num{font-family:var(--mono);font-size:8px;letter-spacing:.16em;fill:var(--ink-soft);opacity:.75}
+.rr-t{font-family:var(--display);font-size:12px;font-style:italic;fill:var(--ink)}
+.rr-t.is-open{fill:var(--gold-sh)}
+.rr-key line{stroke-width:3;stroke-linecap:round}
+.rr-key text{font-family:var(--mono);font-size:7.5px;letter-spacing:.2em}
+text.rr--sense{fill:var(--teal)}
+text.rr--shift{fill:var(--navy);opacity:.72}
+text.rr--scale{fill:var(--gold-sh)}
+/* small screens — the SVG scales with its viewBox, so the type goes up as
+   the figure comes down */
 @media(max-width:640px){
-  .rl-num{font-size:12px}
-  .rl-lab{font-size:16px}
-  .rl-ph{font-size:11px;letter-spacing:.16em}
+  .rr-num{font-size:11px}
+  .rr-t{font-size:16px}
+  .rr-key text{font-size:10px;letter-spacing:.14em}
 }
 
 .months{display:flex;flex-direction:column;gap:0;margin:var(--s3) 0 var(--s5);border-top:1px solid var(--rule)}

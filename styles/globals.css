@@ -255,7 +255,7 @@ p:last-child{margin-bottom:0}
 /* ── C10 · TABLE / CALENDAR ────────────────────────── */
 .rows{margin-top:var(--s4);border-top:1px solid var(--rule)}
 .row{display:grid;grid-template-columns:1fr;gap:var(--s1);padding:var(--s3) 0;border-bottom:1px solid var(--rule);align-items:baseline}
-@media(min-width:880px){.row{grid-template-columns:210px 1.5fr 1fr 130px;gap:var(--s3)}}
+@media(min-width:880px){.row{grid-template-columns:1.6fr 1.4fr 150px;gap:var(--s3)}}
 .row .d{font-family:var(--mono);font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--gold)}
 .row .n{font-family:var(--display);font-size:21px;font-weight:500;line-height:1.2}
 .row .s{font-size:14px;color:var(--ink-soft)}

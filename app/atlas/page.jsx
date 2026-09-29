@@ -25,15 +25,11 @@ const __MARKUP = String.raw`
 <section class="warm"><div class="w-narrow">
   <h2>Nothing here asks for your email <em>first.</em></h2>
   <p class="lede">Subscribe if you want it delivered. Read it either way.</p>
-  <form class="subs-form" data-subscribe-form="https://bijalsejpal.substack.com">
-    <label class="subs-form__label" for="subs-email">Your email</label>
-    <div class="subs-form__row">
-      <input id="subs-email" type="email" name="email" required placeholder="you@work.com" autocomplete="email"/>
-      <button class="btn" type="submit">Subscribe</button>
-    </div>
-    <p class="subs-form__note">Delivered through Substack, who handle the list. Free, and you can leave whenever you like.</p>
-    <p class="subs-form__done" data-subscribe-done hidden>Substack has opened in a new tab with your address filled in — one more click there and you are on the list.</p>
-  </form>
+  <div class="subs-embed">
+    <iframe src="https://bijalsejpal.substack.com/embed" title="Subscribe to Bijal Sejpal on Substack" loading="lazy" scrolling="no"></iframe>
+  </div>
+  <p class="subs-embed__note">One click and you are on the list — every new piece arrives by email. Substack hold the list, so you can leave from any email they send.</p>
+
 </div></section>
 
 <section><div class="w">

@@ -892,3 +892,22 @@ h2, h3, h4              { margin-left: -0.024em; }
 .subs-form__note{font-size:13px;line-height:1.6;color:var(--ink-soft);margin:12px 0 0;max-width:52ch}
 .subs-form__done{font-size:14px;line-height:1.6;color:var(--navy);margin:12px 0 0;padding-left:14px;border-left:2px solid var(--teal);max-width:54ch}
 @media(max-width:520px){.subs-form .btn{width:100%}}
+.subs-form__pot{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.subs-form__err{font-size:14px;line-height:1.6;color:var(--coral);margin:12px 0 0;max-width:54ch}
+.subs-form__err a{color:var(--navy);border-bottom:1px solid var(--teal);text-decoration:none}
+.subs-form .btn:disabled{opacity:.6;cursor:default}
+
+
+/* =====================================================================
+   Subscribe · /atlas · Substack embed
+   Substack's embed cannot be themed — the portrait, name, description,
+   orange button and watermark are fixed, and the documented params do
+   nothing. It is used anyway because it is the only one-click path:
+   Substack's API answers 403 to a browser on another origin, and 403 to
+   a Node runtime even with matching headers (TLS fingerprinting), so
+   every alternative costs a second click on Substack's own page.
+   The frame is ours; the widget inside it is theirs.
+   ===================================================================== */
+.subs-embed{margin-top:var(--s4);max-width:480px;border:1px solid var(--rule);background:#fff;overflow:hidden}
+.subs-embed iframe{display:block;width:100%;height:320px;border:0}
+.subs-embed__note{font-size:13px;line-height:1.6;color:var(--ink-soft);margin:12px 0 0;max-width:52ch}

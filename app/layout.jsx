@@ -96,6 +96,7 @@ export const metadata = {
   description:
     'We find what is holding you back, build what moves it, and leave you able to run it.',
   openGraph: {
+    images: [{ url: '/og/default-1200x630.png', width: 1200, height: 630 }],
     type: 'website',
     locale: 'en_AU',
     siteName: 'Omameh',
@@ -127,16 +128,15 @@ export const metadata = {
   authors: [{ name: 'Bijal Sejpal', url: `${SITE.url}/founder` }],
   creator: 'Bijal Sejpal',
   publisher: SITE.legalName,
+  manifest: '/site.webmanifest',
   icons: {
     icon: [
-      // SVG first — modern browsers prefer it and it stays sharp at any size
+      { url: '/favicon.ico', sizes: 'any' },
       { url: '/favicon.svg', type: 'image/svg+xml' },
-      { url: '/favicon-32.png', sizes: '32x32', type: 'image/png' },
-      { url: '/favicon-16.png', sizes: '16x16', type: 'image/png' },
-      { url: '/favicon-48.png', sizes: '48x48', type: 'image/png' },
+      { url: '/favicon-32.png', type: 'image/png', sizes: '32x32' },
+      { url: '/favicon-16.png', type: 'image/png', sizes: '16x16' },
     ],
-    apple: [{ url: '/favicon-180.png', sizes: '180x180', type: 'image/png' }],
-    other: [{ rel: 'icon', url: '/favicon-512.png', sizes: '512x512', type: 'image/png' }],
+    apple: '/apple-touch-icon.png',
   },
 };
 

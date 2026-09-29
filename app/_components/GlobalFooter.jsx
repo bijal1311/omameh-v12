@@ -22,6 +22,8 @@
  * The माँ Foundation block ships WITH its disclaimer, on every page.
  */
 
+import CookieSettingsLink from './CookieSettingsLink';
+
 const SOCIALS = [
   {
     label: 'LinkedIn',
@@ -131,6 +133,10 @@ export default function GlobalFooter() {
             <a href="/founder">Founder</a>
             <a href="/contact">Contact</a>
             <a href="/privacy">Privacy</a>
+            {/* Withdrawing consent has to be as easy as giving it, so the
+                banner is reachable again from here rather than only once.
+                Its own client component so this file stays a server one. */}
+            <CookieSettingsLink />
           </div>
         </div>
 

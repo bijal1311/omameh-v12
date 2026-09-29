@@ -84,7 +84,11 @@ const spaceMono = Space_Mono({
 });
 
 export const metadata = {
-  metadataBase: new URL('https://omameh.com.au'),
+  // Must be the canonical host, with the www. The apex 308-redirects
+  // here, and og:image URLs resolved against the apex therefore redirect
+  // too — which LinkedIn's crawler does not reliably follow when fetching
+  // a share image. A redirecting og:image renders as a grey box.
+  metadataBase: new URL(SITE.url),
   title: {
     default: 'Omameh · Everyone got the technology. Almost nobody got their time back.',
     template: '%s · Omameh',

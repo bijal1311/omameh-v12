@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Omameh">
+  <rect width="512" height="512" rx="112" fill="#06102C"/>
+  <g fill="none" stroke-width="56" stroke-linecap="round">
+    <path d="M 309.01 115.68 A 150 150 0 0 1 375.96 346.06" stroke="#00B5AD"/>
+    <path d="M 375.96 346.06 A 150 150 0 0 1 136.04 346.06" stroke="#F4F0E6"/>
+    <path d="M 136.04 346.06 A 150 150 0 0 1 202.99 115.68" stroke="#C9A84C"/>
+  </g>
+</svg>

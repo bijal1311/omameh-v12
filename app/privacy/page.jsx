@@ -178,7 +178,8 @@ const __MARKUP = String.raw`
         <h2 id="s8"><span class="num">08</span>Website Cookies</h2>
         <p>Cookies are small files sent from websites you visit to the device you are accessing the websites on. These small files track your browsing activity and store your setting choices and content preferences to facilitate a tailored and seamless web experience as they ensure you are served information that is personalised and relevant to you.</p>
         <p>Omameh Partners may use cookies or similar tracking technologies on our website to improve your browsing experience. Some of these cookies are necessary to ensure the functionality of our website, and some are used to capture your interactions with our website and recall your choices and preferences for your next session.</p>
-        <p>You can disable cookies through your internet browser, but our website may not work as intended for you if you do so.</p>
+        <p>We use <strong>Google Analytics</strong> to understand which pages are read and which are not. It is not loaded, and no analytics cookie is set, unless you accept when asked. We do not use cookies to advertise to you, and we do not share this data with advertising networks. IP addresses are anonymised.</p>
+        <p>You can change your mind at any time using the <strong>Cookies</strong> link in the footer of any page, and declining costs you nothing — the site works exactly the same either way. You can also disable cookies through your internet browser, although some websites may not then work as intended for you.</p>
         <p>Omameh Partners may also use cookies to collect data that may include personal information. We will handle any personal information collected by cookies in the same way that we handle all other personal information as described in this Policy.</p>
 
         <h2 id="s9"><span class="num">09</span>Third Party Links</h2>

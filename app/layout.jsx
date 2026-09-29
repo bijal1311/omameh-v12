@@ -35,6 +35,8 @@ import '../styles/globals.css';
 import '../styles/legacy.css';
 import GlobalNav from './_components/GlobalNav';
 import GlobalFooter from './_components/GlobalFooter';
+import CookieConsent from './_components/CookieConsent';
+import Analytics from './_components/Analytics';
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -128,6 +130,8 @@ export default function RootLayout({ children }) {
         <GlobalNav />
         {children}
         <GlobalFooter />
+        <CookieConsent />
+        <Analytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
       </body>
     </html>
   );

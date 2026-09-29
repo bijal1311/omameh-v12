@@ -848,3 +848,29 @@ h2, h3, h4              { margin-left: -0.024em; }
 .tf__done-k{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);margin:0 0 10px}
 .tf__done-t{font-size:17px;line-height:1.6;color:var(--ink);margin:0;max-width:52ch}
 @media(max-width:640px){.tf__row{grid-template-columns:1fr}}
+
+
+/* =====================================================================
+   Cookie consent
+   Bottom bar rather than a modal — it informs without holding the page
+   hostage. Decline and Accept are the same size, side by side, because a
+   banner where declining is harder than accepting is not a free choice.
+   ===================================================================== */
+.cc{position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--navy-deep);color:var(--cream);border-top:1px solid rgba(201,168,76,.45);box-shadow:0 -8px 28px rgba(6,16,44,.22)}
+.cc__in{max-width:1140px;margin:0 auto;padding:18px var(--gutter);display:flex;gap:var(--s4);align-items:center;justify-content:space-between;flex-wrap:wrap}
+.cc__text{max-width:70ch;min-width:260px;flex:1}
+.cc__text b{font-family:var(--mono);font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-light);display:block;margin-bottom:6px}
+.cc__text p{font-size:13.5px;line-height:1.6;color:#C5CBDB;margin:0}
+.cc__text a{color:var(--cream);text-decoration:none;border-bottom:1px solid var(--gold)}
+.cc__acts{display:flex;gap:10px;flex-shrink:0}
+.cc__btn{font-family:var(--body);font-size:13px;font-weight:500;letter-spacing:.03em;padding:11px 24px;border-radius:2px;cursor:pointer;background:var(--gold);color:var(--navy-ink);border:1px solid var(--gold);transition:.2s}
+.cc__btn:hover{background:var(--gold-light)}
+.cc__btn--ghost{background:transparent;color:var(--cream);border-color:rgba(244,240,230,.4)}
+.cc__btn--ghost:hover{background:rgba(244,240,230,.08)}
+@media(max-width:640px){
+  .cc__in{gap:var(--s3)}
+  .cc__acts{width:100%}
+  .cc__btn{flex:1}
+}
+/* the withdrawal link in the footer — same weight as the other legal links */
+.cc-link{background:none;border:0;padding:0;font:inherit;color:inherit;cursor:pointer;text-align:left}

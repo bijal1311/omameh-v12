@@ -37,6 +37,9 @@ import GlobalNav from './_components/GlobalNav';
 import GlobalFooter from './_components/GlobalFooter';
 import CookieConsent from './_components/CookieConsent';
 import Analytics from './_components/Analytics';
+import JsonLd from './_components/JsonLd';
+import { globalGraph } from '@/lib/seo/graph';
+import { SITE } from '@/lib/seo/content';
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -102,7 +105,24 @@ export const metadata = {
     description:
       'We find what is holding you back, build what moves it, and leave you able to run it.',
   },
-  robots: { index: true, follow: true },
+  alternates: { canonical: SITE.url },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      // At the default Google caps the extract. These permit a long
+      // pull into an AI Overview, which is the whole point of the
+      // writing being public.
+      'max-snippet': -1,
+      'max-image-preview': 'large',
+      'max-video-preview': -1,
+    },
+  },
+  authors: [{ name: 'Bijal Sejpal', url: `${SITE.url}/founder` }],
+  creator: 'Bijal Sejpal',
+  publisher: SITE.legalName,
   icons: {
     icon: [
       // SVG first — modern browsers prefer it and it stays sharp at any size
@@ -129,6 +149,7 @@ export default function RootLayout({ children }) {
       className={`${playfair.variable} ${inter.variable} ${jetbrains.variable} ${cormorant.variable} ${spaceMono.variable}`}
     >
       <body>
+        <JsonLd data={globalGraph} />
         <GlobalNav />
         {children}
         <GlobalFooter />

@@ -32,7 +32,7 @@ const SOCIALS = [
   },
   {
     label: 'Substack',
-    href: '#',
+    href: 'https://bijalsejpal.substack.com',
     path: 'M3 3h18v3H3V3zm0 5.5h18V21l-9-4.6L3 21V8.5z',
   },
   {
@@ -89,8 +89,14 @@ export default function GlobalFooter() {
             </p>
 
             <div className="soc">
-              {SOCIALS.map((s) => (
-                <a key={s.label} href={s.href} aria-label={s.label}>
+              {SOCIALS.filter((s) => s.href && s.href !== '#').map((s) => (
+                <a
+                  key={s.label}
+                  href={s.href}
+                  aria-label={s.label}
+                  target="_blank"
+                  rel="noopener"
+                >
                   <svg viewBox="0 0 24 24" fill="currentColor">
                     <path d={s.path} />
                   </svg>

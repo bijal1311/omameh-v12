@@ -28,6 +28,18 @@ export const masthead = {
   status: 'Unlearn',
 };
 
+/**
+ * The share card. Kept here rather than in opengraph-image.jsx so the
+ * headline on the card and the headline on the page cannot drift — this is
+ * the one URL that gets posted to LinkedIn and Substack, and the card is
+ * what most people will see of it.
+ */
+export const og = {
+  eyebrow: masthead.kicker,
+  title: 'Carrying',
+  accent: 'enough.',
+};
+
 export const author = {
   portrait: '/og/bijal-authorcard-400.jpg',
   eyebrow: 'Written by',

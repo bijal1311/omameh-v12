@@ -15,5 +15,6 @@ export default function Image() {
     eyebrow: 'Atlas · Cases · 00',
     title: 'You do not get a',
     accent: 'blank month.',
+    withPortrait: true,
   });
 }

@@ -15,5 +15,6 @@ export default function Image() {
     eyebrow: 'Atlas',
     title: 'What we learn inside the work,',
     accent: 'written down.',
+    withPortrait: true,
   });
 }

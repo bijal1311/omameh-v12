@@ -6,7 +6,7 @@ import article from '../_articles/case-00';
  *
  * The route is deliberately thin. The article is data in
  * app/_articles/case-00.js and renders through ArticleLayout, which is the
- * repeating format — Case 01 and the Field Notes follow the same shape.
+ * repeating format — Case 01 and the Founder Notes follow the same shape.
  *
  * omameh.com.au is canonical. The same words publish to Substack, so
  * without an explicit canonical the search engine picks the platform over
@@ -44,7 +44,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Omameh Group' },
   mainEntityOfPage: { '@type': 'WebPage', '@id': article.url },
   url: article.url,
-  isPartOf: { '@type': 'Blog', name: 'Atlas · Field Notes' },
+  isPartOf: { '@type': 'Blog', name: 'Atlas · Cases' },
 };
 
 export default function Case00Page() {

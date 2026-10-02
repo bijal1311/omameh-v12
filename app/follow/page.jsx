@@ -48,7 +48,7 @@ const __MARKUP = String.raw`
     </a>
     <a class="fl" href="/contact">
       <span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 3h18v3H3V3zm0 5.5h18V21l-9-4.6L3 21V8.5z"/></svg></span>
-      <span class="tx"><b>Subscribe on Substack</b><i>Field Notes &amp; Executive Briefs · free, no gate</i></span>
+      <span class="tx"><b>Subscribe on Substack</b><i>Founder Notes &amp; Cases · free, no gate</i></span>
       <span class="st">Coming</span><span class="ar">→</span>
     </a>
     <a class="fl" href="/contact">

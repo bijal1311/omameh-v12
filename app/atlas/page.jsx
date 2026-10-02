@@ -77,14 +77,6 @@ const __MARKUP = String.raw`
       <a class="ch" href="/contact"><svg class="glyph" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12a10 10 0 10-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.45 2.89h-2.33v6.99A10 10 0 0022 12z"/></svg><b>Follow on Facebook</b><span>Same clips, different room. For the people who are there rather than on LinkedIn.</span><span class="pend">Coming soon</span></a>
   </div>
 
-  <a class="ch table" href="/contact">
-    <div>
-      <span class="k">From 2027 · Not a broadcast</span>
-      <b>The Roundtables</b>
-      <span>One industry, one table, ten or twelve people who run something — mapping where it goes next. Nothing is sold in the room, by anyone, including us.</span>
-    </div>
-    <span class="pend">Register your interest →</span>
-  </a>
 </div></section>
 
 

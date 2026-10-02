@@ -1,32 +1,23 @@
-// Canonical host. The apex 308-redirects here, so emit www directly rather
-// than sending crawlers through a redirect on every URL.
-const BASE = 'https://www.omameh.com.au';
+import { SITE, ENTRIES } from '@/lib/seo/content';
 
 /**
- * /follow and /trial are deliberately absent — both carry
- * robots:{index:false}. /follow is a link-hub reached from print and QR
- * codes; /trial is reached from the essay, not from search.
+ * Generated from the content manifest, not a second hand-kept list.
+ *
+ * It used to be its own hardcoded array, which meant adding an article
+ * updated the page, the schema and the metadata but silently not the
+ * sitemap — found exactly that way when Founder Note 01 went in. A list
+ * maintained in two places is a list that is wrong in one of them.
+ *
+ * /follow and /trial are deliberately absent: both carry
+ * robots:{index:false}. /follow is reached from print and QR codes,
+ * /trial from the essay — neither from search. They are not in ENTRIES,
+ * so they cannot creep in here either.
+ *
+ * priority and changefreq are dropped on purpose. Google ignores both.
  */
-const ROUTES = [
-  { path: '', priority: 1.0 },
-  { path: '/advisory', priority: 0.9 },
-  { path: '/products', priority: 0.9 },
-  { path: '/fluency', priority: 0.9 },
-  { path: '/about', priority: 0.8 },
-  { path: '/atlas', priority: 0.8 },
-  { path: '/case-00', priority: 0.7 },
-  { path: '/founder', priority: 0.7 },
-  { path: '/contact', priority: 0.7 },
-  { path: '/media', priority: 0.5 },
-  { path: '/privacy', priority: 0.3 },
-];
-
 export default function sitemap() {
-  const lastModified = new Date();
-  return ROUTES.map(({ path, priority }) => ({
-    url: `${BASE}${path}`,
-    lastModified,
-    changeFrequency: 'monthly',
-    priority,
+  return ENTRIES.map((e) => ({
+    url: `${SITE.url}${e.slug}`,
+    lastModified: new Date(e.modified),
   }));
 }

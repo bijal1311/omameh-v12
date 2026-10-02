@@ -33,6 +33,30 @@ const __MARKUP = String.raw`
 </div></section>
 
 <section><div class="w">
+  <p class="eyebrow">Published</p>
+  <h2>Start anywhere. They do not need <em>reading in order.</em></h2>
+  <div class="pieces">
+
+    <a class="piece" href="/atlas/carrying-enough">
+      <div class="piece__meta"><span class="piece__stream">Founder Notes</span><span class="piece__date">October 2026</span><span class="piece__time">5 min</span></div>
+      <h3>Carrying enough</h3>
+      <p class="piece__dek">After twenty years in corporate, why build your own?</p>
+      <p class="piece__open">People assumed two things. That something must have gone wrong. And that I would be going into consulting. The second is easier, so I will start there. No.</p>
+      <span class="piece__more">Continue reading &rarr;</span>
+    </a>
+
+    <a class="piece" href="/case-00">
+      <div class="piece__meta"><span class="piece__stream">Cases</span><span class="piece__date">September 2026</span><span class="piece__time">6 min</span></div>
+      <h3>You do not get a blank month</h3>
+      <p class="piece__dek">I built a business and its operating model at the same time, because nobody gets to stop and design first.</p>
+      <p class="piece__open">The advice I was given most often was to start with one thing and do it well. I did the opposite, and I would do it again.</p>
+      <span class="piece__more">Continue reading &rarr;</span>
+    </a>
+
+  </div>
+</div></section>
+
+<section><div class="w">
   <p class="eyebrow">The streams</p>
   <div class="streams">
     <div class="stream"><span class="k">Free · ongoing</span><div><h4>Field Notes</h4><span class="m">Short · from live engagements</span></div><p>What we ran into this week and what it taught us. Written from inside the work rather than about it. Nobody has to give us an email address to read one.</p></div>

@@ -15,8 +15,8 @@
  * rail still shipping in the content source.
  */
 
-export const slug = 'case-00';
-export const url = 'https://www.omameh.com.au/case-00';
+export const slug = 'atlas/case-00';
+export const url = 'https://www.omameh.com.au/atlas/case-00';
 
 export const masthead = {"kicker":"Atlas · Cases · 00","title":"You do not get a blank month.","dek":"I built a business and its operating model at the same time, because nobody gets to stop and design first. Four months, month by month — including the parts that did not work.","author":"Bijal Sejpal","date":"September 2026","readingTime":"6 minute read","status":"Still building"};
 

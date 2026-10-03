@@ -35,17 +35,22 @@ const LINKS = [
 const CHAIN = ['/', '/advisory', '/products', '/fluency', '/about', '/atlas', '/contact', '/follow'];
 
 /**
- * The two Editorial-register routes. On these the nav wordmark switches to
+ * The Editorial-register routes. On these the nav wordmark switches to
  * Cormorant Garamond to match the page beneath it; everything else in the
  * nav is unchanged. Practice register everywhere else.
+ *
+ * This was an exact-match list of two, which meant the first piece filed
+ * under /atlas — Founder Note 01 — rendered an Editorial page under a
+ * Practice wordmark. Every piece lives under /atlas now, so the prefix is
+ * the rule and new pieces inherit it.
  */
-const EDITORIAL_ROUTES = ['/atlas', '/case-00'];
+const EDITORIAL_PREFIX = '/atlas';
 
 export default function GlobalNav() {
   const pathname = usePathname() || '/';
   const step = CHAIN.indexOf(pathname);
   const position = step >= 0 ? step + 1 : null;
-  const editorial = EDITORIAL_ROUTES.includes(pathname);
+  const editorial = pathname === EDITORIAL_PREFIX || pathname.startsWith(`${EDITORIAL_PREFIX}/`);
 
   return (
     <>

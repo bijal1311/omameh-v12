@@ -139,7 +139,7 @@ export default function GlobalFooter() {
             <b>Read</b>
             <a href="/atlas">Atlas</a>
             <a href="/atlas/carrying-enough">Carrying enough</a>
-            <a href="/case-00">Case 00</a>
+            <a href="/atlas/case-00">Case 00</a>
             <a href="/media">Media kit</a>
           </div>
 

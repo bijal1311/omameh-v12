@@ -45,7 +45,7 @@ const __MARKUP = String.raw`
       <span class="piece__more">Continue reading &rarr;</span>
     </a>
 
-    <a class="piece" href="/case-00">
+    <a class="piece" href="/atlas/case-00">
       <div class="piece__meta"><span class="piece__stream">Cases</span><span class="piece__date">September 2026</span><span class="piece__time">6 min</span></div>
       <h3>You do not get a blank month</h3>
       <p class="piece__dek">I built a business and its operating model at the same time, because nobody gets to stop and design first.</p>

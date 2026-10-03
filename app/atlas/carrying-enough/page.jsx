@@ -5,9 +5,9 @@ import article from '../../_articles/founder-note-01';
  * Founder Note 01 · Carrying enough
  *
  * Nested under /atlas so the breadcrumb reads Atlas › Founder Notes ›
- * Carrying enough, and every future piece nests the same way. Case 00
- * stays at /case-00 — it is live, indexed and linked from Home and the
- * footer, and moving it would break those for a tidier URL.
+ * Carrying enough, and every future piece nests the same way. Case 00 was
+ * moved under /atlas to join it — the root was filling with one URL per
+ * piece, and the cost of moving only went up with each one.
  *
  * The site is canonical. Substack carries the same words with its post
  * canonical pointed back here, which is the only thing stopping a platform

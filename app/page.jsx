@@ -147,7 +147,7 @@ const __MARKUP = String.raw`
     <div class="card"><span class="k">03</span><h4>Made it teachable</h4><p>What we learned doing it became the rooms. If it only works when we are holding it, it is not a method.</p><span class="foot" style="color:var(--teal-light);border-color:var(--rule-dark);opacity:1">Fluency</span></div>
     <div class="card"><span class="k">04</span><h4>Built the products</h4><p>Eight platforms, and the ones only one client will ever need. This is the phase we are in now.</p><span class="foot" style="color:var(--teal-light);border-color:var(--rule-dark);opacity:1">Products</span></div>
   </div>
-  <div class="cta"><a class="btn" href="/case-00">Read Case 00</a></div>
+  <div class="cta"><a class="btn" href="/atlas/case-00">Read Case 00</a></div>
 </div></section>
 
 <section><div class="w">

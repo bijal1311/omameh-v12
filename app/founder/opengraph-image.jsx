@@ -15,5 +15,6 @@ export default function Image() {
     eyebrow: 'Founder',
     title: 'Twenty years inside the architecture of large',
     accent: 'institutions.',
+    withPortrait: true,
   });
 }

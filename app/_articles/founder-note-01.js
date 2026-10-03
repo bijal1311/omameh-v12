@@ -28,6 +28,18 @@ export const masthead = {
   status: 'Unlearn',
 };
 
+/**
+ * The share card. Kept here rather than in opengraph-image.jsx so the
+ * headline on the card and the headline on the page cannot drift — this is
+ * the one URL that gets posted to LinkedIn and Substack, and the card is
+ * what most people will see of it.
+ */
+export const og = {
+  eyebrow: masthead.kicker,
+  title: 'Carrying',
+  accent: 'enough.',
+};
+
 export const author = {
   portrait: '/og/bijal-authorcard-400.jpg',
   eyebrow: 'Written by',
@@ -49,11 +61,11 @@ export const next = {
   eyebrow: 'The how',
   title: 'Case 00 — the same months, documented, including what did not work.',
   label: 'Read Case 00 →',
-  href: '/case-00',
+  href: '/atlas/case-00',
 };
 
 export const endnote = String.raw`<p>Next in Founder Notes: <strong>The unglamorous version.</strong></p>
-<p style="margin-top:14px!important">This is the why. <a href="/case-00"><strong>Case 00</strong></a> is the how — the same four months, month by month, including the parts that did not work.</p>`;
+<p style="margin-top:14px!important">This is the why. <a href="/atlas/case-00"><strong>Case 00</strong></a> is the how — the same four months, month by month, including the parts that did not work.</p>`;
 
 export const body = String.raw`
   <p class="drop">People assumed two things. That something must have gone wrong. And that I would be going into consulting.</p>

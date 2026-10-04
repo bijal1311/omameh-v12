@@ -15,9 +15,15 @@
   --w40:rgba(255,255,255,.4); --w70:rgba(255,255,255,.7);
 
   /* type */
-  --display:"Playfair Display",Georgia,serif;
-  --body:"Inter",-apple-system,"Segoe UI",sans-serif;
-  --mono:"JetBrains Mono",ui-monospace,monospace;
+  /* next/font serves each face under a hashed family, so a literal name
+     matches nothing and the whole site fell through to its fallback —
+     every heading on every page rendered in Georgia, not Playfair, and
+     had done since launch. The var() comes first; the literal names stay
+     as the fallback. The same bug was found and fixed for the editorial
+     register months ago and never checked here. */
+  --display:var(--font-playfair),"Playfair Display",Georgia,serif;
+  --body:var(--font-inter),"Inter",-apple-system,"Segoe UI",sans-serif;
+  --mono:var(--font-jetbrains),"JetBrains Mono",ui-monospace,monospace;
   /* The editorial register now resolves to the practice faces.
      The Unlearning's whole identity — avatars, email headers, quote cards,
      covers, banners — is Playfair, Inter and JetBrains Mono, and Substack
@@ -923,3 +929,12 @@ h2, h3, h4              { margin-left: -0.024em; }
 .piece__more{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);border-bottom:1.5px solid var(--gold);padding-bottom:2px}
 
 
+
+/* =====================================================================
+   /atlas · the redesign carries its own styling inline, so the only
+   thing it needs from here is the browser default off. Links inside it
+   were arriving underlined, including the pill button, which design's
+   reference does not have anywhere.
+   ===================================================================== */
+.atlas2 a{text-decoration:none}
+.atlas2 a:hover{text-decoration:none}

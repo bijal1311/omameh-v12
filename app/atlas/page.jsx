@@ -77,10 +77,19 @@ const row = (a, ink, border, accent, ground, dekInk) => String.raw`
     </a>`;
 
 /** A series with nothing published says so, rather than taking a placeholder. */
-const soon = (border, dot, ink) => String.raw`
-    <div style="display:flex;align-items:center;gap:14px;padding:18px 20px;border:1px dashed ${border};border-radius:12px">
-      <span style="width:8px;height:8px;border-radius:50%;background:${dot}"></span>
-      <span style="font:500 11px/1.3 ${MONO};letter-spacing:.2em;color:${ink};text-transform:uppercase">The first one lands soon.</span>
+/**
+ * A series with nothing published. It still carries its portrait: the
+ * frame belongs to the series, not the piece, and the only image on a
+ * tile used to come from the article row — so the two empty series had
+ * no face at all. Shown at its own aspect so none of it is cropped.
+ */
+const soon = (series, border, dot, ink) => String.raw`
+    <div style="display:grid;grid-template-columns:minmax(0,104px) minmax(0,1fr);gap:18px;align-items:center;padding:12px;border:1px dashed ${border};border-radius:12px">
+      <img src="/og/series-${series}.jpg?v=${CARD_V}" alt="" loading="lazy" style="width:100%;aspect-ratio:460/630;object-fit:cover;border-radius:8px;display:block">
+      <span style="display:flex;align-items:center;gap:12px">
+        <span style="width:8px;height:8px;border-radius:50%;background:${dot};flex:none"></span>
+        <span style="font:500 11px/1.4 ${MONO};letter-spacing:.2em;color:${ink};text-transform:uppercase">The first one lands soon.</span>
+      </span>
     </div>`;
 
 const months = Array.from(
@@ -142,7 +151,7 @@ ${contents}
     <div style="font:500 11px/1 ${MONO};letter-spacing:.24em;color:#8a6d22">WEEKLY · MONDAY</div>
     <div style="display:flex;flex-direction:column;gap:12px;max-width:420px"><h3 style="margin:0;font:500 34px/1.1 ${DISPLAY};letter-spacing:-.01em">The <span style="font-style:italic">Standing Item</span></h3><p style="margin:0;font:400 16px/1.6 ${BODY};color:rgba(26,26,24,.72)">The question I was asked most this week, and the one nobody raised.</p></div>
     <div style="flex:1"></div>
-${soon('rgba(138,109,34,.45)', '#C9A84C', '#8a6d22')}
+${soon('standing', 'rgba(138,109,34,.45)', '#C9A84C', '#8a6d22')}
   </article>
 
   <article id="aob" style="color:#ffffff;position:relative;overflow:hidden;border-radius:16px;background:#081335;border:1px solid rgba(201,168,76,.28);padding:clamp(24px,3vw,36px);display:flex;flex-direction:column;gap:22px;min-height:360px">
@@ -164,7 +173,7 @@ ${row(ARTICLE.blankMonth, '#f4f0e6', 'rgba(244,240,230,.16)', '#E0C67A', 'rgba(0
     <div style="display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap"><div style="font:500 11px/1 ${MONO};letter-spacing:.24em;color:#00D4CB">QUARTERLY</div><div style="display:flex;gap:6px;font:500 9px/1 ${MONO};letter-spacing:.16em">${quarters}</div></div>
     <div style="display:flex;flex-direction:column;gap:12px;max-width:420px"><h3 style="margin:0;font:500 34px/1.1 ${DISPLAY};letter-spacing:-.01em">The Board <span style="font-style:italic;color:#00D4CB">Pack</span></h3><p style="margin:0;font:400 16px/1.6 ${BODY};color:rgba(255,255,255,.74)">One decision a board is facing, taken apart. Nothing is sold in it.</p></div>
     <div style="flex:1"></div>
-${soon('rgba(0,181,173,.45)', '#00B5AD', '#00D4CB')}
+${soon('board', 'rgba(0,181,173,.45)', '#00B5AD', '#00D4CB')}
   </article>
 
   </div>

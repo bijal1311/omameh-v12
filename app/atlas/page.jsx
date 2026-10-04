@@ -22,6 +22,13 @@ const __MARKUP = String.raw`
   <p class="lede">No gate, no email address, no lead magnet. If it is useful it should be readable.</p>
 </div></section>
 
+
+<div class="seriesnav" role="navigation" aria-label="The four series"><div class="w">
+  <a class="sn" href="#standing" style="--sn:#C9A84C">The Standing Item<span>Weekly</span></a>
+  <a class="sn" href="#aob" style="--sn:#081335">Any Other Business<span>Monthly</span></a>
+  <a class="sn" href="#mec" style="--sn:#2D5A3D">Month End Close<span>Month end</span></a>
+  <a class="sn" href="#board" style="--sn:#00B5AD">The Board Pack<span>Quarterly</span></a>
+</div></div>
 <section class="warm"><div class="w-narrow">
   <h2>Nothing here asks for your email <em>first.</em></h2>
   <p class="lede">Subscribe if you want it delivered. Read it either way.</p>
@@ -61,10 +68,10 @@ const __MARKUP = String.raw`
   <h2>One publication, four <em>different jobs.</em></h2>
   <p class="lede">They share a masthead and nothing else. Each runs to its own rhythm, and you can follow one and ignore the rest.</p>
   <div class="streams">
-    <div class="stream"><span class="k">Free · Monday</span><div><h4>The Standing Item</h4><span class="m">Weekly</span></div><p>The question I was asked most this week, and the one nobody raised. Short, and on the table every Monday.</p></div>
-    <div class="stream"><span class="k">Free · monthly</span><div><h4>Any Other Business</h4><span class="m">First person</span></div><p>What building this has actually required. Written from inside it, including the parts that did not work.</p></div>
-    <div class="stream"><span class="k">Free · month end</span><div><h4>Month End Close</h4><span class="m">Documented, month by month</span></div><p>Work that was actually done, written up in full. The method is free and the numbers are real.</p></div>
-    <div class="stream"><span class="k">Free · quarterly</span><div><h4>The Board Pack</h4><span class="m">For the people who sign it off</span></div><p>One decision a board is facing, taken apart. Short, practical, and nothing is sold in it.</p></div>
+    <div class="stream" id="standing"><span class="k">Free · Monday</span><div><h4>The Standing Item</h4><span class="m">Weekly</span></div><p>The question I was asked most this week, and the one nobody raised. Short, and on the table every Monday.</p></div>
+    <div class="stream" id="aob"><span class="k">Free · monthly</span><div><h4>Any Other Business</h4><span class="m">First person</span></div><p>What building this has actually required. Written from inside it, including the parts that did not work.</p></div>
+    <div class="stream" id="mec"><span class="k">Free · month end</span><div><h4>Month End Close</h4><span class="m">Documented, month by month</span></div><p>Work that was actually done, written up in full. The method is free and the numbers are real.</p></div>
+    <div class="stream" id="board"><span class="k">Free · quarterly</span><div><h4>The Board Pack</h4><span class="m">For the people who sign it off</span></div><p>One decision a board is facing, taken apart. Short, practical, and nothing is sold in it.</p></div>
   </div>
 </div></section>
 

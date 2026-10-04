@@ -8,29 +8,24 @@
  * Fonts · Playfair Display, Inter and JetBrains Mono load site-wide and
  * are preloaded.
  *
- * Cormorant Garamond and Space Mono are the Editorial register, used under
- * /atlas only. They are DECLARED here rather than in a route
- * layout, with preload:false — declaring them here puts --font-cormorant
- * and --font-space-mono in scope for GlobalNav, which sits outside every
- * route layout and needs the editorial face for its wordmark on those
- * routes. preload:false keeps the font files off the wire on the routes
- * that never render them, which is what §9 was protecting.
+ * Three faces, everywhere. Cormorant Garamond and Space Mono used to be
+ * a second, Editorial register under /atlas. They were dropped when The
+ * Unlearning got its identity: every asset in the publication — avatars,
+ * email headers, quote cards, covers, banners — is Playfair, Inter and
+ * JetBrains Mono, and Substack cannot be made to serve Cormorant, so the
+ * site's two reading pages were the only surface anywhere using different
+ * type.
  *
- * This replaces app/atlas/layout.jsx, which scoped the import but could
- * not reach the nav.
+ * The editorial surfaces still size and space differently. Only the faces
+ * are shared now — see --ed-display and --ed-mono in globals.css. Essay
+ * body copy is Georgia and was never part of either register.
  *
  * The V16 stylesheet is self-contained: it carries the motif tiles and
  * the Foundation block, so the old maa-foundation.css and
  * omameh-motifs.css imports are gone.
  */
 
-import {
-  Playfair_Display,
-  Inter,
-  JetBrains_Mono,
-  Cormorant_Garamond,
-  Space_Mono,
-} from 'next/font/google';
+import { Playfair_Display, Inter, JetBrains_Mono } from 'next/font/google';
 import '../styles/globals.css';
 import '../styles/legacy.css';
 import GlobalNav from './_components/GlobalNav';
@@ -64,23 +59,6 @@ const jetbrains = JetBrains_Mono({
   variable: '--font-jetbrains',
   display: 'swap',
   preload: true,
-});
-
-const cormorant = Cormorant_Garamond({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600'],
-  style: ['normal', 'italic'],
-  variable: '--font-cormorant',
-  display: 'swap',
-  preload: false,
-});
-
-const spaceMono = Space_Mono({
-  subsets: ['latin'],
-  weight: ['400', '700'],
-  variable: '--font-space-mono',
-  display: 'swap',
-  preload: false,
 });
 
 export const metadata = {
@@ -150,7 +128,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en-AU"
-      className={`${playfair.variable} ${inter.variable} ${jetbrains.variable} ${cormorant.variable} ${spaceMono.variable}`}
+      className={`${playfair.variable} ${inter.variable} ${jetbrains.variable}`}
     >
       <body>
         <JsonLd data={globalGraph} />

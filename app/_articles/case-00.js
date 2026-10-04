@@ -18,7 +18,7 @@
 export const slug = 'atlas/case-00';
 export const url = 'https://www.omameh.com.au/atlas/case-00';
 
-export const masthead = {"kicker":"The Unlearning · 02 · Month End Close","title":"You do not get a blank month.","dek":"I built a business and its operating model at the same time, because nobody gets to stop and design first. Four months, month by month — including the parts that did not work.","author":"Bijal Sejpal","date":"September 2026","readingTime":"6 minute read","status":"Still building"};
+export const masthead = {"kicker":"The Unlearning · 01 · Month End Close","title":"You do not get a blank month.","dek":"I built a business and its operating model at the same time, because nobody gets to stop and design first. Four months, month by month — including the parts that did not work.","author":"Bijal Sejpal","date":"September 2026","readingTime":"6 minute read","status":"Still building"};
 
 /**
  * The share card. Kept beside the title so the two cannot drift — this is
@@ -27,7 +27,7 @@ export const masthead = {"kicker":"The Unlearning · 02 · Month End Close","tit
  */
 export const og = {
   series: 'mec',
-  n: '02',
+  n: '01',
   title: 'You do not get a',
   accent: 'blank month.',
   dek: 'Four months, month by month, including what did not work.',

@@ -19,7 +19,7 @@ export const url = 'https://www.omameh.com.au/atlas/carrying-enough';
 export const publishedAt = '2026-10-02';
 
 export const masthead = {
-  kicker: 'The Unlearning · 01 · Any Other Business',
+  kicker: 'The Unlearning · 02 · Any Other Business',
   title: 'Carrying enough',
   dek: 'After twenty years in corporate, why build your own?',
   author: 'Bijal Sejpal',
@@ -36,7 +36,7 @@ export const masthead = {
  */
 export const og = {
   series: 'aob',
-  n: '01',
+  n: '02',
   title: 'Carrying',
   accent: 'enough.',
   dek: masthead.dek,

@@ -76,7 +76,7 @@ const __MARKUP = String.raw`
     </div>
 
     <hr class="rule" style="margin-block: var(--space-8);">
-    <p class="tag" style="text-align:center;"><a href="/atlas/case-00">Continue reading → <em>The case that made the practice.</em> · Next · 07 · Case 00</a></p>
+    <p class="tag" style="text-align:center;"><a href="/atlas/case-00">Continue reading → <em>The case that made the practice.</em></a></p>
   </div>
 `;
 

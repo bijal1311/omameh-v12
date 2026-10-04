@@ -19,7 +19,7 @@ export const url = 'https://www.omameh.com.au/atlas/carrying-enough';
 export const publishedAt = '2026-10-02';
 
 export const masthead = {
-  kicker: 'Atlas · Founder Notes · 01',
+  kicker: 'The Unlearning · 01 · Any Other Business',
   title: 'Carrying enough',
   dek: 'After twenty years in corporate, why build your own?',
   author: 'Bijal Sejpal',
@@ -50,21 +50,21 @@ export const author = {
 };
 
 export const subscribe = {
-  eyebrow: 'Atlas · Founder Notes',
+  eyebrow: 'The Unlearning · Any Other Business',
   heading: 'The next one lands here.',
-  body: 'Founder Notes, and what comes after them. Written for people building something while running it. Occasional, never scheduled, and nothing is sold in it.',
+  body: 'Any Other Business lands monthly. Written for people building something while running it, and nothing is sold in it.',
   linkLabel: 'Subscribe on Substack &rarr;',
 };
 
 export const next = {
   eyebrow: 'The how',
-  title: 'Case 00 — the same months, documented, including what did not work.',
-  label: 'Read Case 00 →',
+  title: 'Month End Close — the same months, documented, including what did not work.',
+  label: 'Read it →',
   href: '/atlas/case-00',
 };
 
-export const endnote = String.raw`<p>Next in Founder Notes: <strong>The unglamorous version.</strong></p>
-<p style="margin-top:14px!important">This is the why. <a href="/atlas/case-00"><strong>Case 00</strong></a> is the how — the same four months, month by month, including the parts that did not work.</p>`;
+export const endnote = String.raw`<p>Next in Any Other Business: <strong>The unglamorous version.</strong></p>
+<p style="margin-top:14px!important">This is the why. <a href="/atlas/case-00"><strong>You do not get a blank month</strong></a> is the how — the same four months, month by month, including the parts that did not work.</p>`;
 
 export const body = String.raw`
   <p class="drop">People assumed two things. That something must have gone wrong. And that I would be going into consulting.</p>
@@ -142,7 +142,7 @@ const article = {
   slug,
   url,
   publishedAt,
-  stream: 'Founder Notes',
+  stream: 'Any Other Business',
   movement: 'UNLEARN',
   masthead,
   body,

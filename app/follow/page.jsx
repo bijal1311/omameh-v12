@@ -55,7 +55,7 @@ const __MARKUP = String.raw`
     <p class="fk">Read</p>
     <a class="fl" href="https://bijalsejpal.substack.com" target="_blank" rel="noopener">
       <span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 3h18v3H3V3zm0 5.5h18V21l-9-4.6L3 21V8.5z"/></svg></span>
-      <span class="tx"><b>Subscribe on Substack</b><i>Founder Notes &amp; Cases · free, no gate</i></span>
+      <span class="tx"><b>Subscribe on Substack</b><i>Four series · free, no gate</i></span>
       <span class="st live">Live</span><span class="ar">→</span>
     </a>
     <a class="fl" href="/atlas">

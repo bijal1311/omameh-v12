@@ -18,15 +18,15 @@
 export const slug = 'atlas/case-00';
 export const url = 'https://www.omameh.com.au/atlas/case-00';
 
-export const masthead = {"kicker":"Atlas · Cases · 00","title":"You do not get a blank month.","dek":"I built a business and its operating model at the same time, because nobody gets to stop and design first. Four months, month by month — including the parts that did not work.","author":"Bijal Sejpal","date":"September 2026","readingTime":"6 minute read","status":"Still building"};
+export const masthead = {"kicker":"The Unlearning · 02 · Month End Close","title":"You do not get a blank month.","dek":"I built a business and its operating model at the same time, because nobody gets to stop and design first. Four months, month by month — including the parts that did not work.","author":"Bijal Sejpal","date":"September 2026","readingTime":"6 minute read","status":"Still building"};
 
 export const author = {"portrait":"/founder-authorcard.jpg","eyebrow":"Written by","name":"Bijal Sejpal","bio":"Founder of Omameh Group. <strong>Human-Led. AI-Operated.</strong> Helping businesses grow — and building the systems that carry them.","linkHref":"/founder","linkLabel":"Read the founder's story &rarr;"};
 
-export const subscribe = {"eyebrow":"Atlas · Cases","heading":"This is where I will say how.","body":"Case 01, and what comes after it. Written for people building something while running it. Occasional, never scheduled, and nothing is sold in it.","linkLabel":"Subscribe on Substack &rarr;"};
+export const subscribe = {"eyebrow":"The Unlearning · Month End Close","heading":"This is where I will say how.","body":"Month End Close lands at the end of the month. Written for people building something while running it, and nothing is sold in it.","linkLabel":"Subscribe on Substack &rarr;"};
 
-export const next = {"eyebrow":"Coming next","title":"Case 01 — the system we built, and what it changed.","label":"Published through Atlas →","href":"/atlas"};
+export const next = {"eyebrow":"Coming next","title":"The system we built, and what it changed — next month end.","label":"Follow Month End Close →","href":"/atlas"};
 
-export const endnote = String.raw`<p>The system we built gets its own piece — <strong>Case 01</strong>, next. We are opening it for trial shortly, and if you run a growing business and recognised the three-tabs-and-a-spreadsheet problem, I would like you in that first group. <strong>Stay with it and I will say how.</strong></p>
+export const endnote = String.raw`<p>The system we built gets its own piece — <strong>next month end</strong>. We are opening it for trial shortly, and if you run a growing business and recognised the three-tabs-and-a-spreadsheet problem, I would like you in that first group. <strong>Stay with it and I will say how.</strong></p>
     <p style="margin-top:14px!important">And if you would have done any of it differently, I would like to hear it.</p>`;
 
 /** ISO date for JSON-LD. The visible date lives in masthead.date. */
@@ -197,7 +197,7 @@ export const body = String.raw`
 
 const article = {
   id: 'case00',
-  label: '09 · Case 00',
+  label: '09 · Month End Close 02',
   slug,
   url,
   publishedAt,

@@ -950,3 +950,39 @@ h2, h3, h4              { margin-left: -0.024em; }
 /* The anchor targets sit under the sticky nav, so they need the offset. */
 .stream[id]{scroll-margin-top:92px}
 @media(max-width:760px){.seriesnav .w{grid-template-columns:repeat(2,minmax(0,1fr));gap:0 20px}.sn{padding:14px 0 11px}}
+
+/* =====================================================================
+   The series bands · /atlas
+   One band per series: who it is on the left, what is in it on the right.
+   This replaces a "Published" index and a separate "the four series"
+   block that between them named the same four things twice and left the
+   pieces with no series to belong to.
+   A series with nothing in it says so. It does not get a placeholder card.
+   ===================================================================== */
+.sbands{display:flex;flex-direction:column;margin-top:var(--s5)}
+.sband{display:grid;grid-template-columns:minmax(0,260px) minmax(0,1fr);gap:var(--s4);
+  padding:var(--s4) 0;border-top:3px solid var(--sn);scroll-margin-top:96px}
+.sband + .sband{margin-top:var(--s3)}
+.sband__id h3{font-family:var(--ed-display);font-size:clamp(23px,2.8vw,30px);font-weight:400;margin:0;line-height:1.1}
+.sband__cad{display:block;margin-top:9px;font-family:var(--ed-mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--sn)}
+.sband__id p{margin:14px 0 0;font-size:14px;line-height:1.6;color:var(--ink-soft);max-width:34ch}
+.sband__items{display:flex;flex-direction:column;gap:var(--s3);min-width:0}
+.sband__soon{margin:0;font-family:var(--ed-display);font-size:19px;font-style:italic;color:var(--ink-soft);opacity:.7}
+
+.spiece{display:grid;grid-template-columns:minmax(0,236px) minmax(0,1fr);gap:var(--s3);
+  text-decoration:none;color:inherit;align-items:start;transition:transform .18s ease}
+.spiece:hover{transform:translateX(3px)}
+.spiece__shot{display:block;overflow:hidden;border:1px solid var(--rule);background:var(--cream-warm)}
+.spiece__shot img{display:block;width:100%;height:auto}
+.spiece__tx{display:flex;flex-direction:column;gap:7px;min-width:0}
+.spiece__meta{font-family:var(--ed-mono);font-size:9.5px;letter-spacing:.17em;text-transform:uppercase;color:var(--ink-soft)}
+.spiece strong{font-family:var(--ed-display);font-size:clamp(21px,2.5vw,27px);font-weight:400;line-height:1.14}
+.spiece__dek{font-size:14.5px;line-height:1.6;color:var(--ink-soft);max-width:46ch}
+.spiece__more{font-family:var(--ed-mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--navy);border-bottom:1px solid var(--gold);align-self:flex-start;padding-bottom:3px;margin-top:3px}
+.spiece:hover .spiece__more{color:var(--teal)}
+
+@media(max-width:880px){
+  .sband{grid-template-columns:1fr;gap:var(--s3)}
+  .spiece{grid-template-columns:1fr;gap:14px}
+  .spiece__shot{max-width:420px}
+}

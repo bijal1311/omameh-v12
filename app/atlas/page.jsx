@@ -30,8 +30,8 @@ const __MARKUP = String.raw`
   <a class="sn" href="#board" style="--sn:#00B5AD">The Board Pack<span>Quarterly</span></a>
 </div></div>
 <section class="warm"><div class="w-narrow">
-  <h2>Nothing here asks for your email <em>first.</em></h2>
-  <p class="lede">Subscribe if you want it delivered. Read it either way.</p>
+  <h2>Have it <em>delivered.</em></h2>
+  <p class="lede">Four series, one list. Nothing is sold in any of them.</p>
   <div class="subs-embed">
     <iframe src="https://bijalsejpal.substack.com/embed" title="Subscribe to Bijal Sejpal on Substack" loading="lazy" scrolling="no"></iframe>
   </div>
@@ -40,38 +40,66 @@ const __MARKUP = String.raw`
 </div></section>
 
 <section><div class="w">
-  <p class="eyebrow">Published</p>
-  <h2>Start anywhere. They do not need <em>reading in order.</em></h2>
-  <div class="pieces">
-
-    <a class="piece" href="/atlas/carrying-enough">
-      <div class="piece__meta"><span class="piece__stream">Any Other Business</span><span class="piece__date">October 2026</span><span class="piece__time">5 min</span></div>
-      <h3>Carrying enough</h3>
-      <p class="piece__dek">After twenty years in corporate, why build your own?</p>
-      <p class="piece__open">People assumed two things. That something must have gone wrong. And that I would be going into consulting. The second is easier, so I will start there. No.</p>
-      <span class="piece__more">Continue reading &rarr;</span>
-    </a>
-
-    <a class="piece" href="/atlas/case-00">
-      <div class="piece__meta"><span class="piece__stream">Month End Close</span><span class="piece__date">September 2026</span><span class="piece__time">6 min</span></div>
-      <h3>You do not get a blank month</h3>
-      <p class="piece__dek">I built a business and its operating model at the same time, because nobody gets to stop and design first.</p>
-      <p class="piece__open">The advice I was given most often was to start with one thing and do it well. I did the opposite, and I would do it again.</p>
-      <span class="piece__more">Continue reading &rarr;</span>
-    </a>
-
-  </div>
-</div></section>
-
-<section><div class="w">
   <p class="eyebrow">The four series</p>
   <h2>One publication, four <em>different jobs.</em></h2>
-  <p class="lede">They share a masthead and nothing else. Each runs to its own rhythm, and you can follow one and ignore the rest.</p>
-  <div class="streams">
-    <div class="stream" id="standing"><span class="k">Free · Monday</span><div><h4>The Standing Item</h4><span class="m">Weekly</span></div><p>The question I was asked most this week, and the one nobody raised. Short, and on the table every Monday.</p></div>
-    <div class="stream" id="aob"><span class="k">Free · monthly</span><div><h4>Any Other Business</h4><span class="m">First person</span></div><p>What building this has actually required. Written from inside it, including the parts that did not work.</p></div>
-    <div class="stream" id="mec"><span class="k">Free · month end</span><div><h4>Month End Close</h4><span class="m">Documented, month by month</span></div><p>Work that was actually done, written up in full. The method is free and the numbers are real.</p></div>
-    <div class="stream" id="board"><span class="k">Free · quarterly</span><div><h4>The Board Pack</h4><span class="m">For the people who sign it off</span></div><p>One decision a board is facing, taken apart. Short, practical, and nothing is sold in it.</p></div>
+  <p class="lede">They share a masthead and nothing else. Follow one and ignore the rest.</p>
+  <div class="sbands">
+    <div class="sband" id="standing" style="--sn:#C9A84C">
+      <div class="sband__id">
+        <h3>The Standing Item</h3>
+        <span class="sband__cad">Weekly · Monday</span>
+        <p>The question I was asked most this week, and the one nobody raised.</p>
+      </div>
+      <div class="sband__items">
+      <p class="sband__soon">The first one lands soon.</p>
+      </div>
+    </div>
+    <div class="sband" id="aob" style="--sn:#081335">
+      <div class="sband__id">
+        <h3>Any Other Business</h3>
+        <span class="sband__cad">Monthly</span>
+        <p>What building this has actually required, written from inside it.</p>
+      </div>
+      <div class="sband__items">
+      <a class="spiece" href="/atlas/carrying-enough">
+        <span class="spiece__shot"><img src="/atlas/carrying-enough/opengraph-image" alt="" loading="lazy" width="1200" height="630"></span>
+        <span class="spiece__tx">
+          <span class="spiece__meta">01 · October 2026 · 5 min</span>
+          <strong>Carrying enough</strong>
+          <span class="spiece__dek">After twenty years in corporate, why build your own?</span>
+          <span class="spiece__more">Continue reading &rarr;</span>
+        </span>
+      </a>
+      </div>
+    </div>
+    <div class="sband" id="mec" style="--sn:#2D5A3D">
+      <div class="sband__id">
+        <h3>Month End Close</h3>
+        <span class="sband__cad">Month end</span>
+        <p>Work that was actually done, written up in full. The numbers are real.</p>
+      </div>
+      <div class="sband__items">
+      <a class="spiece" href="/atlas/case-00">
+        <span class="spiece__shot"><img src="/atlas/case-00/opengraph-image" alt="" loading="lazy" width="1200" height="630"></span>
+        <span class="spiece__tx">
+          <span class="spiece__meta">02 · September 2026 · 6 min</span>
+          <strong>You do not get a blank month</strong>
+          <span class="spiece__dek">I built a business and its operating model at the same time.</span>
+          <span class="spiece__more">Continue reading &rarr;</span>
+        </span>
+      </a>
+      </div>
+    </div>
+    <div class="sband" id="board" style="--sn:#00B5AD">
+      <div class="sband__id">
+        <h3>The Board Pack</h3>
+        <span class="sband__cad">Quarterly</span>
+        <p>One decision a board is facing, taken apart. Nothing is sold in it.</p>
+      </div>
+      <div class="sband__items">
+      <p class="sband__soon">The first one lands soon.</p>
+      </div>
+    </div>
   </div>
 </div></section>
 

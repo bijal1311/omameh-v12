@@ -35,6 +35,8 @@ export const metadata = {
     'No gate, no email address, no lead magnet. If it is useful it should be readable.',
 };
 
+const CARD_V = '3';
+
 const DISPLAY = "var(--font-playfair),'Playfair Display',Georgia,serif";
 const BODY = "var(--font-inter),Inter,-apple-system,sans-serif";
 const MONO = "var(--font-jetbrains),'JetBrains Mono',ui-monospace,monospace";
@@ -65,7 +67,7 @@ const ARTICLE = {
 /** A published issue inside a series card: its own share card, then the meta. */
 const row = (a, ink, border, accent, ground, dekInk) => String.raw`
     <a href="${a.href}" style="display:grid;grid-template-columns:minmax(0,150px) minmax(0,1fr);gap:18px;align-items:center;padding:12px;border-radius:12px;background:${ground};border:1px solid ${border};color:${ink}">
-      <img src="${a.href}/opengraph-image" alt="" loading="lazy" style="width:100%;aspect-ratio:1200/630;object-fit:cover;border-radius:8px;display:block">
+      <img src="${a.href}/opengraph-image?v=${CARD_V}" alt="" loading="lazy" style="width:100%;aspect-ratio:1200/630;object-fit:cover;border-radius:8px;display:block">
       <span style="display:flex;flex-direction:column;gap:8px">
         <span style="font:500 10px/1.3 ${MONO};letter-spacing:.18em;color:${accent}">${a.meta}</span>
         <span style="font:500 21px/1.2 ${DISPLAY}">${a.title}</span>

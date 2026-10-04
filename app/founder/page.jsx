@@ -15,7 +15,7 @@ export const metadata = {
 
 const __MARKUP = String.raw`
   <div class="container">
-    <div class="route__header"><span class="route__index">06</span><span class="route__name">/founder · Founder</span><span class="route__issue">Vol. I · Issue 01 · Q2 2026</span></div>
+    <div class="route__header"><span class="route__index">06</span><span class="route__name">/founder · Founder</span><span class="route__issue">Vol. I · Issue 01</span></div>
     <div class="fo-hero">
       <div class="fo-hero__portrait" role="img" aria-label="Bijal Sejpal, founder of Omameh — editorial portrait">
         <img src="/founder-portrait.png" alt="Bijal Sejpal · founder of Omameh" style="width: 100%; height: 100%; object-fit: cover; display: block;">
@@ -24,8 +24,8 @@ const __MARKUP = String.raw`
         <span class="eyebrow">Founder · the first door</span>
         <h1 class="fo-hero__name">Bijal Sejpal.</h1>
         <div class="fo-hero__meta">
-          <span class="role">Founder of Omameh.</span>
-          <span>Sydney · Australia → India passage</span>
+          <span class="role">Founder &amp; CEO of Omameh.</span>
+          <span>Sydney · Hyderabad · One team, two countries</span>
         </div>
         <p class="fo-hero__lede">Two decades inside the architecture of large institutions — financial services, healthcare, government, media, and technology. I've seen what scales, what stalls, and what it takes to move either.</p>
         <a class="fo-hero__link" href="https://www.linkedin.com/in/bijal-sejpal/" target="_blank" rel="noopener noreferrer">linkedin.com/in/bijal-sejpal ↗</a>
@@ -68,7 +68,7 @@ const __MARKUP = String.raw`
         <p class="why__close"><em>Human-Led. AI-Operated.</em> Built for the era we are actually in.</p>
         <p class="why__close why__close--coda">Change everything but the reason you began. Build what stays Day 1 without you — <em>in the hands of people who no longer need you.</em></p>
 
-        <p class="why__signoff" aria-label="Bijal, Founder of Omameh">
+        <p class="why__signoff" aria-label="Bijal, Founder and CEO of Omameh">
           <span class="why__signoff-name">Bijal</span>
           <span class="why__signoff-role">Founder · Omameh</span>
         </p>

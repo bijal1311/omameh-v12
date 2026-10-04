@@ -3,7 +3,7 @@ import RouteShell from '../_components/RouteShell';
 export const metadata = {
   title: 'Media kit',
   description:
-    'Approved portraits, brand assets, founder bio, and the press contact for interviews, panels, and speaking enquiries.',
+    'Approved portraits, brand assets, bios, and the press contact for interviews, panels, and speaking enquiries.',
 };
 
 /**
@@ -15,18 +15,18 @@ export const metadata = {
 
 const __MARKUP = String.raw`
   <div class="container">
-    <div class="route__header"><span class="route__index">08</span><span class="route__name">/media · Media Kit</span><span class="route__issue">Vol. I · Issue 01 · Q2 2026</span></div>
+    <div class="route__header"><span class="route__index">08</span><span class="route__name">/media · Media Kit</span><span class="route__issue">Vol. I · Issue 01</span></div>
     <div class="hero">
       <span class="eyebrow">Media · Press · Bookings</span>
       <h1 style="margin-top: var(--space-4)">Media <em>kit.</em></h1>
-      <p class="lede">An advisory practice with its own engineering team. Approved portraits, founder bios, and one address for interviews, panels and speaking enquiries.</p>
+      <p class="lede">Approved portraits, bios and one address for interviews, panels and speaking enquiries.</p>
     </div>
 
     <div class="section">
       <div class="section__head">
         <span class="eyebrow">01 · Approved portraits</span>
-        <h2>Two portraits, <em>two registers.</em></h2>
-        <p class="strap">Colour for editorial use. Black and white for the kit. Crop as needed; do not retouch.</p>
+        <h2>Twelve approved frames, <em>assigned by surface.</em></h2>
+        <p class="strap">Each surface has its frame and its treatment, so a reader recognises the series before reading a word. Crop as needed; do not retouch, and do not crop the face.</p>
       </div>
       <div class="grid-2">
         <div class="why__portrait" style="aspect-ratio: 3/4;">
@@ -51,7 +51,7 @@ const __MARKUP = String.raw`
             <div class="bio__label">25 words · the one-liner</div>
             <div class="bio__context">For panel programmes, conference bios, LinkedIn header lift.</div>
           </header>
-          <p class="bio__body">Bijal Sejpal founded Omameh, an advisory practice with its own engineering team. It designs what the AI era requires, builds it, and hands it over working.</p>
+          <p class="bio__body">Bijal Sejpal is Founder &amp; CEO of Omameh Group, which helps businesses of every size put AI to work safely — teaching it, building it, and governing it.</p>
           <button type="button" class="bio__copy" data-bio-copy>Copy →</button>
         </article>
 
@@ -60,7 +60,7 @@ const __MARKUP = String.raw`
             <div class="bio__label">50 words · the introduction</div>
             <div class="bio__context">For press releases, partner intros, short speaker bios.</div>
           </header>
-          <p class="bio__body">Bijal Sejpal is founder of Omameh — an advisory practice with its own engineering team. Omameh designs the operating model, governance and capability that AI-era ambition actually needs, builds the platforms underneath it, and leaves clients able to run it without help. Two decades inside S&amp;P/ASX 20 enterprises. Sydney and Hyderabad.</p>
+          <p class="bio__body">Bijal Sejpal is Founder &amp; CEO of Omameh Group. Omameh helps organisations of every size put AI to work safely: teaching their people to work fluently with it, building the platforms they run on, and governing it so they can prove it is under control. Two decades inside S&amp;P/ASX 20 enterprises. Sydney and Hyderabad.</p>
           <button type="button" class="bio__copy" data-bio-copy>Copy →</button>
         </article>
 
@@ -70,9 +70,9 @@ const __MARKUP = String.raw`
             <div class="bio__context">For press kits, media bios, board introductions, longer speaker bios.</div>
           </header>
           <div class="bio__body">
-            <p>Bijal Sejpal is founder of Omameh — an advisory practice with its own engineering team.</p>
-            <p>Most firms sell the strategy or sell the tools. Omameh does the work in between: it designs what has to change, builds it, and leaves the client able to run it. Advisory, platforms and capability from one team, for enterprises, growing businesses, consulting firms and founders.</p>
-            <p>Built from two decades inside S&amp;P/ASX 20 enterprises across financial services, healthcare, government and technology — most recently as Group Chief Operating Officer, Data and AI at QBE, and Chief Operating Officer, Technology and interim CIO at Bupa Asia-Pacific. Sydney and Hyderabad.</p>
+            <p>Bijal Sejpal is Founder &amp; CEO of Omameh Group.</p>
+            <p>AI should be easy to learn, easy to access and safe to use, whether you run a ten-person tutoring centre or a regulated insurer. Omameh gets organisations there — teaching their people to work fluently with AI, giving them the platforms and products to run on it, and governing it so they can prove it is under control. The result is teams and digital workers side by side.</p>
+            <p>Two decades inside S&amp;P/ASX 20 enterprises across financial services, healthcare, government and technology. Most recently Chief Operating Officer, Technology and interim CIO, Bupa Asia-Pacific (2025–2026), and Group Chief Operating Officer, Data Analytics and AI, QBE (2019–2025). Sydney and Hyderabad.</p>
             <p><em>Human-Led. AI-Operated.</em></p>
           </div>
           <button type="button" class="bio__copy" data-bio-copy>Copy →</button>
@@ -84,10 +84,10 @@ const __MARKUP = String.raw`
             <div class="bio__context">For the website media kit page, keynote bios, magazine features, in-depth podcast pre-reads.</div>
           </header>
           <div class="bio__body">
-            <p>Bijal Sejpal is founder of Omameh — an advisory practice with its own engineering team.</p>
-            <p>Everyone got the technology. Almost nobody got their time back. The enterprise ran the pilot and the team still does the workaround. The founder bought the tools and still cannot take a holiday. What is missing is not the technology — it is the operating model, the governance, and the judgement around it.</p>
-            <p>Omameh works in that gap and does all three parts. It designs what has to change. It builds what does not exist yet, across a platform estate its own team has shipped. And it runs the rooms that leave people able to make the next call without help — because the decisions keep coming after the engagement ends.</p>
-            <p>Two decades inside S&amp;P/ASX 20 enterprises across financial services, healthcare, government and technology. Most recently Group Chief Operating Officer, Data and AI at QBE, and Chief Operating Officer, Technology and interim CIO at Bupa Asia-Pacific. Sydney-based, with engineering in Hyderabad.</p>
+            <p>Bijal Sejpal is Founder &amp; CEO of Omameh Group.</p>
+            <p>Most organisations got the technology and did not get their time back. The enterprise ran the pilot and the team still does the workaround. The founder bought the tools and still cannot take a holiday. What is missing is not the technology — it is the operating model, the governance, and the judgement around it.</p>
+            <p>Omameh works in that gap and does all three parts. It teaches people to work fluently with AI. It builds the platforms and products they run on, across an estate its own team has shipped. And it governs the result, so a board can prove what its organisation is actually doing.</p>
+            <p>Two decades inside S&amp;P/ASX 20 enterprises across financial services, healthcare, government and technology. Most recently Chief Operating Officer, Technology and interim CIO, Bupa Asia-Pacific (2025–2026), and Group Chief Operating Officer, Data Analytics and AI, QBE (2019–2025). Sydney-based, with engineering in Hyderabad.</p>
             <p><em>Human-Led. AI-Operated.</em> Built for the era we are actually in.</p>
           </div>
           <button type="button" class="bio__copy" data-bio-copy>Copy →</button>

@@ -30,7 +30,7 @@ const __MARKUP = String.raw`
 <section class="dark"><div class="w"><div class="founder">
   <figure class="portrait">
     <img src="/founder-bijal.jpg" alt="Bijal Sejpal, founder of Omameh"/>
-    <figcaption>Bijal Sejpal · Founder<br><span>Former Group COO, Data &amp; AI at QBE. Former COO Technology and interim CIO at Bupa Asia-Pacific.</span></figcaption>
+    <figcaption>Bijal Sejpal · Founder &amp; CEO<br><span>Former COO Technology and interim CIO at Bupa Asia-Pacific (2025–2026). Former Group COO, Data &amp; AI at QBE (2019–2025).</span></figcaption>
   </figure>
   <div>
     <p class="eyebrow">From the founder</p>

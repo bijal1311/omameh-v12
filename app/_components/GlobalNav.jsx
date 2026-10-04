@@ -51,7 +51,7 @@ export default function GlobalNav() {
       <div className="vol">
         <div className="w">
           <span>Omameh Group</span>
-          <span><b>Vol. I</b> · Issue 01 · Q3 2026</span>
+          <span><b>Vol. I</b> · Issue 01</span>
         </div>
       </div>
 

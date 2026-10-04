@@ -922,34 +922,6 @@ h2, h3, h4              { margin-left: -0.024em; }
 .piece__open{font-size:15.5px;line-height:1.7;color:var(--ink);margin:0 0 14px;max-width:66ch}
 .piece__more{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);border-bottom:1.5px solid var(--gold);padding-bottom:2px}
 
-/* =====================================================================
-   The series nav · /atlas
-   Lifted from the Substack masthead in the brand kit, which is the one
-   place the publication's structure reads in a single glance. The four
-   series were a text block halfway down the page; a reader could not see
-   what they were subscribing to without scrolling past the subscribe box.
-
-   Each item carries its own series colour as the rail, matching the cream
-   theme in Unlearning Card.dc.html — gold, navy deep, stage green, teal.
-
-   They are anchors, not routes. Two of the four have nothing published,
-   and a tab that opens an empty page is the promise we keep trying to
-   stop making. Clicking takes you to what that series is.
-   ===================================================================== */
-.seriesnav{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);background:var(--cream);color:var(--ink)}
-.seriesnav .w{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0 34px}
-.sn{
-  display:flex;flex-direction:column;gap:6px;min-width:0;
-  padding:19px 0 14px;border-bottom:3px solid var(--sn);
-  text-decoration:none;color:var(--ink);transition:color .18s ease;
-  font-family:var(--ed-display);font-size:clamp(17px,2vw,21px);font-weight:400;line-height:1.1;
-}
-.sn span{font-family:var(--ed-mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft)}
-.sn:hover{color:var(--navy)}
-.sn:hover span{color:var(--navy)}
-/* The anchor targets sit under the sticky nav, so they need the offset. */
-.stream[id]{scroll-margin-top:92px}
-@media(max-width:760px){.seriesnav .w{grid-template-columns:repeat(2,minmax(0,1fr));gap:0 20px}.sn{padding:14px 0 11px}}
 
 /* =====================================================================
    The series bands · /atlas
@@ -986,3 +958,24 @@ h2, h3, h4              { margin-left: -0.024em; }
   .spiece{grid-template-columns:1fr;gap:14px}
   .spiece__shot{max-width:420px}
 }
+
+/* =====================================================================
+   The subscribe bar · /atlas
+   Replaces Substack's embed, which could not be themed: their white box,
+   their orange button, their wordmark, and a circular portrait on a brand
+   that does not put her face in a circle. It was the one element on the
+   page we had not designed, and it looked it.
+   A link rather than a form costs one click and matches the button at the
+   foot of every essay, so the two subscribe moments stop looking like two
+   different companies.
+   It also takes over the strip under the hero from the series nav, which
+   was naming the four series the bands below already name.
+   ===================================================================== */
+.subbar{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);background:var(--cream-warm)}
+.subbar .w{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:var(--s3);padding:19px 0}
+.subbar__tx{margin:0;font-size:14.5px;line-height:1.5;color:var(--ink-soft)}
+.subbar__tx strong{font-weight:500;color:var(--ink)}
+.subbar__btn{flex:none;font-family:var(--ed-mono);font-size:10.5px;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--navy-deep);background:var(--gold-light);text-decoration:none;padding:13px 22px;transition:background .18s ease}
+.subbar__btn:hover{background:var(--gold-hi)}
+@media(max-width:640px){.subbar .w{padding:16px 0}.subbar__btn{width:100%;text-align:center}}

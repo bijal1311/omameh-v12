@@ -23,21 +23,10 @@ const __MARKUP = String.raw`
 </div></section>
 
 
-<div class="seriesnav" role="navigation" aria-label="The four series"><div class="w">
-  <a class="sn" href="#standing" style="--sn:#C9A84C">The Standing Item<span>Weekly</span></a>
-  <a class="sn" href="#aob" style="--sn:#081335">Any Other Business<span>Monthly</span></a>
-  <a class="sn" href="#mec" style="--sn:#2D5A3D">Month End Close<span>Month end</span></a>
-  <a class="sn" href="#board" style="--sn:#00B5AD">The Board Pack<span>Quarterly</span></a>
+<div class="subbar"><div class="w">
+  <p class="subbar__tx"><strong>Four series, one list.</strong> Free, and nothing is sold in any of them.</p>
+  <a class="subbar__btn" href="https://bijalsejpal.substack.com" target="_blank" rel="noopener">Subscribe on Substack &rarr;</a>
 </div></div>
-<section class="warm"><div class="w-narrow">
-  <h2>Have it <em>delivered.</em></h2>
-  <p class="lede">Four series, one list. Nothing is sold in any of them.</p>
-  <div class="subs-embed">
-    <iframe src="https://bijalsejpal.substack.com/embed" title="Subscribe to Bijal Sejpal on Substack" loading="lazy" scrolling="no"></iframe>
-  </div>
-  <p class="subs-embed__note">One click and you are on the list — every new piece arrives by email. Substack hold the list, so you can leave from any email they send.</p>
-
-</div></section>
 
 <section><div class="w">
   <p class="eyebrow">The four series</p>
@@ -105,14 +94,10 @@ const __MARKUP = String.raw`
 
 <section class="warm"><div class="w">
   <p class="eyebrow">Where to find it</p>
-  <h2>Read it, watch it, or come and <em>argue with it.</em></h2>
+  <h2>Read it, or come and <em>argue with it.</em></h2>
   <div class="channels">
       <a class="ch live" href="https://www.linkedin.com/in/bijal-sejpal" target="_blank" rel="noopener"><svg class="glyph" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 100 5 2.5 2.5 0 000-5zM3 9h4v12H3V9zm7 0h3.8v1.7h.05c.53-1 1.83-2.05 3.75-2.05 4 0 4.75 2.6 4.75 6V21h-4v-5.5c0-1.3 0-3-1.85-3s-2.15 1.45-2.15 2.9V21h-4V9z"/></svg><b>Follow on LinkedIn</b><span>Where most of this surfaces first, and where the conversation actually happens.</span><span class="pend live">Live</span></a>
       <a class="ch live" href="https://bijalsejpal.substack.com" target="_blank" rel="noopener"><svg class="glyph" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 3h18v3H3V3zm0 5.5h18V21l-9-4.6L3 21V8.5z"/></svg><b>Subscribe on Substack</b><span>All four series, in your inbox.</span><span class="pend live">Live</span></a>
-      <a class="ch" href="/contact"><svg class="glyph" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.6 7.2s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16 4 12 4 12 4s-4 0-6.8.3c-.4 0-1.2 0-2 .9-.6.6-.8 2-.8 2S2 8.8 2 10.5v1.6c0 1.7.2 3.3.2 3.3s.2 1.4.8 2c.8.9 1.8.8 2.2.9 1.6.2 6.8.3 6.8.3s4 0 6.8-.3c.4 0 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.3v-1.6c0-1.7-.2-3.3-.2-3.3zM10 14.6V9.1l5.2 2.8-5.2 2.7z"/></svg><b>Follow on YouTube</b><span>Conversations with the people actually answering for this — one theme at a time, across every market we work in.</span><span class="pend">Coming soon</span></a>
-      <a class="ch" href="/contact"><svg class="glyph" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm4.5 14.4a.78.78 0 01-1.07.26c-2.94-1.8-6.63-2.2-11-1.2a.78.78 0 11-.35-1.52c4.77-1.09 8.86-.62 12.15 1.39.37.23.48.7.27 1.07zm1.2-2.67a.97.97 0 01-1.34.32c-3.36-2.07-8.49-2.67-12.46-1.46a.97.97 0 11-.57-1.86c4.54-1.38 10.19-.71 14.05 1.66.46.28.6.88.32 1.34zm.1-2.78C13.77 8.56 7.4 8.35 3.9 9.41a1.17 1.17 0 11-.68-2.24C7.25 5.95 14.28 6.2 18.9 8.94a1.17 1.17 0 01-1.2 2.01z"/></svg><b>Subscribe to the podcast</b><span>The same conversations wherever you already listen — the drive, the walk, the gym.</span><span class="pend">Coming soon</span></a>
-      <a class="ch" href="/contact"><svg class="glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg><b>Follow on Instagram</b><span>The short version. Clips from the room, from the podcast, from the work.</span><span class="pend">Coming soon</span></a>
-      <a class="ch" href="/contact"><svg class="glyph" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12a10 10 0 10-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.45 2.89h-2.33v6.99A10 10 0 0022 12z"/></svg><b>Follow on Facebook</b><span>Same clips, different room. For the people who are there rather than on LinkedIn.</span><span class="pend">Coming soon</span></a>
   </div>
 
 </div></section>

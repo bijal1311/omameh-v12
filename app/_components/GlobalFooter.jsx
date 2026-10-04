@@ -45,6 +45,22 @@ const SOCIALS = [
     href: '#',
     path: 'M12 2a10 10 0 100 20 10 10 0 000-20zm4.5 14.4a.78.78 0 01-1.07.26c-2.94-1.8-6.63-2.2-11-1.2a.78.78 0 11-.35-1.52c4.77-1.09 8.86-.62 12.15 1.39.37.23.48.7.27 1.07zm1.2-2.67a.97.97 0 01-1.34.32c-3.36-2.07-8.49-2.67-12.46-1.46a.97.97 0 11-.57-1.86c4.54-1.38 10.19-.71 14.05 1.66.46.28.6.88.32 1.34zm.1-2.78C13.77 8.56 7.4 8.35 3.9 9.41a1.17 1.17 0 11-.68-2.24C7.25 5.95 14.28 6.2 18.9 8.94a1.17 1.17 0 01-1.2 2.01z',
   },
+  /*
+   * Instagram and Facebook were marked up outside this list, so the "#"
+   * filter below never reached them and both shipped as live-looking icons
+   * that went nowhere. In the list they are simply absent until there is a
+   * URL — same rule as YouTube and the podcast.
+   */
+  {
+    label: 'Instagram',
+    href: '#',
+    path: 'M12 2.2c3.2 0 3.6 0 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.25.07 1.63.07 4.81s-.01 3.56-.07 4.81c-.05 1.17-.25 1.8-.41 2.23a3.8 3.8 0 01-.9 1.38c-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.25.06-1.63.07-4.85.07s-3.6-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.8 3.8 0 01-1.38-.9 3.8 3.8 0 01-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.21 15.56 2.2 15.18 2.2 12s.01-3.56.07-4.81c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.44 2.21 8.82 2.2 12 2.2zm0 3.18a6.62 6.62 0 100 13.24 6.62 6.62 0 000-13.24zm0 10.92a4.3 4.3 0 110-8.6 4.3 4.3 0 010 8.6zm6.88-11.18a1.55 1.55 0 11-3.1 0 1.55 1.55 0 013.1 0z',
+  },
+  {
+    label: 'Facebook',
+    href: '#',
+    path: 'M22 12a10 10 0 10-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.45 2.89h-2.33v6.99A10 10 0 0022 12z',
+  },
 ];
 
 export default function GlobalFooter() {
@@ -102,18 +118,6 @@ export default function GlobalFooter() {
                   </svg>
                 </a>
               ))}
-              <a href="#" aria-label="Instagram">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-                  <rect x="3" y="3" width="18" height="18" rx="5" />
-                  <circle cx="12" cy="12" r="4" />
-                  <circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none" />
-                </svg>
-              </a>
-              <a href="#" aria-label="Facebook">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M22 12a10 10 0 10-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.45 2.89h-2.33v6.99A10 10 0 0022 12z" />
-                </svg>
-              </a>
             </div>
           </div>
 
@@ -122,14 +126,20 @@ export default function GlobalFooter() {
             <a href="/advisory">Advisory</a>
             <a href="/products">Products</a>
             <a href="/fluency">Fluency</a>
-            <a href="/case-00">Case 00</a>
           </div>
 
           <div className="fcol">
+            {/*
+              Field Notes and Executive Briefs both pointed at /atlas. One is
+              retired and the other does not exist yet, so the column listed
+              three names and had two destinations. It lists what can be read
+              now — which also gives the new piece an internal link from
+              every page on the site.
+            */}
             <b>Read</b>
             <a href="/atlas">Atlas</a>
-            <a href="/atlas">Field Notes</a>
-            <a href="/atlas">Executive Briefs</a>
+            <a href="/atlas/carrying-enough">Carrying enough</a>
+            <a href="/atlas/case-00">Case 00</a>
             <a href="/media">Media kit</a>
           </div>
 

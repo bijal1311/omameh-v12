@@ -3,15 +3,27 @@ import RouteShell from '../_components/RouteShell';
 /**
  * 08 · Follow · V16
  *
- * Markup ported verbatim from 02_CONTENT_SOURCE.html. Content is locked —
- * not a word changes. The only edits are technical: the document's
- * #anchors become real routes, and the shared .vol bar, <nav> and
- * <footer> are lifted into GlobalNav and GlobalFooter.
+ * Markup ported from 02_CONTENT_SOURCE.html, where the links were still
+ * placeholders. Every one of the ten pointed at /contact, including the
+ * two that are live, so the page a QR code lands on could not actually
+ * take anyone to Substack or LinkedIn. This is the one surface whose whole
+ * job is sending people somewhere.
+ *
+ * Rows that have a destination are links. Rows that do not are divs with
+ * the same class — .fl is a plain class selector, not a.fl, so they style
+ * identically without pretending to be clickable. Reordered so the two
+ * things we actually want — the list and the follow — are the first two
+ * rows rather than the fourth and the eighth.
+ *
+ * Dates are out: "from 19 September" had passed and the Roundtable's
+ * "from 2027" was removed from /atlas the same day.
+ *
+ * noindex stays. This page is reached from print and QR, never search.
  */
 
 export const metadata = {
-  title: "follow",
-  description: "",
+  title: 'Follow',
+  description: 'Everything in one place — the list, the practice, and one inbox.',
   robots: { index: false, follow: false },
 };
 
@@ -40,61 +52,55 @@ const __MARKUP = String.raw`
       <p class="fsub">Everything in one place. Follow whichever of these is actually useful to you — and none of the rest.</p>
     </div>
 
+    <p class="fk">Read</p>
+    <a class="fl" href="https://bijalsejpal.substack.com" target="_blank" rel="noopener">
+      <span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 3h18v3H3V3zm0 5.5h18V21l-9-4.6L3 21V8.5z"/></svg></span>
+      <span class="tx"><b>Subscribe on Substack</b><i>Founder Notes &amp; Cases · free, no gate</i></span>
+      <span class="st live">Live</span><span class="ar">→</span>
+    </a>
+    <a class="fl" href="/atlas">
+      <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 4.5h7v15H4zM13 4.5h7v15h-7z"/><path d="M11 6.5h2M11 10h2M11 13.5h2"/></svg></span>
+      <span class="tx"><b>Read it on the site</b><i>Everything, free, nothing asks for an email first</i></span>
+      <span class="st live">Live</span><span class="ar">→</span>
+    </a>
+
     <p class="fk">The practice</p>
-    <a class="fl" href="/contact">
+    <a class="fl" href="https://www.linkedin.com/company/omameh/" target="_blank" rel="noopener">
       <span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 100 5 2.5 2.5 0 000-5zM3 9h4v12H3V9zm7 0h3.8v1.7h.05c.53-1 1.83-2.05 3.75-2.05 4 0 4.75 2.6 4.75 6V21h-4v-5.5c0-1.3 0-3-1.85-3s-2.15 1.45-2.15 2.9V21h-4V9z"/></svg></span>
       <span class="tx"><b>Follow on LinkedIn</b><i>Where the work surfaces first</i></span>
       <span class="st live">Live</span><span class="ar">→</span>
     </a>
-    <a class="fl" href="/contact">
-      <span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 3h18v3H3V3zm0 5.5h18V21l-9-4.6L3 21V8.5z"/></svg></span>
-      <span class="tx"><b>Subscribe on Substack</b><i>Field Notes &amp; Executive Briefs · free, no gate</i></span>
-      <span class="st">Coming</span><span class="ar">→</span>
-    </a>
-    <a class="fl" href="/contact">
-      <span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.6 7.2s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16 4 12 4 12 4s-4 0-6.8.3c-.4 0-1.2 0-2 .9-.6.6-.8 2-.8 2S2 8.8 2 10.5v1.6c0 1.7.2 3.3.2 3.3s.2 1.4.8 2c.8.9 1.8.8 2.2.9 1.6.2 6.8.3 6.8.3s4 0 6.8-.3c.4 0 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.3v-1.6c0-1.7-.2-3.3-.2-3.3zM10 14.6V9.1l5.2 2.8-5.2 2.7z"/></svg></span>
-      <span class="tx"><b>Follow on YouTube</b><i>The podcast · one theme, one guest</i></span>
-      <span class="st">Coming</span><span class="ar">→</span>
-    </a>
-    <a class="fl" href="/contact">
-      <span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm4.5 14.4a.78.78 0 01-1.07.26c-2.94-1.8-6.63-2.2-11-1.2a.78.78 0 11-.35-1.52c4.77-1.09 8.86-.62 12.15 1.39.37.23.48.7.27 1.07zm1.2-2.67a.97.97 0 01-1.34.32c-3.36-2.07-8.49-2.67-12.46-1.46a.97.97 0 11-.57-1.86c4.54-1.38 10.19-.71 14.05 1.66.46.28.6.88.32 1.34zm.1-2.78C13.77 8.56 7.4 8.35 3.9 9.41a1.17 1.17 0 11-.68-2.24C7.25 5.95 14.28 6.2 18.9 8.94a1.17 1.17 0 01-1.2 2.01z"/></svg></span>
-      <span class="tx"><b>Subscribe to the podcast</b><i>Spotify · Apple · wherever you listen</i></span>
-      <span class="st">Coming</span><span class="ar">→</span>
-    </a>
-    <a class="fl" href="/contact">
-      <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg></span>
-      <span class="tx"><b>Follow on Instagram</b><i>Clips from the room</i></span>
-      <span class="st">Coming</span><span class="ar">→</span>
-    </a>
-    <a class="fl" href="/contact">
-      <span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 10-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.45 2.89h-2.33v6.99A10 10 0 0022 12z"/></svg></span>
-      <span class="tx"><b>Follow on Facebook</b><i>Same clips, different room</i></span>
-      <span class="st">Coming</span><span class="ar">→</span>
-    </a>
 
     <p class="fk">The founder</p>
-    <a class="fl" href="/contact">
+    <a class="fl" href="https://www.linkedin.com/in/bijal-sejpal" target="_blank" rel="noopener">
       <span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 100 5 2.5 2.5 0 000-5zM3 9h4v12H3V9zm7 0h3.8v1.7h.05c.53-1 1.83-2.05 3.75-2.05 4 0 4.75 2.6 4.75 6V21h-4v-5.5c0-1.3 0-3-1.85-3s-2.15 1.45-2.15 2.9V21h-4V9z"/></svg></span>
       <span class="tx"><b>Follow Bijal on LinkedIn</b><i>The first-person version</i></span>
       <span class="st live">Live</span><span class="ar">→</span>
     </a>
 
     <p class="fk">Come and sit in</p>
-    <a class="fl" href="/contact">
+    <a class="fl" href="/fluency">
       <span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 5h18a1 1 0 011 1v12a1 1 0 01-1 1H3a1 1 0 01-1-1V6a1 1 0 011-1zm9 7.2L4.4 7H19.6L12 12.2zM4 8.9V17h16V8.9l-8 5.5-8-5.5z"/></svg></span>
-      <span class="tx"><b>Apply for a room</b><i>Ten seats, online, from 19 September</i></span>
+      <span class="tx"><b>Apply for a room</b><i>Online · ten seats · by application</i></span>
       <span class="st live">Live</span><span class="ar">→</span>
     </a>
-    <a class="fl" href="/contact">
-      <span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 5h18a1 1 0 011 1v12a1 1 0 01-1 1H3a1 1 0 01-1-1V6a1 1 0 011-1zm9 7.2L4.4 7H19.6L12 12.2zM4 8.9V17h16V8.9l-8 5.5-8-5.5z"/></svg></span>
-      <span class="tx"><b>Register for a Roundtable</b><i>One industry, one table, from 2027</i></span>
-      <span class="st">2027</span><span class="ar">→</span>
-    </a>
-    <a class="fl" href="/contact">
+    <a class="fl" href="mailto:contact@omameh.com.au">
       <span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 5h18a1 1 0 011 1v12a1 1 0 01-1 1H3a1 1 0 01-1-1V6a1 1 0 011-1zm9 7.2L4.4 7H19.6L12 12.2zM4 8.9V17h16V8.9l-8 5.5-8-5.5z"/></svg></span>
       <span class="tx"><b>contact@omameh.com.au</b><i>One inbox, and it reaches Bijal</i></span>
       <span class="st live">Live</span><span class="ar">→</span>
     </a>
+
+    <p class="fk">Not yet</p>
+    <div class="fl">
+      <span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.6 7.2s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16 4 12 4 12 4s-4 0-6.8.3c-.4 0-1.2 0-2 .9-.6.6-.8 2-.8 2S2 8.8 2 10.5v1.6c0 1.7.2 3.3.2 3.3s.2 1.4.8 2c.8.9 1.8.8 2.2.9 1.6.2 6.8.3 6.8.3s4 0 6.8-.3c.4 0 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.3v-1.6c0-1.7-.2-3.3-.2-3.3zM10 14.6V9.1l5.2 2.8-5.2 2.7z"/></svg></span>
+      <span class="tx"><b>YouTube and the podcast</b><i>One theme, one guest · wherever you listen</i></span>
+      <span class="st">Coming</span>
+    </div>
+    <div class="fl">
+      <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg></span>
+      <span class="tx"><b>Instagram and Facebook</b><i>Clips from the room, from the podcast, from the work</i></span>
+      <span class="st">Coming</span>
+    </div>
 
     <div class="qrblock">
       <div class="qr">

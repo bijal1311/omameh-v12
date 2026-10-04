@@ -15,14 +15,14 @@
  * rail still shipping in the content source.
  */
 
-export const slug = 'case-00';
-export const url = 'https://www.omameh.com.au/case-00';
+export const slug = 'atlas/case-00';
+export const url = 'https://www.omameh.com.au/atlas/case-00';
 
-export const masthead = {"kicker":"Atlas · Field Notes · Case 00","title":"You do not get a blank month.","dek":"I built a business and its operating model at the same time, because nobody gets to stop and design first. Four months, month by month — including the parts that did not work.","author":"Bijal Sejpal","date":"September 2026","readingTime":"6 minute read","status":"Still building"};
+export const masthead = {"kicker":"Atlas · Cases · 00","title":"You do not get a blank month.","dek":"I built a business and its operating model at the same time, because nobody gets to stop and design first. Four months, month by month — including the parts that did not work.","author":"Bijal Sejpal","date":"September 2026","readingTime":"6 minute read","status":"Still building"};
 
 export const author = {"portrait":"/founder-authorcard.jpg","eyebrow":"Written by","name":"Bijal Sejpal","bio":"Founder of Omameh Group. <strong>Human-Led. AI-Operated.</strong> Helping businesses grow — and building the systems that carry them.","linkHref":"/founder","linkLabel":"Read the founder's story &rarr;"};
 
-export const subscribe = {"eyebrow":"Atlas · Field Notes","heading":"This is where I will say how.","body":"Case 01, and what comes after it. Written for people building something while running it. Occasional, never scheduled, and nothing is sold in it.","linkHref":"/atlas","linkLabel":"Follow Atlas &rarr;"};
+export const subscribe = {"eyebrow":"Atlas · Cases","heading":"This is where I will say how.","body":"Case 01, and what comes after it. Written for people building something while running it. Occasional, never scheduled, and nothing is sold in it.","linkLabel":"Subscribe on Substack &rarr;"};
 
 export const next = {"eyebrow":"Coming next","title":"Case 01 — the system we built, and what it changed.","label":"Published through Atlas →","href":"/atlas"};
 

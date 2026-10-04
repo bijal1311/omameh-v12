@@ -8,11 +8,11 @@
  * Fonts · Playfair Display, Inter and JetBrains Mono load site-wide and
  * are preloaded.
  *
- * Cormorant Garamond and Space Mono are the Editorial register, used on
- * /atlas and /case-00 only. They are DECLARED here rather than in a route
+ * Cormorant Garamond and Space Mono are the Editorial register, used under
+ * /atlas only. They are DECLARED here rather than in a route
  * layout, with preload:false — declaring them here puts --font-cormorant
  * and --font-space-mono in scope for GlobalNav, which sits outside every
- * route layout and needs the editorial face for its wordmark on those two
+ * route layout and needs the editorial face for its wordmark on those
  * routes. preload:false keeps the font files off the wire on the routes
  * that never render them, which is what §9 was protecting.
  *

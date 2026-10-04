@@ -20,12 +20,12 @@
  * Satori renders a restricted CSS subset — flexbox only, no filters, and
  * every element with more than one child needs an explicit display:flex.
  * The mono treatment the kit specifies is baked into the photos in
- * lib/og/series-photos.js for exactly that reason.
+ * lib/og/photos/*.js for exactly that reason — one module per series, so
+ * a card inlines only the panel it draws.
  */
 
 import { ImageResponse } from 'next/og';
 import { playfair500, playfair500Italic, inter400, jetbrains700 } from './fonts';
-import { seriesPhoto } from './series-photos';
 import { SERIES } from './series';
 
 export const OG_SIZE = { width: 1200, height: 630 };
@@ -113,8 +113,10 @@ function Mark({ size, colour }) {
  * @param accent   trailing phrase, italic, in the series' emphasis colour
  * @param dek      one line under the headline
  * @param closed   months closed (mec) or quarters reached (board)
+ * @param photo    the series' own inlined panel, imported by the route so
+ *                 a card never carries the three photos it will not draw
  */
-export function unlearningCard({ series, n, title, accent, dek, closed }) {
+export function unlearningCard({ series, n, title, accent, dek, closed, photo }) {
   const t = SERIES[series];
   if (!t) throw new Error('unknown series: ' + series);
   const len = title.length + (accent ? accent.length + 1 : 0);
@@ -275,7 +277,7 @@ export function unlearningCard({ series, n, title, accent, dek, closed }) {
             width: PANEL,
             height: H,
             background: t.bg,
-            backgroundImage: 'url(' + seriesPhoto[series] + ')',
+            backgroundImage: 'url(' + photo + ')',
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
           }}

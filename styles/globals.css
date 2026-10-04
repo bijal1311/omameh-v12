@@ -18,11 +18,18 @@
   --display:"Playfair Display",Georgia,serif;
   --body:"Inter",-apple-system,"Segoe UI",sans-serif;
   --mono:"JetBrains Mono",ui-monospace,monospace;
-  /* next/font serves these under hashed family names, so the literal name
-     never matched and the editorial register silently rendered in Georgia.
-     The var() comes first; the literal names stay as a fallback. */
-  --ed-display:var(--font-cormorant),"Cormorant Garamond",Georgia,serif;
-  --ed-mono:var(--font-space-mono),"Space Mono",ui-monospace,monospace;
+  /* The editorial register now resolves to the practice faces.
+     The Unlearning's whole identity — avatars, email headers, quote cards,
+     covers, banners — is Playfair, Inter and JetBrains Mono, and Substack
+     cannot be made to serve Cormorant. Keeping it here would have left the
+     site's two reading pages as the only surface in the publication using
+     different type, which is an outlier rather than a register.
+     The variables stay rather than being inlined everywhere, because the
+     editorial surfaces still size and space differently from the practice
+     ones — only the faces are shared.
+     Essay body copy is Georgia and is untouched by this. */
+  --ed-display:var(--font-playfair),"Playfair Display",Georgia,serif;
+  --ed-mono:var(--font-jetbrains),"JetBrains Mono",ui-monospace,monospace;
 
   /* scale */
   --t-xs:11px; --t-sm:13.5px; --t-base:15.5px; --t-lg:clamp(16px,1.35vw,17.5px);
@@ -914,3 +921,32 @@ h2, h3, h4              { margin-left: -0.024em; }
 .piece__dek{font-size:var(--t-lg);color:var(--ink-soft);margin:0 0 14px;max-width:58ch}
 .piece__open{font-size:15.5px;line-height:1.7;color:var(--ink);margin:0 0 14px;max-width:66ch}
 .piece__more{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);border-bottom:1.5px solid var(--gold);padding-bottom:2px}
+
+/* =====================================================================
+   The series nav · /atlas
+   Lifted from the Substack masthead in the brand kit, which is the one
+   place the publication's structure reads in a single glance. The four
+   series were a text block halfway down the page; a reader could not see
+   what they were subscribing to without scrolling past the subscribe box.
+
+   Each item carries its own series colour as the rail, matching the cream
+   theme in Unlearning Card.dc.html — gold, navy deep, stage green, teal.
+
+   They are anchors, not routes. Two of the four have nothing published,
+   and a tab that opens an empty page is the promise we keep trying to
+   stop making. Clicking takes you to what that series is.
+   ===================================================================== */
+.seriesnav{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);background:var(--cream);color:var(--ink)}
+.seriesnav .w{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0 34px}
+.sn{
+  display:flex;flex-direction:column;gap:6px;min-width:0;
+  padding:19px 0 14px;border-bottom:3px solid var(--sn);
+  text-decoration:none;color:var(--ink);transition:color .18s ease;
+  font-family:var(--ed-display);font-size:clamp(17px,2vw,21px);font-weight:400;line-height:1.1;
+}
+.sn span{font-family:var(--ed-mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft)}
+.sn:hover{color:var(--navy)}
+.sn:hover span{color:var(--navy)}
+/* The anchor targets sit under the sticky nav, so they need the offset. */
+.stream[id]{scroll-margin-top:92px}
+@media(max-width:760px){.seriesnav .w{grid-template-columns:repeat(2,minmax(0,1fr));gap:0 20px}.sn{padding:14px 0 11px}}

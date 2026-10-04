@@ -12,7 +12,7 @@ export const alt = 'You do not get a blank month.';
 
 export default function Image() {
   return ogCard({
-    eyebrow: 'Atlas · Cases · 00',
+    eyebrow: 'The Unlearning · 02 · Month End Close',
     title: 'You do not get a',
     accent: 'blank month.',
     withPortrait: true,

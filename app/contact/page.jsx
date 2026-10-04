@@ -29,7 +29,7 @@ const __MARKUP = String.raw`
   <div class="grid three">
     <div class="card"><span class="k">Fifteen minutes</span><h4>Take the read</h4><p>A scored view of where you sit, with the working shown. Yours whether we speak again or not.</p><a class="link" href="/contact">Ask for the diagnostic</a></div>
     <div class="card"><span class="k">A room</span><h4>Join a cohort</h4><p>The Independent Practice opens first. Three sessions, online, wherever you run your practice from.</p><a class="link" href="/fluency">See the rooms</a></div>
-    <div class="card"><span class="k">Nothing yet</span><h4>Just read</h4><p>Founder Notes and Cases. Free, and we do not ask for an email address to let you read them.</p><a class="link" href="/atlas">Go to Atlas</a></div>
+    <div class="card"><span class="k">Nothing yet</span><h4>Just read</h4><p>Four series, free, and we do not ask for an email address to let you read any of them.</p><a class="link" href="/atlas">Go to Atlas</a></div>
   </div>
 </div></section>
 

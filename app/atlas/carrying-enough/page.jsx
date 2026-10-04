@@ -52,8 +52,8 @@ const jsonLd = {
       url: article.url,
       inLanguage: 'en-AU',
       isAccessibleForFree: true,
-      articleSection: 'Founder Notes',
-      isPartOf: { '@type': 'Blog', name: 'Atlas · Founder Notes' },
+      articleSection: 'Any Other Business',
+      isPartOf: { '@type': 'Blog', name: 'The Unlearning · Any Other Business' },
       keywords: [
         'Leaving corporate',
         'Founding a business',
@@ -67,7 +67,7 @@ const jsonLd = {
       '@id': `${article.url}#breadcrumbs`,
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Atlas', item: `${SITE}/atlas` },
-        { '@type': 'ListItem', position: 2, name: 'Founder Notes', item: `${SITE}/atlas` },
+        { '@type': 'ListItem', position: 2, name: 'Any Other Business', item: `${SITE}/atlas` },
         { '@type': 'ListItem', position: 3, name: article.masthead.title },
       ],
     },

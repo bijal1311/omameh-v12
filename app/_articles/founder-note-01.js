@@ -35,9 +35,11 @@ export const masthead = {
  * what most people will see of it.
  */
 export const og = {
-  eyebrow: masthead.kicker,
+  series: 'aob',
+  n: '01',
   title: 'Carrying',
   accent: 'enough.',
+  dek: masthead.dek,
 };
 
 export const author = {

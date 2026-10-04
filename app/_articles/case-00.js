@@ -20,6 +20,20 @@ export const url = 'https://www.omameh.com.au/atlas/case-00';
 
 export const masthead = {"kicker":"The Unlearning · 02 · Month End Close","title":"You do not get a blank month.","dek":"I built a business and its operating model at the same time, because nobody gets to stop and design first. Four months, month by month — including the parts that did not work.","author":"Bijal Sejpal","date":"September 2026","readingTime":"6 minute read","status":"Still building"};
 
+/**
+ * The share card. Kept beside the title so the two cannot drift — this is
+ * the image that goes to Substack as the cover and to LinkedIn as the
+ * preview. `closed` is the months the piece actually documents.
+ */
+export const og = {
+  series: 'mec',
+  n: '02',
+  title: 'You do not get a',
+  accent: 'blank month.',
+  dek: 'Four months, month by month, including what did not work.',
+  closed: 4,
+};
+
 export const author = {"portrait":"/founder-authorcard.jpg","eyebrow":"Written by","name":"Bijal Sejpal","bio":"Founder of Omameh Group. <strong>Human-Led. AI-Operated.</strong> Helping businesses grow — and building the systems that carry them.","linkHref":"/founder","linkLabel":"Read the founder's story &rarr;"};
 
 export const subscribe = {"eyebrow":"The Unlearning · Month End Close","heading":"This is where I will say how.","body":"Month End Close lands at the end of the month. Written for people building something while running it, and nothing is sold in it.","linkLabel":"Subscribe on Substack &rarr;"};

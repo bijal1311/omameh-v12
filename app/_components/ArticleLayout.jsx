@@ -21,6 +21,20 @@
 
 import { useEffect, useRef } from 'react';
 import { wireInteractions, rewriteHrefs } from '@/lib/wire-interactions';
+import { SITE } from '@/lib/seo/content';
+
+/**
+ * The end of a piece is the moment someone decides to subscribe, and it
+ * used to spend that moment on "Follow Atlas →" — a link to the index,
+ * where they would then have to find the embed. Two clicks and a scroll
+ * between finishing and subscribing.
+ *
+ * It goes straight to Substack now. The list lives there, their subscribe
+ * page is built for nothing else, and the site stays canonical for the
+ * writing itself. One destination, defined once — an article should not
+ * carry the URL of the list.
+ */
+const SUBSCRIBE_HREF = SITE.substack;
 
 export default function ArticleLayout({ article }) {
   const ref = useRef(null);
@@ -96,7 +110,9 @@ export default function ArticleLayout({ article }) {
                   <p>{subscribe.body}</p>
                 </div>
                 <a
-                  href={subscribe.linkHref}
+                  href={SUBSCRIBE_HREF}
+                  target="_blank"
+                  rel="noopener"
                   dangerouslySetInnerHTML={{ __html: subscribe.linkLabel }}
                 />
               </div>

@@ -22,7 +22,7 @@ export const masthead = {"kicker":"Atlas · Cases · 00","title":"You do not get
 
 export const author = {"portrait":"/founder-authorcard.jpg","eyebrow":"Written by","name":"Bijal Sejpal","bio":"Founder of Omameh Group. <strong>Human-Led. AI-Operated.</strong> Helping businesses grow — and building the systems that carry them.","linkHref":"/founder","linkLabel":"Read the founder's story &rarr;"};
 
-export const subscribe = {"eyebrow":"Atlas · Cases","heading":"This is where I will say how.","body":"Case 01, and what comes after it. Written for people building something while running it. Occasional, never scheduled, and nothing is sold in it.","linkHref":"/atlas","linkLabel":"Follow Atlas &rarr;"};
+export const subscribe = {"eyebrow":"Atlas · Cases","heading":"This is where I will say how.","body":"Case 01, and what comes after it. Written for people building something while running it. Occasional, never scheduled, and nothing is sold in it.","linkLabel":"Subscribe on Substack &rarr;"};
 
 export const next = {"eyebrow":"Coming next","title":"Case 01 — the system we built, and what it changed.","label":"Published through Atlas →","href":"/atlas"};
 

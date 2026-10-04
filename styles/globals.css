@@ -399,6 +399,10 @@ footer .blurb{font-size:14px;color:#A8AEC0;max-width:38ch;margin:0}
   margin-bottom:8px;transition:.18s;background:rgba(244,240,230,.02);
 }
 .fl:hover{border-color:rgba(201,168,76,.55);background:rgba(244,240,230,.055);transform:translateX(2px)}
+/* Rows with nowhere to go are divs, not links. They keep the shape of the
+   list and lose the hover, so the cursor tells the truth about them. */
+div.fl{opacity:.6}
+div.fl:hover{border-color:rgba(244,240,230,.14);background:rgba(244,240,230,.02);transform:none}
 .fl .ic{width:22px;height:22px;color:#C9C4B4;flex:none;display:flex}
 .fl .ic svg{width:22px;height:22px}
 .fl:hover .ic{color:var(--gold-light)}
@@ -876,26 +880,6 @@ h2, h3, h4              { margin-left: -0.024em; }
 .cc-link{background:none;border:0;padding:0;font:inherit;color:inherit;cursor:pointer;text-align:left}
 
 
-/* =====================================================================
-   Subscribe · /atlas
-   An on-brand field that hands the address to Substack pre-filled, rather
-   than Substack's own embed — which arrives orange, watermarked, and
-   repeating the name and tagline already on the page.
-   ===================================================================== */
-.subs-form{margin-top:var(--s4);max-width:520px}
-.subs-form__label{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:10px}
-.subs-form__row{display:flex;gap:10px;flex-wrap:wrap}
-.subs-form input{flex:1;min-width:220px;font-family:var(--body);font-size:16px;line-height:1.5;color:var(--ink);background:#fff;border:1px solid var(--rule);border-radius:0;padding:13px 15px;transition:border-color .18s ease}
-.subs-form input::placeholder{color:var(--ink-soft);opacity:.5}
-.subs-form input:focus{outline:none;border-color:var(--teal);box-shadow:0 0 0 3px rgba(0,181,173,.12)}
-.subs-form .btn{border:0;cursor:pointer;flex-shrink:0}
-.subs-form__note{font-size:13px;line-height:1.6;color:var(--ink-soft);margin:12px 0 0;max-width:52ch}
-.subs-form__done{font-size:14px;line-height:1.6;color:var(--navy);margin:12px 0 0;padding-left:14px;border-left:2px solid var(--teal);max-width:54ch}
-@media(max-width:520px){.subs-form .btn{width:100%}}
-.subs-form__pot{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
-.subs-form__err{font-size:14px;line-height:1.6;color:var(--coral);margin:12px 0 0;max-width:54ch}
-.subs-form__err a{color:var(--navy);border-bottom:1px solid var(--teal);text-decoration:none}
-.subs-form .btn:disabled{opacity:.6;cursor:default}
 
 
 /* =====================================================================

@@ -38,7 +38,7 @@ const __MARKUP = String.raw`
     <div>
       <span class="k">Everything in one place</span>
       <b>Follow, subscribe, or just come and sit in.</b>
-      <span class="d">One page with every channel, the rooms and the roundtables. Scan it, save it, or send it on.</span>
+      <span class="d">One page with the list, every channel and the rooms. Scan it, save it, or send it on.</span>
     </div>
     <span class="go">Go to the follow page →</span>
   </a>

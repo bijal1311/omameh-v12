@@ -52,9 +52,8 @@ export const author = {
 export const subscribe = {
   eyebrow: 'Atlas · Founder Notes',
   heading: 'The next one lands here.',
-  body: 'Founder Notes, and what comes after them. Written for people building something while running it. Occasional, never scheduled, and nothing is sold in it.',
-  linkHref: '/atlas',
-  linkLabel: 'Follow Atlas &rarr;',
+  body: 'Founder Notes, and what comes after them. Written for people building something while running it. Occasional, never scheduled, and nothing is sold in it.',
+  linkLabel: 'Subscribe on Substack &rarr;',
 };
 
 export const next = {

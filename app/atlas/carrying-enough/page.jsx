@@ -9,9 +9,11 @@ import article from '../../_articles/founder-note-01';
  * moved under /atlas to join it — the root was filling with one URL per
  * piece, and the cost of moving only went up with each one.
  *
- * The site is canonical. Substack carries the same words with its post
- * canonical pointed back here, which is the only thing stopping a platform
- * with far more domain authority outranking her for her own writing.
+ * The site is canonical and says so itself. Substack has no canonical
+ * URL field — its SEO panel is title, description and slug, and the API
+ * drops canonical_url — so the protection against a platform with far more
+ * domain authority outranking her is NOT a tag. It is that this page is
+ * indexed first and that the Substack cut is a different, shorter piece.
  */
 
 export const metadata = {

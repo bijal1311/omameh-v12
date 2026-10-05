@@ -17,10 +17,10 @@ import article from '../../_articles/case-00';
  * Notes are titled and cases are numbered — /atlas/carrying-enough and
  * /atlas/case-00 — because that is how the site already refers to them.
  *
- * omameh.com.au is canonical. The same words publish to Substack, so
- * without an explicit canonical the search engine picks the platform over
- * the owner. The Substack side of that has to be set in Substack's own
- * post settings; code cannot do it.
+ * omameh.com.au is canonical and declares itself so. Substack offers no
+ * canonical field, so the duplicate-content protection is editorial rather
+ * than technical: the Substack cut of this piece is deliberately shorter,
+ * around 800 words against the full version here.
  */
 
 export const metadata = {

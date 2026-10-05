@@ -8,7 +8,6 @@
  *
  * The only technical edits against the source: the prototype's
  * data-route attributes are gone, its #anchors are real routes, and the
- * base64 author portrait is an optimised asset at /founder-authorcard.jpg.
  *
  * The four-month figure is the founder's redraw — a curve carrying the
  * sequence with three lanes beneath carrying the overlap. It replaces the
@@ -34,7 +33,7 @@ export const og = {
   closed: 4,
 };
 
-export const author = {"portrait":"/founder-authorcard.jpg","eyebrow":"Written by","name":"Bijal Sejpal","bio":"Founder of Omameh Group. <strong>Human-Led. AI-Operated.</strong> Helping businesses grow — and building the systems that carry them.","linkHref":"/founder","linkLabel":"Read the founder's story &rarr;"};
+export const author = {"portrait":"/og/bijal-authorcard-400.jpg","eyebrow":"Written by","name":"Bijal Sejpal","bio":"Founder of Omameh Group. <strong>Human-Led. AI-Operated.</strong> Helping businesses grow — and building the systems that carry them.","linkHref":"/founder","linkLabel":"Read the founder's story &rarr;"};
 
 export const subscribe = {"eyebrow":"The Unlearning · Month End Close","heading":"This is where I will say how.","body":"Month End Close lands at the end of the month. Written for people building something while running it, and nothing is sold in it.","linkLabel":"Subscribe on Substack &rarr;"};
 

@@ -8,8 +8,12 @@
  *
  * The site carries this first. Substack has far more domain authority, so
  * publishing there first makes Substack the origin of her own writing and
- * the site a mirror of it. Site first, then Substack with its canonical
- * pointed back here.
+ * the site a mirror of it.
+ *
+ * There is no canonical to point back with — Substack does not offer the
+ * field. This piece is the one genuinely at duplicate risk, because the
+ * Substack cut is close to word-for-word at ~1,180 words. The fix is a
+ * different cut, not a tag.
  *
  * Editorial register, same as Case 00.
  */

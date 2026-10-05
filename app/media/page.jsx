@@ -72,7 +72,7 @@ const __MARKUP = String.raw`
           <div class="bio__body">
             <p>Bijal Sejpal is Founder &amp; CEO of Omameh Group.</p>
             <p>AI should be easy to learn, easy to access and safe to use, whether you run a ten-person tutoring centre or a regulated insurer. Omameh gets organisations there — teaching their people to work fluently with AI, giving them the platforms and products to run on it, and governing it so they can prove it is under control. The result is teams and digital workers side by side.</p>
-            <p>Two decades inside S&amp;P/ASX 20 enterprises across financial services, healthcare, government and technology. Most recently Chief Operating Officer, Technology and interim CIO, Bupa Asia-Pacific (2025–2026), and Group Chief Operating Officer, Data Analytics and AI, QBE (2019–2025). Sydney and Hyderabad.</p>
+            <p>Two decades inside S&amp;P/ASX 20 enterprises across financial services, healthcare, government and technology. Most recently Chief Operating Officer, Technology, Bupa Asia-Pacific (2025–2026), and Group Chief Operating Officer, Data Analytics and AI, QBE (2019–2025). Sydney and Hyderabad.</p>
             <p><em>Human-Led. AI-Operated.</em></p>
           </div>
           <button type="button" class="bio__copy" data-bio-copy>Copy →</button>
@@ -87,7 +87,7 @@ const __MARKUP = String.raw`
             <p>Bijal Sejpal is Founder &amp; CEO of Omameh Group.</p>
             <p>Most organisations got the technology and did not get their time back. The enterprise ran the pilot and the team still does the workaround. The founder bought the tools and still cannot take a holiday. What is missing is not the technology — it is the operating model, the governance, and the judgement around it.</p>
             <p>Omameh works in that gap and does all three parts. It teaches people to work fluently with AI. It builds the platforms and products they run on, across an estate its own team has shipped. And it governs the result, so a board can prove what its organisation is actually doing.</p>
-            <p>Two decades inside S&amp;P/ASX 20 enterprises across financial services, healthcare, government and technology. Most recently Chief Operating Officer, Technology and interim CIO, Bupa Asia-Pacific (2025–2026), and Group Chief Operating Officer, Data Analytics and AI, QBE (2019–2025). Sydney-based, with engineering in Hyderabad.</p>
+            <p>Two decades inside S&amp;P/ASX 20 enterprises across financial services, healthcare, government and technology. Most recently Chief Operating Officer, Technology, Bupa Asia-Pacific (2025–2026), and Group Chief Operating Officer, Data Analytics and AI, QBE (2019–2025). Sydney-based, with engineering in Hyderabad.</p>
             <p><em>Human-Led. AI-Operated.</em> Built for the era we are actually in.</p>
           </div>
           <button type="button" class="bio__copy" data-bio-copy>Copy →</button>

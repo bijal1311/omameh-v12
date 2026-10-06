@@ -19,6 +19,7 @@ import TrialForm from '../_components/TrialForm';
  */
 
 export const metadata = {
+  alternates: { canonical: '/trial' },
   title: 'The first trial',
   description:
     'A small number of growing businesses, running the operating layer on their own work for a fortnight.',

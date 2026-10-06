@@ -1,6 +1,7 @@
 import RouteShell from '../_components/RouteShell';
 
 export const metadata = {
+  alternates: { canonical: '/privacy' },
   title: 'Privacy Policy',
   description:
     'Omameh Partners Pty Ltd · ABN 77 697 372 517 · Version 1.0 effective 1 May 2026. How we collect, use, retain, and disclose personal information under the Australian Privacy Principles.',

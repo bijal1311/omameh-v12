@@ -10,6 +10,7 @@ import RouteShell from '../_components/RouteShell';
  */
 
 export const metadata = {
+  alternates: { canonical: '/about' },
   title: "The people who design it are the people who build it.",
   description: "One team, two countries, and the same agenda from the first conversation to the last deployment.",
 };

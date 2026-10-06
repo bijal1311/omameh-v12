@@ -10,6 +10,7 @@ import RouteShell from '../_components/RouteShell';
  */
 
 export const metadata = {
+  alternates: { canonical: '/fluency' },
   title: "Unlearn. Relearn. Reinvent.",
   description: "The decisions you actually have to make. Not a lecture, not a certificate, and nothing you could have read.",
 };

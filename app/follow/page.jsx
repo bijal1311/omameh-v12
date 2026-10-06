@@ -22,6 +22,7 @@ import RouteShell from '../_components/RouteShell';
  */
 
 export const metadata = {
+  alternates: { canonical: '/follow' },
   title: 'Follow',
   description: 'Everything in one place — the list, the practice, and one inbox.',
   robots: { index: false, follow: false },

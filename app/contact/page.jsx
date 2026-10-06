@@ -10,6 +10,7 @@ import RouteShell from '../_components/RouteShell';
  */
 
 export const metadata = {
+  alternates: { canonical: '/contact' },
   title: "One inbox. It reaches me.",
   description: "No form that disappears, no routing, no queue. Write and I read it.",
 };

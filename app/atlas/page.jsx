@@ -30,6 +30,7 @@ import AtlasBody from './AtlasBody';
  */
 
 export const metadata = {
+  alternates: { canonical: '/atlas' },
   title: 'What we learn inside the work, written down.',
   description:
     'No gate, no email address, no lead magnet. If it is useful it should be readable.',

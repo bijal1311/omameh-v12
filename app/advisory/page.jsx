@@ -10,6 +10,7 @@ import RouteShell from '../_components/RouteShell';
  */
 
 export const metadata = {
+  alternates: { canonical: '/advisory' },
   title: "We work out what is actually in the way.",
   description: "Most of what slows an organisation down was a sensible fix at the time. We find the ones that have earned a redesign, and do it with the people who live inside them.",
 };

@@ -10,6 +10,7 @@ import RouteShell from '../_components/RouteShell';
  */
 
 export const metadata = {
+  alternates: { canonical: '/products' },
   title: "We build the things we advise on.",
   description: "Eight platforms built by our own team. Or something new, for the part nobody sells off the shelf.",
 };

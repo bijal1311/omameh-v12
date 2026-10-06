@@ -1,6 +1,7 @@
 import RouteShell from '../_components/RouteShell';
 
 export const metadata = {
+  alternates: { canonical: '/founder' },
   title: 'Founder',
   description:
     'Bijal Sejpal · founder of Omameh. Two decades inside the architecture of large institutions. Why I built this — Transformation Strategy is the discipline almost no one writes down.',

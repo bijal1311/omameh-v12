@@ -1,6 +1,7 @@
 import RouteShell from '../_components/RouteShell';
 
 export const metadata = {
+  alternates: { canonical: '/media' },
   title: 'Media kit',
   description:
     'Approved portraits, brand assets, bios, and the press contact for interviews, panels, and speaking enquiries.',

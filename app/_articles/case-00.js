@@ -210,7 +210,7 @@ export const body = String.raw`
 
 const article = {
   id: 'case00',
-  label: '09 · Month End Close 02',
+  label: '09 · Month End Close 01',
   slug,
   url,
   publishedAt,

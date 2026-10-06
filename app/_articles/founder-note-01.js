@@ -144,7 +144,7 @@ export const body = String.raw`
 
 const article = {
   id: 'fn01',
-  label: '10 · Founder Note 01',
+  label: '10 · Any Other Business 02',
   slug,
   url,
   publishedAt,

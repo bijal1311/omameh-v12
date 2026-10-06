@@ -22,6 +22,7 @@
 import { useEffect, useRef } from 'react';
 import { wireInteractions, rewriteHrefs } from '@/lib/wire-interactions';
 import { SITE } from '@/lib/seo/content';
+import SubscribeForm from './SubscribeForm';
 
 /**
  * The end of a piece is the moment someone decides to subscribe, and it
@@ -36,9 +37,38 @@ import { SITE } from '@/lib/seo/content';
  */
 const SUBSCRIBE_HREF = SITE.substack;
 
+/**
+ * Where the form goes inside the body.
+ *
+ * Roughly 40% through, and always at a paragraph boundary — never inside
+ * one, and never adjacent to a pull quote, where it would read as part of
+ * the quote. An article can name its own split point with subscribeAfter,
+ * a unique phrase from the paragraph it should follow, because "the
+ * paragraph where the piece turns to the reader" is an editorial call and
+ * not a percentage.
+ */
+function splitBody(body, marker) {
+  const ends = [...body.matchAll(/<\/p>/g)].map((m) => m.index + 4);
+  if (!ends.length) return [body, ''];
+
+  if (marker) {
+    const at = body.indexOf(marker);
+    if (at >= 0) {
+      const cut = ends.find((e) => e > at);
+      if (cut) return [body.slice(0, cut), body.slice(cut)];
+    }
+  }
+
+  const target = body.length * 0.4;
+  let cut = ends[0];
+  for (const e of ends) if (Math.abs(e - target) < Math.abs(cut - target)) cut = e;
+  return [body.slice(0, cut), body.slice(cut)];
+}
+
 export default function ArticleLayout({ article }) {
   const ref = useRef(null);
-  const { masthead: m, body, author, endnote, subscribe, next, id, label } = article;
+  const { masthead: m, body, author, endnote, subscribe, next, id, label, subscribeAfter } = article;
+  const [bodyTop, bodyRest] = splitBody(body, subscribeAfter);
 
   useEffect(() => {
     if (!ref.current) return;
@@ -69,13 +99,16 @@ export default function ArticleLayout({ article }) {
               <span>{m.date}</span>
               <span>{m.readingTime}</span>
               {m.status && <span className="st">{m.status}</span>}
+              <a className="sub__link" href="#subscribe">Subscribe</a>
             </div>
           </header>
         </div>
 
         <section style={{ background: 'var(--cream)', paddingTop: 'var(--s5)' }}>
           <div className="art">
-            <div dangerouslySetInnerHTML={{ __html: body }} />
+            <div dangerouslySetInnerHTML={{ __html: bodyTop }} />
+            <SubscribeForm heading="Still reading? Get the next one." />
+            <div dangerouslySetInnerHTML={{ __html: bodyRest }} />
 
             <div className="authcard">
               <img

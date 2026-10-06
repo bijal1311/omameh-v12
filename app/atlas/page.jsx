@@ -1,4 +1,4 @@
-import RouteShell from '../_components/RouteShell';
+import AtlasBody from './AtlasBody';
 
 /**
  * 06 · Atlas
@@ -197,6 +197,16 @@ ${soon('board', 'rgba(0,181,173,.45)', '#00B5AD', '#00D4CB')}
 </div>
 `;
 
+const SPLIT = '</header>';
+const at = __MARKUP.indexOf(SPLIT) + SPLIT.length;
+
 export default function AtlasPage() {
-  return <RouteShell id="atlas" label="06 · Atlas" markup={__MARKUP} />;
+  return (
+    <AtlasBody
+      id="atlas"
+      label="06 · Atlas"
+      top={__MARKUP.slice(0, at)}
+      rest={__MARKUP.slice(at)}
+    />
+  );
 }

@@ -938,3 +938,43 @@ h2, h3, h4              { margin-left: -0.024em; }
    ===================================================================== */
 .atlas2 a{text-decoration:none}
 .atlas2 a:hover{text-decoration:none}
+
+/* =====================================================================
+   Subscribe · one component, two placements
+   It sits in the page and never over it. No modal, no overlay, no sticky
+   bar, no exit intent — the build spec's first hard rule, and the reason
+   /atlas can keep promising no gate and no lead magnet.
+   ===================================================================== */
+.sub{
+  margin:var(--s5) 0;padding:var(--s4);border:1px solid var(--rule);border-radius:4px;
+  background:var(--cream-warm);scroll-margin-top:96px
+}
+.sub__h{margin:0 0 var(--s3);font-family:var(--ed-display);font-size:clamp(21px,2.4vw,26px);font-weight:400;line-height:1.2;color:var(--ink)}
+.sub__form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr)) auto;gap:12px;align-items:end}
+.sub__f{display:flex;flex-direction:column;gap:7px;min-width:0}
+.sub__f span{font-family:var(--ed-mono);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft)}
+.sub__f input{
+  font-family:var(--body);font-size:16px;line-height:1.5;color:var(--ink);background:#fff;
+  border:1px solid var(--rule);border-radius:0;padding:12px 14px;width:100%;box-sizing:border-box;transition:border-color .18s ease
+}
+.sub__f input:focus{outline:none;border-color:var(--teal);box-shadow:0 0 0 3px rgba(0,181,173,.12)}
+.sub__go{
+  font-family:var(--ed-mono);font-size:10.5px;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--navy-deep);background:var(--gold-light);border:0;border-radius:0;
+  padding:14px 24px;cursor:pointer;white-space:nowrap;transition:background .18s ease
+}
+.sub__go:hover{background:var(--gold-hi)}
+.sub__done{margin:0;font-family:var(--ed-display);font-size:clamp(19px,2.2vw,23px);font-weight:400;line-height:1.35;color:var(--ink)}
+.sub__done a{color:var(--navy);border-bottom:1.5px solid var(--gold);text-decoration:none;white-space:nowrap}
+.sub__err{margin:12px 0 0;font-size:14px;line-height:1.55;color:var(--coral)}
+/* The top link in the byline row — a word, not a box. */
+.by .sub__link{color:var(--navy);border-bottom:1.5px solid var(--gold);text-decoration:none;padding-bottom:1px}
+.by .sub__link:hover{color:var(--teal)}
+@media(max-width:720px){
+  .sub__form{grid-template-columns:1fr}
+  .sub__go{width:100%}
+}
+/* The /atlas form sits in the page gutter, between the hero and the series. */
+.atlas2__subband{border-top:1px solid rgba(26,26,24,.1)}
+.atlas2__subwrap{max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,56px)}
+.atlas2__subwrap .sub{margin:clamp(32px,4vw,48px) 0}

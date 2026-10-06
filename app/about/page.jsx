@@ -1,3 +1,4 @@
+import { pageMeta } from '@/lib/seo/page-meta';
 import RouteShell from '../_components/RouteShell';
 
 /**
@@ -9,11 +10,12 @@ import RouteShell from '../_components/RouteShell';
  * <footer> are lifted into GlobalNav and GlobalFooter.
  */
 
-export const metadata = {
-  alternates: { canonical: '/about' },
-  title: "The people who design it are the people who build it.",
-  description: "One team, two countries, and the same agenda from the first conversation to the last deployment.",
-};
+export const metadata = pageMeta({
+  title: 'The people who design it are the people who build it.',
+  description:
+    'One team, two countries, and the same agenda from the first conversation to the last deployment.',
+  path: '/about',
+});
 
 const __MARKUP = String.raw`
 <section class="hero"><div class="w">

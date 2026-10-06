@@ -1,3 +1,4 @@
+import { pageMeta } from '@/lib/seo/page-meta';
 import RouteShell from '../_components/RouteShell';
 
 /**
@@ -9,11 +10,12 @@ import RouteShell from '../_components/RouteShell';
  * <footer> are lifted into GlobalNav and GlobalFooter.
  */
 
-export const metadata = {
-  alternates: { canonical: '/contact' },
-  title: "One inbox. It reaches me.",
-  description: "No form that disappears, no routing, no queue. Write and I read it.",
-};
+export const metadata = pageMeta({
+  title: 'One inbox. It reaches me.',
+  description:
+    'No form that disappears, no routing, no queue. Write and I read it.',
+  path: '/contact',
+});
 
 const __MARKUP = String.raw`
 <section class="hero" style="position:relative;overflow:hidden"><div class="rings ink"></div><div class="w" style="position:relative">

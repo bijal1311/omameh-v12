@@ -1,3 +1,4 @@
+import { pageMeta } from '@/lib/seo/page-meta';
 import RouteShell from '../_components/RouteShell';
 
 /**
@@ -21,12 +22,13 @@ import RouteShell from '../_components/RouteShell';
  * noindex stays. This page is reached from print and QR, never search.
  */
 
-export const metadata = {
-  alternates: { canonical: '/follow' },
+export const metadata = pageMeta({
   title: 'Follow',
-  description: 'Everything in one place — the list, the practice, and one inbox.',
-  robots: { index: false, follow: false },
-};
+  description:
+    'Everything in one place — the list, the practice, and one inbox.',
+  path: '/follow',
+  noindex: true,
+});
 
 const __MARKUP = String.raw`
 <div class="followpage">

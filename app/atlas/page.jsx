@@ -1,3 +1,4 @@
+import { pageMeta } from '@/lib/seo/page-meta';
 import AtlasBody from './AtlasBody';
 
 /**
@@ -29,12 +30,12 @@ import AtlasBody from './AtlasBody';
  * way round, which put issue 02 a month before issue 01.
  */
 
-export const metadata = {
-  alternates: { canonical: '/atlas' },
+export const metadata = pageMeta({
   title: 'What we learn inside the work, written down.',
   description:
     'No gate, no email address, no lead magnet. If it is useful it should be readable.',
-};
+  path: '/atlas',
+});
 
 const CARD_V = '3';
 

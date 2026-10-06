@@ -1,3 +1,4 @@
+import { pageMeta } from '@/lib/seo/page-meta';
 import TrialForm from '../_components/TrialForm';
 
 /**
@@ -18,13 +19,13 @@ import TrialForm from '../_components/TrialForm';
  * Not indexed. It is reached from the essay, not from search.
  */
 
-export const metadata = {
-  alternates: { canonical: '/trial' },
+export const metadata = pageMeta({
   title: 'The first trial',
   description:
     'A small number of growing businesses, running the operating layer on their own work for a fortnight.',
-  robots: { index: false, follow: true },
-};
+  path: '/trial',
+  noindex: true,
+});
 
 export default function TrialPage() {
   return (

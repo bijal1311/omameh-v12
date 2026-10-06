@@ -1,11 +1,12 @@
+import { pageMeta } from '@/lib/seo/page-meta';
 import RouteShell from '../_components/RouteShell';
 
-export const metadata = {
-  alternates: { canonical: '/media' },
+export const metadata = pageMeta({
   title: 'Media kit',
   description:
     'Approved portraits, brand assets, bios, and the press contact for interviews, panels, and speaking enquiries.',
-};
+  path: '/media',
+});
 
 /**
  * Media · v12 · 29 May 2026 · mockup verbatim.

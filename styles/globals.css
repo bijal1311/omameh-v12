@@ -967,9 +967,12 @@ h2, h3, h4              { margin-left: -0.024em; }
 .sub__done{margin:0;font-family:var(--ed-display);font-size:clamp(19px,2.2vw,23px);font-weight:400;line-height:1.35;color:var(--ink)}
 .sub__done a{color:var(--navy);border-bottom:1.5px solid var(--gold);text-decoration:none;white-space:nowrap}
 .sub__err{margin:12px 0 0;font-size:14px;line-height:1.55;color:var(--coral)}
-/* The top link in the byline row — a word, not a box. */
-.by .sub__link{color:var(--navy);border-bottom:1.5px solid var(--gold);text-decoration:none;padding-bottom:1px}
-.by .sub__link:hover{color:var(--teal)}
+/* The top link in the byline row — a word, not a box.
+   The row sits on navy-deep, so this was navy on navy: the text vanished
+   and left a gold underline floating after the reading time. Gold is what
+   the rest of that row uses for its accent. */
+.emast .by .sub__link{color:var(--gold-light);border-bottom:1.5px solid rgba(201,168,76,.55);text-decoration:none;padding-bottom:2px;transition:color .18s ease,border-color .18s ease}
+.emast .by .sub__link:hover{color:var(--teal-light);border-bottom-color:var(--teal-light)}
 @media(max-width:720px){
   .sub__form{grid-template-columns:1fr}
   .sub__go{width:100%}

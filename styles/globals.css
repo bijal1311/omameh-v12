@@ -958,12 +958,18 @@ h2, h3, h4              { margin-left: -0.024em; }
   border:1px solid var(--rule);border-radius:0;padding:12px 14px;width:100%;box-sizing:border-box;transition:border-color .18s ease
 }
 .sub__f input:focus{outline:none;border-color:var(--teal);box-shadow:0 0 0 3px rgba(0,181,173,.12)}
+/* "Subscribe, large" from Subscribe Button.dc.html — gold fill, navy
+   text and a navy arrow, not the mono caps the rest of the form uses. */
 .sub__go{
-  font-family:var(--ed-mono);font-size:10.5px;letter-spacing:.15em;text-transform:uppercase;
-  color:var(--navy-deep);background:var(--gold-light);border:0;border-radius:0;
-  padding:14px 24px;cursor:pointer;white-space:nowrap;transition:background .18s ease
+  display:inline-flex;align-items:center;gap:14px;
+  font-family:var(--body);font-size:18px;font-weight:600;letter-spacing:-.005em;
+  color:#0D1F4E;background:#C9A84C;border:0;border-radius:10px;
+  padding:18px 30px;cursor:pointer;white-space:nowrap;
+  transition:background 200ms cubic-bezier(.2,.8,.2,1)
 }
-.sub__go:hover{background:var(--gold-hi)}
+.sub__go:hover{background:#d6b862}
+.sub__go:active{opacity:.85}
+.sub__go svg{display:block;flex:none}
 .sub__done{margin:0;font-family:var(--ed-display);font-size:clamp(19px,2.2vw,23px);font-weight:400;line-height:1.35;color:var(--ink)}
 .sub__done a{color:var(--navy);border-bottom:1.5px solid var(--gold);text-decoration:none;white-space:nowrap}
 .sub__err{margin:12px 0 0;font-size:14px;line-height:1.55;color:var(--coral)}

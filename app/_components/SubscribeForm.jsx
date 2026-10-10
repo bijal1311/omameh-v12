@@ -117,7 +117,12 @@ export default function SubscribeForm({ heading, id = 'subscribe' }) {
             onChange={(e) => setEmail(e.target.value)}
           />
         </label>
-        <button type="submit" className="sub__go">Subscribe</button>
+        <button type="submit" className="sub__go">
+          Subscribe
+          <svg width="18" height="12" viewBox="0 0 18 12" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <path d="M1 6h15M11 1l5 5-5 5" />
+          </svg>
+        </button>
       </form>
       {state === 'error' && (
         <p className="sub__err">Both fields, please — the name is how the first line is written.</p>

@@ -199,16 +199,31 @@ ${soon('board', 'rgba(0,181,173,.45)', '#00B5AD', '#00D4CB')}
 </div>
 `;
 
+/**
+ * The markup splits where the hero closes, so the subscribe form can sit
+ * between the hero and the four series.
+ *
+ * BOTH HALVES MUST BE WELL-FORMED. The wrapper opens at the top of
+ * __MARKUP and closes at the bottom, so a naive slice leaves the first
+ * half with an unclosed div and the second with an orphan closing tag.
+ * Each half is then repaired by the browser differently from the server,
+ * and React discards the server HTML and re-renders the whole page on the
+ * client — a hydration failure that shipped silently, because the page
+ * still looks right once it has re-rendered.
+ */
 const SPLIT = '</header>';
 const at = __MARKUP.indexOf(SPLIT) + SPLIT.length;
+const WRAP_OPEN = '<div class="atlas2">';
+const TOP = __MARKUP.slice(0, at) + '</div>';
+const REST = WRAP_OPEN + __MARKUP.slice(at);
 
 export default function AtlasPage() {
   return (
     <AtlasBody
       id="atlas"
       label="06 · Atlas"
-      top={__MARKUP.slice(0, at)}
-      rest={__MARKUP.slice(at)}
+      top={TOP}
+      rest={REST}
     />
   );
 }

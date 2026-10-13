@@ -1,5 +1,6 @@
 import { pageMeta } from '@/lib/seo/page-meta';
 import RouteShell from '../_components/RouteShell';
+import IntukaDemo from '../_components/IntukaDemo';
 
 /**
  * 03 · Products · V16
@@ -36,7 +37,7 @@ const __MARKUP = String.raw`
 
   <div class="feature lead">
     <div class="top">
-      <div><span class="eyebrow" style="margin:0">P02</span><h3 style="margin:2px 0 0">Intuka</h3></div>
+      <div><span class="eyebrow" style="margin:0">P02</span><h3 style="margin:2px 0 0;display:flex;align-items:center"><img src="/brand/intuka-wordmark.svg" alt="Intuka" style="height:30px;width:auto;display:block"/></h3></div>
       <span class="phase">In trial</span>
     </div>
     <h4 style="color:var(--ink-soft);font-family:var(--body);font-size:14px;font-weight:500;letter-spacing:.08em;text-transform:uppercase">Business Operations</h4>
@@ -52,7 +53,7 @@ const __MARKUP = String.raw`
           <div class="step"><span class="n">03 · Decide</span><span>If what it finds is worth fixing, we set you up. If your time is better spent elsewhere, we will tell you that too.</span></div>
         </div>
       </div>
-      <div class="cta" style="margin-top:0"><a class="btn" href="mailto:contact@omameh.com.au?subject=Demo%20request%20-%20Intuka">Book a demo</a><a class="btn ghost" href="https://www.intuka.com" target="_blank" rel="noopener">Learn more about Intuka →</a></div>
+      <div class="cta" style="margin-top:0"><a class="btn" data-intuka-demo href="mailto:contact@omameh.com.au?subject=Demo%20request%20-%20Intuka">Book a demo</a><a class="btn ghost" href="https://www.intuka.com" target="_blank" rel="noopener">Learn more about Intuka →</a></div>
     </div>
   </div>
 
@@ -156,5 +157,10 @@ const __MARKUP = String.raw`
 `;
 
 export default function ProductsPage() {
-  return <RouteShell id="products" label="03 · Products" markup={__MARKUP} />;
+  return (
+    <>
+      <RouteShell id="products" label="03 · Products" markup={__MARKUP} />
+      <IntukaDemo />
+    </>
+  );
 }

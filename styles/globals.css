@@ -939,6 +939,34 @@ h2, h3, h4              { margin-left: -0.024em; }
 .atlas2 a{text-decoration:none}
 .atlas2 a:hover{text-decoration:none}
 
+/* The index list. One row per published piece, carrying the same cover
+   that is on Substack — rendered at half the master's size rather than
+   downsampled from it, so Playfair's thin strokes hold (public/atlas/).
+   The grid is here rather than inline because it needs a breakpoint:
+   four columns do not survive a phone. */
+.atlas2__piece{
+  display:grid;
+  grid-template-columns:auto clamp(160px,24vw,300px) minmax(0,1fr) auto;
+  gap:clamp(18px,3vw,40px);
+  align-items:center;
+  padding:clamp(22px,2.8vw,32px) 0;
+  border-top:1px solid rgba(26,26,24,.14);
+  color:#1a1a18
+}
+.atlas2__piece:last-of-type{border-bottom:1px solid rgba(26,26,24,.14)}
+.atlas2__cover{
+  width:100%;height:auto;aspect-ratio:1456/1048;object-fit:cover;display:block;
+  border-radius:10px;border:1px solid rgba(26,26,24,.12);
+  transition:transform .25s cubic-bezier(.2,.8,.2,1)
+}
+.atlas2__piece:hover .atlas2__cover{transform:translateY(-3px)}
+.atlas2__piece:hover .atlas2__t{color:#8a6d22}
+.atlas2__t{transition:color .18s ease}
+@media(max-width:800px){
+  .atlas2__piece{grid-template-columns:minmax(0,1fr);gap:14px}
+  .atlas2__cover{order:-1}
+}
+
 /* =====================================================================
    Subscribe · one component, two placements
    It sits in the page and never over it. No modal, no overlay, no sticky

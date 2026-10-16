@@ -19,7 +19,11 @@ import AtlasBody from './AtlasBody';
  * commitment the publication was not making.
  *
  * The list grows by itself. A new piece is one more entry in PIECES, in
- * publication order, and nothing else on this page changes.
+ * publication order, and nothing else on this page changes — plus its
+ * cover in public/atlas/, rendered from design's Editorial Cover
+ * component at 728 x 524, which is half the Substack master. Render it
+ * at that size rather than resizing the master: Playfair's thin strokes
+ * go soft when a 1456px export is scaled down in the browser.
  *
  * WHAT STAYED, DELIBERATELY
  *
@@ -66,6 +70,7 @@ const PIECES = [
     title: 'You do not get a blank month',
     line: 'Four months, month by month, including what did not work.',
     date: 'September 2026',
+    cover: '/atlas/blank-month.jpg',
     href: 'https://atlas.omameh.com.au/p/you-do-not-get-a-blank-month',
   },
   {
@@ -73,21 +78,29 @@ const PIECES = [
     title: 'Carrying enough',
     line: 'After 7,629 days in corporate, why build your own?',
     date: 'October 2026',
+    cover: '/atlas/carrying-enough.jpg',
     href: 'https://atlas.omameh.com.au/p/carrying-enough',
   },
 ];
 
-const entry = (p, last) => String.raw`
-    <a href="${p.href}" target="_blank" rel="noopener" style="display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:clamp(18px,3vw,40px);align-items:baseline;padding:clamp(24px,3vw,34px) 0;border-top:1px solid rgba(26,26,24,.14);${last ? 'border-bottom:1px solid rgba(26,26,24,.14);' : ''}color:#1a1a18">
+/**
+ * The cover is the one on Substack, so a reader meets the same image in
+ * the feed, in the inbox and here. alt is empty on purpose: the title
+ * sits beside it inside the same link, and a screen reader announcing
+ * both says everything twice.
+ */
+const entry = (p) => String.raw`
+    <a class="atlas2__piece" href="${p.href}" target="_blank" rel="noopener">
       <span style="font:500 12px/1 ${MONO};letter-spacing:.2em;color:#8a6d22">${p.n}</span>
+      <img class="atlas2__cover" src="${p.cover}" alt="" width="728" height="524" loading="lazy" decoding="async">
       <span style="display:flex;flex-direction:column;gap:10px;min-width:0">
-        <span style="font:500 clamp(26px,3.4vw,38px)/1.15 ${DISPLAY};letter-spacing:-.015em">${p.title}</span>
+        <span class="atlas2__t" style="font:500 clamp(26px,3.4vw,38px)/1.15 ${DISPLAY};letter-spacing:-.015em">${p.title}</span>
         <span style="font:400 17px/1.6 ${BODY};color:rgba(26,26,24,.7);text-wrap:pretty">${p.line}</span>
       </span>
       <span style="font:500 10px/1 ${MONO};letter-spacing:.2em;color:rgba(26,26,24,.5);white-space:nowrap">${p.date.toUpperCase()}</span>
     </a>`;
 
-const list = PIECES.map((p, i) => entry(p, i === PIECES.length - 1)).join('\n');
+const list = PIECES.map(entry).join('\n');
 
 const HEAD = String.raw`
 <div class="atlas2">

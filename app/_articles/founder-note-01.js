@@ -1,3 +1,12 @@
+/* ARCHIVED 16 October 2026.
+ *
+ * The route that rendered this was deleted when the writing moved to
+ * https://atlas.omameh.com.au/p/carrying-enough
+ * and /atlas became an index. The piece is kept here as the worked
+ * example of the article format, and as the source the published
+ * version came from. Nothing imports it.
+ */
+
 /**
  * Founder Note 01 · Carrying enough
  *

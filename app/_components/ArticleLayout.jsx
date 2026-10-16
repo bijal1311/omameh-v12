@@ -17,25 +17,20 @@
  *
  * Author portrait is square and sits at the foot. Never circular, never at
  * the top of an article.
+ *
+ * 16 October 2026 — the writing moved to atlas.omameh.com.au and both
+ * article routes are now 301s, so nothing renders through here today. The
+ * format is kept because the next piece that belongs on the site will use
+ * it, and two things were removed rather than left dormant: the navy
+ * closing block (.subs) and the Subscribe on Substack button inside it.
+ * Substack owns that moment now, and a component left in place is a
+ * component that comes back. The in-body SubscribeForm stays — it is our
+ * own form, not a handoff button.
  */
 
 import { useEffect, useRef } from 'react';
 import { wireInteractions, rewriteHrefs } from '@/lib/wire-interactions';
-import { SITE } from '@/lib/seo/content';
 import SubscribeForm from './SubscribeForm';
-
-/**
- * The end of a piece is the moment someone decides to subscribe, and it
- * used to spend that moment on "Follow Atlas →" — a link to the index,
- * where they would then have to find the embed. Two clicks and a scroll
- * between finishing and subscribing.
- *
- * It goes straight to Substack now. The list lives there, their subscribe
- * page is built for nothing else, and the site stays canonical for the
- * writing itself. One destination, defined once — an article should not
- * carry the URL of the list.
- */
-const SUBSCRIBE_HREF = SITE.substack;
 
 /**
  * Where the form goes inside the body.
@@ -67,7 +62,7 @@ function splitBody(body, marker) {
 
 export default function ArticleLayout({ article }) {
   const ref = useRef(null);
-  const { masthead: m, body, author, endnote, subscribe, next, id, label, subscribeAfter } = article;
+  const { masthead: m, body, author, endnote, next, id, label, subscribeAfter } = article;
   const [bodyTop, bodyRest] = splitBody(body, subscribeAfter);
 
   useEffect(() => {
@@ -134,22 +129,6 @@ export default function ArticleLayout({ article }) {
               dangerouslySetInnerHTML={{ __html: endnote }}
             />
 
-            <aside className="subs">
-              <div className="rings" />
-              <div className="in">
-                <div>
-                  <span className="k">{subscribe.eyebrow}</span>
-                  <h4>{subscribe.heading}</h4>
-                  <p>{subscribe.body}</p>
-                </div>
-                <a
-                  href={SUBSCRIBE_HREF}
-                  target="_blank"
-                  rel="noopener"
-                  dangerouslySetInnerHTML={{ __html: subscribe.linkLabel }}
-                />
-              </div>
-            </aside>
           </div>
         </section>
       </div>

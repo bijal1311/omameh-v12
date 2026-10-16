@@ -12,7 +12,14 @@
  *
  * So the markup arrives in two halves with the form between them, inside
  * a single <main>. Everything else is RouteShell's behaviour, including
- * rewriteHrefs and wireInteractions, which the series anchors rely on.
+ * rewriteHrefs and wireInteractions.
+ *
+ * BOTH HALVES MUST BE WELL-FORMED. They are two separate innerHTML
+ * writes, so each opens and closes its own .atlas2 wrapper. A half with
+ * an unclosed div is repaired by the browser differently from the server,
+ * React throws away the server HTML and re-renders the whole page, and
+ * the hydration failure ships silently because the page still looks right
+ * afterwards. That happened here once.
  */
 
 import { useEffect, useRef } from 'react';
@@ -34,7 +41,7 @@ export default function AtlasBody({ id, label, top, rest }) {
       <div dangerouslySetInnerHTML={{ __html: top }} />
       <div className="atlas2 atlas2__subband">
         <div className="atlas2__subwrap">
-          <SubscribeForm heading="One a month. Straight to your inbox." />
+          <SubscribeForm heading="The next one, straight to your inbox." />
         </div>
       </div>
       <div dangerouslySetInnerHTML={{ __html: rest }} />

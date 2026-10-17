@@ -24,13 +24,13 @@
  * it, and two things were removed rather than left dormant: the navy
  * closing block (.subs) and the Subscribe on Substack button inside it.
  * Substack owns that moment now, and a component left in place is a
- * component that comes back. The in-body SubscribeForm stays — it is our
- * own form, not a handoff button.
+ * component that comes back. The in-body subscribe stays, and is now
+ * Substack's own embed rather than the two-step handoff form.
  */
 
 import { useEffect, useRef } from 'react';
 import { wireInteractions, rewriteHrefs } from '@/lib/wire-interactions';
-import SubscribeForm from './SubscribeForm';
+import SubscribeEmbed from './SubscribeEmbed';
 
 /**
  * Where the form goes inside the body.
@@ -102,7 +102,7 @@ export default function ArticleLayout({ article }) {
         <section style={{ background: 'var(--cream)', paddingTop: 'var(--s5)' }}>
           <div className="art">
             <div dangerouslySetInnerHTML={{ __html: bodyTop }} />
-            <SubscribeForm heading="Still reading? Get the next one." />
+            <SubscribeEmbed />
             <div dangerouslySetInnerHTML={{ __html: bodyRest }} />
 
             <div className="authcard">

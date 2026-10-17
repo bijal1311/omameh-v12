@@ -24,7 +24,7 @@
 
 import { useEffect, useRef } from 'react';
 import { wireInteractions, rewriteHrefs } from '@/lib/wire-interactions';
-import SubscribeForm from '../_components/SubscribeForm';
+import SubscribeEmbed from '../_components/SubscribeEmbed';
 
 export default function AtlasBody({ id, label, top, rest }) {
   const ref = useRef(null);
@@ -41,7 +41,7 @@ export default function AtlasBody({ id, label, top, rest }) {
       <div dangerouslySetInnerHTML={{ __html: top }} />
       <div className="atlas2 atlas2__subband">
         <div className="atlas2__subwrap">
-          <SubscribeForm heading="The next one, straight to your inbox." />
+          <SubscribeEmbed />
         </div>
       </div>
       <div dangerouslySetInnerHTML={{ __html: rest }} />

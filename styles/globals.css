@@ -968,10 +968,27 @@ h2, h3, h4              { margin-left: -0.024em; }
 }
 
 /* =====================================================================
-   Subscribe · one component, two placements
-   It sits in the page and never over it. No modal, no overlay, no sticky
-   bar, no exit intent — the build spec's first hard rule, and the reason
-   /atlas can keep promising no gate and no lead magnet.
+   Subscribe · Substack's own form in a frame
+   One step instead of two. It sits in the page and never over it — no
+   modal, no overlay, no sticky bar, no exit intent — and it gates
+   nothing, which is what lets /atlas keep promising no gate and no lead
+   magnet. The frame is Substack's document, so it keeps its own white
+   ground: presented as a card on the cream rather than pretending to be
+   part of the page, because a near-match is worse than an inset.
+   ===================================================================== */
+/* Centred, because the card inside the frame centres its own contents.
+   Left-aligned in a 1180px column it read as a box that had drifted. */
+.subemb{margin:var(--s5) 0;display:flex;justify-content:center}
+.subemb__f{
+  width:100%;max-width:560px;height:460px;
+  border:1px solid var(--rule);border-radius:4px;background:#fff;
+  display:block;color-scheme:light
+}
+
+/* =====================================================================
+   Subscribe (retired) · the two-step handoff form
+   Kept only because .sub__link in the article byline still uses the
+   namespace. The form itself was replaced by .subemb above.
    ===================================================================== */
 .sub{
   margin:var(--s5) 0;padding:var(--s4);border:1px solid var(--rule);border-radius:4px;

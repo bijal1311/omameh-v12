@@ -10,16 +10,20 @@
  * read as a lead-gen page on the one route that promises no gate and no
  * lead magnet.
  *
- * So the markup arrives in two halves with the form between them, inside
- * a single <main>. Everything else is RouteShell's behaviour, including
+ * So the markup arrives in halves with the form between them, inside a
+ * single <main>. Everything else is RouteShell's behaviour, including
  * rewriteHrefs and wireInteractions.
  *
- * BOTH HALVES MUST BE WELL-FORMED. They are two separate innerHTML
- * writes, so each opens and closes its own .atlas2 wrapper. A half with
- * an unclosed div is repaired by the browser differently from the server,
- * React throws away the server HTML and re-renders the whole page, and
- * the hydration failure ships silently because the page still looks right
+ * EVERY HALF MUST BE WELL-FORMED. They are separate innerHTML writes, so
+ * each opens and closes its own .atlas2 wrapper. A half with an unclosed
+ * div is repaired by the browser differently from the server, React
+ * throws away the server HTML and re-renders the whole page, and the
+ * hydration failure ships silently because the page still looks right
  * afterwards. That happened here once.
+ *
+ * `rest` is optional. The page ends on the subscribe box today, and
+ * passing undefined into dangerouslySetInnerHTML renders the string
+ * "undefined" — so it is skipped rather than defaulted.
  */
 
 import { useEffect, useRef } from 'react';
@@ -44,7 +48,7 @@ export default function AtlasBody({ id, label, top, rest }) {
           <SubscribeEmbed />
         </div>
       </div>
-      <div dangerouslySetInnerHTML={{ __html: rest }} />
+      {rest ? <div dangerouslySetInnerHTML={{ __html: rest }} /> : null}
     </main>
   );
 }

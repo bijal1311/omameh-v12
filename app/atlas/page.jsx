@@ -31,11 +31,19 @@ import AtlasBody from './AtlasBody';
  * it already appears on the site — it is the trademarked line, and §2 of
  * the brief reverses an earlier instruction to strip it.
  *
- * Vol. I / Issue 01 in the eyebrow stays. §3 of the brief lists it for
- * deletion and §2 says explicitly to leave it alone until it is dealt
- * with on all ten pages at once; §7's verification list does not ask for
- * it. Two of the three agree, and a volume number on this page only is
- * worse than a volume number on all of them.
+ * The eyebrow and the next-page card are gone, and that reverses what
+ * this comment said yesterday. §2 of the brief says Vol. I / Issue 01 is
+ * on all ten pages and should be left until they are all done together,
+ * so it was kept here. Measured against the live site rather than the
+ * brief, that is only half true: the global strip carries "Vol. I" on
+ * every page, but "06 / 08 · ATLAS · VOL. I · ISSUE 01" and
+ * "NEXT · 07 · CONTACT" appear on this route and nowhere else. They were
+ * not a site pattern, they were leftovers from the retired design. The
+ * global strip is untouched, so §2 still holds.
+ *
+ * It also read badly: an eyebrow saying ATLAS above a masthead saying
+ * The Unlearning gives the same page two names, and a card inviting you
+ * to an inbox sat directly under a box asking for your email.
  *
  * The subscribe form stays. It is not a gate and it is now the only place
  * on the site where a reader can start following the writing. Its heading
@@ -106,7 +114,6 @@ const HEAD = String.raw`
 <div class="atlas2">
 
 <header style="max-width:1180px;margin:0 auto;padding:clamp(48px,7vw,96px) clamp(20px,4vw,56px) clamp(32px,5vw,56px);display:flex;flex-direction:column;gap:30px">
-  <div style="display:flex;align-items:center;gap:14px;font:500 11px/1 ${MONO};letter-spacing:.28em;color:#00807a"><span style="color:rgba(26,26,24,.4)">06 / 08</span><span style="width:28px;height:1px;background:rgba(26,26,24,.25)"></span><span>ATLAS · VOL. I · ISSUE 01</span></div>
   <h1 style="margin:0;font:500 clamp(44px,8vw,88px)/1.02 ${DISPLAY};letter-spacing:-.025em">The <span style="font-style:italic;font-weight:500;color:#8a6d22">Unlearning</span></h1>
   <p style="margin:0;max-width:620px;font:400 clamp(19px,2.2vw,23px)/1.55 ${BODY};color:rgba(26,26,24,.8);text-wrap:pretty">For anyone who has outgrown the version of themselves that got them here.</p>
   <p style="margin:0;max-width:520px;font:400 16px/1.6 ${BODY};color:rgba(26,26,24,.6);text-wrap:pretty">No gate, no email address, no lead magnet. If it is useful it should be readable.</p>
@@ -118,18 +125,6 @@ ${list}
 
 </div>`;
 
-const TAIL = String.raw`
-<div class="atlas2">
-
-<div style="max-width:1180px;margin:0 auto;padding:clamp(40px,6vw,72px) clamp(20px,4vw,56px) clamp(48px,7vw,88px)">
-  <a href="/contact" style="display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;padding:clamp(26px,3.5vw,40px);border-radius:16px;background:linear-gradient(90deg,rgba(0,181,173,.14),rgba(201,168,76,.08));border:1px solid rgba(0,181,173,.3);color:#1a1a18">
-    <span style="display:flex;flex-direction:column;gap:10px"><span style="font:500 11px/1 ${MONO};letter-spacing:.28em;color:#00807a">CONTINUE</span><span style="font:500 clamp(26px,3vw,34px)/1.15 ${DISPLAY};">One inbox, and it <span style="font-style:italic;color:#8a6d22">reaches me.</span></span></span>
-    <span style="font:500 12px/1 ${MONO};letter-spacing:.22em;color:rgba(26,26,24,.8)">NEXT · 07 · CONTACT &rarr;</span>
-  </a>
-</div>
-
-</div>`;
-
 export default function AtlasPage() {
-  return <AtlasBody id="atlas" label="06 · Atlas" top={HEAD} rest={TAIL} />;
+  return <AtlasBody id="atlas" label="06 · Atlas" top={HEAD} />;
 }

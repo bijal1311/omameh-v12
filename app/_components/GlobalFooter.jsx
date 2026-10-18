@@ -19,7 +19,20 @@
  * content source. Every one carries an aria-label; the five that are
  * not live yet point at "#" per 01_CODE_BRIEF.md §6.
  *
- * The माँ Foundation block ships WITH its disclaimer, on every page.
+ * CHANGED 18 OCTOBER — handover §3, five fixes, all of them on every
+ * page of the site because this file is:
+ *
+ *   1 · "our engineering company" → "our engineering partner". The old
+ *       wording claimed ownership of a company Omameh holds a minority
+ *       stake in.
+ *   2 · The Substack link goes to atlas.omameh.com.au. The custom domain
+ *       is paid for and live; the old address only forwards.
+ *   3 · The two article links are gone. Both 301 out now, and a footer
+ *       should never point at a redirect.
+ *   4 · Products relabelled Platforms — the URL stays /products, which is
+ *       indexed and is what people search. Founder comes out; it folds
+ *       into /about#founder. Rooms is added when /rooms exists.
+ *   5 · The माँ Foundation disclaimer is removed. One line only.
  */
 
 import CookieSettingsLink from './CookieSettingsLink';
@@ -32,7 +45,7 @@ const SOCIALS = [
   },
   {
     label: 'Substack',
-    href: 'https://bijalsejpal.substack.com',
+    href: 'https://atlas.omameh.com.au',
     path: 'M3 3h18v3H3V3zm0 5.5h18V21l-9-4.6L3 21V8.5z',
   },
   {
@@ -101,7 +114,7 @@ export default function GlobalFooter() {
               >
                 Syntegreti
               </a>
-              , our engineering company · AWS and Microsoft Azure partners
+              , our engineering partner · AWS and Microsoft Azure partners
             </p>
 
             <div className="soc">
@@ -124,29 +137,24 @@ export default function GlobalFooter() {
           <div className="fcol">
             <b>Practice</b>
             <a href="/advisory">Advisory</a>
-            <a href="/products">Products</a>
+            <a href="/products">Platforms</a>
             <a href="/fluency">Fluency</a>
           </div>
 
           <div className="fcol">
             {/*
-              Field Notes and Executive Briefs both pointed at /atlas. One is
-              retired and the other does not exist yet, so the column listed
-              three names and had two destinations. It lists what can be read
-              now — which also gives the new piece an internal link from
-              every page on the site.
+              The two article links are gone. Both now 301 out to Substack,
+              and a footer on every page of the site should never point at
+              a redirect — handover §3.
             */}
             <b>Read</b>
             <a href="/atlas">Atlas</a>
-            <a href="/atlas/carrying-enough">Carrying enough</a>
-            <a href="/atlas/case-00">You do not get a blank month</a>
             <a href="/media">Media kit</a>
           </div>
 
           <div className="fcol">
             <b>Company</b>
             <a href="/about">About</a>
-            <a href="/founder">Founder</a>
             <a href="/contact">Contact</a>
             <a href="/privacy">Privacy</a>
             {/* Withdrawing consent has to be as easy as giving it, so the
@@ -156,9 +164,13 @@ export default function GlobalFooter() {
           </div>
         </div>
 
+        {/*
+          One line. The "not a registered charity, no funds are solicited
+          or held" disclaimer was removed deliberately on 18 October —
+          handover §3. Do not restore it.
+        */}
         <div className="foundation">
           <b>माँ [ mā ] Foundation</b> — A standing share of the practice — time, capacity, capability — directed toward helping and education.
-          <i>A commitment of our own time and capability, not a registered charity. No funds are solicited or held.</i>
         </div>
 
         <div className="fbase">

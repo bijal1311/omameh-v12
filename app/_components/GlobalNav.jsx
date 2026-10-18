@@ -1,93 +1,69 @@
 'use client';
 
 /**
- * GlobalNav · V16.
+ * GlobalNav.
  *
- * Ported from 02_CONTENT_SOURCE.html — the .vol bar and <nav> block,
- * verbatim. Hrefs converted from the single-document's #anchors to real
- * routes. Seven items, this order, per 01_CODE_BRIEF.md §4.
+ * Seven items. The wordmark is the way home, so Home is not one of them
+ * — "WEBSITE — THE HANDOVER, 18 October" §2.
  *
- * Founder, Case 00, Media kit and Privacy are footer-only. Deliberate.
- * Do not add them here.
+ * PLATFORMS IS LABELLED PLATFORMS AND LIVES AT /products. The label and
+ * the URL differ on purpose: /products is indexed and it is what people
+ * search. Do not "fix" this.
+ *
+ * Rooms is the seventh item and is added when /rooms exists. A nav link
+ * to a 404 is worse than a nav that is briefly one item short.
+ *
+ * Founder, Media kit and Privacy are not here. Founder folds into
+ * /about#founder and the media kit folds into /rooms.
  *
  * Client component because aria-current has to follow the route.
  * app/layout.jsx stays a server component — repo rule §2.2.
  *
- * The reading-chain position device (mono NN / 08 plus an eight-tick
- * rail) is the one addition from 04_DESIGN_NOTES.md §4. It answers
- * "where am I in this argument" without implying a funnel.
+ * WHAT CAME OFF, 18 OCTOBER
+ *
+ * The Vol. I / Issue 01 strip, and the NN / 08 reading-chain device with
+ * its eight-tick rail. Both were V11 conceits. The numbering looks
+ * considered until one of them is wrong, and then every page added to
+ * the site is a renumbering job — which is what happened the moment
+ * /rooms was planned. §9 of the handover requires both strings to return
+ * empty across the whole site, and they were in here, so they were on
+ * all eleven pages.
  */
 
 import { usePathname } from 'next/navigation';
 
 const LINKS = [
-  ['Home', '/'],
   ['Advisory', '/advisory'],
-  ['Products', '/products'],
+  ['Platforms', '/products'],
   ['Fluency', '/fluency'],
-  ['About', '/about'],
   ['Atlas', '/atlas'],
+  ['About', '/about'],
   ['Contact', '/contact'],
 ];
 
-// The eight-step reading chain. Follow sits outside the nav but inside
-// the chain — it is step 08.
-const CHAIN = ['/', '/advisory', '/products', '/fluency', '/about', '/atlas', '/contact', '/follow'];
-
-/*
- * There used to be a second wordmark here, in Cormorant, for the Editorial
- * routes. The two registers collapsed into one when The Unlearning got its
- * identity, so the switch changed nothing but a font weight and has gone.
- * One wordmark, every page.
- */
-
 export default function GlobalNav() {
   const pathname = usePathname() || '/';
-  const step = CHAIN.indexOf(pathname);
-  const position = step >= 0 ? step + 1 : null;
 
   return (
-    <>
-      <div className="vol">
-        <div className="w">
-          <span>Omameh Group</span>
-          <span><b>Vol. I</b> · Issue 01</span>
-        </div>
+    <nav>
+      <div className="w">
+        <a className="wordmark" href="/">
+          Omameh
+        </a>
+
+        <ul>
+          {LINKS.map(([label, href]) => {
+            const current = pathname.startsWith(href);
+            return (
+              <li key={href}>
+                <a href={href} {...(current ? { 'aria-current': 'page' } : {})}>
+                  {label}
+                </a>
+              </li>
+            );
+          })}
+        </ul>
       </div>
-
-      <nav>
-        <div className="w">
-          <a className="wordmark" href="/">
-            Omameh
-          </a>
-
-          <ul>
-            {LINKS.map(([label, href]) => {
-              const current = href === '/' ? pathname === '/' : pathname.startsWith(href);
-              return (
-                <li key={href}>
-                  <a href={href} {...(current ? { 'aria-current': 'page' } : {})}>
-                    {label}
-                  </a>
-                </li>
-              );
-            })}
-          </ul>
-
-          {position && (
-            <div className="chain" aria-hidden="true">
-              <span className="chain__n">
-                {String(position).padStart(2, '0')} / 08
-              </span>
-              <span className="chain__rail">
-                {CHAIN.map((_, i) => (
-                  <i key={i} className={i === step ? 'is-here' : undefined} />
-                ))}
-              </span>
-            </div>
-          )}
-        </div>
-      </nav>
-    </>
+    </nav>
   );
 }

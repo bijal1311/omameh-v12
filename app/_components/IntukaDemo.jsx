@@ -53,7 +53,30 @@ const PRODUCTS = {
     sub: 'Tell us a little about your business and we’ll set up a walkthrough on your real operation.',
     placeholder: 'What does your business run on today?',
     done: 'We’ll be in touch shortly to set up your Intuka demo.',
+    privacy: 'arrange your demo',
     site: { href: 'https://www.intuka.com', label: 'intuka.com' },
+  },
+  /* Services. Same form, same endpoint — the category is what separates
+     an Advisory enquiry from a product demo in the CRM. */
+  'Advisory — Pressure-test': {
+    eyebrow: 'Advisory',
+    logo: null,
+    title: 'Start a Pressure-test',
+    sub: 'Tell us roughly where the organisation is and what the strategy assumes. We will come back with the shape and the sequence.',
+    placeholder: 'What is the gap you already suspect is there?',
+    done: 'We’ll be in touch shortly about a Pressure-test.',
+    privacy: 'arrange a Pressure-test',
+    site: { href: '/advisory', label: 'the Advisory page' },
+  },
+  'Advisory — Standing counsel': {
+    eyebrow: 'Advisory',
+    logo: null,
+    title: 'Explore standing counsel',
+    sub: 'A retained room for the leader inside the transition. Tell us what is in front of you.',
+    placeholder: 'What is the decision you cannot make out loud yet?',
+    done: 'We’ll be in touch shortly about standing counsel.',
+    privacy: 'arrange that conversation',
+    site: { href: '/advisory', label: 'the Advisory page' },
   },
   GovernVeil: {
     eyebrow: 'GovernVeil',
@@ -65,6 +88,7 @@ const PRODUCTS = {
     sub: 'Tell us where AI is already touching data you cannot let leave, and we’ll scope a pilot in your own environment.',
     placeholder: 'Which models or tools are your teams already using?',
     done: 'We’ll be in touch shortly about a GovernVeil design-partner pilot.',
+    privacy: 'arrange your pilot',
     site: { href: 'https://governveil.com', label: 'governveil.com' },
   },
 };
@@ -271,7 +295,9 @@ export default function IntukaDemo() {
                   )}
                 </button>
               </div>
-              <p className={styles.privacy}>We&rsquo;ll only use these details to arrange your demo.</p>
+              {/* "your demo" is wrong on a service enquiry — this form now
+                  carries Advisory and standing counsel too. */}
+              <p className={styles.privacy}>We&rsquo;ll only use these details to {p.privacy}.</p>
             </form>
           </>
         )}

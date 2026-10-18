@@ -62,6 +62,25 @@ import IntukaDemo from '../_components/IntukaDemo';
  * sets the name in type and ships only a generic square favicon, and
  * blowing a favicon up next to the real Intuka wordmark would look like
  * a mistake. When the HoldCo brand lands, this is where the asset goes.
+ *
+ * THE TWO IMAGES ARE REAL AND NEITHER HAS A CUSTOMER IN IT.
+ *
+ * None of the three product sites carries a single image file — Intuka,
+ * GovernVeil and Evaluetor are all type, SVG and CSS — so there was
+ * nothing to download and both of these are captures.
+ *
+ * GovernVeil: the hero's own redaction panel, at 2x.
+ *
+ * Intuka: the digital workforce panel from Bijal's live instance. The
+ * rest of that instance was not used and should not be — the sales view
+ * already carries a named lead, and every module fills up with real
+ * people as the business runs on it. This panel holds no records at
+ * all, and "Nothing sends without you" is Human-Led. AI-Operated. in
+ * the product's own words.
+ *
+ * Seeded demo numbers were offered and declined. An invented dashboard
+ * sitting beside "Omameh runs on Intuka" would be a fabricated claim
+ * about her own operation, and the wireframe says no mockups.
  */
 
 export const metadata = pageMeta({
@@ -126,8 +145,13 @@ const __MARKUP = String.raw`
       <h3 style="margin:0;display:flex;align-items:center"><img src="/brand/intuka-wordmark.svg" alt="Intuka" style="height:30px;width:auto;display:block"></h3>
       <span class="chip live">Ours</span>
     </div>
-    <p class="lede">Connected business operations — CRM, finance, HR, projects — on one data platform with AI in each of them. Configured against how your organisation actually works, rather than the organisation adapting to the software.</p>
-    <p style="font-size:14.5px;color:var(--ink-soft);line-height:1.55;margin:0"><b style="color:var(--ink)">Omameh runs on Intuka.</b> The demo is our live instance, not a sandbox.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:clamp(20px,3vw,36px);align-items:center">
+      <div style="display:flex;flex-direction:column;gap:var(--s2);min-width:0">
+        <p class="lede">Connected business operations — CRM, finance, HR, projects — on one data platform with AI in each of them. Configured against how your organisation actually works, rather than the organisation adapting to the software.</p>
+        <p style="font-size:14.5px;color:var(--ink-soft);line-height:1.55;margin:0"><b style="color:var(--ink)">Omameh runs on Intuka.</b> The demo is our live instance, not a sandbox.</p>
+      </div>
+      <img src="/platforms/intuka-digital-workforce.png" alt="The digital workforce panel in Intuka: a sales, a finance and a projects assistant, each drafting work for approval, under the line Nothing sends without you." width="392" height="514" loading="lazy" decoding="async" style="width:100%;max-width:340px;height:auto;display:block;justify-self:center;border:1px solid var(--rule);border-radius:3px">
+    </div>
     <div class="foot" style="margin-top:var(--s2);padding-top:var(--s2);border-top:1px solid var(--rule);font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)">Pillar 01 · Operating Model</div>
     <div class="cta" style="margin-top:0"><a class="btn" data-intuka-demo href="${MAILTO('Demo request - Intuka')}">Book a demo</a><a class="btn ghost" href="https://www.intuka.com" target="_blank" rel="noopener">Learn more about Intuka →</a></div>
   </div>

@@ -37,14 +37,24 @@ import IntukaDemo from '../_components/IntukaDemo';
  * as marks — Stripe and SAP both restrict third-party use, and on a
  * typographic page the set names look better anyway.
  *
- * STILL TO COME, both logged in PENDING — who has to do what.md:
- *   · The wide stage shot from 17 September. Supplied to the wireframe
- *     author, never into the repo, so it cannot be placed yet. Do not
- *     centre-crop it when it lands — it is roughly 3:2 and the legible
- *     screen is the top third, which is the whole credential.
- *   · The LinkedIn embeds. Rendered as links to the hosts' own posts
- *     for now, which is honest and does not risk a broken iframe.
- *     Co-work is helping with the embeds.
+ * THE PHOTOGRAPH, placed 18 October, full width and uncropped. It is
+ * exactly 3:2 (1800 x 1200, re-encoded from a 2048 x 1365 original) so
+ * it needs no crop — and must never get one. The event screen is the
+ * top third and it carries the whole credential: the panel title, the
+ * date, the venue, and Lee Hickin and Dr Tom Gao named. A square crop
+ * destroys it. Caption below, never over, because two corners already
+ * carry burned-in branding. The alt text carries the facts, because
+ * the evidence here is visual and a screen reader gets none of it.
+ *
+ * No host logo beside this item — the event branding is already inside
+ * the photograph, and the mark twice is the mark twice.
+ *
+ * The two ALT-not-for-page-* frames are not used: in one she is turned
+ * away with nothing identifying the panel, and the other is a good
+ * photograph of a panellist that barely has her in it.
+ *
+ * "For Stripe" is now ON the monetisation roundtable — confirmed by
+ * Bijal on 18 October. It was held back while it was a guess.
  */
 
 export const metadata = pageMeta({
@@ -79,7 +89,29 @@ const SIX_D = [
 
 const POST = (slug) => `https://www.linkedin.com/posts/${slug}`;
 
-const room = ({ meta, role, title, body, people, link, linkLabel }) => String.raw`
+/**
+ * One item. The text, the attribution and the outbound link are ALWAYS
+ * rendered — that is the link card, and it is what a reader sees if
+ * linkedin.com is blocked, which some corporate networks do. The iframe
+ * is only ever an enhancement: lazy, and with no border, so a blocked
+ * one is whitespace rather than an empty frame.
+ *
+ * Only four of the six posts embed. Tested signed out on 18 October,
+ * which is the only test that counts — an embed that renders for Bijal
+ * and not for a visitor fails invisibly:
+ *
+ *   activity:7303005232110739456  TechWomen IBM         200, renders
+ *   ugcPost:7483382872242872321   Ortus · SaaS          200, renders
+ *   ugcPost:7473220419118845953   Ortus · Monetisation  200, renders
+ *   share:7178639395707658240     MercerMarsh           200, renders
+ *   activity:7198925334858121216  Morgan McKinley       404
+ *   share:7495331001980682240     W.Media               404
+ *
+ * The URN type does not predict it: an activity 404s and both ugcPosts
+ * work. It is per post, and only testing tells you. Re-test before
+ * adding one — LinkedIn can withdraw an embed at any time.
+ */
+const room = ({ meta, role, title, body, people, link, linkLabel, embed }) => String.raw`
     <div style="padding:clamp(26px,3.2vw,38px) 0;border-top:1px solid var(--rule);display:flex;flex-direction:column;gap:14px">
       <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:baseline;justify-content:space-between">
         <span style="font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft)">${meta}</span>
@@ -89,6 +121,7 @@ const room = ({ meta, role, title, body, people, link, linkLabel }) => String.ra
       ${body ? `<p style="margin:0;font-size:15.5px;line-height:1.6;color:var(--ink-soft)">${body}</p>` : ''}
       ${people ? `<ul style="margin:6px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:7px">${people.map((p) => `<li style="font-size:14.5px;line-height:1.5;color:var(--ink-soft)">${p}</li>`).join('')}</ul>` : ''}
       ${link ? `<a class="link" href="${link}" target="_blank" rel="noopener">${linkLabel} &rarr;</a>` : ''}
+      ${embed ? `<iframe src="https://www.linkedin.com/embed/feed/update/${embed}" title="${linkLabel}" loading="lazy" frameborder="0" scrolling="no" style="width:100%;max-width:560px;height:420px;border:0;display:block;margin-top:4px"></iframe>` : ''}
     </div>`;
 
 const __MARKUP = String.raw`
@@ -104,6 +137,13 @@ const __MARKUP = String.raw`
   <div style="border-bottom:1px solid var(--rule)">
 ${UPCOMING.map(([meta, role, title, body]) => room({ meta, role, title, body })).join('')}
   </div>
+</div></section>
+
+<section><div class="w">
+  <figure style="margin:0">
+    <img src="/rooms/cloud-datacenter-convention-17sep2026.jpg" alt="Bijal Sejpal moderating the Industry Deep-Dive Panel, AI &amp; Cloud Transformation Across Industries, at the Cloud and Datacenter Convention, ICC Sydney, 17 September 2026." width="1800" height="1200" loading="lazy" decoding="async" style="width:100%;height:auto;display:block;border-radius:3px">
+    <figcaption style="margin-top:14px;font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft)">Cloud &amp; Datacenter Convention · ICC Sydney · 17 September 2026</figcaption>
+  </figure>
 </div></section>
 
 <section><div class="w">
@@ -128,14 +168,16 @@ ${room({
   body: 'Token-based pricing, and why speed of experimentation has become the real competitive advantage.',
   link: POST('theortusclub-knowledgesharing-saasevolution-ugcPost-7483382872242872321-3gL0/'),
   linkLabel: 'The Ortus Club&rsquo;s write-up',
+  embed: 'urn:li:ugcPost:7483382872242872321',
 })}
 ${room({
   meta: 'The Ortus Club · 2026 · The Meat &amp; Wine Co, Sydney',
   role: 'Moderator',
   title: 'AI &amp; Monetisation: Pricing, Billing and Growth',
-  body: 'The agentic paradigm is already here, and most revenue infrastructure was not built for it.',
+  body: 'The agentic paradigm is already here, and most revenue infrastructure was not built for it. For Stripe.',
   link: POST('theortusclub-knowledgesharing-aimonetisation-ugcPost-7473220419118845953-WPZg/'),
   linkLabel: 'The Ortus Club&rsquo;s write-up',
+  embed: 'urn:li:ugcPost:7473220419118845953',
 })}
   </div>
 </div></section>
@@ -157,12 +199,15 @@ ${room({
   body: 'International Women&rsquo;s Day week. Sydney, then Melbourne the following day at capacity.',
   link: POST('ibm_techwomen-activity-7303005232110739456-0000/'),
   linkLabel: 'The host&rsquo;s own post',
+  embed: 'urn:li:activity:7303005232110739456',
 })}
 ${room({
   meta: 'MercerMarsh Benefits · early 2024 · Workers Compensation Colleague Conference',
   role: 'Presented',
   title: 'Trends and advancements in AI and generative AI',
   body: 'With colleagues from QBE, to a room of brokers and clients — in early 2024.',
+  embed: 'urn:li:share:7178639395707658240',
+  linkLabel: 'The post',
 })}
   </div>
 </div></section>

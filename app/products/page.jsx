@@ -3,163 +3,200 @@ import RouteShell from '../_components/RouteShell';
 import IntukaDemo from '../_components/IntukaDemo';
 
 /**
- * 03 · Products · V16
+ * Platforms · /products
  *
- * Markup ported verbatim from 02_CONTENT_SOURCE.html. Content is locked —
- * not a word changes. The only edits are technical: the document's
- * #anchors become real routes, and the shared .vol bar, <nav> and
- * <footer> are lifted into GlobalNav and GlobalFooter.
+ * Rebuilt 18 October 2026 from WIREFRAME — platforms.html.
+ * Copy is final and is reproduced exactly. Do not improve it.
+ *
+ * THE LABEL IS PLATFORMS AND THE URL IS /products. Deliberate — the URL
+ * is indexed and it is what people search. Do not align them.
+ *
+ * WHAT CHANGED, AND WHY
+ *
+ * Eight platforms became two. Intuka and GovernVeil are the ones with
+ * their own companies, their own sites and their own customers. The rest
+ * are accelerators and they now sit at the bottom, where they stop
+ * competing with the two real platforms for attention.
+ *
+ * Channel is its own section, which is why /partners was never built. A
+ * buyer does not want the partnership model explained; they want to know
+ * what they can buy and whose it is. "Where the platform is not ours,
+ * the page says whose it is" is the independence position, and it was
+ * the only line on /partners doing real work.
+ *
+ * EVERY FINANCIAL METRIC IS GONE — $780k, $2–5M per facility, $72k per
+ * 1,000 users, 97% faster, 95% accuracy. They were live on this page
+ * until today. Working rule 5 and open item 2: they need written
+ * sign-off from Jay and Manish, and some are attributable to their
+ * clients. Bijal decided on 18 October to publish without them rather
+ * than wait. If sign-off lands they go back and this page gets
+ * materially stronger.
+ *
+ * Client-identifying detail is gone too and stays gone — "Texas",
+ * "200+ locations", "35+ carriers", "one of America's largest
+ * home-improvement platforms". Sector plus geography plus scale
+ * identifies a client without naming one.
+ *
+ * THE UNIFYAPPS CARD IS NOT RENDERED. §8 blocks the name, the logo and
+ * the description until the contract is signed and logo use is granted.
+ * The wireframe's placeholder text — "Reserved. Name, logo and
+ * description go in when the contract is signed" — is an instruction to
+ * the builder, not page copy; publishing it would disclose an unsigned
+ * negotiation. The markup is kept directly below the Evaluetor card,
+ * commented, so landing it really is a fifteen-minute change.
+ *
+ * The Intuka deep link is untouched: the Book a demo control keeps its
+ * data-intuka-demo attribute and <IntukaDemo /> still mounts, which is
+ * Karthik's lead capture. Do not change either.
  */
 
 export const metadata = pageMeta({
   title: 'We build the things we advise on.',
   description:
-    'Eight platforms built by our own team. Or something new, for the part nobody sells off the shelf.',
+    'Two platforms of our own. Partner software we take to market here. And accelerators built once and configured for you.',
   path: '/products',
 });
 
+const MAILTO = (subject) =>
+  `mailto:contact@omameh.com.au?subject=${encodeURIComponent(subject)}`;
+
+/** Accelerators — name and the one line that says what it is. */
+const ACCELERATORS = [
+  ['Document intelligence', 'Confidence-scored extraction with human review. Auditable, not black-box.'],
+  ['Regulatory reporting', 'Regulation as a knowledge graph, the graph as filing schemas.'],
+  ['Agent platform', 'Specialised agents under a supervisor, querying your systems in parallel and returning one synthesised answer.'],
+  ['AI-assisted delivery', 'Structured phases replacing ad-hoc prompting, every line traceable to the requirement that asked for it.'],
+  ['Datacenter thermal', 'Thermal forecasting on real operational data, with a digital twin for what-if.'],
+  ['Something that does not exist yet', 'Most of what an organisation needs sits between three systems nobody joined up. We build those.'],
+];
+
+const PROMISES = [
+  ['Never from a blank page', 'We start from something proven.'],
+  ['Deployed in your cloud', 'Under your controls, not ours.'],
+  ['Yours at the end', 'You own everything you build with us.'],
+];
+
+/** Patterns already running. No metrics, and nothing that identifies a client. */
+const PATTERNS = [
+  ['AI-assisted insurance sales', 'Carrier comparison, quoting workflow and the sales conversation in one place, across a retail network.'],
+  ['AI IT support assistant', 'Multi-agent orchestration resolving first-line tickets, with escalation that carries full context.'],
+  ['AI scheduling assistant', 'Voice, chat and SMS replacing manual field-service scheduling, weather-aware, with a full audit trail.'],
+  ['Licence and compliance backbone', 'Jurisdiction monitoring, AI document verification and pre-computed compliance status across a contractor network.'],
+];
+
+const cards = (rows) =>
+  rows
+    .map(
+      ([name, line]) => String.raw`
+    <div class="card">
+      <span class="k">${name}</span>
+      <p>${line}</p>
+    </div>`,
+    )
+    .join('');
+
 const __MARKUP = String.raw`
 <section class="hero"><div class="w">
-  <p class="eyebrow">Products</p>
+  <p class="eyebrow">Platforms</p>
   <h1>We build the things we <em>advise on.</em></h1>
-  <p class="lede">Eight platforms built by our own team. Or something new, for the part nobody sells off the shelf.</p>
+  <p class="lede">Two platforms of our own. Partner software we take to market here. And accelerators built once and configured for you.</p>
 </div></section>
 
 <section><div class="w">
-  <p class="eyebrow">Part one · The platforms</p>
-
-  <div class="feature lead">
-    <div class="top"><span class="eyebrow" style="margin:0">P01 · Evaluetor</span><span class="chip live">Live</span></div>
-    <h3>Contract Intelligence</h3>
-    <p class="lede">Nine agents read every supplier agreement you hold, score the risk and track every obligation inside it.</p>
-    <a class="link" href="mailto:contact@omameh.com.au?subject=Demo%20request%20-%20Evaluetor">Book a demo</a>
-  </div>
+  <p class="eyebrow">Ours</p>
+  <h2>Built by our own team.</h2>
+  <p class="lede">Each one is its own company, with its own site and its own customers.</p>
 
   <div class="feature lead">
     <div class="top">
-      <div><span class="eyebrow" style="margin:0">P02</span><h3 style="margin:2px 0 0;display:flex;align-items:center"><img src="/brand/intuka-wordmark.svg" alt="Intuka" style="height:30px;width:auto;display:block"/></h3></div>
-      <span class="phase">In trial</span>
+      <h3 style="margin:0;display:flex;align-items:center"><img src="/brand/intuka-wordmark.svg" alt="Intuka" style="height:30px;width:auto;display:block"></h3>
+      <span class="chip live">Ours</span>
     </div>
-    <h4 style="color:var(--ink-soft);font-family:var(--body);font-size:14px;font-weight:500;letter-spacing:.08em;text-transform:uppercase">Business Operations</h4>
-    <p class="lede">Seven things a business runs on, in one platform, with AI in every one of them.</p>
-    <div class="apply" style="margin-top:var(--s2)">
-      <span class="eyebrow" style="margin:0;color:#8A7228">Trial phase · fourteen days</span>
-      <h4>Fourteen days of early access, on your real operation.</h4>
-      <p style="font-size:14.5px;color:var(--ink-soft)">Not a sandbox and not a demo environment — your business, your data, for a fortnight. It costs nothing. What we ask for in return is your time and your honest read, including what you would change.</p>
-      <div class="cols" style="grid-template-columns:1fr">
-        <div class="seq" style="margin-top:0">
-          <div class="step"><span class="n">01 · Ask</span><span>Tell us what your business runs on today. Two minutes.</span></div>
-          <div class="step"><span class="n">02 · The read</span><span>We send you the operations diagnostic. Fifteen minutes, and the number is yours to keep either way.</span></div>
-          <div class="step"><span class="n">03 · Decide</span><span>If what it finds is worth fixing, we set you up. If your time is better spent elsewhere, we will tell you that too.</span></div>
-        </div>
+    <p class="lede">Connected business operations — CRM, finance, HR, projects — on one data platform with AI in each of them. Configured against how your organisation actually works, rather than the organisation adapting to the software.</p>
+    <p style="font-size:14.5px;color:var(--ink-soft);line-height:1.55;margin:0"><b style="color:var(--ink)">Omameh runs on Intuka.</b> The demo is our live instance, not a sandbox.</p>
+    <div class="foot" style="margin-top:var(--s2);padding-top:var(--s2);border-top:1px solid var(--rule);font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)">Pillar 01 · Operating Model</div>
+    <div class="cta" style="margin-top:0"><a class="btn" data-intuka-demo href="${MAILTO('Demo request - Intuka')}">Book a demo</a><a class="btn ghost" href="https://www.intuka.com" target="_blank" rel="noopener">Learn more about Intuka →</a></div>
+  </div>
+
+  <div class="feature">
+    <div class="top">
+      <h3 style="margin:0">GovernVeil</h3>
+      <span class="chip live">Ours</span>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:clamp(20px,3vw,36px);align-items:center">
+      <div style="display:flex;flex-direction:column;gap:var(--s2);min-width:0">
+        <p class="lede">A self-hosted control gateway that checks every AI request before it reaches an external model — enforcing your data rules and recording the decision for audit.</p>
+        <p style="font-size:14.5px;color:var(--ink-soft);line-height:1.55;margin:0"><b style="color:var(--ink)">Runs inside your own environment.</b> Nothing leaves your perimeter in order to be governed.</p>
       </div>
-      <div class="cta" style="margin-top:0"><a class="btn" data-intuka-demo href="mailto:contact@omameh.com.au?subject=Demo%20request%20-%20Intuka">Book a demo</a><a class="btn ghost" href="https://www.intuka.com" target="_blank" rel="noopener">Learn more about Intuka →</a></div>
+      <img src="/platforms/governveil-redaction@2x.png" alt="A request leaving an application with a customer PAN in it, the redacted version the model provider actually receives, and the audit line recording the verdict." width="942" height="534" loading="lazy" decoding="async" style="width:100%;height:auto;display:block;border:1px solid var(--rule);border-radius:3px">
     </div>
-  </div>
-
-  <div class="feature">
-    <div class="top"><h3 style="margin:0">Agent Platform</h3><span class="chip live">In production</span></div>
-    <p class="lede">Specialised agents coordinated by a supervisor, querying your systems in parallel and returning a synthesised answer in thirty seconds instead of fifteen minutes.</p>
-    <div class="figs">
-      <div class="fig"><b>97%</b><span>faster context gathering</span></div>
-      <div class="fig"><b>40–60%</b><span>ticket reduction</span></div>
-      <div class="fig"><b>$72k</b><span>saved per 1,000 users, annually</span></div>
-    </div>
-    <div class="tags"><span>Multi-agent orchestration</span><span>Enterprise RAG</span><span>Voice + chat</span><span>Smart escalation</span></div>
-    <a class="link" href="mailto:contact@omameh.com.au?subject=Demo%20request%20-%20Agent%20Platform">Book a demo</a>
-  </div>
-
-  <div class="feature">
-    <div class="top"><h3 style="margin:0">AI-Assisted SDLC</h3><span class="chip live">In production</span></div>
-    <p class="lede">Structured questionnaires replacing ad-hoc prompting across five roles. Context flows between phases automatically, and every line of code traces back to the requirement that asked for it.</p>
-    <div class="figs">
-      <div class="fig"><b>40%</b><span>less rework</span></div>
-      <div class="fig"><b>60%</b><span>faster onboarding</span></div>
-      <div class="fig"><b>$780k</b><span>saved annually, 50-developer team</span></div>
-    </div>
-    <div class="tags"><span>Five role-based phases</span><span>Context threading</span><span>Compliance audit trail</span><span>Model-agnostic</span></div>
-    <a class="link" href="mailto:contact@omameh.com.au?subject=Demo%20request%20-%20AI-Assisted%20SDLC">Book a demo</a>
-  </div>
-
-  <div class="feature">
-    <div class="top"><h3 style="margin:0">Datacenter Thermal</h3><span class="chip live">In production</span></div>
-    <p class="lede">Thermal intelligence built on real exascale operational data. Five forecasting algorithms predicting thermal state thirty to sixty minutes ahead, with a digital twin for what-if simulation.</p>
-    <div class="figs">
-      <div class="fig"><b>95%</b><span>prediction accuracy</span></div>
-      <div class="fig"><b>15%</b><span>lower cooling cost</span></div>
-      <div class="fig"><b>$2–5M</b><span>saved per facility, annually</span></div>
-    </div>
-    <div class="tags"><span>Ensemble ML</span><span>Digital twin</span><span>Heat recovery</span><span>Carbon and ESG</span></div>
-    <a class="link" href="mailto:contact@omameh.com.au?subject=Demo%20request%20-%20Datacenter%20Thermal">Book a demo</a>
-  </div>
-
-  <p class="eyebrow" style="margin-top:var(--s5)">Also in the estate</p>
-  <div class="grid three">
-    <div class="card"><h4>AI Governance</h4><p>Every AI call intercepted, policy enforced, logged.</p></div>
-    <div class="card"><h4>Regulatory Reporting</h4><p>Regulation as a knowledge graph, the graph as filing schemas.</p></div>
-    <div class="card"><h4>Document Intelligence</h4><p>Confidence-scored extraction with human review. Auditable, not black-box.</p></div>
-  </div>
-</div></section>
-
-<section class="warm"><div class="w">
-  <p class="eyebrow">Part two · Solutions</p>
-  <h2>When the thing you need does not <em>exist yet.</em></h2>
-  <p class="lede">Most of what an organisation actually needs is not something anyone sells. It sits between three systems nobody joined up, inside a process only two people understand. We build those.</p>
-  <div class="grid three">
-    <div class="card"><h4>Never from a blank page</h4><p>Eight platforms of foundations underneath, so we start from something proven rather than an empty repository.</p></div>
-    <div class="card"><h4>Deployed in your cloud</h4><p>Under your controls, not ours.</p></div>
-    <div class="card"><h4>Yours at the end</h4><p>You own everything you build with us.</p></div>
+    <div class="foot" style="margin-top:var(--s2);padding-top:var(--s2);border-top:1px solid var(--rule);font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)">Pillar 04 · AI Governance</div>
+    <div class="cta" style="margin-top:0"><a class="btn" href="${MAILTO('Product diagnostic - GovernVeil')}">Ask for the product diagnostic</a><a class="btn ghost" href="https://governveil.com" target="_blank" rel="noopener">Learn more about GovernVeil →</a></div>
   </div>
 </div></section>
 
 <section><div class="w">
-  <p class="eyebrow">Built and running</p>
-  <h2>Patterns, not <em>experiments.</em></h2>
-  <p class="lede">Four builds our team has running today. Each one is deployable at your organisation.</p>
-  <div class="grid two">
-    <div class="card">
-      <div class="top" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap"><span class="k">Insurance aggregator · Texas</span><span class="chip live">In production</span></div>
-      <h4>AI-assisted insurance sales</h4>
-      <p>Carrier comparison, quoting workflow and the sales conversation in one place — across a retail network shopping dozens of carriers per customer.</p>
-      <div class="figs" style="border-bottom:0;padding-bottom:0"><div class="fig"><b>200+</b><span>locations</span></div><div class="fig"><b>35+</b><span>carriers per customer</span></div></div>
+  <p class="eyebrow">Channel</p>
+  <h2>Partner software, taken to market here.</h2>
+  <p class="lede">Software we did not build, that we distribute across Asia-Pacific. Where the platform is not ours, the page says whose it is.</p>
+
+  <div class="feature">
+    <div class="top">
+      <h3 style="margin:0">Evaluetor</h3>
+      <span class="chip">Channel</span>
     </div>
-    <div class="card">
-      <div class="top" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap"><span class="k">Enterprise IT</span><span class="chip live">In production</span></div>
-      <h4>AI IT support assistant</h4>
-      <p>Multi-agent orchestration resolving first-line tickets on its own, across ServiceNow and Salesforce, with escalation carrying full context.</p>
-      <div class="figs" style="border-bottom:0;padding-bottom:0"><div class="fig"><b>60%</b><span>of L1 resolved automatically</span></div><div class="fig"><b>2 min</b><span>resolution time</span></div></div>
+    <p class="lede">Contract intelligence — monitors obligations, service levels, risks and renewals after a contract is signed, so value is not leaked during delivery.</p>
+    <div class="foot" style="margin-top:var(--s2);padding-top:var(--s2);border-top:1px solid var(--rule);font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)">Pillar 04 · AI Governance</div>
+    <div class="cta" style="margin-top:0"><a class="btn" href="${MAILTO('Demo request - Evaluetor')}">Book a demo</a></div>
+  </div>
+
+  <!--
+    UNIFYAPPS · blocked by §8 until the contract is signed and written
+    logo permission is granted. Drop the name, the logo and one line of
+    description into this card and it ships. Nothing else moves.
+
+    <div class="feature">
+      <div class="top"><h3 style="margin:0">UnifyApps</h3><span class="chip soon">Channel</span></div>
+      <p class="lede">[one line, once the contract is signed]</p>
+      <div class="foot">Pillar 01 · Operating Model</div>
+      <div class="cta"><a class="btn" href="…">Book a demo</a></div>
     </div>
-    <div class="card">
-      <div class="top" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap"><span class="k">Field services · US</span><span class="chip live">In production</span></div>
-      <h4>AI scheduling assistant</h4>
-      <p>Voice, web chat and SMS replacing manual field-service scheduling, with weather-aware automation and a full audit trail.</p>
-      <div class="tags" style="margin-top:auto;padding-top:var(--s2);border-top:1px solid var(--rule)"><span>Voice AI</span><span>Omni-channel</span><span>Weather-aware</span></div>
-    </div>
-    <div class="card">
-      <div class="top" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap"><span class="k">Home improvement · US</span><span class="chip next">In delivery</span></div>
-      <h4>Licence and contractor compliance</h4>
-      <p>The compliance backbone for one of America's largest home-improvement platforms — jurisdiction monitoring, AI document verification, pre-computed compliance status.</p>
-      <div class="tags" style="margin-top:auto;padding-top:var(--s2);border-top:1px solid var(--rule)"><span>Jurisdiction monitoring</span><span>Document AI</span><span>Milestone delivery</span></div>
-    </div>
+  -->
+
+  <p class="lede" style="margin-top:var(--s4)">We also take our own platforms the other way — our partners carry them into the US, UK and Europe.</p>
+</div></section>
+
+<section><div class="w">
+  <p class="eyebrow">Accelerators</p>
+  <h2>Built once. Configured for you.</h2>
+  <p class="lede">Working software in weeks, not a programme. Not bought off a shelf, and not started from a blank repository either — foundations our own team has shipped, shaped to your problem.</p>
+
+  <div class="grid three">${cards(ACCELERATORS)}
+  </div>
+
+  <div class="grid three" style="margin-top:1px">${cards(PROMISES)}
   </div>
 </div></section>
 
-<section class="deep"><div class="w">
-  <h2>Bring us the problem, not the <em>specification.</em></h2>
-  <p class="lede">We will tell you whether it needs a platform, a build, or neither.</p>
-  <div class="cta"><a class="btn" href="/contact">Request a demo</a><a class="btn ghost" href="/contact">Let's talk</a></div>
+<section><div class="w">
+  <p class="eyebrow">Patterns, not experiments</p>
+  <h2>Running now, and deployable at yours.</h2>
+
+  <div class="grid two">${cards(PATTERNS)}
+  </div>
 </div></section>
 
-<div class="next"><div class="w"><a href="/fluency">
-  <div><span class="k">Continue</span><span class="t">So the next decision does not need us in the room.</span></div>
-  <span class="r">Next · 04 · Fluency →</span>
-</a></div></div>
+<section><div class="w">
+  <h2>Bring us the problem, not the specification.</h2>
+  <p class="lede">We will tell you whether it needs a platform, an accelerator, a build — or none of them.</p>
+  <div class="cta"><a class="btn" href="/contact">Let's talk</a></div>
+</div></section>
 `;
 
-export default function ProductsPage() {
+export default function PlatformsPage() {
   return (
     <>
-      <RouteShell id="products" label="03 · Products" markup={__MARKUP} />
+      <RouteShell id="products" label="Platforms" markup={__MARKUP} />
       <IntukaDemo />
     </>
   );

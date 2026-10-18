@@ -37,7 +37,13 @@ import IntukaDemo from '../_components/IntukaDemo';
  * home-improvement platforms". Sector plus geography plus scale
  * identifies a client without naming one.
  *
- * THE UNIFYAPPS CARD IS NOT RENDERED. §8 blocks the name, the logo and
+ * THE BLOCKED CHANNEL CARD IS NOT IN THE MARKUP AT ALL. It was a
+ * commented-out block here, which still ships inside the HTML and is
+ * readable in view-source — that discloses the very thing §8 blocks.
+ * The card is three lines of the same shape as Evaluetor: a name, one
+ * line, a pillar foot and a CTA. Build it when the contract is signed.
+ *
+ * THE SECOND CHANNEL CARD IS NOT RENDERED. §8 blocks the name, the logo and
  * the description until the contract is signed and logo use is granted.
  * The wireframe's placeholder text — "Reserved. Name, logo and
  * description go in when the contract is signed" — is an instruction to
@@ -188,18 +194,6 @@ const __MARKUP = String.raw`
     <div class="cta" style="margin-top:0"><a class="btn" href="${MAILTO('Demo request - Evaluetor')}">Book a demo</a></div>
   </div>
 
-  <!--
-    UNIFYAPPS · blocked by §8 until the contract is signed and written
-    logo permission is granted. Drop the name, the logo and one line of
-    description into this card and it ships. Nothing else moves.
-
-    <div class="feature">
-      <div class="top"><h3 style="margin:0">UnifyApps</h3><span class="chip soon">Channel</span></div>
-      <p class="lede">[one line, once the contract is signed]</p>
-      <div class="foot">Pillar 01 · Operating Model</div>
-      <div class="cta"><a class="btn" href="…">Book a demo</a></div>
-    </div>
-  -->
 
   <p class="lede" style="margin-top:var(--s4)">We also take our own platforms the other way — our partners carry them into the US, UK and Europe.</p>
 </div></section>

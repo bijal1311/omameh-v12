@@ -931,6 +931,21 @@ h2, h3, h4              { margin-left: -0.024em; }
 
 
 /* =====================================================================
+   Homepage · the twelve triggers
+   Three columns on desktop, ONE LIST on mobile — handover §7. They are
+   never paginated and never hidden behind "show more": recognition is
+   how the section works, and a reader has to be able to scan all
+   twelve. columns rather than grid so they read down, not across.
+   ===================================================================== */
+.triggers{margin-top:var(--s4);column-gap:clamp(24px,4vw,56px)}
+.triggers p{
+  margin:0 0 14px;break-inside:avoid;
+  font-size:16px;line-height:1.55;color:var(--ink-soft);text-wrap:pretty
+}
+@media(min-width:720px){ .triggers{column-count:2} }
+@media(min-width:1040px){ .triggers{column-count:3} }
+
+/* =====================================================================
    /atlas · the redesign carries its own styling inline, so the only
    thing it needs from here is the browser default off. Links inside it
    were arriving underlined, including the pill button, which design's

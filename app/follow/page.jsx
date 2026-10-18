@@ -56,9 +56,9 @@ const __MARKUP = String.raw`
     </div>
 
     <p class="fk">Read</p>
-    <a class="fl" href="https://bijalsejpal.substack.com" target="_blank" rel="noopener">
+    <a class="fl" href="https://atlas.omameh.com.au" target="_blank" rel="noopener">
       <span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 3h18v3H3V3zm0 5.5h18V21l-9-4.6L3 21V8.5z"/></svg></span>
-      <span class="tx"><b>Subscribe on Substack</b><i>Four series · free, no gate</i></span>
+      <span class="tx"><b>The Unlearning</b><i>Ungated, and it stays that way</i></span>
       <span class="st live">Live</span><span class="ar">→</span>
     </a>
     <a class="fl" href="/atlas">
@@ -84,7 +84,7 @@ const __MARKUP = String.raw`
     <p class="fk">Come and sit in</p>
     <a class="fl" href="/fluency">
       <span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 5h18a1 1 0 011 1v12a1 1 0 01-1 1H3a1 1 0 01-1-1V6a1 1 0 011-1zm9 7.2L4.4 7H19.6L12 12.2zM4 8.9V17h16V8.9l-8 5.5-8-5.5z"/></svg></span>
-      <span class="tx"><b>Apply for a room</b><i>Online · ten seats · by application</i></span>
+      <span class="tx"><b>Talk to us about a programme</b><i>Corporate and team programmes</i></span>
       <span class="st live">Live</span><span class="ar">→</span>
     </a>
     <a class="fl" href="mailto:contact@omameh.com.au">
@@ -100,7 +100,7 @@ const __MARKUP = String.raw`
       </div>
       <div>
         <p class="fk" style="margin:0 0 8px">Take this with you</p>
-        <p class="fq">Point a camera at it and this page opens. It goes on cards, badges, decks and the last frame of every episode.</p>
+        <p class="fq">Point a camera at it and this page opens. It goes on cards, badges and decks.</p>
         <p class="fu">omameh.com.au/follow</p>
       </div>
     </div>

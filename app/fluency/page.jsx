@@ -1,139 +1,165 @@
 import { pageMeta } from '@/lib/seo/page-meta';
 import RouteShell from '../_components/RouteShell';
+import IntukaDemo from '../_components/IntukaDemo';
 
 /**
- * 04 · Fluency · V16
+ * AI-Era Fluency · /fluency
  *
- * Markup ported verbatim from 02_CONTENT_SOURCE.html. Content is locked —
- * not a word changes. The only edits are technical: the document's
- * #anchors become real routes, and the shared .vol bar, <nav> and
- * <footer> are lifted into GlobalNav and GlobalFooter.
+ * Rebuilt 18 October 2026 from WIREFRAME — fluency.html.
+ *
+ * THE PUBLIC SEAT MODEL IS GONE. No calendar, no ten seats, no
+ * applications, no pilots, no prices, no durations. Corporate and team
+ * programmes only, scoped and quoted. One action on the page and it is
+ * a conversation.
+ *
+ * Gone with it, and verified absent: The Independent Practice · AI
+ * Fluency · Leader-Led AI · Operating Model for the AI Era · The
+ * Academy · ten seats · by application · Join a cohort. Operating
+ * Model work now sits in Advisory, where it is an engagement rather
+ * than a course.
+ *
+ * NO DURATIONS ANYWHERE. "One day" and "two days" were per-seat
+ * artefacts; naming a length invites a per-day price comparison this
+ * offer does not want.
+ *
+ * GOVERNANCE LEADS, reordered 18 October. A board or CRO with an
+ * accountability gap is not shopping, they are solving — and it comes
+ * out of risk budget rather than discretionary L&D.
+ *
+ * CPS 230, CPS 234 AND FAR ARE NAMED, and were checked on 18 October
+ * before publishing: CPS 230 commenced 1 July 2025 with its transition
+ * ending 1 July 2026, CPS 234 has been in force since 2019 and is
+ * unamended, FAR is operational. Checked against secondary sources —
+ * APRA's own register is the authority, so re-check before this text
+ * is reused in anything regulator-facing.
+ *
+ * Mindset by Design is the METHOD, named inside programme 03, not a
+ * product in its own right.
+ *
+ * Both controls route to the CRM as "Fluency", not to a mailto.
+ *
+ * STILL OPEN: the image under the three programmes — a room with
+ * people working. It must be her own session, because the standing
+ * rule is that no stock photograph of people is ever presented as her
+ * room. Not placed.
+ *
+ * NOTE: this page contradicts CLAUDE.md §9, which still describes the
+ * Phase 1 per-seat offer with published prices. §9 is now out of date.
  */
 
 export const metadata = pageMeta({
   title: 'Unlearn. Relearn. Reinvent.',
   description:
-    'The decisions you actually have to make. Not a lecture, not a certificate, and nothing you could have read.',
+    'Three programmes, built for your organisation and run with your people. Your decisions as the material, not worked examples.',
   path: '/fluency',
 });
 
+const MAILTO = (subject) =>
+  `mailto:contact@omameh.com.au?subject=${encodeURIComponent(subject)}`;
+
+const PROGRAMMES = [
+  [
+    '01',
+    'AI Governance',
+    'How to implement AI safely, and prove it. Who is accountable, what evidence exists, and what the obligations already are — CPS 230, CPS 234 and FAR, and what a regulator will ask for before it asks.',
+    'An accountability map for your own organisation, and the ability to answer what your organisation asked an AI last quarter.',
+    'Boards, company secretaries, chief risk officers and the executives who carry an accountability obligation.',
+  ],
+  [
+    '02',
+    'AI Adoption and Enablement',
+    'The move from pilots into real operations — what has to change in the way the work happens, who needs to be able to do what, and how adoption is sequenced so it holds. Inside your control framework, not around it.',
+    'A sequenced adoption plan your people wrote, and the capability in-house to run it without us.',
+    'Functions and delivery teams going from trial to operations. The ones carrying it once the pilot is signed off.',
+  ],
+  [
+    '03',
+    'Leading in the AI Era',
+    'The instincts that got your leaders here were formed under a different set of conditions. This surfaces them, tests them, and redesigns one real decision loop while everyone who has to live with it is in the room. Delivered through <b style="color:var(--ink)">Mindset by Design</b>, our method.',
+    'Leaders who can name the assumption underneath a decision, and a decision loop that has been rebuilt rather than described.',
+    'Executive teams and senior leadership. The people whose judgement is the organisation’s operating system.',
+  ],
+];
+
+const RUNS = [
+  ['One organisation', 'Every programme runs closed. Everyone in the room works for you, so nobody is performing for a competitor.'],
+  ['Your material', 'We build it from your decisions, your constraints and your regulatory position — not from worked examples.'],
+  ['In person or online', 'At your place or across your region. Length and format follow what you are trying to change.'],
+];
+
+const NOTS = [
+  ['Not a certificate.', 'Proof is the difference between the score walking in and the score a year later.'],
+  ['Not e-learning.', 'Nothing is recorded. The value is the other people in the room.'],
+  ['Not delegable.', 'The shift has to land in the person making the decision.'],
+];
+
+const programme = ([n, name, body, outcome, who]) => String.raw`
+    <div style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(18px,3vw,38px);padding:clamp(26px,3.2vw,38px) 0;border-top:1px solid var(--rule)">
+      <span style="font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--gold)">${n}</span>
+      <div style="display:flex;flex-direction:column;gap:14px;min-width:0">
+        <h3 style="margin:0;font-size:clamp(21px,2.6vw,27px)">${name}</h3>
+        <p style="margin:0;font-size:15.5px;line-height:1.6;color:var(--ink-soft)">${body}</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:18px;margin-top:4px">
+          <div><span class="k" style="display:block;font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:7px">The outcome</span><p style="margin:0;font-size:14.5px;line-height:1.55;color:var(--ink-soft)">${outcome}</p></div>
+          <div><span class="k" style="display:block;font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:7px">Who it is for</span><p style="margin:0;font-size:14.5px;line-height:1.55;color:var(--ink-soft)">${who}</p></div>
+        </div>
+      </div>
+    </div>`;
+
+const card = ([k, body]) => String.raw`
+    <div class="card"><span class="k">${k}</span><p>${body}</p></div>`;
+
 const __MARKUP = String.raw`
 <section class="hero"><div class="w">
-  <p class="eyebrow">AI-Era Fluency</p>
+  <p class="eyebrow">AI-Era Fluency · Corporate and team programmes</p>
   <h1>Unlearn. Relearn. <em>Reinvent.</em></h1>
-  <p class="lede">The decisions you actually have to make. Not a lecture, not a certificate, and nothing you could have read.</p>
-  <div class="cta"><a class="btn" href="/contact">Register interest</a><a class="btn ghost" href="/contact">Run it for your team</a></div>
+  <p class="lede">Three programmes, built for your organisation and run with your people. Your decisions as the material, not worked examples.</p>
+  <div class="cta"><a class="btn" data-intuka-demo data-demo-product="Fluency" href="${MAILTO('AI-Era Fluency programme enquiry')}">Talk to us about a programme</a></div>
 </div></section>
 
-<section class="warm"><div class="w-narrow">
+<section><div class="w">
   <p class="eyebrow">Why this exists</p>
-  <h2>What this actually is. What it is <em>not.</em> And what to build.</h2>
-  <p class="lede">Three questions, and almost nobody answers all three in the same room. What the technology genuinely does today. Where it is going, and what that means for the work you do. And how to build an operating stack of your own rather than renting someone else's.</p>
-  <p class="lede" style="margin-top:var(--s3)">Tools change every six months. Those three do not — which is why what you leave with keeps its value.</p>
-  <p class="lede" style="margin-top:var(--s3)"><strong>Anyone can take a seat.</strong> The board director who has to sign something off. The founder building the thing. And the person who is simply curious and would rather be early than catch up later.</p>
+  <h2>Your people will keep making these decisions after we leave.</h2>
+  <p class="lede">The next tool, the next proposal, the next person selling you something. Fluency is where your people learn to tell a real capability from a good demo, and a solid answer from a plausible one — including ours.</p>
+  <p class="lede" style="margin-top:var(--s3)">Tools change every six months. What these programmes teach does not, which is why what your team leaves with keeps its value.</p>
 </div></section>
 
 <section><div class="w">
-  <p class="eyebrow">The calendar</p>
-  <h2>Every room runs as a <em>pilot first.</em></h2>
-  <p class="lede">All of them online, all of them ten seats, all of them by application. Each runs once as a pilot. The ones that work come back on a schedule.</p>
-  <div class="rows">
-    <div class="row"><span class="n">The Independent Practice</span><span class="s">Pilot starting soon · online · ten seats</span><a class="link" href="/contact" style="font-size:12.5px">Register interest</a></div>
-    <div class="row"><span class="n">AI Fluency</span><span class="s">Pilot starting soon · online · ten seats</span><a class="link" href="/contact" style="font-size:12.5px">Register interest</a></div>
-    <div class="row"><span class="n">Mindset by Design</span><span class="s">Pilot starting soon · online · ten seats</span><a class="link" href="/contact" style="font-size:12.5px">Register interest</a></div>
-    <div class="row"><span class="n">Leader-Led AI</span><span class="s">Pilot starting soon · online · ten seats</span><a class="link" href="/contact" style="font-size:12.5px">Register interest</a></div>
-    <div class="row"><span class="n">AI Governance</span><span class="s">Pilot starting soon · online · ten seats</span><a class="link" href="/contact" style="font-size:12.5px">Register interest</a></div>
-    <div class="row"><span class="n">Operating Model for the AI Era</span><span class="s">Pilot starting soon · online · ten seats</span><a class="link" href="/contact" style="font-size:12.5px">Register interest</a></div>
-    <div class="row later"><span class="n">The rooms, on a schedule</span><span class="s">Monthly or quarterly, and closed rooms on request</span><a class="link" href="/contact" style="font-size:12.5px">Join the list</a></div>
-    <div class="row later"><span class="n">The Roundtables</span><span class="s">One industry, one table · quarterly</span><a class="link" href="/contact" style="font-size:12.5px">Register interest</a></div>
-    <div class="row later"><span class="n">The Academy · a full week</span><span class="s">Every room, in sequence, as one programme</span><a class="link" href="/contact" style="font-size:12.5px">Register interest</a></div>
-  </div>
-  <div class="rule"></div>
-  <p class="lede"><strong>Every room is an application, not a checkout.</strong> Ten seats, and we read all of them. We pick for range — different industries, different problems — because half of what happens in the room comes from the other nine people. Everyone hears back either way.</p>
-</div></section>
+  <p class="eyebrow">The programmes</p>
+  <h2>Govern it. Adopt it. Lead it.</h2>
+  <p class="lede">Each one is shaped to your organisation before it runs. Format, length and depth follow what you are trying to change.</p>
 
-<section class="warm"><div class="w">
-  <p class="eyebrow">The rooms</p>
-  <h2>Ten people. Online. By <em>application.</em></h2>
-  <p class="lede">Every room runs online this year, so where you are is not a reason to miss one. Closed rooms for boards and executive teams run in person, at your place.</p>
-
-  <div class="feature lead" style="margin-top:var(--s4)">
-    <div class="top"><span class="eyebrow" style="margin:0">C01 · Three sessions · Online</span><span class="chip live">Pilot starting soon</span></div>
-    <h3>The Independent Practice</h3>
-    <p style="font-family:var(--mono);font-size:11.5px;color:var(--navy);padding:var(--s2) 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)">Three sessions, a week apart · online<br><span style="color:var(--ink-soft);font-size:10px">Dates set with the room · times that work for Sydney, Singapore, India and Dubai</span></p>
-    <p class="lede">Three Saturdays, a week apart. You map your own week, build one part of it to run without you, then report what broke. You leave with something working, not notes.</p>
-    <p class="who">For the consultant, fractional executive or second-act leader running a practice alone, doing four jobs when clients pay for one.</p>
-    <div class="apply">
-      <h4>Ten seats. We read every application.</h4>
-      <div class="cols">
-        <div><b>Apply if</b><ul><li>You run a practice on your own, or with one or two others</li><li>There is real revenue — this is not the year you are testing whether it works</li><li>You can name the thing that is eating your week</li><li>You will do the work between the sessions</li></ul></div>
-        <div><b>Do not apply if</b><ul><li>You want a general introduction to AI — that is a different room</li><li>You cannot make all three sessions</li><li>You would send someone in your place</li></ul></div>
-      </div>
-      <span class="note">We pick for range — different industries, different problems — so the room teaches itself as much as we do. Everyone hears back either way.</span>
-    </div>
-    <div class="cta" style="margin-top:0"><a class="btn" href="/contact">Register interest</a></div>
-  </div>
-
-  <div class="grid two">
-    <div class="card"><div class="top" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap"><span class="k">C02 · One day · Online</span><span class="chip date">Pilot starting soon</span></div><h4>AI Fluency</h4><p>What the tools are, what they cost, what they reliably get wrong — and how to tell a real capability from a good deck.</p><p class="who">For the leader making decisions about something nobody has explained properly.</p><a class="link" href="/contact">Register interest</a></div>
-    <div class="card"><div class="top" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap"><span class="k">C03 · One day · Online</span><span class="chip date">Pilot starting soon</span></div><h4>Leader-Led AI</h4><p>The four decisions you cannot delegate, written down, and a ninety-day plan you signed.</p><p class="who">For the executive whose team is already using these tools, and who wants the line drawn before it is needed rather than after.</p><a class="link" href="/contact">Register interest</a></div>
-    <div class="card"><div class="top" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap"><span class="k">C04 · One day · Online</span><span class="chip date">Pilot starting soon</span></div><h4>AI Governance</h4><p>An accountability map for your own organisation, and what a regulator will actually ask for.</p><p class="who">For the director who wants to be able to answer what their organisation asked an AI last quarter — before anyone asks it.</p><a class="link" href="/contact">Register interest</a></div>
-    <div class="card"><div class="top" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap"><span class="k">C05 · One day · Online</span><span class="chip date">Pilot starting soon</span></div><h4>Mindset by Design</h4><p>Your assumptions surfaced and tested, one real decision loop redesigned, and a peer holding you to it.</p><p class="who">For the leader whose instincts are excellent and were formed for a different set of conditions.</p><a class="link" href="/contact">Register interest</a></div>
-    <div class="card"><div class="top" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap"><span class="k">C06 · One day · Online</span><span class="chip date">Pilot starting soon</span></div><h4>Operating Model for the AI Era</h4><p>Your operating model mapped against the ambition it carries, and what to change first.</p><p class="who">For the executive ready to change how decisions get made, not only which tools support them.</p><a class="link" href="/contact">Register interest</a></div>
-    <div class="card later"><div class="top" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap"><span class="k">The Academy · A full week</span><span class="chip soon">Later</span></div><h4>Every room, in sequence.</h4><p>All six, run as one programme across a week — the whole arc rather than a single day. For the leader who would rather do it once, properly.</p><p class="who">Opens after the pilots have run and the rooms have earned it.</p><a class="link" href="/contact">Register interest</a></div>
+  <div style="margin-top:var(--s4);border-bottom:1px solid var(--rule)">${PROGRAMMES.map(programme).join('')}
   </div>
 </div></section>
 
 <section><div class="w">
-  <p class="eyebrow">Closed rooms</p>
-  <h2>Or bring your own <em>ten.</em></h2>
-  <p class="lede">Every room above runs closed, for one organisation. Same format — except everyone works for you, and the material is your decisions instead of worked examples.</p>
-  <div class="grid three">
-    <div class="card"><h4>Boards</h4><p>Governance, accountability and the questions to put to management.</p></div>
-    <div class="card"><h4>Executive teams</h4><p>One decision loop, everybody who has to live with the answer in the room.</p></div>
-    <div class="card"><h4>Function leadership</h4><p>The people running the work, with the workflows they actually run.</p></div>
+  <p class="eyebrow">How it runs</p>
+  <h2>Closed. Yours. Your decisions as the material.</h2>
+
+  <div class="grid three">${RUNS.map(card).join('')}
   </div>
-  <div class="cta"><a class="btn" href="/contact">Talk to us</a></div>
 </div></section>
 
-<section class="warm"><div class="w">
-  <p class="eyebrow">The Roundtables</p>
-  <h2>One industry. One table. The next <em>ten years.</em></h2>
-  <p class="lede">Ninety minutes and a dozen people who actually run something in the same industry, working on the question none of them can answer alone: where is this going, and what does it mean for the way we operate?</p>
-  <p class="lede" style="margin-top:var(--s3)">What is already working elsewhere in the world. What the regulator is going to want before it asks. What the model of this industry looks like in ten years, and which parts of today's version do not survive it.</p>
-
-  <div class="grid three" style="margin-top:var(--s4)">
-    <div class="card"><span class="k">Who is in it</span><p>People running the work, not people representing it. Ten or twelve, one industry, no two from the same organisation.</p></div>
-    <div class="card"><span class="k">How it runs</span><p>Chatham House. No slides, no panel, no vendors in the room. We convene it and chair it, and we write up what the table agreed and what it could not.</p></div>
-    <div class="card"><span class="k">What it costs</span><p>Nothing. <strong>And nothing is sold in the room — by anyone, including us.</strong> The moment it becomes a funnel it stops being worth attending.</p></div>
-  </div>
-
-  <div class="rule"></div>
-  <p class="eyebrow">The tables we are convening first</p>
-  <div class="tags" style="margin-top:var(--s2)">
-    <span>Insurance</span><span>Superannuation</span><span>Banking</span><span>Risk &amp; Regulation</span><span>Health &amp; Clinical</span><span>Government &amp; Public Sector</span><span>Hyperscalers</span><span>SaaS &amp; Software</span><span>Startups &amp; Scale-ups</span><span>Technology Operations</span>
-  </div>
-  <div class="cta"><a class="btn ghost" href="/contact">Register interest in a table</a></div>
-</div></section>
-
-<section class="dark"><div class="w">
+<section><div class="w">
   <p class="eyebrow">What it is not</p>
-  <div class="grid three">
-    <div class="card"><h4>Not a certificate.</h4><p>Proof is the difference between your score walking in and your score a year later.</p></div>
-    <div class="card"><h4>Not e-learning.</h4><p>Nothing is recorded. The value is the other nine people.</p></div>
-    <div class="card"><h4>Not delegable.</h4><p>The shift has to land in the person making the decision.</p></div>
+
+  <div class="grid three">${NOTS.map(card).join('')}
   </div>
-  <div class="rule"></div>
-  <h2>Ten seats. Then the room is <em>full.</em></h2>
-  <div class="cta"><a class="btn" href="/contact">Register interest</a><a class="btn ghost" href="/contact">Run it for your team</a></div>
 </div></section>
 
-<div class="next"><div class="w"><a href="/about">
-  <div><span class="k">Continue</span><span class="t">The people who design it are the people who build it.</span></div>
-  <span class="r">Next · 05 · About →</span>
-</a></div></div>
+<section><div class="w">
+  <h2>Tell us what you are trying to change.</h2>
+  <p class="lede">We will tell you which programme fits, what it would take, and whether you need one at all.</p>
+  <div class="cta"><a class="btn" data-intuka-demo data-demo-product="Fluency" href="${MAILTO('AI-Era Fluency enquiry')}">Start a conversation</a></div>
+</div></section>
 `;
 
 export default function FluencyPage() {
-  return <RouteShell id="fluency" label="04 · Fluency" markup={__MARKUP} />;
+  return (
+    <>
+      <RouteShell id="fluency" label="Fluency" markup={__MARKUP} />
+      <IntukaDemo />
+    </>
+  );
 }

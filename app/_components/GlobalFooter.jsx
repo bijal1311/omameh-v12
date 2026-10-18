@@ -139,6 +139,7 @@ export default function GlobalFooter() {
             <a href="/advisory">Advisory</a>
             <a href="/products">Platforms</a>
             <a href="/fluency">Fluency</a>
+            <a href="/rooms">Rooms</a>
           </div>
 
           <div className="fcol">
@@ -149,7 +150,7 @@ export default function GlobalFooter() {
             */}
             <b>Read</b>
             <a href="/atlas">Atlas</a>
-            <a href="/media">Media kit</a>
+            <a href="/rooms">Media kit</a>
           </div>
 
           <div className="fcol">

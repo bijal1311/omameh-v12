@@ -10,8 +10,7 @@
  * the URL differ on purpose: /products is indexed and it is what people
  * search. Do not "fix" this.
  *
- * Rooms is the seventh item and is added when /rooms exists. A nav link
- * to a 404 is worse than a nav that is briefly one item short.
+ * Rooms went in on 18 October, once /rooms existed.
  *
  * Founder, Media kit and Privacy are not here. Founder folds into
  * /about#founder and the media kit folds into /rooms.
@@ -36,6 +35,7 @@ const LINKS = [
   ['Advisory', '/advisory'],
   ['Platforms', '/products'],
   ['Fluency', '/fluency'],
+  ['Rooms', '/rooms'],
   ['Atlas', '/atlas'],
   ['About', '/about'],
   ['Contact', '/contact'],

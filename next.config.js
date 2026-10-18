@@ -44,6 +44,9 @@ const nextConfig = {
          name and is indexed, so it forwards to the section rather than
          404ing. 301 for the same reason as the article routes. */
       { source: '/founder', destination: '/about#founder', statusCode: 301 },
+      /* /media folded into /rooms on 18 October — the media kit is a card
+         on the page that makes someone want the assets. */
+      { source: '/media', destination: '/rooms', statusCode: 301 },
       { source: '/case-00', destination: BLANK_MONTH, statusCode: 301 },
       { source: '/atlas/case-00', destination: BLANK_MONTH, statusCode: 301 },
       { source: '/atlas/carrying-enough', destination: CARRYING_ENOUGH, statusCode: 301 },

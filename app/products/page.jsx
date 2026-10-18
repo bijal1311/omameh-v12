@@ -48,6 +48,20 @@ import IntukaDemo from '../_components/IntukaDemo';
  * The Intuka deep link is untouched: the Book a demo control keeps its
  * data-intuka-demo attribute and <IntukaDemo /> still mounts, which is
  * Karthik's lead capture. Do not change either.
+ *
+ * GOVERNVEIL GETS THE SAME TREATMENT, added 18 October. Its CTA carries
+ * data-demo-product="GovernVeil", which opens the same modal against the
+ * same Intuka WebForm and tags the lead by product. No second
+ * integration, no second key, and Karthik's control is unchanged.
+ *
+ * The CTA reads "Book a design-partner pilot" — the ask governveil.com
+ * itself makes — rather than the wireframe's "Ask for the product
+ * diagnostic". Bijal's call on 18 October.
+ *
+ * GovernVeil is set in type, not a logo. It has no wordmark: its site
+ * sets the name in type and ships only a generic square favicon, and
+ * blowing a favicon up next to the real Intuka wordmark would look like
+ * a mistake. When the HoldCo brand lands, this is where the asset goes.
  */
 
 export const metadata = pageMeta({
@@ -131,7 +145,7 @@ const __MARKUP = String.raw`
       <img src="/platforms/governveil-redaction@2x.png" alt="A request leaving an application with a customer PAN in it, the redacted version the model provider actually receives, and the audit line recording the verdict." width="942" height="534" loading="lazy" decoding="async" style="width:100%;height:auto;display:block;border:1px solid var(--rule);border-radius:3px">
     </div>
     <div class="foot" style="margin-top:var(--s2);padding-top:var(--s2);border-top:1px solid var(--rule);font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)">Pillar 04 · AI Governance</div>
-    <div class="cta" style="margin-top:0"><a class="btn" href="${MAILTO('Product diagnostic - GovernVeil')}">Ask for the product diagnostic</a><a class="btn ghost" href="https://governveil.com" target="_blank" rel="noopener">Learn more about GovernVeil →</a></div>
+    <div class="cta" style="margin-top:0"><a class="btn" data-intuka-demo data-demo-product="GovernVeil" href="${MAILTO('Design-partner pilot - GovernVeil')}">Book a design-partner pilot</a><a class="btn ghost" href="https://governveil.com" target="_blank" rel="noopener">Learn more about GovernVeil →</a></div>
   </div>
 </div></section>
 

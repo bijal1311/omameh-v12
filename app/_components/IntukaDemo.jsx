@@ -1,10 +1,10 @@
 'use client';
 
 /**
- * Intuka · "Book a demo" modal.
+ * Lead modal · Intuka and GovernVeil.
  *
  * The products page is injected as static markup through RouteShell, so the
- * Intuka "Book a demo" control there is a plain <a data-intuka-demo> with a
+ * "Book a demo" control there is a plain <a data-intuka-demo> with a
  * mailto href as a no-JS fallback. This component (mounted once on the
  * products page) finds that control, intercepts the click, and opens a modal
  * lead form instead.
@@ -14,6 +14,21 @@
  * lowercase snake_case contract the endpoint expects — do not rename them.
  * `pk_live_...` is a publishable form key (safe in client JS); it is not a
  * secret and grants nothing beyond submitting this one form.
+ *
+ * TWO PRODUCTS, ONE FORM — added 18 October 2026.
+ *
+ * `product` was already a field in the payload rather than part of the
+ * endpoint, so GovernVeil needed no second integration and no second key:
+ * the same WebForm carries it and the lead is told apart by that field.
+ * A trigger opts in with data-demo-product="GovernVeil"; anything without
+ * it is Intuka, so Karthik's original control is byte-for-byte unchanged
+ * and keeps working exactly as he built it.
+ *
+ * STILL TO CONFIRM: whether WebForm wf_65c596eb accepts a `product` value
+ * of "GovernVeil", or whether its definition pins that field to one
+ * option. If it rejects it the modal shows its error state and the lead
+ * is not silently lost — but it has not been proved with a live
+ * submission, because that would put a real row in Bijal's CRM.
  *
  * Rollback: delete this file + its .module.css, and revert the two marked
  * lines in app/products/page.jsx. The mailto fallback then takes over again.
@@ -26,21 +41,53 @@ const SUBMIT_URL = 'https://app.intuka.com/api/v1/public/forms/wf_65c596eb/submi
 const PUBLIC_KEY = 'pk_live_176274021b6965f7a50149fc';
 const TENANT_ID = '5e81a56b-9bc7-4e85-8171-e6586073b454';
 
+/**
+ * Per-product wording. Everything else about the modal is identical, which
+ * is the point — one form, one endpoint, one thing to maintain.
+ */
+const PRODUCTS = {
+  Intuka: {
+    eyebrow: 'Intuka',
+    logo: '/brand/intuka-wordmark.svg',
+    title: 'Book a demo',
+    sub: 'Tell us a little about your business and we’ll set up a walkthrough on your real operation.',
+    placeholder: 'What does your business run on today?',
+    done: 'We’ll be in touch shortly to set up your Intuka demo.',
+    site: { href: 'https://www.intuka.com', label: 'intuka.com' },
+  },
+  GovernVeil: {
+    eyebrow: 'GovernVeil',
+    /* No wordmark asset exists yet — governveil.com sets its name in type
+       and ships only a generic square favicon. Set in type here too
+       rather than enlarging a favicon into a logo. */
+    logo: null,
+    title: 'Book a design-partner pilot',
+    sub: 'Tell us where AI is already touching data you cannot let leave, and we’ll scope a pilot in your own environment.',
+    placeholder: 'Which models or tools are your teams already using?',
+    done: 'We’ll be in touch shortly about a GovernVeil design-partner pilot.',
+    site: { href: 'https://governveil.com', label: 'governveil.com' },
+  },
+};
+
 const EMPTY = { name: '', email: '', company: '', phone: '', team_size: '', message: '' };
 
 export default function IntukaDemo() {
   const [open, setOpen] = useState(false);
+  const [product, setProduct] = useState('Intuka');
   const [values, setValues] = useState(EMPTY);
   const [status, setStatus] = useState('idle'); // idle | submitting | done | error
   const [error, setError] = useState('');
   const firstFieldRef = useRef(null);
   const closeRef = useRef(null);
 
-  // Wire the injected "Book a demo" control(s) for Intuka.
+  // Wire every injected lead control. The product comes off the trigger,
+  // defaulting to Intuka so the original control behaves as it always has.
   useEffect(() => {
     const triggers = Array.from(document.querySelectorAll('[data-intuka-demo]'));
     const onClick = (e) => {
       e.preventDefault();
+      const named = e.currentTarget.getAttribute('data-demo-product');
+      setProduct(PRODUCTS[named] ? named : 'Intuka');
       setStatus('idle');
       setError('');
       setValues(EMPTY);
@@ -49,6 +96,8 @@ export default function IntukaDemo() {
     triggers.forEach((t) => t.addEventListener('click', onClick));
     return () => triggers.forEach((t) => t.removeEventListener('click', onClick));
   }, []);
+
+  const p = PRODUCTS[product];
 
   // Escape to close + body scroll lock + initial focus while open.
   useEffect(() => {
@@ -103,7 +152,7 @@ export default function IntukaDemo() {
             phone: values.phone.trim(),
             team_size: values.team_size.trim(),
             message: values.message.trim(),
-            product: 'Intuka',
+            product,
           },
         }),
       });
@@ -152,19 +201,17 @@ export default function IntukaDemo() {
             </div>
             <h3 className={styles.doneTitle} id="intuka-demo-title">Thanks — request received.</h3>
             <p className={styles.doneBody}>
-              We&rsquo;ll be in touch shortly to set up your Intuka demo. In the meantime you can
-              learn more at <a href="https://www.intuka.com" target="_blank" rel="noopener">intuka.com</a>.
+              {p.done} In the meantime you can learn more at{' '}
+              <a href={p.site.href} target="_blank" rel="noopener">{p.site.label}</a>.
             </p>
           </div>
         ) : (
           <>
             <div className={styles.head}>
-              <img className={styles.logo} src="/brand/intuka-wordmark.svg" alt="Intuka" />
-              <p className={styles.eyebrow}>P02 · Intuka</p>
-              <h3 className={styles.title} id="intuka-demo-title">Book a demo</h3>
-              <p className={styles.sub}>
-                Tell us a little about your business and we&rsquo;ll set up a walkthrough on your real operation.
-              </p>
+              {p.logo && <img className={styles.logo} src={p.logo} alt={product} />}
+              <p className={styles.eyebrow}>{p.eyebrow}</p>
+              <h3 className={styles.title} id="intuka-demo-title">{p.title}</h3>
+              <p className={styles.sub}>{p.sub}</p>
             </div>
 
             <form className={styles.form} onSubmit={onSubmit} noValidate>
@@ -209,14 +256,14 @@ export default function IntukaDemo() {
                 <span>Anything we should know?</span>
                 <textarea className={styles.textarea} name="message"
                   value={values.message} onChange={set('message')}
-                  placeholder="What does your business run on today?" />
+                  placeholder={p.placeholder} />
               </label>
 
               {error && <p className={styles.err}>{error}</p>}
 
               <div className={styles.actions}>
                 <button type="submit" className={styles.go} disabled={status === 'submitting'}>
-                  {status === 'submitting' ? 'Sending…' : 'Book a demo'}
+                  {status === 'submitting' ? 'Sending…' : p.title}
                   {status !== 'submitting' && (
                     <svg width="18" height="12" viewBox="0 0 18 12" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                       <path d="M1 6h15M11 1l5 5-5 5" />

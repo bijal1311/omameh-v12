@@ -650,6 +650,31 @@ textarea:focus-visible, select:focus-visible, summary:focus-visible,
 .shot{ max-width:340px;width:100%;justify-self:center }
 .shot-wide{ width:100% }
 
+/* Products · 19 October. The product name is set in type, including
+   Intuka, which used to be its wordmark SVG — explicit in the brief.
+   The point-in-case is the line that makes a reader stop, so it gets
+   display type and a gold rule rather than being another paragraph. */
+.prodname{
+  margin:0 0 var(--s2);font-family:var(--display);font-weight:500;
+  font-size:clamp(28px,3.6vw,40px);line-height:1.05;letter-spacing:-.018em;
+  color:var(--navy);
+}
+.dark .prodname,.deep .prodname{ color:var(--cream) }
+.pointcase{
+  margin:0 0 var(--s4);padding-left:clamp(16px,2vw,22px);
+  border-left:2px solid var(--gold);
+  font-family:var(--display);font-style:italic;font-weight:500;
+  font-size:clamp(18px,2.2vw,23px);line-height:1.34;
+  color:var(--navy);max-width:40ch;
+}
+.dark .pointcase,.deep .pointcase{ color:var(--cream);border-left-color:var(--gold-light) }
+.status{
+  margin:var(--s1) 0 0;font-family:var(--mono);font-size:10.5px;
+  letter-spacing:.18em;text-transform:uppercase;color:var(--gold-sh);
+}
+.dark .status,.deep .status{ color:var(--gold-light) }
+.feature .k-sm{ margin-bottom:var(--s2) }
+
 
 /* ── K21 · ROOMS · the gallery ──────────────────────────────
    Every room is the same size, including the one with the good

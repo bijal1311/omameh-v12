@@ -878,6 +878,85 @@ textarea:focus-visible, select:focus-visible, summary:focus-visible,
 .fcol .cc-link:hover{ color:var(--cream) }
 
 
+/* ── K26 · THE FOUNDING TEAM ────────────────────────────────
+   Four square portraits. Square because that is what was supplied —
+   LinkedIn headshots at 400x400 — and because a square grid beside the
+   large portrait above it reads as a different kind of object rather
+   than as four small versions of the same thing. */
+
+.teamgrid{
+  display:grid;gap:clamp(22px,2.6vw,34px);margin-top:var(--s4);
+  grid-template-columns:repeat(2,1fr);
+}
+@media(min-width:860px){ .teamgrid{ grid-template-columns:repeat(4,1fr) } }
+
+.tm{ display:flex;flex-direction:column;gap:6px;min-width:0 }
+
+/* ONE TONE ACROSS ALL FOUR. The supplied headshots have three
+   different backgrounds — flat grey, brown, an office interior — and
+   untreated they read as four photographs rather than as a team.
+   Light desaturation plus a navy edge wash pulls them into one
+   palette. Deliberately restrained: faces are where a heavy treatment
+   announces itself, and nobody should look off-colour. */
+.tm-shot{
+  position:relative;margin:0 0 var(--s2);
+  border-radius:3px;overflow:hidden;aspect-ratio:1;
+  background:var(--cream-warm);
+  box-shadow:var(--lift-2);
+  transition:box-shadow .34s var(--ease), transform .34s var(--ease);
+}
+.tm-shot > img{
+  display:block;width:100%;height:100%;object-fit:cover;
+  /* .85 was not enough — measured against the rendered grid, Manish's
+     warm brown ground still fought the other three. .62 cools it into
+     the same family without draining the faces. */
+  filter:saturate(.62) contrast(1.06);
+  transition:transform .7s var(--ease-out), filter .45s;
+}
+/* A navy wash over the whole frame, multiplied, which pulls four
+   different studio backgrounds toward one. Low enough that skin stays
+   skin. */
+.tm-shot::before{
+  content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:linear-gradient(165deg, rgba(13,31,78,.16), rgba(0,181,173,.07) 60%, rgba(13,31,78,.12));
+  mix-blend-mode:multiply;
+  transition:opacity .45s;
+}
+.tm-shot::after{
+  content:"";position:absolute;inset:0;z-index:2;pointer-events:none;border-radius:3px;
+  background:radial-gradient(120% 100% at 50% 20%, transparent 50%, rgba(13,31,78,.2) 100%);
+  box-shadow:inset 0 0 0 1px rgba(13,31,78,.12);
+}
+/* Hover returns the photograph to itself. */
+.tm:hover .tm-shot::before{ opacity:.35 }
+.tm:hover .tm-shot{ box-shadow:var(--lift-4);transform:translateY(-3px) }
+.tm:hover .tm-shot > img{ transform:scale(1.03);filter:saturate(.95) contrast(1.03) }
+
+.tm-name{
+  margin:0;font-family:var(--display);font-weight:500;
+  font-size:clamp(17px,1.8vw,20px);line-height:1.2;color:var(--navy);
+}
+.tm-role{ margin:0;font-size:13.5px;line-height:1.45;color:var(--ink) }
+/* The company line. The one that keeps the page honest, so it is set
+   in the mono label face rather than hidden in body copy. */
+.tm-org{
+  margin:2px 0 0;font-family:var(--mono);font-size:10px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--ink-soft);opacity:.85;line-height:1.5;
+}
+/* margin-top:auto, not 10px. Manish's role runs to two lines, which
+   pushed his link a line below the other three and made the row look
+   ragged. auto pins all four to the bottom of their cell. */
+.tm-li{ margin-top:auto;padding-top:12px;font-size:12.5px;align-self:flex-start }
+
+.dark .tm-name,.deep .tm-name{ color:var(--cream) }
+.dark .tm-role,.deep .tm-role{ color:#C5CBDB }
+.dark .tm-org,.deep .tm-org{ color:#A8B0C4 }
+
+@media (prefers-reduced-motion: reduce){
+  .tm:hover .tm-shot,.tm:hover .tm-shot > img{ transform:none !important }
+}
+
+
 /* ── K14 · MOTION OFF ───────────────────────────────────────
    Everything above that moves, stops. Content stays visible — the
    reveal is removed, not left in its hidden state. */

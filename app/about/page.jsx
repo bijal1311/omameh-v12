@@ -112,6 +112,72 @@ const ASKED = [
   ['Everyone, quietly', 'How big are you?', 'One delivery team, two companies. Architecture in Sydney, engineering in Hyderabad, no handoff. You get the people who designed it, and a bench that does not have to be recruited first.'],
 ];
 
+/**
+ * The founding team, 19 October 2026. Names, titles and LinkedIn URLs
+ * supplied by Bijal; photographs supplied by her and placed in
+ * /public/team at 400x400.
+ *
+ * THE SECOND LINE ON EACH CARD IS NOT DECORATION. Omameh has one
+ * founder. Three of these four are Syntegreti's people, and Syntegreti
+ * is a separate company in which Omameh holds a minority stake. A row
+ * of four faces under "our team" would imply something a diligent CIO
+ * could disprove from the register in a minute — on a site whose whole
+ * argument is that every claim survives a check.
+ *
+ * So each card states the company, the section heading is Bijal's own
+ * line — "one delivery team, two companies" — and the standfirst
+ * discloses the stake. The structure says the true thing without
+ * weakening it: the bench is real, and it is not pretended to be
+ * wholly ours.
+ */
+const FOUNDING = [
+  {
+    img: 'bijal-sejpal',
+    name: 'Bijal Sejpal',
+    role: 'Founder &amp; CEO',
+    org: 'Omameh',
+    li: 'https://www.linkedin.com/in/bijal-sejpal/',
+  },
+  {
+    img: 'jay-jayakeerthy',
+    name: 'Jay Jayakeerthy',
+    role: 'Chief Technology Officer',
+    org: 'Co-founder, Syntegreti',
+    li: 'https://www.linkedin.com/in/jjayakeerthy/',
+  },
+  {
+    img: 'manish-davda',
+    name: 'Manish Davda',
+    role: 'Chief Commercial Officer, Platforms',
+    org: 'Co-founder, Syntegreti',
+    li: 'https://www.linkedin.com/in/manish-davda-7993975/',
+  },
+  {
+    img: 'karthik-jayaraman',
+    name: 'Karthik Jayaraman',
+    role: 'AI &amp; Technology Lead',
+    org: 'Syntegreti',
+    li: 'https://www.linkedin.com/in/karthik-jayaraman-73909084/',
+  },
+];
+
+/* The three supplied headshots have three different backgrounds — flat
+   grey, brown, and an office interior. Side by side that reads as
+   untidy rather than as a team, so .tm-shot applies one restrained
+   tone to all four: light desaturation and a navy edge wash. Enough to
+   pull them into one palette, not enough to make anyone look
+   off-colour. Faces are the one place a heavy treatment is obvious. */
+const person = ({ img, name, role, org, li }) => String.raw`
+      <article class="tm">
+        <figure class="tm-shot">
+          <img src="/team/${img}.jpg" alt="${name.replace(/&amp;/g, 'and')}" width="400" height="400" loading="lazy" decoding="async">
+        </figure>
+        <h3 class="tm-name">${name}</h3>
+        <p class="tm-role">${role}</p>
+        <p class="tm-org">${org}</p>
+        <a class="link tm-li" href="${li}" target="_blank" rel="noopener noreferrer">LinkedIn &nearr;</a>
+      </article>`;
+
 const card = ([k, body]) => String.raw`
     <div class="card"><span class="k">${k}</span><p>${body}</p></div>`;
 
@@ -169,6 +235,25 @@ ${STATS.map(([n, l]) => String.raw`      <div class="card"><span class="statnum"
       <figure class="fr portrait" style="--ar:880/1179" data-reveal>
         <img src="/about/bijal-seated-teal.jpg" alt="Bijal Sejpal, founder and chief executive of Omameh" width="880" height="1179" loading="lazy" decoding="async">
       </figure>
+    </div>
+  </div>
+</section>
+
+<!-- The founding team. Sits here because the order is: why there is a
+     team, who they are, then how the team works. On warm so it is not
+     a third plain band in a row, and so the four square frames have a
+     ground to sit on rather than floating on the page. -->
+<section class="warm">
+  <span class="arc left sm" aria-hidden="true"></span>
+  <div class="w">
+    <div class="shead" data-reveal>
+      <p class="eyebrow">The founding team</p>
+      <h2>One delivery team, two companies.</h2>
+      <p class="lede">Architecture in Sydney, engineering in Hyderabad, no handoff. Omameh holds a minority stake in Syntegreti, our engineering partner &mdash; so where someone&rsquo;s company is not Omameh, their title says so.</p>
+    </div>
+
+    <div class="teamgrid" data-reveal-group>
+${FOUNDING.map(person).join('\n')}
     </div>
   </div>
 </section>

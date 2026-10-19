@@ -10,9 +10,28 @@ import RouteShell from '../_components/RouteShell';
  * second one the best paragraph on the site and the reason a reader
  * believes the rest, which is right.
  *
- * THIS PAGE ABSORBS /founder. The founder note and the name story move
- * here under #founder, and /founder 301s to /about#founder — the old
+ * THIS PAGE ABSORBS /founder. /founder 301s to /about#founder — the old
  * URL carries her name and is indexed, so it forwards rather than dies.
+ *
+ * ── 19 OCTOBER · THE WRITING IS BACK ───────────────────────────────
+ * The 18 October rebuild read "folded into /about" as "replaced with a
+ * summary". It was not. /founder carried an eleven-paragraph essay,
+ * "Why I built this", and a name-origin aside, and both were deleted
+ * and replaced with a three-paragraph note. That was wrong.
+ *
+ * Both are restored below, verbatim from app/founder/page.jsx at commit
+ * 607f4bc~1. Nothing is paraphrased, nothing is trimmed. What changed
+ * is only the markup: the original used the V11 legacy stylesheet
+ * (.fo-hero, .fo-name, .why, --space-8) and this page is V12, so the
+ * same words now run on .w-narrow, .pq and the craft layer's frames.
+ *
+ * THE NAME STORY NEEDED NO NEW WORDS. The previous version of this file
+ * carried a commented-out section marked "NEEDS YOUR WORDS" and asked
+ * Bijal for two or three sentences. She had already written them, in
+ * 2026, on the page that was then deleted — which is exactly what she
+ * meant by "there is already a mention of what the name means, so you
+ * can just leave it". Asking again for something she had already
+ * written and we had removed is the failure, not the missing copy.
  *
  * "8 platforms in production" is now "8 platforms built by our own
  * team". Eight were built; several are in production. The live page
@@ -22,19 +41,17 @@ import RouteShell from '../_components/RouteShell';
  * as in the footer. Omameh holds a minority stake in Syntegreti and
  * should not claim to own it.
  *
- * THE NAME STORY IS NOT ON THE PAGE YET. The wireframe carries the
- * heading — "The name is my mother's, woven with my daughters'" — and
- * marks the body NEEDS YOUR WORDS. It is the one thing on this site
- * nobody else could write, so it is not being invented or paraphrased
- * from a LinkedIn line. The section is below, commented, and goes live
- * the moment Bijal sends two or three sentences.
- *
  * The partner story lands here rather than on a page of its own, which
  * is why /partners is not built. Who does the work is an About
  * question; the partnership model is not a page.
  *
  * Her titles are past tense and dated, with no "currently" and no
  * "interim" — that withdrawal is permanent.
+ *
+ * BAND RHYTHM · plain · warm · plain · warm · dark · plain · warm ·
+ * plain · dark. Nothing adjacent repeats. The essay sits on warm at
+ * .w-narrow because it is the longest read on the site and needs a
+ * measure, not a column of a grid.
  */
 
 export const metadata = pageMeta({
@@ -56,11 +73,14 @@ const DISCIPLINES = [
   'Data scientists', 'Clinical specialists', 'Domain specialists', 'DevOps',
 ];
 
+/** Four of the six sanctioned icons. Six is the ceiling and no set is
+ *  ever installed — these ship in /public/icons and had been used on no
+ *  page at all. Each is decorative: the heading carries the meaning. */
 const HOW = [
-  ['Build first, pitch second', 'We build a working proof and let the result decide.'],
-  ['Everyone ships', 'The person who talks to you on day one deploys it later.'],
-  ['Stay small, go deep', 'We would rather go further into fewer problems.'],
-  ['Own the outcome', 'Nothing is handed off.'],
+  ['diagnose', 'Build first, pitch second', 'We build a working proof and let the result decide.'],
+  ['sequence', 'Everyone ships', 'The person who talks to you on day one deploys it later.'],
+  ['readiness', 'Stay small, go deep', 'We would rather go further into fewer problems.'],
+  ['compound-tight', 'Own the outcome', 'Nothing is handed off.'],
 ];
 
 const PARTNERS = [
@@ -98,107 +118,135 @@ const card = ([k, body]) => String.raw`
 const titled = ([k, head, body]) => String.raw`
     <div class="card">
       <span class="k">${k}</span>
-      <h3 style="margin:0;font-size:clamp(18px,2.2vw,22px)">${head}</h3>
+      <h3 class="card-h">${head}</h3>
+      <p>${body}</p>
+    </div>`;
+
+const howCard = ([icon, head, body]) => String.raw`
+    <div class="card">
+      <img class="ic48" src="/icons/${icon}.svg" alt="" aria-hidden="true" width="48" height="48" loading="lazy" decoding="async">
+      <h3 class="card-h">${head}</h3>
       <p>${body}</p>
     </div>`;
 
 const __MARKUP = String.raw`
-<section class="hero"><div class="w">
-  <p class="eyebrow">About</p>
-  <h1>The people who design it are the people who <em>build it.</em></h1>
-  <p class="lede">One team, two countries, and the same agenda from the first conversation to the last deployment.</p>
+<section class="hero">
+  <span class="arc top" aria-hidden="true"></span>
+  <div class="w">
+    <p class="eyebrow">About</p>
+    <h1>The people who design it are the people who <em>build it.</em></h1>
+    <p class="lede">One team, two countries, and the same agenda from the first conversation to the last deployment.</p>
 
-  <div class="grid four" style="margin-top:var(--s5)">
-${STATS.map(([n, l]) => String.raw`    <div class="card"><span style="font-family:var(--display);font-size:clamp(34px,4.5vw,46px);line-height:1;color:var(--navy)">${n}</span><p>${l}</p></div>`).join('\n')}
-  </div>
-</div></section>
-
-<!--
-  THE NAME · needs Bijal's words, two or three sentences.
-  Heading is hers; the body is the one thing on this site nobody else
-  could write, so it is not being invented. Uncomment and fill.
-
-  <section><div class="w">
-    <p class="eyebrow">The name</p>
-    <h2>The name is my mother&rsquo;s, woven with my daughters&rsquo;.</h2>
-    <p class="lede">[two or three sentences]</p>
-  </div></section>
--->
-
-<section id="founder"><div class="w">
-  <p class="eyebrow">From the founder</p>
-  <h2>Why there is a team.</h2>
-
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(28px,4vw,56px);align-items:start;margin-top:var(--s4)">
-    <div style="display:flex;flex-direction:column;gap:var(--s2);min-width:0">
-      <p class="lede">I spent twenty years inside large regulated organisations watching the same thing happen. A good strategy, a well-run pilot, then nothing — not because the technology failed, but because the way the work happened underneath it never changed.</p>
-      <p class="lede" style="font-style:italic;color:var(--navy)">As an adviser you can name that problem precisely. Naming it was never what I wanted to do. I wanted to be accountable for fixing it.</p>
-      <p class="lede">Twenty people and growing — architecture, engineering, data, cloud, clinical and domain specialists. None of it gets designed alone. The team is in the room for the design, not only the build.</p>
-      <p style="margin:0;font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)">— Bijal Sejpal · Founder &amp; CEO</p>
-      <p style="margin:0;font-size:14px;line-height:1.6;color:var(--ink-soft)">Formerly Chief Operating Officer, Technology, Bupa Asia-Pacific (2025&ndash;2026). Formerly Group Chief Operating Officer, Data, Analytics and AI, QBE (2019&ndash;2025). Earlier: NSW Department of Customer Service, the ABC, NSW Police. MBA (Executive), AGSM.</p>
+    <div class="grid four statgrid" data-reveal-group>
+${STATS.map(([n, l]) => String.raw`      <div class="card"><span class="statnum">${n}</span><p>${l}</p></div>`).join('\n')}
     </div>
-    <img src="/about/bijal-seated-teal.jpg" alt="Bijal Sejpal" width="880" height="1179" loading="lazy" decoding="async" style="width:100%;max-width:420px;height:auto;display:block;justify-self:center;border-radius:3px">
   </div>
+</section>
+
+<!-- THE NAME moved to /founder on 19 October, not deleted.
+     It was on both pages for about an hour, which meant a reader going
+     About -> Founder met the same paragraph twice. It belongs on
+     /founder: it is first person, it is her account of naming the
+     practice after her mother and daughters, and it is part of the
+     write-up she meant when she said "there is already a mention of
+     what the name means". /about links there. -->
+<section id="founder">
+  <div class="w">
+    <div class="fo-split">
+      <div class="fo-words" data-reveal>
+        <p class="eyebrow">From the founder</p>
+        <h2>Why there is a team.</h2>
+        <p class="lede">I spent twenty years inside large regulated organisations watching the same thing happen. A good strategy, a well-run pilot, then nothing &mdash; not because the technology failed, but because the way the work happened underneath it never changed.</p>
+        <p class="pq">As an adviser you can name that problem precisely. Naming it was never what I wanted to do. I wanted to be accountable for fixing it.</p>
+        <p class="lede">Twenty people and growing &mdash; architecture, engineering, data, cloud, clinical and domain specialists. None of it gets designed alone. The team is in the room for the design, not only the build.</p>
+        <p class="signature">&mdash; Bijal Sejpal · Founder &amp; CEO</p>
+        <p class="credentials">Formerly Chief Operating Officer, Technology, Bupa Asia-Pacific (2025&ndash;2026). Formerly Group Chief Operating Officer, Data, Analytics and AI, QBE (2019&ndash;2025). Earlier: NSW Department of Customer Service, the ABC, NSW Police. MBA (Executive), AGSM.</p>
+        <div class="cta">
+          <a class="btn" href="/founder">Read why I built this &rarr;</a>
+          <a class="link" href="https://www.linkedin.com/in/bijal-sejpal/" target="_blank" rel="noopener noreferrer">linkedin.com/in/bijal-sejpal &nearr;</a>
+        </div>
+      </div>
+      <figure class="fr portrait" style="--ar:880/1179" data-reveal>
+        <img src="/about/bijal-seated-teal.jpg" alt="Bijal Sejpal, founder and chief executive of Omameh" width="880" height="1179" loading="lazy" decoding="async">
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="dark">
+  <span class="arc left" aria-hidden="true"></span>
+  <div class="w">
+    <div class="shead" data-reveal>
+      <p class="eyebrow">The team</p>
+      <h2>Small on purpose. Not small in the room.</h2>
+      <p class="lede">One team across Sydney and Hyderabad, led from Sydney. Advisory is founder-led; the engineering is Syntegreti, our engineering partner. The people who sit in your solution design are the people who build it &mdash; same meeting, same specification, no translation layer.</p>
+    </div>
+
+    <p class="chiprow">
+${DISCIPLINES.map((d) => String.raw`      <span class="chip">${d}</span>`).join('\n')}
+    </p>
+
+    <div class="grid four" data-reveal-group>${HOW.map(howCard).join('')}
+    </div>
+  </div>
+</section>
+
+<section><div class="w">
+  <div class="shead" data-reveal>
+    <p class="eyebrow">And who we work with</p>
+    <h2>Three directions, and we say which one applies.</h2>
+  </div>
+
+  <div class="grid three" data-reveal-group>${PARTNERS.map(card).join('')}
+  </div>
+
+  <p class="lede aftergrid">We do not take every partner. It has to sit inside one of the five pillars, be complementary rather than competing, and be a product we would put our own name next to. We have said no.</p>
+</div></section>
+
+<section class="warm"><div class="w">
+  <div class="shead" data-reveal>
+    <p class="eyebrow">Where we play</p>
+    <h2>Deep where it is regulated. Open where it is not.</h2>
+    <p class="lede">Enterprise work concentrates in regulated, complex industries &mdash; that is where we started and where the lens is sharpest. Everything else, we take on any field.</p>
+  </div>
+
+  <div class="grid four" data-reveal-group>${SECTORS.map(card).join('')}
+  </div>
+
+  <p class="lede aftergrid"><b class="strongink">Everyone else · any field.</b> Owner-led businesses, platform vendors and independent operators come to us from every industry there is. A roadmap that will not scale looks the same in construction as it does in law.</p>
 </div></section>
 
 <section><div class="w">
-  <p class="eyebrow">The team</p>
-  <h2>Small on purpose. Not small in the room.</h2>
-  <p class="lede">One team across Sydney and Hyderabad, led from Sydney. Advisory is founder-led; the engineering is Syntegreti, our engineering partner. The people who sit in your solution design are the people who build it — same meeting, same specification, no translation layer.</p>
-
-  <p style="margin:var(--s4) 0 0;display:flex;flex-wrap:wrap;gap:10px">
-${DISCIPLINES.map((d) => String.raw`    <span class="chip">${d}</span>`).join('\n')}
-  </p>
-
-  <div class="grid four" style="margin-top:var(--s4)">${HOW.map(card).join('')}
-  </div>
-</div></section>
-
-<section><div class="w">
-  <p class="eyebrow">And who we work with</p>
-  <h2>Three directions, and we say which one applies.</h2>
-
-  <div class="grid three">${PARTNERS.map(card).join('')}
+  <div class="shead" data-reveal>
+    <p class="eyebrow">The work</p>
+    <h2>We are the first case.</h2>
+    <p class="lede">Everything on this site, we did to ourselves first &mdash; and in this order.</p>
   </div>
 
-  <p class="lede" style="margin-top:var(--s4)">We do not take every partner. It has to sit inside one of the five pillars, be complementary rather than competing, and be a product we would put our own name next to. We have said no.</p>
-</div></section>
-
-<section><div class="w">
-  <p class="eyebrow">Where we play</p>
-  <h2>Deep where it is regulated. Open where it is not.</h2>
-  <p class="lede">Enterprise work concentrates in regulated, complex industries — that is where we started and where the lens is sharpest. Everything else, we take on any field.</p>
-
-  <div class="grid four">${SECTORS.map(card).join('')}
-  </div>
-
-  <p class="lede" style="margin-top:var(--s4)"><b style="color:var(--ink)">Everyone else · any field.</b> Owner-led businesses, platform vendors and independent operators come to us from every industry there is. A roadmap that will not scale looks the same in construction as it does in law.</p>
-</div></section>
-
-<section><div class="w">
-  <p class="eyebrow">The work</p>
-  <h2>We are the first case.</h2>
-  <p class="lede">Everything on this site, we did to ourselves first — and in this order.</p>
-
-  <div class="grid four">${FIRSTCASE.map(titled).join('')}
+  <div class="grid four" data-reveal-group>${FIRSTCASE.map(titled).join('')}
   </div>
 
   <div class="cta"><a class="link" href="/products">See what we have built &rarr;</a></div>
 </div></section>
 
-<section><div class="w">
-  <p class="eyebrow">What people ask us</p>
-  <h2>The questions we actually get.</h2>
-  <p class="lede">These are the awkward ones, so they are the ones on the page.</p>
+<section class="dark">
+  <span class="arc" aria-hidden="true"></span>
+  <div class="w">
+    <div class="shead" data-reveal>
+      <p class="eyebrow">What people ask us</p>
+      <h2>The questions we actually get.</h2>
+      <p class="lede">These are the awkward ones, so they are the ones on the page.</p>
+    </div>
 
-  <div class="grid two">${ASKED.map(titled).join('')}
-  </div>
+    <div class="grid two" data-reveal-group>${ASKED.map(titled).join('')}
+    </div>
 
-  <div class="feature" style="margin-top:var(--s4)">
-    <h3 style="margin:0;font-size:clamp(19px,2.4vw,24px)">And the one nobody asks out loud — have you ever told a client to stop?</h3>
-    <p class="lede">Yes, more than once. We would rather protect your budget than protect our next phase. It is the same reason our clients come back.</p>
+    <div class="feature lastword" data-reveal>
+      <h3>And the one nobody asks out loud &mdash; have you ever told a client to stop?</h3>
+      <p class="lede">Yes, more than once. We would rather protect your budget than protect our next phase. It is the same reason our clients come back.</p>
+    </div>
   </div>
-</div></section>
+</section>
 `;
 
 export default function AboutPage() {

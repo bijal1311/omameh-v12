@@ -36,129 +36,20 @@
 
 import { useEffect, useRef, useState } from 'react';
 import styles from './IntukaDemo.module.css';
+import {
+  PRODUCTS, TEAM_SIZES, EMPTY_LEAD, validateLead, submitLead,
+} from '@/lib/intuka-lead';
 
-const SUBMIT_URL = 'https://app.intuka.com/api/v1/public/forms/wf_65c596eb/submit';
-const PUBLIC_KEY = 'pk_live_176274021b6965f7a50149fc';
-const TENANT_ID = '5e81a56b-9bc7-4e85-8171-e6586073b454';
+/* 19 October 2026 · the endpoint, the keys, the headers and the ten
+   categories moved to lib/intuka-lead.js when /contact gained an inline
+   form, so both forms share one definition instead of two copies that
+   drift. Nothing about this modal's behaviour changed. */
 
-/**
- * Per-product wording. Everything else about the modal is identical, which
- * is the point — one form, one endpoint, one thing to maintain.
- */
-const PRODUCTS = {
-  Intuka: {
-    eyebrow: 'Intuka',
-    logo: '/brand/intuka-wordmark.svg',
-    title: 'Book a demo',
-    sub: 'Tell us a little about your business and we’ll set up a walkthrough on your real operation.',
-    placeholder: 'What does your business run on today?',
-    done: 'We’ll be in touch shortly to set up your Intuka demo.',
-    privacy: 'arrange your demo',
-    site: { href: 'https://www.intuka.com', label: 'intuka.com' },
-  },
-  /* Services. Same form, same endpoint — the category is what separates
-     an Advisory enquiry from a product demo in the CRM. */
-  'Advisory — Pressure-test': {
-    eyebrow: 'Advisory',
-    logo: null,
-    title: 'Start a Pressure-test',
-    sub: 'Tell us roughly where the organisation is and what the strategy assumes. We will come back with the shape and the sequence.',
-    placeholder: 'What is the gap you already suspect is there?',
-    done: 'We’ll be in touch shortly about a Pressure-test.',
-    privacy: 'arrange a Pressure-test',
-    site: { href: '/advisory', label: 'the Advisory page' },
-  },
-  'Advisory — Standing counsel': {
-    eyebrow: 'Advisory',
-    logo: null,
-    title: 'Explore standing counsel',
-    sub: 'A retained room for the leader inside the transition. Tell us what is in front of you.',
-    placeholder: 'What is the decision you cannot make out loud yet?',
-    done: 'We’ll be in touch shortly about standing counsel.',
-    privacy: 'arrange that conversation',
-    site: { href: '/advisory', label: 'the Advisory page' },
-  },
-  Fluency: {
-    eyebrow: 'AI-Era Fluency',
-    logo: null,
-    title: 'Start a conversation',
-    sub: 'Tell us what you are trying to change. We will tell you which programme fits, what it would take, and whether you need one at all.',
-    placeholder: 'What decision keeps being made badly?',
-    done: 'We’ll be in touch shortly about a programme.',
-    privacy: 'arrange that conversation',
-    site: { href: '/fluency', label: 'the Fluency page' },
-  },
-  Diagnostic: {
-    eyebrow: 'The read',
-    logo: null,
-    title: 'Ask for the diagnostic',
-    sub: 'Fifteen minutes, scored against eight dimensions, with the working shown. Yours whether we speak again or not.',
-    placeholder: 'Anything you want the read to look hardest at?',
-    done: 'We’ll send the diagnostic through shortly.',
-    privacy: 'send you the diagnostic',
-    site: { href: '/advisory', label: 'the Advisory page' },
-  },
-  Roundtable: {
-    eyebrow: 'The roundtable',
-    logo: null,
-    title: 'Register interest',
-    sub: 'Ninety minutes, one industry, a dozen people who actually run something. No slides and nothing sold.',
-    placeholder: 'Which industry, and what would make it worth your ninety minutes?',
-    done: 'We’ll be in touch when the next table suits you.',
-    privacy: 'tell you about the next table',
-    site: { href: '/contact', label: 'the Contact page' },
-  },
-  Partnership: {
-    eyebrow: 'Partnerships',
-    logo: null,
-    title: 'Start a conversation',
-    sub: 'Delivery in region, or taking each other’s software to market. Tell us which direction and what you are trying to reach.',
-    placeholder: 'Which direction, and what are you trying to reach?',
-    done: 'We’ll be in touch shortly.',
-    privacy: 'arrange that conversation',
-    site: { href: '/about', label: 'the About page' },
-  },
-  Speaking: {
-    eyebrow: 'Rooms',
-    logo: null,
-    title: 'Book a room',
-    sub: 'Keynotes, panels, moderation, webinars and private roundtables. Sydney, Asia-Pacific and remote.',
-    placeholder: 'What is the room, and when?',
-    done: 'We’ll be in touch shortly about the room.',
-    privacy: 'answer your enquiry',
-    site: { href: '/rooms', label: 'the Rooms page' },
-  },
-  'Media kit': {
-    eyebrow: 'Media kit',
-    logo: null,
-    title: 'Open the kit',
-    sub: 'Approved portraits, four bio lengths written to be lifted verbatim, and QR codes.',
-    placeholder: 'What are you writing, and by when?',
-    done: 'We’ll send the kit through shortly.',
-    privacy: 'send you the kit',
-    site: { href: '/rooms', label: 'the Rooms page' },
-  },
-  GovernVeil: {
-    eyebrow: 'GovernVeil',
-    /* No wordmark asset exists yet — governveil.com sets its name in type
-       and ships only a generic square favicon. Set in type here too
-       rather than enlarging a favicon into a logo. */
-    logo: null,
-    title: 'Book a design-partner pilot',
-    sub: 'Tell us where AI is already touching data you cannot let leave, and we’ll scope a pilot in your own environment.',
-    placeholder: 'Which models or tools are your teams already using?',
-    done: 'We’ll be in touch shortly about a GovernVeil design-partner pilot.',
-    privacy: 'arrange your pilot',
-    site: { href: 'https://governveil.com', label: 'governveil.com' },
-  },
-};
-
-const EMPTY = { name: '', email: '', company: '', phone: '', team_size: '', message: '' };
 
 export default function IntukaDemo() {
   const [open, setOpen] = useState(false);
   const [product, setProduct] = useState('Intuka');
-  const [values, setValues] = useState(EMPTY);
+  const [values, setValues] = useState(EMPTY_LEAD);
   const [status, setStatus] = useState('idle'); // idle | submitting | done | error
   const [error, setError] = useState('');
   const firstFieldRef = useRef(null);
@@ -174,7 +65,7 @@ export default function IntukaDemo() {
       setProduct(PRODUCTS[named] ? named : 'Intuka');
       setStatus('idle');
       setError('');
-      setValues(EMPTY);
+      setValues(EMPTY_LEAD);
       setOpen(true);
     };
     triggers.forEach((t) => t.addEventListener('click', onClick));
@@ -204,53 +95,19 @@ export default function IntukaDemo() {
 
   async function onSubmit(e) {
     e.preventDefault();
-    const name = values.name.trim();
-    const email = values.email.trim();
-    const company = values.company.trim();
 
-    if (!name || !email || !company) {
-      setError('Please add your name, work email and company.');
-      return;
-    }
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      setError('That email address does not look right.');
-      return;
-    }
+    const invalid = validateLead(values);
+    if (invalid) { setError(invalid); return; }
 
     setStatus('submitting');
     setError('');
 
-    try {
-      const res = await fetch(SUBMIT_URL, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'X-API-Key': PUBLIC_KEY,
-          'X-Tenant-ID': TENANT_ID,
-        },
-        body: JSON.stringify({
-          data: {
-            name,
-            email,
-            company,
-            phone: values.phone.trim(),
-            team_size: values.team_size.trim(),
-            message: values.message.trim(),
-            product,
-          },
-        }),
-      });
-
-      const payload = await res.json().catch(() => null);
-      if (res.ok && payload && payload.success) {
-        setStatus('done');
-      } else {
-        setStatus('error');
-        setError('Something went wrong sending your request. Please email contact@omameh.com.au and we will sort it.');
-      }
-    } catch {
+    const res = await submitLead(values, product);
+    if (res.ok) {
+      setStatus('done');
+    } else {
       setStatus('error');
-      setError('We could not reach the server. Please check your connection, or email contact@omameh.com.au.');
+      setError(res.message);
     }
   }
 
@@ -326,12 +183,16 @@ export default function IntukaDemo() {
                 </label>
                 <label className={styles.field}>
                   <span>Team size</span>
+                  {/* Bands come from lib/intuka-lead.js so this modal and
+                      the inline form on /contact cannot put two different
+                      vocabularies into the same CRM column. The top band
+                      was "200+", which grouped a 300-person firm with a
+                      bank — extended there, not here. */}
                   <select className={styles.select} name="team_size" value={values.team_size} onChange={set('team_size')}>
                     <option value="">Select&hellip;</option>
-                    <option value="1-10">1&ndash;10</option>
-                    <option value="11-50">11&ndash;50</option>
-                    <option value="51-200">51&ndash;200</option>
-                    <option value="200+">200+</option>
+                    {TEAM_SIZES.map(([value, label]) => (
+                      <option key={value} value={value}>{label}</option>
+                    ))}
                   </select>
                 </label>
               </div>

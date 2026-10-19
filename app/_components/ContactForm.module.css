@@ -1,0 +1,108 @@
+/* ContactForm · the inline CRM form on /contact.
+   Sits on a .warm band, so the inputs go cream-white to lift off it. */
+
+.form{
+  display:flex;flex-direction:column;gap:var(--s3);
+  margin-top:var(--s4);
+}
+
+.row{ display:grid;gap:var(--s3);grid-template-columns:1fr }
+@media(min-width:640px){ .row{ grid-template-columns:1fr 1fr } }
+
+.field{ display:flex;flex-direction:column;gap:7px;min-width:0 }
+
+.lab{
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--ink-soft);
+}
+.lab i{ font-style:normal;opacity:.6;text-transform:none;letter-spacing:.06em }
+
+.input,.select,.textarea{
+  font-family:var(--body);font-size:15.5px;color:var(--ink);
+  background:#FCFAF4;
+  border:1px solid var(--rule);border-radius:2px;
+  padding:13px 14px;width:100%;
+  transition:border-color .2s, box-shadow .2s, background .2s;
+}
+.textarea{ resize:vertical;min-height:120px;line-height:1.6 }
+.select{ appearance:none;cursor:pointer;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none' stroke='%234A4A44' stroke-width='1.5' stroke-linecap='round'%3E%3Cpath d='M1 1.5 6 6.5 11 1.5'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 14px center;
+  padding-right:38px;
+}
+
+.input:hover,.select:hover,.textarea:hover{ border-color:#BFB7A0 }
+
+.input:focus,.select:focus,.textarea:focus{
+  outline:none;background:#fff;
+  border-color:var(--gold);
+  box-shadow:0 0 0 3px rgba(201,168,76,.18);
+}
+/* Keyboard users still get the system ring from craft.css §K07 on top
+   of this — the box-shadow is the resting affordance, not the focus
+   indicator, so removing the outline here would fail WCAG 2.4.7. */
+.input:focus-visible,.select:focus-visible,.textarea:focus-visible{
+  outline:2px solid var(--gold);outline-offset:2px;
+}
+
+.input[aria-invalid],.textarea[aria-invalid]{
+  border-color:#B3453A;background:#FDF6F5;
+}
+
+.err{
+  font-size:14px;line-height:1.55;color:#8F3429;
+  background:#FBEFED;border-left:2px solid #B3453A;
+  padding:11px 14px;margin:0;border-radius:2px;
+}
+
+.actions{
+  display:flex;flex-wrap:wrap;align-items:center;gap:var(--s3);
+  margin-top:var(--s1);
+}
+
+.go{
+  font-family:var(--body);font-size:var(--t-sm);font-weight:500;letter-spacing:.03em;
+  display:inline-flex;align-items:center;gap:10px;
+  padding:15px 30px;border-radius:2px;cursor:pointer;
+  background:var(--navy);color:var(--cream);border:1px solid var(--navy);
+  box-shadow:0 1px 2px rgba(13,31,78,.06), 0 2px 8px rgba(13,31,78,.06);
+  transition:background .22s, transform .22s, box-shadow .28s;
+}
+.go:hover:not(:disabled){
+  background:var(--navy-deep);transform:translateY(-2px);
+  box-shadow:0 4px 10px rgba(13,31,78,.08), 0 14px 32px rgba(13,31,78,.14);
+}
+.go:active:not(:disabled){ transform:translateY(0) }
+.go:disabled{ opacity:.6;cursor:default }
+.go svg{ transition:transform .3s cubic-bezier(.16,1,.3,1) }
+.go:hover:not(:disabled) svg{ transform:translateX(3px) }
+
+.privacy{
+  font-size:13px;line-height:1.5;color:var(--ink-soft);opacity:.85;margin:0;
+}
+
+/* Confirmation */
+.done{
+  display:flex;flex-direction:column;align-items:flex-start;gap:var(--s2);
+  margin-top:var(--s4);padding:clamp(26px,3.4vw,38px);
+  background:#FCFAF4;border:1px solid var(--rule);border-radius:3px;
+  box-shadow:0 2px 4px rgba(13,31,78,.05), 0 6px 16px rgba(13,31,78,.06);
+}
+.done:focus{ outline:2px solid var(--gold);outline-offset:3px }
+.doneIcon{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:40px;height:40px;border-radius:2px;
+  background:rgba(0,181,173,.12);color:#00847E;
+}
+.doneTitle{
+  font-family:var(--display);font-weight:500;font-size:clamp(21px,2.6vw,26px);
+  margin:0;color:var(--navy);line-height:1.2;
+}
+.doneBody{ font-size:15.5px;line-height:1.65;color:var(--ink-soft);margin:0;max-width:52ch }
+.doneBody a{ color:var(--navy);border-bottom:1.5px solid var(--gold);text-decoration:none }
+
+@media (prefers-reduced-motion: reduce){
+  .go,.go svg,.input,.select,.textarea{ transition:none }
+  .go:hover:not(:disabled){ transform:none }
+  .go:hover:not(:disabled) svg{ transform:none }
+}

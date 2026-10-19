@@ -1,0 +1,872 @@
+/* ═══════════════════════════════════════════════════════════
+   OMAMEH · CRAFT LAYER · 19 October 2026
+
+   Why this file exists, and why it is not folded into globals.css.
+
+   globals.css is the design system — 183 classes, the grounds, the
+   bands, the type scale, the open-ring tiles. It is correct and it is
+   not the problem. The problem was that the 18 October rebuild used
+   sixteen of its classes and hand-rolled the rest in inline styles, so
+   every page came out one flat cream ground with no rhythm, no depth
+   and no motion. Measured before this file was written: 0 dark bands,
+   0 warm bands, 0 ring fields, 126 inline styles across eight pages.
+
+   This layer does two jobs and only two:
+
+     1 · DEPTH AND LIFE. globals.css is austere by design — hairlines,
+         flat fills, no shadow, no motion anywhere. That reads as
+         considered on a 2019 brochure site and as cold in 2026. This
+         adds a shadow ladder, entrance motion, hover response, and
+         gradient on the grounds so navy is a surface rather than a
+         fill.
+
+     2 · ORNAMENT FROM THE BRAND'S OWN PARTS. The six sanctioned icons
+         and the three motif patterns already ship in /public and were
+         used on no page at all. The open ring becomes a real
+         compositional element here instead of a 60px background tile.
+
+   It never redefines a globals.css class outright. Everything is
+   additive, scoped to a data-attribute or a new class, so removing the
+   single import in layout.jsx returns the site exactly to where it was.
+
+   THE LAW HOLDS. No circle closes. Every arc in this file carries a gap
+   of at least 8 degrees, canonical 20. If you add a shape here, open it.
+
+   ACCESSIBILITY IS NOT OPTIONAL AND NOT A SECOND PASS.
+     · Every motion rule is off under prefers-reduced-motion.
+     · Reveal animation never gates content — elements are visible by
+       default and the observer only adds the transition, so the page
+       reads with JavaScript disabled or broken.
+     · Focus is visible on every interactive surface, gold on cream and
+       gold on navy, never removed.
+     · Contrast: --ink-soft on --cream is 7.4:1; #C5CBDB on --navy is
+       9.1:1; --gold on --navy is 5.6:1. Gold is never used for body
+       copy on cream — it fails there at 2.9:1 and is reserved for
+       rules, eyebrows and 11px mono labels where it is ornament.
+   ═══════════════════════════════════════════════════════════ */
+
+
+/* ── K01 · DEPTH LADDER ─────────────────────────────────────
+   Four steps, all tinted navy rather than black. A neutral black
+   shadow on cream reads as grey dirt; tinting it with the brand navy
+   keeps the whole page in one colour family. */
+
+:root{
+  --lift-1:0 1px 2px rgba(13,31,78,.04), 0 2px 6px rgba(13,31,78,.04);
+  --lift-2:0 2px 4px rgba(13,31,78,.05), 0 6px 16px rgba(13,31,78,.06);
+  --lift-3:0 4px 8px rgba(13,31,78,.06), 0 14px 32px rgba(13,31,78,.09);
+  --lift-4:0 8px 16px rgba(13,31,78,.07), 0 28px 60px rgba(13,31,78,.12);
+
+  /* on navy the same ladder has to go darker, not lighter */
+  --lift-d1:0 2px 8px rgba(3,8,22,.30);
+  --lift-d2:0 6px 20px rgba(3,8,22,.38);
+  --lift-d3:0 16px 44px rgba(3,8,22,.46);
+
+  --ease:cubic-bezier(.22,.61,.36,1);
+  --ease-out:cubic-bezier(.16,1,.3,1);
+}
+
+
+/* ── K02 · GROUNDS GAIN DEPTH ───────────────────────────────
+   Flat navy is the single biggest reason the dark bands read as cold.
+   A wide radial, warm at the top-left and falling to navy-ink at the
+   bottom-right, makes it a lit surface. The ring tile from globals.css
+   still sits on top via .dark::before — this goes underneath it. */
+
+.dark, .deep{
+  background-image:
+    radial-gradient(120% 100% at 12% 0%, rgba(0,181,173,.10) 0%, transparent 52%),
+    radial-gradient(100% 90% at 88% 100%, rgba(201,168,76,.07) 0%, transparent 55%);
+  background-color:var(--navy);
+}
+.deep{ background-color:var(--navy-ink); }
+
+/* Cream warm bands get the faintest vertical lift so a run of three
+   does not read as one block. */
+.warm{
+  background-image:linear-gradient(180deg, rgba(255,255,255,.45) 0%, transparent 38%);
+}
+
+/* A hairline of gold where a dark band meets what is above it. This is
+   the single detail that makes the band changes feel intentional. */
+.dark::after, .deep::after{
+  content:"";position:absolute;left:0;right:0;top:0;height:1px;z-index:1;
+  background:linear-gradient(90deg,
+    transparent 0%, rgba(201,168,76,.55) 18%, rgba(201,168,76,.55) 42%,
+    transparent 46%, transparent 54%,
+    rgba(0,181,173,.45) 58%, rgba(0,181,173,.45) 82%, transparent 100%);
+}
+
+
+/* ── K03 · THE OPEN RING AS COMPOSITION ─────────────────────
+   Not a tile. One large arc, cropped by the band, sitting behind the
+   content. 20 degree gap at the top, per the law.
+
+   Put <span class="arc" aria-hidden="true"></span> as the first child
+   of a section. It is decorative and carries aria-hidden, so a screen
+   reader never meets it. */
+
+/* The arc deliberately hangs off the edge of its band, so the band has
+   to clip it. overflow-x:clip rather than hidden — hidden would make
+   every section a scroll container and silently kill position:sticky
+   anywhere inside one. Measured before this rule: /about overflowed the
+   viewport by 201px and scrolled sideways. */
+section{ overflow-x:clip }
+
+.arc{
+  position:absolute;pointer-events:none;z-index:0;
+  width:min(62vw,780px);aspect-ratio:1;
+  top:50%;right:-14%;translate:0 -50%;
+  background:no-repeat center/contain;
+  opacity:.5;
+}
+.dark .arc, .deep .arc{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'%3E%3Cg fill='none' stroke-width='1.25' stroke-linecap='round'%3E%3Cpath d='M 234.6 26.3 A 180 180 0 1 1 165.4 26.3' stroke='%2300D4CB' opacity='.42'/%3E%3Cpath d='M 223.2 77.4 A 128 128 0 1 1 176.8 77.4' stroke='%23C9A84C' opacity='.30'/%3E%3Cpath d='M 211.8 128.6 A 76 76 0 1 1 188.2 128.6' stroke='%23F4F0E6' opacity='.16'/%3E%3C/g%3E%3C/svg%3E");
+}
+.warm .arc, section:not(.dark):not(.deep) .arc{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'%3E%3Cg fill='none' stroke-width='1.25' stroke-linecap='round'%3E%3Cpath d='M 234.6 26.3 A 180 180 0 1 1 165.4 26.3' stroke='%230D1F4E' opacity='.16'/%3E%3Cpath d='M 223.2 77.4 A 128 128 0 1 1 176.8 77.4' stroke='%23C9A84C' opacity='.34'/%3E%3Cpath d='M 211.8 128.6 A 76 76 0 1 1 188.2 128.6' stroke='%230D1F4E' opacity='.10'/%3E%3C/g%3E%3C/svg%3E");
+  opacity:.8;
+}
+.arc.left{ right:auto; left:-16%; }
+.arc.top{ top:-10%; translate:0 0; }
+.arc.sm{ width:min(40vw,420px); }
+
+/* Content has to sit above the arc and the ring tile. */
+section > .w{ position:relative; z-index:2; }
+
+
+/* ── K04 · ENTRANCE MOTION ──────────────────────────────────
+   The rule that matters: the element is VISIBLE BY DEFAULT. Only once
+   the observer in reveal.js has confirmed it can run does it add
+   [data-reveal-ready] to <html>, and only then does anything hide. A
+   page with broken or blocked JavaScript shows every word. */
+
+html[data-reveal-ready] [data-reveal]{
+  opacity:0; transform:translateY(16px);
+  transition:opacity .62s var(--ease-out), transform .62s var(--ease-out);
+  transition-delay:var(--reveal-delay,0ms);
+}
+html[data-reveal-ready] [data-reveal].is-in{
+  opacity:1; transform:none;
+}
+
+/* Stagger children of a grid without writing a delay per card. */
+html[data-reveal-ready] [data-reveal-group] > *{
+  opacity:0; transform:translateY(18px);
+  transition:opacity .58s var(--ease-out), transform .58s var(--ease-out);
+}
+html[data-reveal-ready] [data-reveal-group].is-in > *{ opacity:1; transform:none; }
+html[data-reveal-ready] [data-reveal-group].is-in > :nth-child(1){ transition-delay:0ms }
+html[data-reveal-ready] [data-reveal-group].is-in > :nth-child(2){ transition-delay:70ms }
+html[data-reveal-ready] [data-reveal-group].is-in > :nth-child(3){ transition-delay:140ms }
+html[data-reveal-ready] [data-reveal-group].is-in > :nth-child(4){ transition-delay:210ms }
+html[data-reveal-ready] [data-reveal-group].is-in > :nth-child(5){ transition-delay:280ms }
+html[data-reveal-ready] [data-reveal-group].is-in > :nth-child(6){ transition-delay:350ms }
+html[data-reveal-ready] [data-reveal-group].is-in > :nth-child(n+7){ transition-delay:410ms }
+
+
+/* ── K05 · CARDS RESPOND ────────────────────────────────────
+   globals.css builds .grid as a 1px gap over a --rule background, so
+   the cards are tiles in a mortar grid and cannot carry a shadow
+   individually. Rather than fight it, the whole grid lifts as one
+   object and individual cards respond on hover by raising their own
+   ground, not by moving. Moving a tile inside a mortar grid tears it. */
+
+.grid{
+  box-shadow:var(--lift-2);
+  border-radius:3px;
+  overflow:hidden;
+}
+.dark .grid, .deep .grid{
+  box-shadow:var(--lift-d2);
+  background:rgba(244,240,230,.14);
+  border-color:rgba(244,240,230,.14);
+}
+.card{ transition:background .3s var(--ease), transform .3s var(--ease); }
+.card:hover{ background:#FBF9F3; }
+.dark .card, .deep .card{ background:#10244F; color:var(--cream); }
+.dark .card p, .deep .card p{ color:#C5CBDB; }
+.dark .card:hover, .deep .card:hover{ background:#152C5E; }
+
+/* A card that is its own object rather than a grid tile. */
+.card.solo{
+  border:1px solid var(--rule); border-radius:3px;
+  box-shadow:var(--lift-1);
+  transition:box-shadow .34s var(--ease), transform .34s var(--ease);
+}
+.card.solo:hover{ box-shadow:var(--lift-3); transform:translateY(-3px); }
+
+
+/* ── K06 · LINKS AND BUTTONS ACQUIRE RESPONSE ───────────────
+   .link in globals.css is a static gold underline. Here the underline
+   is drawn from the left on hover, and the arrow in the label moves.
+   Both are decorative; neither carries meaning on its own. */
+
+.link{
+  position:relative;border-bottom-color:transparent;
+  background-image:linear-gradient(90deg,var(--gold),var(--gold));
+  background-repeat:no-repeat;
+  background-position:0 100%;
+  background-size:100% 1.5px;
+  transition:background-size .34s var(--ease), color .2s;
+  padding-bottom:3px;
+}
+.link:hover{ background-size:100% 2.5px; }
+.link::after{ content:""; }
+.dark .link, .deep .link{
+  background-image:linear-gradient(90deg,var(--gold-light),var(--gold-light));
+}
+
+.btn{
+  position:relative;overflow:hidden;
+  transition:background .24s var(--ease), box-shadow .3s var(--ease), transform .24s var(--ease);
+  box-shadow:var(--lift-1);
+}
+.btn:hover{ transform:translateY(-2px); box-shadow:var(--lift-3); }
+.btn:active{ transform:translateY(0); box-shadow:var(--lift-1); }
+.dark .btn:hover, .deep .btn:hover{ box-shadow:0 10px 28px rgba(201,168,76,.26); }
+
+
+/* ── K07 · FOCUS · never removed, always visible ────────────
+   Two-tone so it survives on both grounds without a second rule per
+   component. Offset so it never sits on the glyphs. */
+
+a:focus-visible, button:focus-visible, input:focus-visible,
+textarea:focus-visible, select:focus-visible, summary:focus-visible,
+[tabindex]:focus-visible{
+  outline:2px solid var(--gold);
+  outline-offset:3px;
+  border-radius:2px;
+}
+.dark a:focus-visible, .deep a:focus-visible,
+.dark button:focus-visible, .deep button:focus-visible{
+  outline-color:var(--gold-light);
+}
+
+/* Skip link — present in the DOM, off-screen until focused. */
+.skip{
+  position:absolute;left:-9999px;top:0;z-index:999;
+  background:var(--navy);color:var(--cream);
+  padding:12px 20px;font-size:var(--t-sm);text-decoration:none;
+}
+.skip:focus{ left:8px; top:8px; }
+
+
+/* ── K08 · THE SIX ICONS ────────────────────────────────────
+   /public/icons — diagnose, sequence, bearings, governance, readiness,
+   compound. Six is the ceiling; no set is ever installed. Minimum 48px
+   per the motif system, so 48 is the floor here and the default.
+
+   Always decorative: the label beside an icon carries the meaning, so
+   the <img> takes alt="" and the icon is never the only signal. */
+
+/* 56px, not the 48px floor. The motif system states 48 as the MINIMUM
+   render size, and at exactly the minimum the thinner marks disappear:
+   governance.svg carries a 6px stroke on a 400 viewBox (0.72px at 48)
+   and compound.svg fades its smallest dot to 0.3 opacity.
+
+   THEY ARE ONLY EVER PLACED ON DARK GROUNDS. governance.svg's outer
+   ring is stroke="rgba(255,255,255,0.4)" — white at 40%, which is
+   invisible on cream. The set was drawn for navy. Putting them on a
+   cream band, as the first version of this did, renders four of the
+   five as near-blank space.
+
+   No filter is applied. An earlier version recoloured them to a gold
+   monochrome on dark, which destroyed the teal-and-gold two-colour
+   design and the deliberate opacity fade in compound.svg — and the
+   motif system is explicit that the fade by index is the idea, not an
+   artefact to flatten. */
+.ic48{
+  width:56px;height:56px;flex:0 0 56px;display:block;
+  transition:transform .4s var(--ease-out), opacity .3s;
+  opacity:.95;
+}
+.card:hover .ic48, .pillar:hover .ic48{ transform:translateY(-2px) scale(1.04); opacity:1; }
+
+
+/* ── K09 · PILLARS ──────────────────────────────────────────
+   globals.css ships .pillars/.pillar and the 18 October rebuild
+   hand-rolled a worse copy in inline styles. This restores the real one
+   and gives it the icon column, a hover ground, and a number that reads
+   as a design element rather than a list marker. */
+
+.pillar{
+  transition:background .3s var(--ease), padding .3s var(--ease);
+  align-items:start;
+}
+.pillar:hover{ background:rgba(255,255,255,.5); }
+.dark .pillar:hover, .deep .pillar:hover{ background:rgba(244,240,230,.045); }
+.pillar .n{
+  font-size:13px;letter-spacing:.14em;font-weight:500;
+  display:flex;align-items:baseline;gap:9px;
+}
+.pillar .n::after{
+  content:"";height:1px;width:0;background:var(--gold);
+  transition:width .42s var(--ease-out);display:inline-block;
+}
+.pillar:hover .n::after{ width:18px; }
+.pillar .q{ border-left-width:2px; }
+@media(min-width:840px){
+  .pillar.has-icon{ grid-template-columns:56px 44px 1.25fr 1fr; gap:var(--s3) var(--s4); }
+}
+
+
+/* ── K10 · IMAGERY ──────────────────────────────────────────
+   The rule the 18 October build broke: a photograph on this site is
+   never a bare <img> dropped at whatever size the file happens to be.
+   It is always in a frame, always with a declared aspect ratio, always
+   with the ring or a hairline doing the work of making it belong.
+
+   .fr          the frame. Set --ar for the ratio.
+   .fr img      fills it, object-fit cover, focal point via --pos.
+   .fr figcaption  mono, beneath, never over the image.
+
+   An image that must not be cropped takes .fr.exact, which sets the
+   ratio to the file's own and lets it letterbox on narrow screens
+   rather than lose anything. */
+
+.fr{
+  position:relative;display:block;margin:0;
+  border-radius:3px;overflow:hidden;
+  background:var(--cream-warm);
+  box-shadow:var(--lift-2);
+}
+.fr > img{
+  display:block;width:100%;height:100%;
+  aspect-ratio:var(--ar,3/2);
+  object-fit:cover;object-position:var(--pos,50% 50%);
+  transition:transform .8s var(--ease-out);
+}
+.fr.exact > img{ object-fit:contain; background:var(--cream-warm); }
+.fr.zoom:hover > img{ transform:scale(1.035); }
+
+/* The hairline that makes a photograph part of the system rather than
+   pasted onto it. Gold at the top-left corner, open — it does not meet. */
+.fr::after{
+  content:"";position:absolute;inset:0;pointer-events:none;border-radius:3px;
+  box-shadow:inset 0 0 0 1px rgba(13,31,78,.10);
+}
+.dark .fr::after, .deep .fr::after{ box-shadow:inset 0 0 0 1px rgba(244,240,230,.16); }
+
+.fr figcaption, .fcap{
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--ink-soft);opacity:.78;
+  margin-top:10px;line-height:1.5;
+}
+.dark .fcap, .deep .fcap{ color:#A8B0C4;opacity:.9 }
+
+/* A duotone wash for a photograph that has to sit on a navy band
+   without fighting it. Multiply keeps the detail; the navy overlay
+   pulls it into the palette. */
+.fr.tone > img{ filter:saturate(.72) contrast(1.04); }
+.fr.tone::before{
+  content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:linear-gradient(140deg, rgba(13,31,78,.34), rgba(0,181,173,.12) 62%, transparent);
+  mix-blend-mode:multiply;
+}
+
+/* Portrait — the one place a soft vignette is allowed, because a
+   cut-out head on a flat ground is what made /about look like a CV. */
+.fr.portrait{ box-shadow:var(--lift-4); }
+.fr.portrait::before{
+  content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:radial-gradient(130% 90% at 30% 18%, transparent 44%, rgba(13,31,78,.16) 100%);
+}
+
+
+/* ── K11 · BRAND-NATIVE TEXTURE ─────────────────────────────
+   For slots that want an image and have no photograph that belongs
+   there. Built from the motif, so it is never stock and never generic.
+   Used as a card ground, not as a fake photograph. */
+
+.tex{
+  position:relative;border-radius:3px;overflow:hidden;
+  background:
+    radial-gradient(120% 120% at 18% 12%, rgba(0,181,173,.22), transparent 58%),
+    radial-gradient(100% 100% at 86% 86%, rgba(201,168,76,.20), transparent 56%),
+    linear-gradient(152deg, var(--navy) 0%, var(--navy-ink) 100%);
+  aspect-ratio:var(--ar,3/2);
+}
+.tex::before{
+  content:"";position:absolute;inset:0;
+  background:var(--tile-ring) repeat;background-size:60px;opacity:.085;
+}
+.tex.warmtone{
+  background:
+    radial-gradient(120% 120% at 20% 10%, rgba(201,168,76,.26), transparent 56%),
+    radial-gradient(100% 100% at 84% 88%, rgba(0,181,173,.16), transparent 58%),
+    linear-gradient(152deg, var(--cream-warm) 0%, #DCD4C0 100%);
+}
+.tex.warmtone::before{ background-image:var(--tile-ring-ink); opacity:.10; }
+
+
+/* ── K12 · PULL QUOTE ───────────────────────────────────────
+   The founder essay and the advisory page both have lines that were
+   running as ordinary body copy. */
+
+.pq{
+  margin:var(--s5) 0;padding-left:clamp(20px,3vw,34px);
+  border-left:2px solid var(--gold);
+  font-family:var(--display);font-weight:500;font-style:italic;
+  font-size:clamp(20px,2.6vw,27px);line-height:1.34;
+  color:var(--navy);max-width:34ch;
+}
+.dark .pq, .deep .pq{ color:var(--cream);border-left-color:var(--gold-light) }
+
+
+/* ── K13 · SECTION HEAD ─────────────────────────────────────
+   A consistent opener so every band starts the same way and the eye
+   learns the rhythm. */
+
+.shead{ max-width:62ch;margin-bottom:var(--s5) }
+.shead .lede{ margin-top:var(--s2) }
+.shead .rule{ margin:var(--s3) 0 0;max-width:120px }
+
+
+/* ── K15 · SHARED UTILITIES ─────────────────────────────────
+   These replace inline styles that were repeated across pages. Each
+   one existed as a style="" attribute in at least two places in the
+   18 October build. */
+
+.statnum{
+  font-family:var(--display);font-size:clamp(34px,4.5vw,48px);
+  line-height:1;color:var(--navy);display:block;
+  font-weight:500;letter-spacing:-.015em;
+}
+.dark .statnum,.deep .statnum{ color:var(--gold-light) }
+.statgrid{ margin-top:var(--s5) }
+
+.chiprow{ margin:var(--s4) 0 0;display:flex;flex-wrap:wrap;gap:10px }
+.dark .chip,.deep .chip{
+  border-color:rgba(244,240,230,.26);color:#C5CBDB;background:rgba(244,240,230,.05);
+}
+.aftergrid{ margin-top:var(--s4) }
+.strongink{ color:var(--ink) }
+.dark .strongink,.deep .strongink{ color:var(--cream) }
+.lastword{ margin-top:var(--s4) }
+.dark .feature,.deep .feature{
+  background:rgba(244,240,230,.06);border-color:rgba(244,240,230,.18);
+}
+
+
+/* ── K16 · ABOUT ────────────────────────────────────────────
+   The name, the portrait split, and the essay — the long read that was
+   deleted on 18 October and restored on the 19th. */
+
+.namebox{ text-align:center }
+.nameword{
+  font-family:var(--display);font-weight:500;
+  font-size:clamp(44px,8vw,86px);line-height:1;
+  margin:0;color:var(--navy);letter-spacing:-.02em;max-width:none;
+}
+.nameword em{ font-style:italic;color:var(--teal) }
+.namepron{
+  font-family:var(--mono);font-size:11px;letter-spacing:.3em;
+  text-transform:uppercase;color:var(--ink-soft);opacity:.75;
+  margin:var(--s2) 0 var(--s4);
+}
+.nameline{ margin:0 auto;text-align:left;max-width:58ch }
+
+.fo-split{ display:grid;gap:clamp(28px,4.5vw,64px);align-items:start }
+@media(min-width:860px){ .fo-split{ grid-template-columns:1.15fr .85fr } }
+.fo-words{ display:flex;flex-direction:column;gap:var(--s3);min-width:0 }
+.fo-words .pq{ margin:var(--s2) 0 }
+.fo-words .fr{ max-width:420px }
+.signature{
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--gold);margin:var(--s2) 0 0;
+}
+.credentials{ font-size:14px;line-height:1.65;color:var(--ink-soft);margin:0 }
+.fo-split .fr.portrait{ max-width:440px;justify-self:center;width:100% }
+
+/* The essay. Measure first — everything here serves the line length. */
+.essay-band .w-narrow > p{
+  font-size:17px;line-height:1.72;color:var(--ink-soft);
+  margin:0 0 var(--s3);
+}
+.essay-band .w-narrow > p em{ font-style:italic;color:var(--navy) }
+.essay-band .w-narrow > p strong{ color:var(--ink);font-weight:600 }
+.whyhead{ font-size:clamp(32px,5vw,54px);max-width:none;margin-bottom:var(--s4) }
+.essay-open{
+  font-family:var(--display) !important;font-size:clamp(21px,2.7vw,27px) !important;
+  line-height:1.38 !important;color:var(--navy) !important;
+  margin-bottom:var(--s4) !important;
+}
+.essay-band .pq{ margin:var(--s5) 0 }
+.coda{
+  font-family:var(--display) !important;font-style:italic;
+  font-size:clamp(19px,2.3vw,24px) !important;line-height:1.42 !important;
+  color:var(--navy) !important;padding-top:var(--s4);
+  border-top:1px solid var(--rule);margin-top:var(--s5) !important;
+}
+.coda em{ color:var(--teal) !important;font-style:italic }
+
+/* Chapter break · an open arc, not a row of dots. */
+.chapbreak{
+  display:flex;align-items:center;gap:var(--s3);
+  margin:var(--s5) 0;color:var(--gold);
+}
+.chapbreak::before,.chapbreak::after{
+  content:"";height:1px;flex:1;
+  background:linear-gradient(90deg,transparent,rgba(201,168,76,.6));
+}
+.chapbreak::after{ background:linear-gradient(90deg,rgba(201,168,76,.6),transparent) }
+.chapbreak span{
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.24em;
+  text-transform:uppercase;white-space:nowrap;
+}
+
+.signoff{
+  display:flex;flex-direction:column;gap:3px;
+  margin-top:var(--s5) !important;padding-top:var(--s4);
+  border-top:1px solid var(--rule);
+}
+.signoff-name{
+  font-family:var(--display);font-size:24px;font-weight:500;color:var(--navy);
+}
+.signoff-role{
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--ink-soft);opacity:.8;
+}
+
+
+/* ── K17 · CONTACT ──────────────────────────────────────────
+   The address stays prominent even though the form is now on the page.
+   Someone who distrusts forms must not have to hunt for it. */
+
+.mailline{ margin:var(--s4) 0 var(--s1) }
+.maillink{
+  font-size:clamp(19px,2.4vw,26px);font-family:var(--display);
+  background-size:100% 2px;
+}
+.maillink:hover{ background-size:100% 3px }
+.mailnote{ font-size:14px;color:var(--ink-soft);opacity:.85;margin:0 }
+.formlede{ margin-bottom:var(--s2) }
+.nojs-note{
+  margin-top:var(--s4);padding:16px 18px;
+  background:#FCFAF4;border-left:2px solid var(--gold);border-radius:2px;
+}
+/* .link inside a .card pushes itself to the bottom so a row of cards
+   lines its calls to action up regardless of body length. Was an
+   inline style="margin-top:auto" on nine cards across four pages. */
+.cardlink{ margin-top:auto }
+
+
+/* ── K18 · ADVISORY ─────────────────────────────────────────
+   .pillar in globals.css is a two-then-three column grid. The icon adds
+   a fourth, so the body gets its own wrapper to keep the name and the
+   description together in one cell. */
+
+.pillar-body{ display:flex;flex-direction:column;gap:7px;min-width:0 }
+.pillars{ border-bottom:1px solid var(--rule) }
+.dark .pillars,.deep .pillars{ border-color:rgba(244,240,230,.16) }
+.dark .pillar,.deep .pillar{ border-bottom-color:rgba(244,240,230,.16) }
+.dark .pillar .do,.deep .pillar .do{ color:#C5CBDB }
+.dark .pillar .q,.deep .pillar .q{ color:var(--cream) }
+.honest{ font-size:var(--t-lg);line-height:1.72;max-width:none }
+
+
+/* ── K19 · HOMEPAGE ─────────────────────────────────────────
+   The hero moves onto the navy-deep ground the pre-rebuild homepage
+   used. A portrait on cream read as a CV photograph; on navy with the
+   arc behind it, it reads as a cover. */
+
+.hero-split{
+  display:grid;gap:clamp(28px,4vw,64px);align-items:center;
+  grid-template-columns:1fr;
+}
+@media(min-width:820px){ .hero-split{ grid-template-columns:1.2fr .8fr } }
+.hero-words{ display:flex;flex-direction:column;gap:var(--s3);min-width:0 }
+.hero-h1{ margin:0 }
+.hero-kicker{ font-style:italic;color:var(--gold-light) }
+.hero-portrait{ max-width:400px;width:100%;justify-self:center }
+
+.evidence-k{ margin-top:var(--s5) }
+.srcnote{
+  margin:var(--s2) 0 0;font-family:var(--mono);font-size:10.5px;
+  letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);
+}
+.dark .srcnote,.deep .srcnote{ color:#A8B0C4 }
+.rolep{ color:var(--navy) }
+.dark .rolep,.deep .rolep{ color:var(--teal-light) }
+
+.roomstrip{
+  margin:var(--s4) 0 0;font-family:var(--display);
+  font-size:clamp(19px,2.4vw,26px);line-height:1.5;color:var(--navy);
+}
+.unlearning .cta{ margin-top:var(--s4) }
+
+/* The twelve triggers. globals.css columns them; this adds the hanging
+   rule so a long list reads as a list rather than as wrapped prose. */
+.triggers p{
+  break-inside:avoid;padding:10px 0 10px 0;margin:0;
+  border-bottom:1px solid var(--rule);
+  font-size:15.5px;line-height:1.55;color:var(--ink-soft);
+}
+.dark .triggers p,.deep .triggers p{
+  border-bottom-color:rgba(244,240,230,.14);color:#C5CBDB;
+}
+
+
+/* ── K20 · THE CLASSES THAT REPLACED THE INLINE STYLES ──────
+   Each of these was a style="" attribute repeated across pages in the
+   18 October build. Named here once, so changing a body size is one
+   edit rather than a search across eight files. */
+
+.body-sm{ margin:0;font-size:14.5px;line-height:1.55;color:var(--ink-soft) }
+.body-md{ margin:0;font-size:15.5px;line-height:1.6;color:var(--ink-soft) }
+.dark .body-sm,.deep .body-sm,.dark .body-md,.deep .body-md{ color:#C5CBDB }
+
+.k-sm{
+  display:block;font-family:var(--mono);font-size:10px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--gold);margin-bottom:7px;
+}
+/* .foot is scoped to .card in globals.css; these sit outside one. */
+.foot{
+  margin-top:var(--s2);padding-top:var(--s2);border-top:1px solid var(--rule);
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--ink-soft);
+}
+.dark .foot,.deep .foot{ border-top-color:rgba(244,240,230,.16);color:#A8B0C4 }
+
+.mt0{ margin-top:0 }
+.mt2{ margin-top:var(--s2) }
+.mt3{ margin-top:var(--s3) }
+
+.minigrid{
+  display:grid;gap:18px;margin-top:4px;
+  grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));
+}
+.splitgrid{
+  display:grid;gap:clamp(20px,3vw,36px);align-items:center;
+  grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));
+}
+.stack2{ display:flex;flex-direction:column;gap:var(--s2);min-width:0 }
+.lockline{ margin:0;display:flex;align-items:center }
+.lockmark{ height:30px;width:auto;display:block }
+
+/* Product screenshots. Were bare <img> with a border and a max-width;
+   now they sit in the standard frame like every other image. */
+.shot{ max-width:340px;width:100%;justify-self:center }
+.shot-wide{ width:100% }
+
+
+/* ── K21 · ROOMS · the gallery ──────────────────────────────
+   Every room is the same size, including the one with the good
+   photograph. A credentials page where one item is four times the
+   others is not a gallery, it is a single claim with footnotes. */
+
+.rmgrid{
+  display:grid;gap:clamp(24px,3vw,40px);margin-top:var(--s4);
+  grid-template-columns:1fr;
+}
+@media(min-width:720px){ .rmgrid{ grid-template-columns:repeat(2,1fr) } }
+@media(min-width:1120px){ .rmgrid{ grid-template-columns:repeat(3,1fr) } }
+
+.rm{
+  display:flex;flex-direction:column;gap:var(--s3);min-width:0;
+  background:var(--cream);border:1px solid var(--rule);border-radius:3px;
+  overflow:hidden;box-shadow:var(--lift-1);
+  transition:box-shadow .34s var(--ease), transform .34s var(--ease);
+}
+.rm:hover{ box-shadow:var(--lift-3);transform:translateY(-3px) }
+.warm .rm{ background:#F7F3E9 }
+.dark .rm,.deep .rm{
+  background:#10244F;border-color:rgba(244,240,230,.16);box-shadow:var(--lift-d1);
+}
+
+/* The image slot. Fixed 3:2 whether it holds a photograph or the
+   motif ground, so the grid never goes ragged. */
+.rm-img{
+  margin:0;border-radius:0;box-shadow:none;width:100%;
+  --ar:3/2;
+}
+.rm-img::after{ box-shadow:none;border-radius:0 }
+.rm-img > img{ aspect-ratio:3/2 }
+/* A room with no photograph is not a card with a hole in it. The whole
+   card becomes the open-ring ground and the words sit on it, so it
+   reads as a typographic tile rather than a missing image. */
+.rm.noimg{
+  background:
+    radial-gradient(120% 120% at 18% 12%, rgba(0,181,173,.22), transparent 58%),
+    radial-gradient(100% 100% at 86% 86%, rgba(201,168,76,.20), transparent 56%),
+    linear-gradient(152deg, var(--navy) 0%, var(--navy-ink) 100%);
+  border-color:rgba(244,240,230,.18);
+  box-shadow:var(--lift-d1);
+  position:relative;overflow:hidden;
+}
+.rm.noimg::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:var(--tile-ring) repeat;background-size:60px;opacity:.085;
+}
+.rm.noimg:hover{ box-shadow:var(--lift-d3) }
+.rm.noimg .rm-body{
+  position:relative;z-index:1;
+  padding:clamp(24px,2.8vw,30px);
+}
+.rm.noimg .rm-meta{ color:#A8B0C4;opacity:.95 }
+.rm.noimg .rm-title{ color:var(--cream) }
+.rm.noimg .body-sm,
+.rm.noimg .rm-people li,
+.rm.noimg .rm-foot{ color:#C5CBDB }
+.rm.noimg .rm-people li::before{ background:var(--gold-light) }
+.rm.noimg .rm-foot{ opacity:.75 }
+.rm.noimg .link{
+  color:var(--cream);
+  background-image:linear-gradient(90deg,var(--gold-light),var(--gold-light));
+}
+.rm.noimg .chip{
+  border-color:rgba(244,240,230,.3);color:#C5CBDB;background:rgba(244,240,230,.06);
+}
+
+.rm-body{
+  display:flex;flex-direction:column;gap:var(--s2);min-width:0;
+  padding:0 clamp(20px,2.4vw,26px) clamp(22px,2.6vw,28px);
+  flex:1;
+}
+.rm-top{
+  display:flex;flex-wrap:wrap;gap:10px;
+  align-items:baseline;justify-content:space-between;
+}
+.rm-meta{
+  font-family:var(--mono);font-size:10px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--ink-soft);opacity:.85;line-height:1.5;
+}
+.dark .rm-meta,.deep .rm-meta{ color:#A8B0C4 }
+.rm-title{
+  margin:0;font-family:var(--display);font-weight:500;
+  font-size:clamp(18px,2vw,21px);line-height:1.22;
+}
+.rm-people{
+  margin:4px 0 0;padding:0;list-style:none;
+  display:flex;flex-direction:column;gap:6px;
+}
+.rm-people li{
+  font-size:13.5px;line-height:1.45;color:var(--ink-soft);
+  padding-left:13px;position:relative;
+}
+.rm-people li::before{
+  content:"";position:absolute;left:0;top:.62em;
+  width:5px;height:1px;background:var(--gold);
+}
+.rm-foot{
+  font-size:13px;line-height:1.5;color:var(--ink-soft);opacity:.8;margin:0;
+}
+.rm .fcap{ margin-top:0 }
+.rm .cardlink{ margin-top:auto;padding-top:var(--s2) }
+
+/* Podcast · words beside the video rather than the video alone. */
+.pod{ display:grid;gap:clamp(26px,3.4vw,48px);align-items:start;grid-template-columns:1fr }
+@media(min-width:900px){ .pod{ grid-template-columns:1fr 1fr } }
+.pod-words{ display:flex;flex-direction:column;gap:var(--s2);min-width:0 }
+.pod-video{
+  aspect-ratio:16/9;border-radius:3px;overflow:hidden;
+  box-shadow:var(--lift-d3);
+}
+.pod-video iframe{ width:100%;height:100%;border:0;display:block }
+.pod .pq{ margin:var(--s2) 0 }
+
+
+/* ── K22 · ONE LEFT EDGE ────────────────────────────────────
+   globals.css centres .w-narrow (margin:0 auto). On a page that
+   alternates full-width bands with narrow ones, that puts two different
+   left margins down the same page — the hero starts at the gutter and
+   the narrow section starts ~140px further in. The eye reads it as
+   misalignment without being able to name it, and it is visible on
+   /contact and the homepage in the 19 October renders.
+
+   So narrow columns constrain the RIGHT edge only and the left edge
+   holds all the way down. .mid restores centring for the one place it
+   is a deliberate display choice — the name block on /about.
+
+   This is the only globals.css class this file redefines. It is safe
+   because .w-narrow was used on no page before 19 October (measured:
+   0 of 183 system classes were in use) and every current use is in
+   markup written here or on /trial, which is noindex. */
+
+.w-narrow{ margin-left:0;margin-right:auto }
+.w-narrow.mid{ margin-left:auto;margin-right:auto }
+
+
+/* ── K23 · CARD HEADINGS ────────────────────────────────────
+   These were <h4> sitting directly under a section's <h2>, which skips
+   a heading level — a screen-reader user navigating by headings hears
+   a level vanish, and it was flagged on five routes. They are now <h3>
+   for structure and sized like an h4 for the page, which is the right
+   way round: heading level is semantics, size is design. */
+
+.card-h{
+  margin:0;font-family:var(--display);font-weight:500;
+  font-size:var(--t-h4);line-height:1.22;
+}
+
+/* /follow's wordmark became the page's h1 — it was a <span>, so the
+   page had no h1 at all. It now inherits h1's bottom margin, which
+   .fhead already provides as a gap. */
+.fom{ margin:0;max-width:none }
+
+
+/* ── K24 · THE CLOSING MARK ─────────────────────────────────
+   The master mark returns as the homepage's last band. It was in the
+   hero before 18 October and is not going back there — the portrait
+   earns that slot, because a board director hires a person and a mark
+   nobody recognises yet is decoration.
+
+   No animation here. globals.css already drives five independent
+   rotations on it (arcs 36s reverse, orbit text 60s, orbit ring 90s,
+   ticks 120s reverse, centre breathing 6s) and carries its own
+   prefers-reduced-motion block. */
+
+.closemark{ padding-bottom:calc(var(--band) + var(--s4)) }
+.closestage{
+  display:flex;flex-direction:column;align-items:center;
+  gap:var(--s3);text-align:center;
+}
+.closestage .markstage{ width:min(380px,74vw);margin:0 auto var(--s2) }
+.closeline{
+  font-family:var(--display);font-weight:500;
+  font-size:clamp(26px,3.6vw,40px);line-height:1.12;
+  color:var(--cream);margin:0;letter-spacing:-.012em;
+}
+.closeline em{ font-style:italic;color:var(--teal-light) }
+.closesub{
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--gold-light);margin:0;opacity:.9;
+}
+
+
+/* ── K25 · THE FOOTER'S "COOKIES" ───────────────────────────
+   It sat 15.5px and cream next to three siblings at 14px and #C9C4B4,
+   with no padding, so it read as emphasised. Measured, not guessed.
+
+   Cause: it is a <button>, not an <a>, and correctly so — it opens the
+   consent dialog rather than navigating, and making it a link to get
+   the styling would be a lie to a screen reader. But globals.css styles
+   `.fcol a`, so the button inherited from the footer instead.
+
+   Fixed by matching the styling, not by changing the element. */
+
+.fcol .cc-link{
+  display:block;font-size:14px;color:#C9C4B4;padding:5px 0;
+  font-family:var(--body);font-weight:400;letter-spacing:normal;
+}
+.fcol .cc-link:hover{ color:var(--cream) }
+
+
+/* ── K14 · MOTION OFF ───────────────────────────────────────
+   Everything above that moves, stops. Content stays visible — the
+   reveal is removed, not left in its hidden state. */
+
+@media (prefers-reduced-motion: reduce){
+  html[data-reveal-ready] [data-reveal],
+  html[data-reveal-ready] [data-reveal-group] > *{
+    opacity:1 !important; transform:none !important; transition:none !important;
+  }
+  .fr.zoom:hover > img,
+  .btn:hover, .card.solo:hover,
+  .card:hover .ic48, .pillar:hover .ic48{ transform:none !important; }
+  *, *::before, *::after{
+    animation-duration:.01ms !important; animation-iteration-count:1 !important;
+    transition-duration:.01ms !important; scroll-behavior:auto !important;
+  }
+}

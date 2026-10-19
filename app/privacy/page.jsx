@@ -204,7 +204,7 @@ const __MARKUP = String.raw`
         <p>If you wish to do any of the above please contact our Privacy Officer via:</p>
 
         <div class="privacy-contact">
-          <h4>Privacy Officer · Omameh Partners Pty Ltd</h4>
+          <h3 class="card-h">Privacy Officer · Omameh Partners Pty Ltd</h3>
           <dl>
             <dt>Email</dt><dd><a href="mailto:privacy@omameh.com.au"><strong>privacy@omameh.com.au</strong></a></dd>
             <dt>Post</dt><dd><strong>Privacy Officer</strong><br/>Omameh Partners Pty Ltd<br/>1/11 Calidore Street<br/>Bankstown NSW 2200</dd>

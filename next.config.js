@@ -43,7 +43,15 @@ const nextConfig = {
       /* /founder folded into /about on 18 October. The URL carries her
          name and is indexed, so it forwards to the section rather than
          404ing. 301 for the same reason as the article routes. */
-      { source: '/founder', destination: '/about#founder', statusCode: 301 },
+      /* /founder REDIRECT REMOVED, 19 October 2026.
+         It was added on the 18th when the page was folded into /about.
+         On Bijal's call the essay has its own page again, so the route
+         is live and must not forward — leaving this line in would have
+         made the restored page unreachable while every link to it kept
+         working, which is the kind of fault nobody sees until a reader
+         clicks. Deliberately not replaced with a redirect in the other
+         direction: /about#founder is still a real anchor on a real
+         section, and both URLs should resolve. */
       /* /media folded into /rooms on 18 October — the media kit is a card
          on the page that makes someone want the assets. */
       { source: '/media', destination: '/rooms', statusCode: 301 },

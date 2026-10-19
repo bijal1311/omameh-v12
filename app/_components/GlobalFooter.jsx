@@ -156,6 +156,13 @@ export default function GlobalFooter() {
           <div className="fcol">
             <b>Company</b>
             <a href="/about">About</a>
+            {/* Founder is back, 19 October. It was dropped on the 18th when
+                the route 301'd into /about; the essay has its own page
+                again on Bijal's call, and the footer is where it belongs
+                rather than the nav — eight nav items is too many, and
+                Founder is a page you go to from About, not a top-level
+                destination competing with Advisory and Platforms. */}
+            <a href="/founder">Founder</a>
             <a href="/contact">Contact</a>
             <a href="/privacy">Privacy</a>
             {/* Withdrawing consent has to be as easy as giving it, so the

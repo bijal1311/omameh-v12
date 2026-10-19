@@ -1,41 +1,58 @@
 import { pageMeta } from '@/lib/seo/page-meta';
 import RouteShell from '../_components/RouteShell';
 import IntukaDemo from '../_components/IntukaDemo';
+import ContactForm from '../_components/ContactForm';
 
 /**
  * Contact · /contact
  *
  * Rebuilt 18 October 2026 from WIREFRAME — contact.html.
+ * Reworked 19 October on Bijal's instruction.
  *
- * The inbox stays an inbox. "No form that disappears, no routing, no
- * queue. Write and I read it." is the differentiator and it costs
- * nothing to keep true — so the address is a mailto and is not being
- * replaced by a form.
+ * ── WHAT CHANGED ON 19 OCTOBER ─────────────────────────────────────
+ * "We probably just put the same form which we have built everywhere
+ * to go straight to the Intuka CRM... we keep press and partnerships
+ * at the bottom and then we just put that form over here and remove
+ * the three ways."
  *
- * The three ways in ladder by TIME, not by price — fifteen minutes,
- * ninety minutes, nothing. A reader picks by what they can spare,
- * which is the real objection.
+ * So: the CRM form is now ON the page rather than behind a modal, the
+ * "Or start smaller / three ways in" section is gone, and Press and
+ * Partnerships stays at the bottom where it was.
  *
- * Three dead references are gone and verified absent: "Four series,
- * free" (the series are retired), "Join a cohort" and "The Independent
- * Practice" (that course and the cohort model both went with the seat
- * model on /fluency). The roundtable replaces the cohort as the middle
- * rung, which is the right register — convening, not teaching.
+ * THE INBOX LINE SURVIVES, and deliberately. "No form that disappears,
+ * no routing, no queue. Write and I read it." was the differentiator
+ * and putting a form on the page appears to contradict it — so the
+ * copy now says both things honestly: the form routes into the CRM so
+ * nothing is lost, and the address is still there, still direct, for
+ * anyone who would rather just write. A visitor who distrusts forms
+ * loses nothing. Deleting the address to make room for a form would
+ * have been the version that breaks the promise.
  *
- * Also removed: the "everything in one place" block. It pointed at
- * /follow, which is noindex, and duplicated links already in the
- * footer. A contact page should narrow, not fan out.
+ * THE FORM IS THE SAME COMPONENT, not a copy. ContactForm and the
+ * IntukaDemo modal both post to the one Intuka WebForm endpoint with
+ * the same field names and the same `product` category, so an enquiry
+ * from this page is indistinguishable from one raised by the modal
+ * anywhere else on the site. One form in the CRM, one place to change
+ * the endpoint. Building a second form would have been how the two
+ * silently drift apart.
  *
- * Two of the three ways in route to the CRM rather than a mailto, so
- * they arrive as leads with the right category on them. "Just read"
- * goes straight to Substack — it is the one that must never ask for
- * anything.
+ * THE DIAGNOSTIC AND ROUNDTABLE DID NOT DIE WITH THE THREE CARDS. They
+ * are options in the form's category list, so the two routes Bijal
+ * cared about still arrive tagged — they are now a choice inside one
+ * ask rather than three competing calls to action.
+ *
+ * Three dead references remain gone and verified absent: "Four series,
+ * free", "Join a cohort" and "The Independent Practice".
+ *
+ * BAND RHYTHM · hero(plain) · warm(the form) · dark(press and
+ * partnerships). Matches the pre-rebuild page, which ran
+ * hero · warm · dark and is the shape this page had when it worked.
  */
 
 export const metadata = pageMeta({
   title: 'One inbox. It reaches me.',
   description:
-    'No form that disappears, no routing, no queue. Write and I read it.',
+    'Tell me what you are trying to move. No routing, no queue — it reaches me.',
   path: '/contact',
 });
 
@@ -43,63 +60,72 @@ const MAILTO = (subject) =>
   `mailto:contact@omameh.com.au?subject=${encodeURIComponent(subject)}`;
 
 const __MARKUP = String.raw`
-<section class="hero"><div class="w">
-  <p class="eyebrow">Contact</p>
-  <h1>One inbox. <em>It reaches me.</em></h1>
-  <p class="lede">No form that disappears, no routing, no queue. Write and I read it.</p>
-  <p style="margin:var(--s4) 0 0"><a class="link" style="font-size:clamp(19px,2.4vw,25px);font-family:var(--display);border-bottom-width:2px" href="${MAILTO('Hello')}">contact@omameh.com.au</a></p>
-</div></section>
+<section class="hero">
+  <span class="arc top" aria-hidden="true"></span>
+  <div class="w">
+    <p class="eyebrow">Contact</p>
+    <h1>One inbox. <em>It reaches me.</em></h1>
+    <p class="lede">Tell me what you are trying to move and I will tell you whether we are the right people for it. No routing, no queue, and no junior calling you back.</p>
+    <p class="mailline"><a class="link maillink" href="${MAILTO('Hello')}">contact@omameh.com.au</a></p>
+    <p class="mailnote">Or write directly, if you would rather not use a form. It reaches the same place.</p>
+  </div>
+</section>
 
-<section><div class="w">
-  <p class="eyebrow">Or start smaller</p>
-  <h2>Three ways in that are not a sales call.</h2>
-
-  <div class="grid three">
-    <div class="card">
-      <span class="k">Fifteen minutes</span>
-      <h3 style="margin:0;font-size:clamp(19px,2.3vw,23px)">Take the read</h3>
-      <p>A scored view of where you sit, with the working shown. Yours whether we speak again or not.</p>
-      <a class="link" style="margin-top:auto" data-intuka-demo data-demo-product="Diagnostic" href="${MAILTO('Diagnostic request')}">Ask for the diagnostic &rarr;</a>
-    </div>
-    <div class="card">
-      <span class="k">Ninety minutes</span>
-      <h3 style="margin:0;font-size:clamp(19px,2.3vw,23px)">Sit at a table</h3>
-      <p>One industry, a dozen people who actually run something, no slides and nothing sold — by anyone, including us.</p>
-      <a class="link" style="margin-top:auto" data-intuka-demo data-demo-product="Roundtable" href="${MAILTO('Roundtable interest')}">Register interest &rarr;</a>
-    </div>
-    <div class="card">
-      <span class="k">Nothing yet</span>
-      <h3 style="margin:0;font-size:clamp(19px,2.3vw,23px)">Just read</h3>
-      <p>The Unlearning. Ungated, and it stays that way.</p>
-      <a class="link" style="margin-top:auto" href="https://atlas.omameh.com.au" target="_blank" rel="noopener">atlas.omameh.com.au &rarr;</a>
+<section class="warm" id="enquire">
+  <span class="arc left" aria-hidden="true"></span>
+  <div class="w">
+    <div class="w-narrow" data-reveal>
+      <p class="eyebrow">Start here</p>
+      <h2>What are you trying to move?</h2>
+      <p class="lede formlede">A few lines is enough. Tell me which of these it is and roughly what you are dealing with, and I will come back to you myself.</p>
+      <div data-contact-form>
+        <!-- With JavaScript off this slot is empty, so the section would
+             render a heading and a lede over nothing. <noscript> is the
+             one thing that shows only in that case, and createPortal
+             appends rather than replaces, so this cannot double up when
+             the form does mount. -->
+        <noscript>
+          <p class="lede nojs-note">This form needs JavaScript. It is not working for you right now, so write to <a class="link" href="${MAILTO('Hello')}">contact@omameh.com.au</a> instead &mdash; it reaches exactly the same place, and I read it myself.</p>
+        </noscript>
+      </div>
     </div>
   </div>
-</div></section>
+</section>
 
-<section><div class="w">
-  <p class="eyebrow">If you are here for something specific</p>
+<section class="dark">
+  <span class="arc" aria-hidden="true"></span>
+  <div class="w">
+    <div class="shead" data-reveal>
+      <p class="eyebrow">If you are here for something specific</p>
+      <h2>Press and partnerships.</h2>
+    </div>
 
-  <div class="grid two">
-    <div class="card">
-      <span class="k">Press, speaking and moderating</span>
-      <p>Interviews, briefings, keynotes, panels and roundtables. Portraits and bios are in the media kit.</p>
-      <a class="link" style="margin-top:auto" href="/rooms">Rooms &rarr;</a>
+    <div class="grid two" data-reveal-group>
+      <div class="card">
+        <span class="k">Press, speaking and moderating</span>
+        <p>Interviews, briefings, keynotes, panels and roundtables. Portraits and bios are in the media kit.</p>
+        <a class="link cardlink" href="/rooms">Rooms &rarr;</a>
+      </div>
+      <div class="card">
+        <span class="k">Partnerships</span>
+        <p>Delivery in region, or taking each other&rsquo;s software to market. Tell us which direction and what you are trying to reach.</p>
+        <a class="link cardlink" data-intuka-demo data-demo-product="Partnership" href="${MAILTO('Partnership enquiry')}">Start a conversation &rarr;</a>
+      </div>
     </div>
-    <div class="card">
-      <span class="k">Partnerships</span>
-      <p>Delivery in region, or taking each other&rsquo;s software to market. Same address — tell us which direction and what you are trying to reach.</p>
-      <a class="link" style="margin-top:auto" data-intuka-demo data-demo-product="Partnership" href="${MAILTO('Partnership enquiry')}">Start a conversation &rarr;</a>
-    </div>
+
+    <p class="lede aftergrid">Sydney and Hyderabad. One team, two countries.</p>
   </div>
-
-  <p class="lede" style="margin-top:var(--s4)">Sydney and Hyderabad. One team, two countries.</p>
-</div></section>
+</section>
 `;
 
 export default function ContactPage() {
   return (
     <>
       <RouteShell id="contact" label="Contact" markup={__MARKUP} />
+      {/* Mounts into [data-contact-form] inside the markup above — the
+          page is dangerouslySetInnerHTML, so a React child cannot be
+          nested into it directly and is portalled in instead. */}
+      <ContactForm mountSelector="[data-contact-form]" />
       <IntukaDemo />
     </>
   );

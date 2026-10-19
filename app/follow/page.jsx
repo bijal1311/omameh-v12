@@ -51,7 +51,7 @@ const __MARKUP = String.raw`
         </g></g>
         <g transform="translate(200 200)"><circle r="12" fill="url(#fc)"/><circle cx="-1.8" cy="-1.8" r="3" fill="#FFF6D9" opacity=".7"/></g>
       </svg>
-      <span class="fom">Om<i>a</i>meh</span>
+      <h1 class="fom">Om<i>a</i>meh</h1>
       <p class="fsub">Everything in one place. Follow whichever of these is actually useful to you — and none of the rest.</p>
     </div>
 

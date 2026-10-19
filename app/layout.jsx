@@ -28,8 +28,13 @@
 import { Playfair_Display, Inter, JetBrains_Mono } from 'next/font/google';
 import '../styles/globals.css';
 import '../styles/legacy.css';
+// Craft layer — depth, motion and ornament over the design system.
+// Must load last: it is additive and scoped, and relies on winning
+// ties against globals.css rather than on specificity. See its header.
+import '../styles/craft.css';
 import GlobalNav from './_components/GlobalNav';
 import GlobalFooter from './_components/GlobalFooter';
+import Reveal from './_components/Reveal';
 import CookieConsent from './_components/CookieConsent';
 import Analytics from './_components/Analytics';
 import JsonLd from './_components/JsonLd';
@@ -132,10 +137,15 @@ export default function RootLayout({ children }) {
     >
       <body>
         <JsonLd data={globalGraph} />
+        {/* First focusable thing on every page. Keyboard and screen-reader
+            users should not have to walk the seven nav items on each
+            route before reaching the content. */}
+        <a className="skip" href="#main-content">Skip to content</a>
         <GlobalNav />
         {children}
         <GlobalFooter />
         <CookieConsent />
+        <Reveal />
         <Analytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
       </body>
     </html>

@@ -135,47 +135,49 @@ const cards = (rows) =>
     .join('');
 
 const __MARKUP = String.raw`
-<section class="hero"><div class="w">
+<section class="hero">
+  <span class="arc top" aria-hidden="true"></span>
+  <div class="w">
   <p class="eyebrow">Platforms</p>
   <h1>We build the things we <em>advise on.</em></h1>
   <p class="lede">Two platforms of our own. Partner software we take to market here. And accelerators built once and configured for you.</p>
 </div></section>
 
-<section><div class="w">
+<section class="warm"><div class="w">
   <p class="eyebrow">Ours</p>
   <h2>Built by our own team.</h2>
   <p class="lede">Each one is its own company, with its own site and its own customers.</p>
 
   <div class="feature lead">
     <div class="top">
-      <h3 style="margin:0;display:flex;align-items:center"><img src="/brand/intuka-wordmark.svg" alt="Intuka" style="height:30px;width:auto;display:block"></h3>
+      <h3 class="lockline"><img src="/brand/intuka-wordmark.svg" alt="Intuka" class="lockmark"></h3>
       <span class="chip live">Ours</span>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:clamp(20px,3vw,36px);align-items:center">
-      <div style="display:flex;flex-direction:column;gap:var(--s2);min-width:0">
+    <div class="splitgrid">
+      <div class="stack2">
         <p class="lede">Connected business operations — CRM, finance, HR, projects — on one data platform with AI in each of them. Configured against how your organisation actually works, rather than the organisation adapting to the software.</p>
-        <p style="font-size:14.5px;color:var(--ink-soft);line-height:1.55;margin:0"><b style="color:var(--ink)">Omameh runs on Intuka.</b> The demo is our live instance, not a sandbox.</p>
+        <p class="body-sm"><b class="strongink">Omameh runs on Intuka.</b> The demo is our live instance, not a sandbox.</p>
       </div>
-      <img src="/platforms/intuka-digital-workforce.png" alt="The digital workforce panel in Intuka: a sales, a finance and a projects assistant, each drafting work for approval, under the line Nothing sends without you." width="392" height="514" loading="lazy" decoding="async" style="width:100%;max-width:340px;height:auto;display:block;justify-self:center;border:1px solid var(--rule);border-radius:3px">
+      <figure class="fr zoom shot" style="--ar:392/514"><img src="/platforms/intuka-digital-workforce.png" alt="The digital workforce panel in Intuka: a sales, a finance and a projects assistant, each drafting work for approval, under the line Nothing sends without you." width="392" height="514" loading="lazy" decoding="async"></figure>
     </div>
-    <div class="foot" style="margin-top:var(--s2);padding-top:var(--s2);border-top:1px solid var(--rule);font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)">Pillar 01 · Operating Model</div>
-    <div class="cta" style="margin-top:0"><a class="btn" data-intuka-demo href="${MAILTO('Demo request - Intuka')}">Book a demo</a><a class="btn ghost" href="https://www.intuka.com" target="_blank" rel="noopener">Learn more about Intuka →</a></div>
+    <div class="foot foot">Pillar 01 · Operating Model</div>
+    <div class="cta mt0"><a class="btn" data-intuka-demo href="${MAILTO('Demo request - Intuka')}">Book a demo</a><a class="btn ghost" href="https://www.intuka.com" target="_blank" rel="noopener">Learn more about Intuka →</a></div>
   </div>
 
   <div class="feature">
     <div class="top">
-      <h3 style="margin:0">GovernVeil</h3>
+      <h3>GovernVeil</h3>
       <span class="chip live">Ours</span>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:clamp(20px,3vw,36px);align-items:center">
-      <div style="display:flex;flex-direction:column;gap:var(--s2);min-width:0">
+    <div class="splitgrid">
+      <div class="stack2">
         <p class="lede">A self-hosted control gateway that checks every AI request before it reaches an external model — enforcing your data rules and recording the decision for audit.</p>
-        <p style="font-size:14.5px;color:var(--ink-soft);line-height:1.55;margin:0"><b style="color:var(--ink)">Runs inside your own environment.</b> Nothing leaves your perimeter in order to be governed.</p>
+        <p class="body-sm"><b class="strongink">Runs inside your own environment.</b> Nothing leaves your perimeter in order to be governed.</p>
       </div>
-      <img src="/platforms/governveil-redaction@2x.png" alt="A request leaving an application with a customer PAN in it, the redacted version the model provider actually receives, and the audit line recording the verdict." width="942" height="534" loading="lazy" decoding="async" style="width:100%;height:auto;display:block;border:1px solid var(--rule);border-radius:3px">
+      <figure class="fr zoom shot-wide" style="--ar:942/534"><img src="/platforms/governveil-redaction@2x.png" alt="A request leaving an application with a customer PAN in it, the redacted version the model provider actually receives, and the audit line recording the verdict." width="942" height="534" loading="lazy" decoding="async"></figure>
     </div>
-    <div class="foot" style="margin-top:var(--s2);padding-top:var(--s2);border-top:1px solid var(--rule);font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)">Pillar 04 · AI Governance</div>
-    <div class="cta" style="margin-top:0"><a class="btn" data-intuka-demo data-demo-product="GovernVeil" href="${MAILTO('Design-partner pilot - GovernVeil')}">Book a design-partner pilot</a><a class="btn ghost" href="https://governveil.com" target="_blank" rel="noopener">Learn more about GovernVeil →</a></div>
+    <div class="foot foot">Pillar 04 · AI Governance</div>
+    <div class="cta mt0"><a class="btn" data-intuka-demo data-demo-product="GovernVeil" href="${MAILTO('Design-partner pilot - GovernVeil')}">Book a design-partner pilot</a><a class="btn ghost" href="https://governveil.com" target="_blank" rel="noopener">Learn more about GovernVeil →</a></div>
   </div>
 </div></section>
 
@@ -186,19 +188,21 @@ const __MARKUP = String.raw`
 
   <div class="feature">
     <div class="top">
-      <h3 style="margin:0">Evaluetor</h3>
+      <h3>Evaluetor</h3>
       <span class="chip">Channel</span>
     </div>
     <p class="lede">Contract intelligence — monitors obligations, service levels, risks and renewals after a contract is signed, so value is not leaked during delivery.</p>
-    <div class="foot" style="margin-top:var(--s2);padding-top:var(--s2);border-top:1px solid var(--rule);font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)">Pillar 04 · AI Governance</div>
-    <div class="cta" style="margin-top:0"><a class="btn" href="${MAILTO('Demo request - Evaluetor')}">Book a demo</a></div>
+    <div class="foot foot">Pillar 04 · AI Governance</div>
+    <div class="cta mt0"><a class="btn" href="${MAILTO('Demo request - Evaluetor')}">Book a demo</a></div>
   </div>
 
 
-  <p class="lede" style="margin-top:var(--s4)">We also take our own platforms the other way — our partners carry them into the US, UK and Europe.</p>
+  <p class="lede aftergrid">We also take our own platforms the other way — our partners carry them into the US, UK and Europe.</p>
 </div></section>
 
-<section><div class="w">
+<section class="dark">
+  <span class="arc" aria-hidden="true"></span>
+  <div class="w">
   <p class="eyebrow">Accelerators</p>
   <h2>Built once. Configured for you.</h2>
   <p class="lede">Working software in weeks, not a programme. Not bought off a shelf, and not started from a blank repository either — foundations our own team has shipped, shaped to your problem.</p>
@@ -206,7 +210,7 @@ const __MARKUP = String.raw`
   <div class="grid three">${cards(ACCELERATORS)}
   </div>
 
-  <div class="grid three" style="margin-top:1px">${cards(PROMISES)}
+  <div class="grid three mt0">${cards(PROMISES)}
   </div>
 </div></section>
 
@@ -218,7 +222,7 @@ const __MARKUP = String.raw`
   </div>
 </div></section>
 
-<section><div class="w">
+<section class="warm"><div class="w">
   <h2>Bring us the problem, not the specification.</h2>
   <p class="lede">We will tell you whether it needs a platform, an accelerator, a build — or none of them.</p>
   <div class="cta"><a class="btn" href="/contact">Let's talk</a></div>

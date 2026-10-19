@@ -39,10 +39,18 @@ export default function RouteShell({ id, label, markup, register, className = ''
   const cls = ['route', className].filter(Boolean).join(' ');
   const extra = register === 'editorial' ? { 'data-register': 'editorial' } : {};
 
+  // id is main-content on every route so the one skip link in layout.jsx
+  // can target it. The route's own name moves to data-route — verified
+  // unreferenced in CSS and JS before the change, so nothing hung off it.
+  // tabIndex -1 makes the skip link actually move focus; without it the
+  // browser scrolls but leaves focus in the nav, which is the usual way
+  // a skip link is present and still useless.
   return (
     <main
       className={cls}
-      id={id}
+      id="main-content"
+      tabIndex={-1}
+      data-route={id}
       data-screen-label={label}
       ref={ref}
       dangerouslySetInnerHTML={{ __html: markup }}

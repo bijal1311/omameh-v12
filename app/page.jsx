@@ -96,83 +96,157 @@ const SHAPES = [
 ];
 
 const __MARKUP = String.raw`
-<section class="hero"><div class="w">
-  <p class="eyebrow">Est. 2026</p>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(28px,4vw,64px);align-items:center">
-    <div style="display:flex;flex-direction:column;gap:var(--s3);min-width:0">
-      <h1 style="margin:0">Everyone got the technology. Almost nobody got <em>their time back.</em></h1>
-      <p class="lede">Omameh helps people understand AI, adopt it, build with it and scale it. Enterprises, owner-led businesses, software platforms, and people with an idea of their own.</p>
-      <p class="lede" style="color:var(--navy);font-style:italic">Safely, and without the theatre.</p>
-      <div class="cta" style="margin-top:var(--s2)"><a class="btn" href="/contact">Let&rsquo;s talk</a></div>
+<section class="deep hero">
+  <span class="arc" aria-hidden="true"></span>
+  <div class="w">
+    <p class="eyebrow">Est. 2026</p>
+    <div class="hero-split">
+      <div class="hero-words">
+        <h1 class="hero-h1">Everyone got the technology. Almost nobody got <em>their time back.</em></h1>
+        <p class="lede">Omameh helps people understand AI, adopt it, build with it and scale it. Enterprises, owner-led businesses, software platforms, and people with an idea of their own.</p>
+        <p class="lede hero-kicker">Safely, and without the theatre.</p>
+        <div class="cta"><a class="btn" href="/contact">Let&rsquo;s talk</a></div>
+      </div>
+      <figure class="fr portrait hero-portrait" style="--ar:880/1179">
+        <img src="/about/bijal-seated-teal.jpg" alt="Bijal Sejpal, founder and chief executive of Omameh" width="880" height="1179" loading="eager" fetchpriority="high" decoding="async">
+      </figure>
     </div>
-    <img src="/about/bijal-seated-teal.jpg" alt="Bijal Sejpal" width="880" height="1179" loading="eager" fetchpriority="high" decoding="async" style="width:100%;max-width:400px;height:auto;display:block;justify-self:center;border-radius:3px">
   </div>
-</div></section>
+</section>
 
 <section><div class="w">
-  <p class="eyebrow">01 · The reframe</p>
-  <h2>The technology was almost never the problem. It was almost never the people.</h2>
-  <p class="lede">Twenty years inside large regulated organisations, watching the same thing happen. A good strategy, a well-run pilot, then nothing — because the way the work happened underneath it never changed.</p>
-
-  <p class="eyebrow" style="margin-top:var(--s5)">And it is not just us saying it</p>
-  <div class="grid three">
-${EVIDENCE.map(([n, l]) => String.raw`    <div class="card"><span style="font-family:var(--display);font-size:clamp(34px,4.5vw,46px);line-height:1;color:var(--navy)">${n}</span><p>${l}</p></div>`).join('\n')}
-  </div>
-  <p class="lede" style="margin-top:var(--s3)"><b style="color:var(--ink)">Not one of those is a technology problem.</b></p>
-  <p style="margin:var(--s2) 0 0;font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft)">National AI Centre · SME AI Pulse · December 2025 &ndash; February 2026</p>
-</div></section>
-
-<section><div class="w">
-  <p class="eyebrow">02 · What we do</p>
-  <h2>Understand it. Adopt it. Build with it. Scale it.</h2>
-  <p class="lede">Four things a buyer does, in that order. Each one has something behind it.</p>
-
-  <div class="grid four">
-${VERBS.map(([k, head, body, href]) => String.raw`    <div class="card"><span class="k">${k}</span><h3 style="margin:0;font-size:clamp(18px,2.1vw,21px)">${head}</h3><p>${body}</p><a class="link" style="margin-top:auto" href="${href}">More &rarr;</a></div>`).join('\n')}
+  <div class="shead" data-reveal>
+    <p class="eyebrow">01 · The reframe</p>
+    <h2>The technology was almost never the problem. It was almost never the people.</h2>
+    <p class="lede">Twenty years inside large regulated organisations, watching the same thing happen. A good strategy, a well-run pilot, then nothing — because the way the work happened underneath it never changed.</p>
   </div>
 
-  <p class="lede" style="margin-top:var(--s4)">One delivery team, two companies. Architecture in Sydney, engineering in Hyderabad, no handoff. Two products in market, each its own company and its own site: <b style="color:var(--ink)">Intuka</b> runs operations. <b style="color:var(--ink)">GovernVeil</b> checks every AI request before it leaves your perimeter. Omameh runs on Intuka — the demo on this site is our live instance.</p>
+  <p class="eyebrow evidence-k">And it is not just us saying it</p>
+  <div class="grid three" data-reveal-group>
+${EVIDENCE.map(([n, l]) => String.raw`    <div class="card"><span class="statnum">${n}</span><p>${l}</p></div>`).join('\n')}
+  </div>
+  <p class="lede aftergrid"><b class="strongink">Not one of those is a technology problem.</b></p>
+  <p class="srcnote">National AI Centre · SME AI Pulse · December 2025 &ndash; February 2026</p>
 </div></section>
 
-<section><div class="w">
-  <p class="eyebrow">Rooms</p>
-  <h2>Rooms we have been trusted to run.</h2>
-  <p class="lede">Moderating, keynotes, panels and webinars — for the organisations whose rooms they were.</p>
-  <p style="margin:var(--s4) 0 0;font-family:var(--display);font-size:clamp(19px,2.4vw,26px);line-height:1.5;color:var(--navy)">${ROOMS.join(' &nbsp;·&nbsp; ')}</p>
+<section class="dark">
+  <span class="arc left" aria-hidden="true"></span>
+  <div class="w">
+    <div class="shead" data-reveal>
+      <p class="eyebrow">02 · What we do</p>
+      <h2>Understand it. Adopt it. Build with it. Scale it.</h2>
+      <p class="lede">Four things a buyer does, in that order. Each one has something behind it.</p>
+    </div>
+
+    <div class="grid four" data-reveal-group>
+${VERBS.map(([k, head, body, href]) => String.raw`    <div class="card"><span class="k">${k}</span><h3 class="card-h">${head}</h3><p>${body}</p><a class="link cardlink" href="${href}">More &rarr;</a></div>`).join('\n')}
+    </div>
+
+    <p class="lede aftergrid">One delivery team, two companies. Architecture in Sydney, engineering in Hyderabad, no handoff. Two products in market, each its own company and its own site: <b class="strongink">Intuka</b> runs operations. <b class="strongink">GovernVeil</b> checks every AI request before it leaves your perimeter. Omameh runs on Intuka — the demo on this site is our live instance.</p>
+  </div>
+</section>
+
+<section class="warm"><div class="w">
+  <div class="shead" data-reveal>
+    <p class="eyebrow">Rooms</p>
+    <h2>Rooms we have been trusted to run.</h2>
+    <p class="lede">Moderating, keynotes, panels and webinars — for the organisations whose rooms they were.</p>
+  </div>
+  <p class="roomstrip" data-reveal>${ROOMS.join(' &nbsp;·&nbsp; ')}</p>
   <div class="cta"><a class="link" href="/rooms">Every room, and how to book one &rarr;</a></div>
 </div></section>
 
 <section><div class="w">
-  <p class="eyebrow">04 · Who should call us, and why</p>
-  <h2>You will know the moment when you read it.</h2>
-  <p class="lede">Twelve reasons people pick up the phone. You do not have to work out which kind of organisation you are first — find the sentence that sounds like your week, and the rest sorts itself out.</p>
+  <div class="shead" data-reveal>
+    <p class="eyebrow">04 · Who should call us, and why</p>
+    <h2>You will know the moment when you read it.</h2>
+    <p class="lede">Twelve reasons people pick up the phone. You do not have to work out which kind of organisation you are first — find the sentence that sounds like your week, and the rest sorts itself out.</p>
+  </div>
 
-  <div class="triggers">
+  <div class="triggers" data-reveal>
 ${TRIGGERS.map((t) => String.raw`    <p>&mdash; ${t}</p>`).join('\n')}
   </div>
 </div></section>
 
-<section><div class="w">
-  <h2>Four shapes, not four industries.</h2>
-  <p class="lede">A roadmap that will not scale looks the same in construction as it does in law. Whichever sentence you recognised, you are one of four shapes — and each one starts somewhere small.</p>
+<section class="dark">
+  <span class="arc" aria-hidden="true"></span>
+  <div class="w">
+    <div class="shead" data-reveal>
+      <h2>Four shapes, not four industries.</h2>
+      <p class="lede">A roadmap that will not scale looks the same in construction as it does in law. Whichever sentence you recognised, you are one of four shapes — and each one starts somewhere small.</p>
+    </div>
 
-  <div class="grid four">
-${SHAPES.map(([k, who, role, starts]) => String.raw`    <div class="card"><span class="k">${k}</span><p>${who}</p><p style="color:var(--navy)">${role}</p><span class="foot">${starts}</span></div>`).join('\n')}
-  </div>
+    <div class="grid four" data-reveal-group>
+${SHAPES.map(([k, who, role, starts]) => String.raw`    <div class="card"><span class="k">${k}</span><p>${who}</p><p class="rolep">${role}</p><span class="foot">${starts}</span></div>`).join('\n')}
+    </div>
 
-  <div class="cta" style="margin-top:var(--s4)">
-    <a class="btn" data-intuka-demo data-demo-product="Roundtable" href="${MAILTO('Start with a conversation')}">Recognise one of those? Start with a conversation</a>
+    <div class="cta">
+      <a class="btn" data-intuka-demo data-demo-product="Roundtable" href="${MAILTO('Start with a conversation')}">Recognise one of those? Start with a conversation</a>
+    </div>
+    <p class="srcnote">Ninety minutes · no slides · no selling</p>
   </div>
-  <p style="margin:var(--s2) 0 0;font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft)">Ninety minutes · no slides · no selling</p>
+</section>
+
+<section class="warm"><div class="w">
+  <div class="w-narrow unlearning" data-reveal>
+    <p class="eyebrow">The writing</p>
+    <h2>The Unlearning</h2>
+    <p class="lede">For anyone who has outgrown the version of themselves that got them here.</p>
+    <p class="lede">No gate, no email address, no lead magnet. If it is useful it should be readable.</p>
+    <div class="cta"><a class="link" href="https://atlas.omameh.com.au" target="_blank" rel="noopener">atlas.omameh.com.au &rarr;</a></div>
+  </div>
 </div></section>
 
-<section><div class="w">
-  <p class="eyebrow">The writing</p>
-  <h2>The Unlearning</h2>
-  <p class="lede">For anyone who has outgrown the version of themselves that got them here.</p>
-  <p class="lede" style="margin-top:var(--s2)">No gate, no email address, no lead magnet. If it is useful it should be readable.</p>
-  <div class="cta"><a class="link" href="https://atlas.omameh.com.au" target="_blank" rel="noopener">atlas.omameh.com.au &rarr;</a></div>
-</div></section>
+<!-- The closing band. Portrait opens the page, the mark closes it —
+     the one is who you call, the other is what it is. dark rather than
+     deep so it steps DOWN into the navy-ink footer instead of merging
+     with it, and .dark::after lays the gold hairline across the join. -->
+<section class="dark closemark">
+  <div class="w">
+    <div class="closestage" data-reveal>
+      <div class="markstage"><span class="mr mr1"></span><span class="mr mr2"></span><span class="mr mr3"></span>
+      <svg class="mark" viewBox="0 0 400 400" fill="none" role="img" aria-label="Omameh">
+      <defs>
+        <radialGradient id="g-centre" cx="42%" cy="34%" r="65%">
+          <stop offset="0%" stop-color="#F1DA8C"/><stop offset="35%" stop-color="#E5C56F"/>
+          <stop offset="70%" stop-color="#C9A84C"/><stop offset="100%" stop-color="#B8941F"/>
+        </radialGradient>
+        <linearGradient id="g-teal" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#00B5AD" stop-opacity=".30"/><stop offset="50%" stop-color="#00B5AD" stop-opacity="1"/><stop offset="100%" stop-color="#00D4CB" stop-opacity=".50"/></linearGradient>
+        <linearGradient id="g-white" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#FFFFFF" stop-opacity=".40"/><stop offset="50%" stop-color="#FFFFFF" stop-opacity="1"/><stop offset="100%" stop-color="#FFFFFF" stop-opacity=".55"/></linearGradient>
+        <linearGradient id="g-gold" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#C9A84C" stop-opacity=".45"/><stop offset="50%" stop-color="#C9A84C" stop-opacity="1"/><stop offset="100%" stop-color="#E5C56F" stop-opacity=".60"/></linearGradient>
+        <path id="orbit-path" d="M 200,200 m -178,0 a 178,178 0 1,1 356,0 a 178,178 0 1,1 -356,0"/>
+      </defs>
+      <g class="m-orbitring"><circle cx="200" cy="200" r="194" stroke="rgba(255,255,255,0.10)" stroke-width=".75" stroke-dasharray="1.5 9" fill="none"/></g>
+      <g class="m-compass">
+        <circle class="halo" cx="394" cy="200" r="6.5" fill="#C9A84C" opacity=".18"/><circle cx="394" cy="200" r="3.5" fill="#C9A84C" opacity=".92"/>
+        <circle class="halo" cx="200" cy="394" r="6.5" fill="#C9A84C" opacity=".18"/><circle cx="200" cy="394" r="3.5" fill="#C9A84C" opacity=".92"/>
+        <circle class="halo" cx="6" cy="200" r="6.5" fill="#C9A84C" opacity=".18"/><circle cx="6" cy="200" r="3.5" fill="#C9A84C" opacity=".92"/>
+      </g>
+      <g class="m-orbittext"><text><textPath href="#orbit-path" startOffset="0">UNLEARN · RELEARN · REINVENT · UNLEARN · RELEARN · REINVENT ·</textPath></text></g>
+      <g class="m-tick"><g transform="translate(200 200)" stroke="rgba(201,168,76,0.55)" stroke-width="1" stroke-linecap="round">
+        <line y1="-92" y2="-86"/><line y1="-92" y2="-86" transform="rotate(30)"/><line y1="-92" y2="-86" transform="rotate(60)"/><line y1="-92" y2="-86" transform="rotate(90)"/>
+        <line y1="-92" y2="-86" transform="rotate(120)"/><line y1="-92" y2="-86" transform="rotate(150)"/><line y1="-92" y2="-86" transform="rotate(180)"/><line y1="-92" y2="-86" transform="rotate(210)"/>
+        <line y1="-92" y2="-86" transform="rotate(240)"/><line y1="-92" y2="-86" transform="rotate(270)"/><line y1="-92" y2="-86" transform="rotate(300)"/><line y1="-92" y2="-86" transform="rotate(330)"/>
+        <circle r="86" fill="none" stroke="rgba(201,168,76,0.16)" stroke-width=".6"/>
+      </g></g>
+      <circle cx="200" cy="200" r="148" stroke="rgba(0,212,203,0.13)" stroke-width=".75" fill="none"/>
+      <line x1="200" y1="60" x2="200" y2="180" stroke="rgba(255,255,255,0.10)" stroke-width=".75"/>
+      <g class="m-arcs"><g transform="translate(200 200)">
+        <path d="M 22.57,-128.03 A 130,130 0 0,1 112.6,65" stroke="url(#g-teal)" stroke-width="14" stroke-linecap="round" fill="none"/>
+        <path d="M 112.6,65 A 130,130 0 0,1 -112.6,65" stroke="url(#g-white)" stroke-width="14" stroke-linecap="round" fill="none"/>
+        <path d="M -112.6,65 A 130,130 0 0,1 -22.57,-128.03" stroke="url(#g-gold)" stroke-width="14" stroke-linecap="round" fill="none"/>
+        <circle cx="22.57" cy="-128.03" r="3.5" fill="#E5C56F" opacity=".18"/><circle cx="22.57" cy="-128.03" r="2" fill="#E5C56F"/>
+        <circle cx="-22.57" cy="-128.03" r="3.5" fill="#E5C56F" opacity=".18"/><circle cx="-22.57" cy="-128.03" r="2" fill="#E5C56F"/>
+      </g></g>
+      <g><circle class="spark a" cx="200" cy="54" r="3.5" fill="#00D4CB"/><circle class="spark b" cx="200" cy="54" r="3" fill="#00D4CB"/><circle class="spark c" cx="200" cy="54" r="2.5" fill="#00D4CB"/></g>
+      <g class="m-centre" transform="translate(200 200)"><circle r="12" fill="url(#g-centre)"/><circle cx="-1.8" cy="-1.8" r="3" fill="#FFF6D9" opacity=".7"/></g>
+      </svg></div>
+      <p class="closeline">Human-Led. <em>AI-Operated.</em></p>
+      <p class="closesub">Built to last. Built to lead.</p>
+    </div>
+  </div>
+</section>
+
 `;
 
 export default function HomePage() {

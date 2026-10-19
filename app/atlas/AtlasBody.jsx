@@ -40,8 +40,19 @@ export default function AtlasBody({ id, label, top, rest }) {
     return unwire;
   }, []);
 
+  // id is main-content to match RouteShell, so the one skip link in
+  // layout.jsx reaches this page too — /atlas was the only route where
+  // it had nothing to land on. tabIndex -1 so focus actually moves
+  // rather than the page merely scrolling.
   return (
-    <main className="route" id={id} data-screen-label={label} ref={ref}>
+    <main
+      className="route"
+      id="main-content"
+      tabIndex={-1}
+      data-route={id}
+      data-screen-label={label}
+      ref={ref}
+    >
       <div dangerouslySetInnerHTML={{ __html: top }} />
       <div className="atlas2 atlas2__subband">
         <div className="atlas2__subwrap">

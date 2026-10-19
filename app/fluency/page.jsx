@@ -75,7 +75,7 @@ const PROGRAMMES = [
   [
     '03',
     'Leading in the AI Era',
-    'The instincts that got your leaders here were formed under a different set of conditions. This surfaces them, tests them, and redesigns one real decision loop while everyone who has to live with it is in the room. Delivered through <b style="color:var(--ink)">Mindset by Design</b>, our method.',
+    'The instincts that got your leaders here were formed under a different set of conditions. This surfaces them, tests them, and redesigns one real decision loop while everyone who has to live with it is in the room. Delivered through <b class="strongink">Mindset by Design</b>, our method.',
     'Leaders who can name the assumption underneath a decision, and a decision loop that has been rebuilt rather than described.',
     'Executive teams and senior leadership. The people whose judgement is the organisation’s operating system.',
   ],
@@ -94,14 +94,14 @@ const NOTS = [
 ];
 
 const programme = ([n, name, body, outcome, who]) => String.raw`
-    <div style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(18px,3vw,38px);padding:clamp(26px,3.2vw,38px) 0;border-top:1px solid var(--rule)">
-      <span style="font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--gold)">${n}</span>
-      <div style="display:flex;flex-direction:column;gap:14px;min-width:0">
-        <h3 style="margin:0;font-size:clamp(21px,2.6vw,27px)">${name}</h3>
-        <p style="margin:0;font-size:15.5px;line-height:1.6;color:var(--ink-soft)">${body}</p>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:18px;margin-top:4px">
-          <div><span class="k" style="display:block;font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:7px">The outcome</span><p style="margin:0;font-size:14.5px;line-height:1.55;color:var(--ink-soft)">${outcome}</p></div>
-          <div><span class="k" style="display:block;font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:7px">Who it is for</span><p style="margin:0;font-size:14.5px;line-height:1.55;color:var(--ink-soft)">${who}</p></div>
+    <div class="pillar">
+      <span class="n">${n}</span>
+      <div class="stack2">
+        <h3>${name}</h3>
+        <p class="body-md">${body}</p>
+        <div class="minigrid">
+          <div><span class="k k-sm">The outcome</span><p class="body-sm">${outcome}</p></div>
+          <div><span class="k k-sm">Who it is for</span><p class="body-sm">${who}</p></div>
         </div>
       </div>
     </div>`;
@@ -110,18 +110,20 @@ const card = ([k, body]) => String.raw`
     <div class="card"><span class="k">${k}</span><p>${body}</p></div>`;
 
 const __MARKUP = String.raw`
-<section class="hero"><div class="w">
+<section class="hero">
+  <span class="arc top" aria-hidden="true"></span>
+  <div class="w">
   <p class="eyebrow">AI-Era Fluency · Corporate and team programmes</p>
   <h1>Unlearn. Relearn. <em>Reinvent.</em></h1>
   <p class="lede">Three programmes, built for your organisation and run with your people. Your decisions as the material, not worked examples.</p>
   <div class="cta"><a class="btn" data-intuka-demo data-demo-product="Fluency" href="${MAILTO('AI-Era Fluency programme enquiry')}">Talk to us about a programme</a></div>
 </div></section>
 
-<section><div class="w">
+<section class="warm"><div class="w">
   <p class="eyebrow">Why this exists</p>
   <h2>Your people will keep making these decisions after we leave.</h2>
   <p class="lede">The next tool, the next proposal, the next person selling you something. Fluency is where your people learn to tell a real capability from a good demo, and a solid answer from a plausible one — including ours.</p>
-  <p class="lede" style="margin-top:var(--s3)">Tools change every six months. What these programmes teach does not, which is why what your team leaves with keeps its value.</p>
+  <p class="lede mt3">Tools change every six months. What these programmes teach does not, which is why what your team leaves with keeps its value.</p>
 </div></section>
 
 <section><div class="w">
@@ -129,11 +131,13 @@ const __MARKUP = String.raw`
   <h2>Govern it. Adopt it. Lead it.</h2>
   <p class="lede">Each one is shaped to your organisation before it runs. Format, length and depth follow what you are trying to change.</p>
 
-  <div style="margin-top:var(--s4);border-bottom:1px solid var(--rule)">${PROGRAMMES.map(programme).join('')}
+  <div class="pillars">${PROGRAMMES.map(programme).join('')}
   </div>
 </div></section>
 
-<section><div class="w">
+<section class="dark">
+  <span class="arc" aria-hidden="true"></span>
+  <div class="w">
   <p class="eyebrow">How it runs</p>
   <h2>Closed. Yours. Your decisions as the material.</h2>
 
@@ -148,7 +152,7 @@ const __MARKUP = String.raw`
   </div>
 </div></section>
 
-<section><div class="w">
+<section class="warm"><div class="w">
   <h2>Tell us what you are trying to change.</h2>
   <p class="lede">We will tell you which programme fits, what it would take, and whether you need one at all.</p>
   <div class="cta"><a class="btn" data-intuka-demo data-demo-product="Fluency" href="${MAILTO('AI-Era Fluency enquiry')}">Start a conversation</a></div>

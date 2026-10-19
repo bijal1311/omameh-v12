@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="92.5 9.5 220 220" fill="none" role="img" aria-label="Compound">
+  <title>Omameh icon · Compound · tight viewBox for 56px render</title>
+  <!--
+    Same four circles as compound.svg, byte for byte. Only the viewBox
+    differs, and compound.svg is untouched.
+
+    Why this file exists: compound.svg is The Rise, and The Rise is a
+    tall narrow column of dots — measured, its artwork is 45 x 201
+    units inside a 400 x 400 viewBox, an aspect of 0.22. The other five
+    icons measure 1.00 to 1.04. Dropped into the same square 56px slot
+    beside them it renders about 6px wide and reads as an empty cell,
+    which is exactly how it shipped on Advisory pillar 05 before this.
+
+    The artwork spans x 180-225 (centre 202.5) and y 19-220 (centre
+    119.5). This viewBox is 220 square, centred on that, so the dots
+    fill 91% of the height instead of 50% and sit centred rather than
+    crammed against the top.
+
+    The opacity fade by index is untouched. The motif system is
+    explicit that the fade IS the idea, not an artefact to flatten.
+
+    PROPER FIX: redraw compound.svg with a tight viewBox upstream in
+    omameh-motif-system/ and delete this. On the pending list.
+  -->
+  <circle cx="200" cy="200" r="20" fill="#C9A84C"></circle>
+  <circle cx="200" cy="128" r="18" fill="#00D4CB"></circle>
+  <circle cx="208" cy="72" r="13" fill="#00D4CB" opacity="0.55"></circle>
+  <circle cx="216" cy="28" r="9" fill="#00D4CB" opacity="0.3"></circle>
+</svg>

@@ -75,6 +75,17 @@ import IntukaDemo from '../_components/IntukaDemo';
  * on Intuka is the only named user. Scott has volunteered Primary Way
  * as a reference; the day that lands it belongs here, because one real
  * customer outweighs every line of description above it.
+ *
+ * THE BUPA TITLE IS "TECHNOLOGY", NOT "TECHNOLOGY AND DIGITAL".
+ * Settled by Bijal on 19 October. The 19 October brief carried "for
+ * technology and digital", which was one word out of step with the two
+ * other places the title appears — /about's credentials line and the
+ * Person schema in lib/seo/graph.js, both of which already said
+ * Technology. "and digital" is a scope claim, and this is a page whose
+ * argument is that every claim survives a check, so it went rather
+ * than being propagated. All three now agree.
+ *
+ * Never "interim CIO", anywhere.
  */
 
 export const metadata = pageMeta({
@@ -139,7 +150,7 @@ const __MARKUP = String.raw`
     <div class="shead" data-reveal>
       <p class="eyebrow">Ours</p>
       <h2>Built by our own team.</h2>
-      <p class="lede">Each one is its own company, with its own site and its own customers. Built by an operator &mdash; Chief Operating Officer for technology and digital at Bupa across Asia-Pacific, and for group data, analytics and AI at QBE across twenty-seven countries.</p>
+      <p class="lede">Each one is its own company, with its own site and its own customers. Built by an operator &mdash; Chief Operating Officer for technology at Bupa across Asia-Pacific, and for group data, analytics and AI at QBE across twenty-seven countries.</p>
     </div>
 
     <div class="feature lead" data-reveal>

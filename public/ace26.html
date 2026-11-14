@@ -197,7 +197,7 @@ function render(){
   $('#prog').style.width=(step==='who'?4:Math.round(i/(f.length-1)*100))+'%';
   const v=$('#view'); let h='';
   if(step==='who'){
-    h=`<section class="screen"><div style="display:flex;flex-direction:column;gap:12px"><p class="eyebrow">GREAT TO MEET YOU</p><h1>The evidence layer for enterprise AI.</h1><p class="lede">A few quick taps and we’ll be in touch within two business days.</p></div>
+    h=`<section class="screen"><div style="display:flex;flex-direction:column;gap:12px"><p class="eyebrow">GREAT TO MEET YOU</p><h1>The evidence layer for enterprise AI.</h1><p class="lede">A few quick taps and we’ll be in touch within a week.</p></div>
     <h2>I’m here as…</h2>${tiles(WHO,'who','g2')}${contBtn(!!s.who,false)}</section>`;
   } else if(step==='next'){
     h=`<section class="screen"><p class="eyebrow">1 OF 3</p><h2>What would you like next?</h2>${tiles(NEXT,'next','g1')}${contBtn(!!s.next)}</section>`;
@@ -235,13 +235,12 @@ function render(){
     let body='';
     if(s.who==='customer'){
       const spot=SPOT.find(o=>o.id===s.spots[0]);
-      const when = s.reach==='other'?`We’ll reach you the way you asked within two business days to find a time.`
-        : s.reach==='phone'?`We’ll call you on ${esc(s.phone)} within two business days to find a time.`
-        : `We’ll email ${esc(s.email)} within two business days to find a time.`;
-      body=`<div class="card dark"><p class="eyebrow">YOUR CALL · 30 MINUTES ON TEAMS</p><p class="t">${esc(CALL[s.next]||'Introductory call')}</p><p class="d">${when}</p></div>
-      <div class="card hot"><p class="eyebrow">BEFORE WE TALK</p><p class="d" style="color:var(--paper)">${esc(spot?spot.hook:'We’ll tailor the conversation to what matters most to you.')}</p></div>`;
+      const when = s.reach==='phone'?`We’ll call you within a week to find a time to meet.`
+        : s.reach==='other'?`We’ll be in touch the way you asked within a week to find a time to meet.`
+        : `We’ll email you within a week to find a time to meet.`;
+      body=`<div class="card dark"><p class="eyebrow">WHAT HAPPENS NEXT</p><p class="t">${esc(CALL[s.next]||'Introductory call')}</p><p class="d">${when}</p></div>`;
     } else {
-      body=`<p class="lede">${s.who==='investor'?'Bijal will be in touch personally within two business days.':'We’ll be in touch within two business days.'}</p>`;
+      body=`<p class="lede">${s.who==='investor'?'Bijal will be in touch personally within a week.':'We’ll be in touch within a week.'}</p>`;
     }
     h=`<section class="screen"><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="#FF5B1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Sent"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.5 2.5L16 9.5"/></svg>
       <h1>Thank you, ${first}.</h1>${body}

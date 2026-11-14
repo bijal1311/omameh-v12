@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="theme-color" content="#0E1411">
+<title>GovernVeil ACE26 Booth</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;700;800&family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+/* Layout: one full-height screen per question; big tap tiles advance; ink ground, signal-orange for choice and action. */
+:root{
+  --ink:#0E1411; --panel:#18201C; --line:#2B3530; --mute:#8E9893; --soft:#C9D0CC; --paper:#F2F3F1;
+  --orange:#FF5B1F; --orange-deep:#B83A0C; --tint:rgba(255,91,31,.14); --ok:#3DBE7A; --warn:#F2B53A; --bad:#FF6B5B;
+  --display:'Schibsted Grotesk',Arial,sans-serif; --body:'Atkinson Hyperlegible',Arial,sans-serif; --mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  color-scheme:dark;
+}
+html,body{height:100%;margin:0}
+body{background:var(--ink);color:var(--paper);font-family:var(--body);font-size:18px;-webkit-tap-highlight-color:transparent;overflow:hidden}
+*{box-sizing:border-box}
+button{font:inherit;color:inherit}
+.app{height:100%;display:flex;flex-direction:column;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{width:100%;max-width:880px;margin:0 auto}
+header{flex:none;padding-block:22px 14px}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo{display:flex;align-items:center;gap:12px}
+.word{font-family:var(--display);font-weight:800;font-size:26px;letter-spacing:-.5px}
+.word span{color:var(--orange)}
+.right{display:flex;align-items:center;gap:14px}
+.tag{font-family:var(--mono);font-weight:700;font-size:13px;letter-spacing:2px;color:var(--orange)}
+.sync{width:12px;height:12px;border-radius:50%;background:var(--mute);flex:none}
+.sync.ok{background:var(--ok)}.sync.wait{background:var(--warn)}.sync.bad{background:var(--bad)}
+.gear{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:transparent;display:grid;place-items:center;cursor:pointer}
+.gear:focus-visible,.tile:focus-visible,.btn:focus-visible,.back:focus-visible,.seg button:focus-visible,input:focus-visible,.check:focus-within{outline:3px solid var(--orange);outline-offset:3px}
+.progress{margin-top:18px;height:4px;background:var(--line);border-radius:2px;overflow:hidden}
+.progress i{display:block;height:100%;width:0;background:var(--orange);transition:width .35s ease}
+main{flex:1;min-height:0;overflow-y:auto;-webkit-overflow-scrolling:touch}
+.screen{padding-block:28px 40px;display:flex;flex-direction:column;gap:28px;animation:in .35s ease both}
+@keyframes in{from{opacity:.001;transform:translateY(14px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.screen{animation:none}.progress i{transition:none}}
+.eyebrow{font-family:var(--mono);font-weight:700;font-size:14px;letter-spacing:2.5px;color:var(--orange);margin:0}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(36px,6vw,58px);line-height:1.02;letter-spacing:-1.5px;margin:0;text-wrap:balance}
+h2{font-family:var(--display);font-weight:800;font-size:clamp(30px,4.6vw,44px);line-height:1.06;letter-spacing:-1px;margin:0;text-wrap:balance}
+.lede{margin:0;font-size:21px;line-height:1.4;color:var(--soft);max-width:36em}
+.grid{display:grid;gap:14px}
+.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.g1{grid-template-columns:minmax(0,1fr)}
+@media (max-width:560px){.g2{grid-template-columns:minmax(0,1fr)}}
+.tile{min-height:112px;text-align:left;padding:22px 24px;border-radius:18px;border:2px solid var(--line);background:var(--panel);cursor:pointer;display:flex;flex-direction:column;justify-content:center;gap:6px;transition:border-color .15s,background .15s,transform .1s}
+.tile:active{transform:scale(.985)}
+.tile.on{border-color:var(--orange);background:var(--tint)}
+.tile b{font-family:var(--display);font-weight:800;font-size:24px;line-height:1.15}
+.tile{position:relative}
+.tile .num{position:absolute;top:12px;right:14px;width:30px;height:30px;border-radius:50%;background:var(--orange);color:var(--ink);font-family:var(--mono);font-weight:700;font-size:15px;display:grid;place-items:center}
+.tile.on b{padding-right:30px}
+.tile small{font-size:17px;line-height:1.35;color:var(--soft)}
+.tile.big{min-height:150px}
+.tile.big b{font-size:28px}
+.fields{display:grid;gap:16px}
+label.f{display:flex;flex-direction:column;gap:8px;font-weight:700;font-size:17px}
+label.f em{font-style:normal;font-weight:400;color:var(--mute)}
+input[type=text],input[type=email],input[type=tel]{height:64px;border-radius:14px;border:2px solid var(--line);background:var(--panel);color:var(--paper);padding:0 18px;font-family:var(--body);font-size:21px;width:100%}
+input::placeholder{color:#5F6A64}
+input:focus{border-color:var(--orange);outline:none}
+.seg{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+@media (max-width:560px){.seg{grid-template-columns:minmax(0,1fr)}}
+.seg button{min-height:64px;border-radius:14px;border:2px solid var(--line);background:var(--panel);cursor:pointer;font-weight:700;font-size:18px;padding:8px 12px}
+.seg button.on{border-color:var(--orange);background:var(--tint)}
+.check{display:flex;gap:16px;align-items:flex-start;padding:18px 20px;border-radius:14px;border:2px solid var(--line);background:var(--panel);cursor:pointer;font-size:17px;line-height:1.45;color:var(--soft)}
+.check input{appearance:none;-webkit-appearance:none;width:30px;height:30px;flex:none;margin:0;border-radius:8px;border:2px solid var(--mute);background:transparent;display:grid;place-items:center;cursor:pointer}
+.check input:checked{background:var(--orange);border-color:var(--orange)}
+.check input:checked::after{content:"";width:9px;height:16px;border:solid var(--ink);border-width:0 3px 3px 0;transform:rotate(45deg) translate(-1px,-2px)}
+.check strong{color:var(--paper)}
+.check a{color:var(--orange)}
+.actions{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.btn{height:72px;padding:0 40px;border-radius:999px;border:none;background:var(--orange);color:#fff;font-family:var(--display);font-weight:800;font-size:24px;cursor:pointer}
+.btn[disabled]{background:#3A443F;color:#7D8681;cursor:not-allowed}
+.btn.ghost{background:transparent;border:2px solid var(--paper);color:var(--paper)}
+.back{height:56px;padding:0 22px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--soft);font-size:18px;cursor:pointer}
+.hint{margin:0;color:var(--mute);font-size:16px}
+.card{border-radius:20px;padding:28px 30px;display:flex;flex-direction:column;gap:10px}
+.card.dark{background:var(--panel);border:1px solid var(--line)}
+.card.hot{background:var(--tint);border:2px solid var(--orange)}
+.card p{margin:0}
+.card .t{font-family:var(--display);font-weight:800;font-size:28px;line-height:1.2}
+.card .d{font-size:20px;line-height:1.45;color:var(--soft)}
+.tick{width:72px;height:72px}
+footer{flex:none;padding-block:12px 18px;color:#5F6A64;font-size:14px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.sheet{position:fixed;inset:0;background:rgba(5,8,6,.72);display:flex;align-items:flex-end;justify-content:center;padding:16px;padding-bottom:max(16px,env(safe-area-inset-bottom,0px));z-index:20}
+[hidden]{display:none!important}
+.sheet .in{width:100%;max-width:560px;background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:26px;display:flex;flex-direction:column;gap:18px}
+.sheet h3{margin:0;font-family:var(--display);font-weight:800;font-size:24px}
+.stat{display:flex;gap:28px;flex-wrap:wrap}
+.stat div{display:flex;flex-direction:column;gap:2px}
+.stat b{font-family:var(--display);font-size:34px;font-variant-numeric:tabular-nums}
+.stat span{font-size:14px;color:var(--mute)}
+.notebox{display:flex;flex-direction:column;gap:10px;border-top:1px dashed var(--line);padding-top:22px}
+</style>
+</head>
+<body>
+
+
+<div class="app">
+  <header><div class="wrap">
+    <div class="bar">
+      <div class="logo">
+        <svg viewBox="0 0 100 100" width="38" height="38" fill="none" aria-hidden="true"><rect x="6.5" y="6.5" width="87" height="87" stroke="#F2F3F1" stroke-width="9"/><path d="M44 76 H76 V44" stroke="#F2F3F1" stroke-width="8"/><path d="M36 66 H66 V36" stroke="#F2F3F1" stroke-width="8"/><rect x="26" y="24" width="34" height="34" fill="#FF5B1F"/><rect x="32.5" y="37.5" width="21" height="7" fill="#FFFFFF"/></svg>
+        <span class="word">Govern<span>Veil</span></span>
+      </div>
+      <div class="right">
+        <span class="tag">ACE26 · SYDNEY</span>
+        <span class="sync" id="sync" title="Connection"></span>
+        <button class="gear" id="gear" aria-label="Team settings">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8E9893" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="progress" aria-hidden="true"><i id="prog"></i></div>
+  </div></header>
+  <main id="main"><div class="wrap" id="view"></div></main>
+  <footer><div class="wrap" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap"><span>GovernVeil Pty Ltd · governveil.com.au</span><span id="metby"></span></div></footer>
+</div>
+<div class="sheet" id="sheet" hidden></div>
+
+<script>
+(function(){
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const mem={};
+const store={get(k,d){try{const v=localStorage.getItem(k);if(v!=null)return JSON.parse(v)}catch(e){}return k in mem?JSON.parse(mem[k]):d},
+  set(k,v){const j=JSON.stringify(v);mem[k]=j;try{localStorage.setItem(k,j)}catch(e){}}};
+
+const WHO=[
+  {id:'customer',t:'Customer',s:'Exploring GovernVeil for your organisation'},
+  {id:'investor',t:'Investor',s:'Fund, angel or corporate venture'},
+  {id:'partner',t:'Partner',s:'Broker, integrator, reseller or vendor'},
+  {id:'other',t:'Something else',s:'Media, government, research or just curious'}];
+const NEXT=[
+  {id:'demo',t:'A detailed demo and architecture walkthrough',s:'For your security, risk and IT leads'},
+  {id:'pilot',t:'A pilot in our environment',s:'Five weeks, on your own traffic'},
+  {id:'check',t:'A free AI governance health check',s:'A read on where you stand today'}];
+const WHEN=[
+  {id:'now',t:'We need something in place now',grade:'Hot'},
+  {id:'evidence',t:'We have policies, but can’t prove they’re followed',grade:'Hot'},
+  {id:'year',t:'Reviewing tools for the next 6 to 12 months',grade:'Warm'},
+  {id:'explore',t:'Just exploring for now',grade:'Nurture'}];
+const SPOT=[
+  {id:'staff',t:'Employees sharing sensitive information with AI tools',hook:'Bring one task your people already do in ChatGPT or Copilot. We’ll show it running through GovernVeil, live, with the sensitive parts masked before they leave.'},
+  {id:'personal',t:'Customer or employee personal information being exposed',hook:'Think of the personal information you’d least like to see in an AI prompt. We’ll show you how it’s caught and masked before it leaves.'},
+  {id:'confidential',t:'Confidential business data leaving the organisation',hook:'Bring an example of data that must never leave, such as pricing, contracts or claims. We’ll show how GovernVeil stops it at the point of use.'},
+  {id:'policy',t:'Lack of consistent AI security policies and enforcement',hook:'Bring your AI policy. We’ll show how its rules are applied to every prompt, the same way every time.'},
+  {id:'evidence',t:'Insufficient audit evidence of AI governance decisions',hook:'We’ll show you the evidence GovernVeil keeps for every decision, ready for your auditors, regulators and board.'},
+  {id:'controls',t:'Not sure whether existing controls are adequate',hook:'We’ll start with the controls you have today, show where AI use can slip past them, and what to look at first.'}];
+const CALL={demo:'Detailed demo and architecture walkthrough',pilot:'Pilot scoping call',check:'AI governance health check kick-off'};
+const TEAM=['Bijal','Thinh','Vineet'];
+
+let s, step, resetTimer=null, lastId=null;
+const PTYPE=[
+  {id:'broker',t:'Broker or insurer channel',s:'Offer GovernVeil to clients or alongside cover'},
+  {id:'resell',t:'Reseller or referral',s:'Introduce or resell to your network'},
+  {id:'tech',t:'Technology integration',s:'Connect your platform or product'},
+  {id:'consult',t:'Consulting or implementation',s:'Deliver governance work with us'}];
+const blank=()=>({who:null,next:null,when:null,spots:[],ptypes:[],name:'',email:'',org:'',reach:'email',ea:'',phone:'',inv:true,note:'',consent:false});
+const flows={customer:['who','next','when','spot','details','done'],investor:['who','details','done'],partner:['who','details','done'],other:['who','details','done']};
+const flow=()=>flows[s.who]||['who','details','done'];
+const metBy=()=>store.get('gv-metby','');
+const deviceId=(()=>{let d=store.get('gv-device',null);if(!d){d='d'+Math.random().toString(36).slice(2,8);store.set('gv-device',d)}return d})();
+
+function start(){s=blank();step='who';render()}
+function go(n){step=n;render();$('#main').scrollTop=0}
+function nextStep(){const f=flow();go(f[f.indexOf(step)+1])}
+function prevStep(){const f=flow();const i=f.indexOf(step);if(i>0)go(f[i-1])}
+function pick(key,val){if(key==='who'&&s.who!==val){s.next=s.when=null;s.spots=[]}s[key]=val;render()}
+function toggleSpot(val){const i=s.spots.indexOf(val);
+  if(i>=0){s.spots.splice(i,1)} else if(s.spots.length<3){s.spots.push(val)} else {const h=$('#spotmsg');if(h){h.textContent='Up to three, please. Tap one to swap it out.'}return}
+  render()}
+let actx=null;
+function tick(){try{actx=actx||new (window.AudioContext||window.webkitAudioContext)();if(actx.state==='suspended')actx.resume();
+  const t=actx.currentTime,o=actx.createOscillator(),g=actx.createGain();o.type='sine';o.frequency.setValueAtTime(880,t);o.frequency.exponentialRampToValueAtTime(520,t+.07);
+  g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(.18,t+.008);g.gain.exponentialRampToValueAtTime(.0001,t+.09);o.connect(g).connect(actx.destination);o.start(t);o.stop(t+.1)}catch(e){}}
+const emailOk=e=>/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(e.trim());
+function ready(){
+  if(!(s.name.trim()&&emailOk(s.email)&&s.org.trim()))return false;
+  if(s.who==='customer'){if(s.reach==='other'&&!s.ea.trim())return false;if(s.reach==='phone'&&!s.phone.trim())return false}
+  return true;
+}
+
+function tiles(list,key,cls){return `<div class="grid ${cls}">${list.map(o=>{const on=key==='spot'?s.spots.includes(o.id):s[key]===o.id;const n=key==='spot'&&on?s.spots.indexOf(o.id)+1:0;
+  return `<button class="tile ${cls==='g2'&&key==='who'?'big':''} ${on?'on':''}" data-pick="${key}" data-val="${o.id}" aria-pressed="${on}">${n?`<span class="num">${n}</span>`:''}<b>${esc(o.t)}</b>${o.s?`<small>${esc(o.s)}</small>`:''}</button>`}).join('')}</div>`}
+const contBtn=(ok,back=true)=>`<div class="actions"><button class="btn" data-act="cont" ${ok?'':'disabled'}>Continue</button>${back?'<button class="back" data-act="back">Back</button>':''}</div>`;
+
+function render(){
+  const f=flow(), i=f.indexOf(step);
+  $('#prog').style.width=(step==='who'?4:Math.round(i/(f.length-1)*100))+'%';
+  const v=$('#view'); let h='';
+  if(step==='who'){
+    h=`<section class="screen"><div style="display:flex;flex-direction:column;gap:12px"><p class="eyebrow">GREAT TO MEET YOU</p><h1>The evidence layer for enterprise AI.</h1><p class="lede">A few quick taps and we’ll be in touch within two business days.</p></div>
+    <h2>I’m here as…</h2>${tiles(WHO,'who','g2')}${contBtn(!!s.who,false)}</section>`;
+  } else if(step==='next'){
+    h=`<section class="screen"><p class="eyebrow">1 OF 3</p><h2>What would you like next?</h2>${tiles(NEXT,'next','g1')}${contBtn(!!s.next)}</section>`;
+  } else if(step==='when'){
+    h=`<section class="screen"><p class="eyebrow">2 OF 3</p><h2>Where is your AI governance today?</h2>${tiles(WHEN,'when','g1')}${contBtn(!!s.when)}</section>`;
+  } else if(step==='spot'){
+    h=`<section class="screen"><p class="eyebrow">3 OF 3</p><div style="display:flex;flex-direction:column;gap:10px"><h2>What are your biggest concerns about AI and data protection?</h2><p class="lede" style="font-size:19px">Tap up to three, starting with the biggest.</p></div>${tiles(SPOT,'spot','g2')}
+      <div class="actions"><button class="btn" data-act="spotnext" ${s.spots.length?'':'disabled'}>Continue</button><button class="back" data-act="back">Back</button></div><p class="hint" id="spotmsg"></p></section>`;
+  } else if(step==='details'){
+    const extra = s.who==='customer' ? `
+      <div style="display:flex;flex-direction:column;gap:10px"><span style="font-weight:700;font-size:17px">Best way to reach you</span>
+      <div class="seg" role="group" aria-label="Best way to reach you">
+        <button data-reach="email" class="${s.reach==='email'?'on':''}">Email me</button>
+        <button data-reach="phone" class="${s.reach==='phone'?'on':''}">Call me</button>
+        <button data-reach="other" class="${s.reach==='other'?'on':''}">Other</button></div></div>
+      ${s.reach==='other'?`<label class="f">How should we reach you?<input id="ea" type="text" value="${esc(s.ea)}" placeholder="e.g. through my EA, Sam Lee, sam.lee@company.com" autocomplete="off"></label>`:''}
+      ${s.reach==='phone'?`<label class="f">Mobile number<input id="phone" type="tel" value="${esc(s.phone)}" placeholder="04xx xxx xxx" inputmode="tel"></label>`:''}`
+    : s.who==='investor' ? `<label class="check"><input id="inv" type="checkbox" ${s.inv?'checked':''}><span><strong>Send me GovernVeil investor updates.</strong> Bijal will also be in touch personally.</span></label>`
+    : s.who==='partner' ? `<div style="display:flex;flex-direction:column;gap:12px"><span style="font-weight:700;font-size:17px">What kind of partnership do you have in mind? <em style="font-style:normal;font-weight:400;color:var(--mute)">Tap all that apply</em></span>
+      <div class="grid g2">${PTYPE.map(o=>{const on=s.ptypes.includes(o.id);return `<button class="tile ${on?'on':''}" data-ptype="${o.id}" aria-pressed="${on}" style="min-height:96px"><b style="font-size:21px">${esc(o.t)}</b><small>${esc(o.s)}</small></button>`}).join('')}</div></div>
+      <label class="f"><span>Anything else we should know? <em>(optional)</em></span><input id="note" type="text" value="${esc(s.note)}" placeholder="A line is plenty"></label>`
+    : `<label class="f"><span>What brings you to the stand? <em>(optional)</em></span><input id="note" type="text" value="${esc(s.note)}" placeholder="A line is plenty"></label>`;
+    h=`<section class="screen"><p class="eyebrow">LAST STEP</p><h2>Where should we follow up?</h2>
+      <div class="fields">
+        <label class="f">Full name<input id="name" type="text" value="${esc(s.name)}" placeholder="Your name" autocomplete="off" autocapitalize="words"></label>
+        <label class="f">Work email<input id="email" type="email" value="${esc(s.email)}" placeholder="name@company.com" autocomplete="off" autocapitalize="none" inputmode="email"></label>
+        <label class="f">Organisation<input id="org" type="text" value="${esc(s.org)}" placeholder="Company, fund or agency" autocomplete="off"></label>
+        ${extra}
+        <p class="hint" style="margin:0;font-size:16px;color:var(--soft)">By sending this, you agree to GovernVeil’s <a href="https://governveil.com.au/privacy" target="_blank" rel="noopener" style="color:var(--orange)">privacy policy</a>.</p>
+      </div>
+      <div class="actions"><button class="btn" id="send" ${ready()?'':'disabled'}>Send</button><button class="back" data-act="back">Back</button></div>
+      <p class="hint" id="why"></p></section>`;
+  } else if(step==='done'){
+    const first=esc((s.name.trim()||'there').split(/\s+/)[0]);
+    let body='';
+    if(s.who==='customer'){
+      const spot=SPOT.find(o=>o.id===s.spots[0]);
+      const when = s.reach==='other'?`We’ll reach you the way you asked within two business days to find a time.`
+        : s.reach==='phone'?`We’ll call you on ${esc(s.phone)} within two business days to find a time.`
+        : `We’ll email ${esc(s.email)} within two business days to find a time.`;
+      body=`<div class="card dark"><p class="eyebrow">YOUR CALL · 30 MINUTES ON TEAMS</p><p class="t">${esc(CALL[s.next]||'Introductory call')}</p><p class="d">${when}</p></div>
+      <div class="card hot"><p class="eyebrow">BEFORE WE TALK</p><p class="d" style="color:var(--paper)">${esc(spot?spot.hook:'We’ll tailor the conversation to what matters most to you.')}</p></div>`;
+    } else {
+      body=`<p class="lede">${s.who==='investor'?'Bijal will be in touch personally within two business days.':'We’ll be in touch within two business days.'}</p>`;
+    }
+    h=`<section class="screen"><svg class="tick" viewBox="0 0 24 24" fill="none" stroke="#FF5B1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Sent"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.5 2.5L16 9.5"/></svg>
+      <h1>Thank you, ${first}.</h1>${body}
+      <p class="hint" style="font-size:18px">Questions in the meantime: contact@governveil.com.au</p>
+      <div class="actions"><button class="btn ghost" data-act="new">Next visitor</button></div>
+      <div class="notebox"><p class="eyebrow" style="color:var(--mute)">FOR THE GOVERNVEIL TEAM</p>
+        <input id="teamnote" type="text" placeholder="Note from the conversation, e.g. MGA, uses Copilot, pilot in Feb" autocomplete="off">
+        <div class="actions"><button class="back" data-act="note">Save note</button><span class="hint" id="notemsg"></span></div></div></section>`;
+  }
+  v.innerHTML=h;
+  $('#metby').textContent=metBy()?'This device: '+metBy():'Tap the gear to set who’s on this device';
+  bind();
+  clearTimeout(resetTimer);
+  if(step==='done')resetTimer=setTimeout(()=>{release();start()},90000);
+}
+
+function bind(){
+  document.querySelectorAll('[data-pick]').forEach(b=>b.onclick=()=>{wake();tick();if(b.dataset.pick==='spot'){toggleSpot(b.dataset.val)}else{b.classList.add('on');pick(b.dataset.pick,b.dataset.val)}});
+  const sn=$('[data-act="spotnext"]');if(sn)sn.onclick=()=>{if(s.spots.length){tick();nextStep()}};
+  document.querySelectorAll('[data-ptype]').forEach(b=>b.onclick=()=>{tick();const id=b.dataset.ptype,i=s.ptypes.indexOf(id);if(i>=0)s.ptypes.splice(i,1);else s.ptypes.push(id);render()});
+  const cn=$('[data-act="cont"]');if(cn)cn.onclick=()=>{const k={who:'who',next:'next',when:'when'}[step];if(k&&s[k]){tick();nextStep()}};
+  const snd=$('#send');if(snd)snd.addEventListener('pointerdown',()=>{if(!snd.disabled)tick()});
+  document.querySelectorAll('[data-act="back"]').forEach(b=>b.onclick=prevStep);
+  document.querySelectorAll('[data-reach]').forEach(b=>b.onclick=()=>{s.reach=b.dataset.reach;render()});
+  const n=$('[data-act="new"]');if(n)n.onclick=()=>{release();start()};
+  ['name','email','org','ea','phone','note'].forEach(k=>{const el=$('#'+k);if(el)el.oninput=()=>{s[k]=el.value;refreshSend()}});
+  const iv=$('#inv');if(iv)iv.onchange=()=>{s.inv=iv.checked};
+  const send=$('#send');if(send)send.onclick=submit;
+  const nb=$('[data-act="note"]');if(nb)nb.onclick=saveNote;
+}
+function refreshSend(){const b=$('#send');if(!b)return;const ok=ready();b.disabled=!ok;
+  const why=$('#why');if(why){why.textContent=ok?'':(!s.name.trim()||!s.org.trim()?'Add your name and organisation.':!emailOk(s.email)?'Add a valid work email.':(s.who==='customer'&&s.reach==='other'&&!s.ea.trim())?'Tell us how you’d like us to reach you.':(s.who==='customer'&&s.reach==='phone'&&!s.phone.trim())?'Add your mobile number.':'')}}
+
+function sydDay(d){try{return new Intl.DateTimeFormat('en-CA',{timeZone:'Australia/Sydney',year:'numeric',month:'2-digit',day:'2-digit'}).format(d)}catch(e){return d.toISOString().slice(0,10)}}
+function record(){
+  const now=new Date(), w=WHEN.find(o=>o.id===s.when);
+  const r={createdAt:now.toISOString(),day:sydDay(now),source:'ACE26 booth',metBy:metBy()||'',device:deviceId,
+    hereAs:WHO.find(o=>o.id===s.who).t, name:s.name.trim(), email:s.email.trim(), organisation:s.org.trim(),
+    consent:true, consentAt:now.toISOString(), teamNote:''};
+  if(s.who==='customer'){Object.assign(r,{wantsNext:NEXT.find(o=>o.id===s.next)?.t||'',timing:w?.t||'',grade:w?.grade||'',topConcern:SPOT.find(o=>o.id===s.spots[0])?.t||'',concerns:s.spots.map(id=>SPOT.find(o=>o.id===id)?.t).filter(Boolean).join('; '),
+    reachBy:{email:'Email',phone:'Phone',other:'Other'}[s.reach],reachDetails:s.reach==='other'?s.ea.trim():'',mobile:s.reach==='phone'?s.phone.trim():'',owner:'Andrew'})}
+  else if(s.who==='investor'){Object.assign(r,{investorUpdates:!!s.inv,owner:'Bijal'})}
+  else {Object.assign(r,{partnershipType:s.ptypes.map(id=>PTYPE.find(o=>o.id===id)?.t).filter(Boolean).join('; '),enquiry:s.note.trim(),owner:'Bijal'})}
+  return r;
+}
+const FLOW_URL='https://default8a91183155104bf484e74811ad66a7.30.environment.api.powerplatform.com:443/powerautomate/automations/direct/cu/22/workflows/ac5f07c2f0554de4bcf2b6033f9e05c0/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=KprPTd-Xt_oGKLH3ReIBX_zuPxPWdwv4VzSePDVGxXg';
+function toRow(r){return {"Lead ID":r.id,"Received":new Date(r.createdAt).toLocaleString('en-AU',{timeZone:'Australia/Sydney'}),"Day":r.day,"Here as":r.hereAs,"Name":r.name,"Work email":r.email,"Organisation":r.organisation,
+  "Wants next":r.wantsNext||'',"Governance today":r.timing||'',"Grade":r.grade||'',"Top concern":r.topConcern||'',"All concerns":r.concerns||'',"Reach by":r.reachBy||'',"Reach details":r.reachDetails||'',"Mobile":r.mobile||'',
+  "Investor updates":r.investorUpdates===undefined?'':(r.investorUpdates?'Yes':'No'),"Partnership type":r.partnershipType||'',"Enquiry":r.enquiry||'',"Owner":r.owner||'',"Met by":r.metBy||'',"Team note":r.teamNote||'',
+  "Consent":'Yes',"Consent at":r.consentAt,"Source":r.source,"Device":r.device}}
+let sendState='idle';
+function submit(){
+  if(!ready())return;
+  const id=Date.now().toString(36)+'-'+deviceId+'-'+Math.random().toString(36).slice(2,6);
+  const data=record();data.id=id;
+  const q=store.get('gv-queue',[]);q.push({id,data,hold:true});store.set('gv-queue',q);
+  lastId=id; go('done'); paint();
+}
+function release(){const q=store.get('gv-queue',[]);let ch=false;q.forEach(x=>{if(x.hold){x.hold=false;ch=true}});if(ch)store.set('gv-queue',q);flush()}
+function saveNote(){
+  const el=$('#teamnote'),msg=$('#notemsg');const note=el.value.trim();if(!note||!lastId)return;
+  const q=store.get('gv-queue',[]);const p=q.find(x=>x.id===lastId);
+  if(p){p.data.teamNote=note;store.set('gv-queue',q);msg.textContent='Added to this lead.'}
+  else msg.textContent='This lead has already been sent. Add the note in Intuka.';
+}
+let flushing=false;
+async function flush(){
+  if(flushing){return}
+  flushing=true;
+  try{
+    const ready=store.get('gv-queue',[]).filter(x=>!x.hold);
+    for(const item of ready){
+      try{
+        const ctl=new AbortController();const t=setTimeout(()=>ctl.abort(),15000);
+        const res=await fetch(FLOW_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(toRow(item.data)),signal:ctl.signal});
+        clearTimeout(t);
+        if(!res.ok)throw new Error('HTTP '+res.status);
+        store.set('gv-queue',store.get('gv-queue',[]).filter(x=>x.id!==item.id));
+        const k='gv-sent-'+sydDay(new Date());store.set(k,store.get(k,0)+1);
+        sendState='ok';
+      }catch(e){sendState='bad';break}
+    }
+  } finally {flushing=false;paint()}
+}
+function paint(){
+  const q=store.get('gv-queue',[]), n=q.filter(x=>!x.hold).length, el=$('#sync');
+  el.className='sync '+(n&&sendState==='bad'?'bad':n?'wait':'ok');
+  el.title=n&&sendState==='bad'?n+' lead(s) waiting: no connection yet, will retry':n?n+' sending':'All leads sent';
+}
+function wake(){try{if(navigator.wakeLock&&!window.__wl)navigator.wakeLock.request('screen').then(l=>{window.__wl=l;l.addEventListener('release',()=>{window.__wl=null})}).catch(()=>{})}catch(e){}}
+function openSheet(){
+  const sh=$('#sheet');const sent=store.get('gv-sent-'+sydDay(new Date()),0);const pending=store.get('gv-queue',[]).filter(x=>!x.hold).length;
+  sh.innerHTML=`<div class="in" role="dialog" aria-label="Team settings"><h3>Who’s on this device?</h3>
+    <div class="seg">${TEAM.map(t=>`<button data-team="${t}" class="${metBy()===t?'on':''}">${t}</button>`).join('')}</div>
+    <div class="stat"><div><b>${sent}</b><span>sent from this device today</span></div><div><b>${pending}</b><span>waiting to send</span></div></div>
+    <p class="hint">${pending&&sendState==='bad'?'No connection right now. Leads are kept on this device and send automatically when it reconnects.':'Each lead is sent to GovernVeil when the next visitor starts.'}</p>
+    <div class="actions"><button class="btn" data-act="close" style="height:60px;font-size:20px">Done</button>${pending?'<button class="back" data-act="retry">Send now</button>':''}</div></div>`;
+  sh.hidden=false;
+  sh.querySelectorAll('[data-team]').forEach(b=>b.onclick=()=>{store.set('gv-metby',b.dataset.team);openSheet();render()});
+  sh.querySelector('[data-act="close"]').onclick=()=>{sh.hidden=true};
+  const r=sh.querySelector('[data-act="retry"]');if(r)r.onclick=()=>{flush();setTimeout(openSheet,1500)};
+  sh.onclick=e=>{if(e.target===sh)sh.hidden=true};
+}
+$('#gear').onclick=openSheet;
+start(); release();
+window.addEventListener('online',flush);
+setInterval(()=>{if(store.get('gv-queue',[]).some(x=>!x.hold))flush()},20000);
+})();
+</script>
+
+</body>
+</html>

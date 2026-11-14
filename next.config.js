@@ -36,6 +36,14 @@ const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
 
+  /* /ace26 is the GovernVeil booth lead form for ACE26 (16 November 2026),
+     a standalone page in public/ace26.html. Not linked from the site and
+     marked noindex; it is for the team's iPads at the stand. Remove both
+     this rewrite and the file after the event. */
+  async rewrites() {
+    return [{ source: '/ace26', destination: '/ace26.html' }];
+  },
+
   async redirects() {
     return [
       { source: '/practice', destination: '/advisory', permanent: true },

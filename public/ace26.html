@@ -287,7 +287,8 @@ function record(){
   return r;
 }
 const FLOW_URL='https://default8a91183155104bf484e74811ad66a7.30.environment.api.powerplatform.com:443/powerautomate/automations/direct/cu/22/workflows/ac5f07c2f0554de4bcf2b6033f9e05c0/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=KprPTd-Xt_oGKLH3ReIBX_zuPxPWdwv4VzSePDVGxXg';
-function toRow(r){return {"Lead ID":r.id,"Received":new Date(r.createdAt).toLocaleString('en-AU',{timeZone:'Australia/Sydney'}),"Day":r.day,"Here as":r.hereAs,"Name":r.name,"Work email":r.email,"Organisation":r.organisation,
+function toRow(r){const row=toRowRaw(r);for(const k in row){if(typeof row[k]==='string')row[k]=row[k].replace(/["\u201C\u201D]/g,"'").replace(/\\/g,'/').replace(/[\r\n]+/g,' ')}return row}
+function toRowRaw(r){return {"Lead ID":r.id,"Received":new Date(r.createdAt).toLocaleString('en-AU',{timeZone:'Australia/Sydney'}),"Day":r.day,"Here as":r.hereAs,"Name":r.name,"Work email":r.email,"Organisation":r.organisation,
   "Wants next":r.wantsNext||'',"Governance today":r.timing||'',"Grade":r.grade||'',"Top concern":r.topConcern||'',"All concerns":r.concerns||'',"Reach by":r.reachBy||'',"Reach details":r.reachDetails||'',"Mobile":r.mobile||'',
   "Investor updates":r.investorUpdates===undefined?'':(r.investorUpdates?'Yes':'No'),"Partnership type":r.partnershipType||'',"Enquiry":r.enquiry||'',"Owner":r.owner||'',"Met by":r.metBy||'',"Team note":r.teamNote||'',
   "Consent":'Yes',"Consent at":r.consentAt,"Source":r.source,"Device":r.device}}
